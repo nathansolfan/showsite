@@ -1,8 +1,4 @@
-# Serve static files directly
-<IfModule mod_rewrite.c>
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^(.*)$ $1 [L]
-</IfModule>
+
 
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
