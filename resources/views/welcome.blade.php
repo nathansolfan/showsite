@@ -41,5 +41,12 @@
         <p class="text-lg text-yellow-500">This is yellow text.</p>
         <p class="text-lg text-purple-500">This is purple text.</p>
     </div>
+
+    <div>
+        <p class="text-lg text-blue-500">VIAD.</p>
+        <p class="text-lg text-green-500">DOS </p>
+        <p class="text-lg text-yellow-500">TRES</p>
+        <p class="text-lg text-purple-500">QUATROS</p>
+    </div>
 </body>
 </html>
