@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test Tailwind</title>
     <link rel="stylesheet" href="{{ asset('build/assets/app-BqFgHIMm.css') }}">
-<script src="{{ asset('build/assets/app-CUzlGF_f.js') }}" defer></script>
+    <script src="{{ asset('build/assets/app-CUzlGF_f.js') }}" defer></script>
 
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
