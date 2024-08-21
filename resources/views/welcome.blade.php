@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test Tailwind</title>
-    {{-- @vite('resources/css/app.css')
-    @vite('resources/js/app.js') --}}
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 <body class="bg-gray-100 flex flex-col items-center justify-center h-screen space-y-6">
     <div class="text-center">
