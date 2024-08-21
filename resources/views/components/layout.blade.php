@@ -16,7 +16,7 @@
             <div>
                 <a href="/" class="text-gray-800 hover:text-gray-600 mx-4">Home</a>
                 <a href="#about" class="text-gray-800 hover:text-gray-600 mx-4">About</a>
-                <a href="#work" class="text-gray-800 hover:text-gray-600 mx-4">Work</a>
+                <a href="/mae" class="text-gray-800 hover:text-gray-600 mx-4">Maezinha</a>
                 <a href="#contact" class="text-gray-800 hover:text-gray-600 mx-4">Contact</a>
             </div>
         </div>

@@ -9,3 +9,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return 'testing';
 });
+
+Route::get('/mae', function () {
+    return 'Maezinha te amo';
+});
+
