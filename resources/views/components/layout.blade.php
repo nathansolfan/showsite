@@ -15,9 +15,11 @@
             <div class="text-lg font-bold">YourName</div>
             <div>
                 <a href="/" class="text-gray-800 hover:text-gray-600 mx-4">Home</a>
-                <a href="#about" class="text-gray-800 hover:text-gray-600 mx-4">About</a>
+                <a href="/about" class="text-gray-800 hover:text-gray-600 mx-4">About</a>
                 <a href="/mae" class="text-gray-800 hover:text-gray-600 mx-4">Maezinha</a>
-                <a href="#contact" class="text-gray-800 hover:text-gray-600 mx-4">Contact</a>
+                <a href="/contact" class="text-gray-800 hover:text-gray-600 mx-4">Contact</a>
+                <a href="/services" class="text-gray-800 hover:text-gray-600 mx-4">Services</a>
+
             </div>
         </div>
     </nav>
