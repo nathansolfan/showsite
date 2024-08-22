@@ -31,7 +31,22 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,gif|max:2048',
+            'url' => 'nullable|url',
+            'github_url' => 'nullable|url',
+        ]);
+
+        // check if user uploaded img
+        if ($request->hasFile('image')) {
+            // access file(), then store it in a variable, and ->store()
+            $validatedData['image'] = $request->file('image')->store('projects', 'public');
+        }
+
+        Project::create($validatedData);
     }
 
     /**
