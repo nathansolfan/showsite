@@ -13,7 +13,7 @@
 
 
     <!-- Work Section -->
-    <section id="work" class="py-20 bg-gray-100">
+    {{-- <section id="work" class="py-20 bg-gray-100">
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold text-center text-gray-800">My Work</h2>
             <p class="mt-4 text-lg text-gray-600 text-center">Here are some of my recent projects.</p>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 </x-layout>
 <script>
 

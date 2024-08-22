@@ -25,6 +25,7 @@
                 <div class="lg:flex-grow ">
                     <a href="/" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Home</a>
                     <a href="/about" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">About</a>
+                    {{-- route('works') is recommended--}}
                     <a href="/works" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Works</a>
                     <a href="/contact" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Contact</a>
                     <a href="/services" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Services</a>

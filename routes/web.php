@@ -15,5 +15,8 @@ Route::get('/services', function () {
 
 Route::get('/works', function () {
     return view('pages.works');
-});
+})->name('works');
 
+Route::get('contact', function (){
+    return view('pages.contact');
+});
