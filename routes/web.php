@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,3 +21,5 @@ Route::get('/works', function () {
 Route::get('contact', function (){
     return view('pages.contact');
 });
+
+Route::resource('projects', ProjectController::class);
