@@ -10,12 +10,20 @@
                 I'm constantly seeking to learn and improve, staying up-to-date with the latest trends in web development to tackle exciting projects. My commitment to quality and exceeding expectations makes me a valuable addition to any team that values dedication, versatility, and excellence in web development.
             </p>
 
+            <!-- LinkedIn Link -->
+            <div class="flex justify-center mt-8">
+                <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" target="_blank" class="flex items-center space-x-2">
+                    <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn" class="w-8 h-8">
+                    <span class="text-blue-600 hover:underline text-lg">Connect with me on LinkedIn</span>
+                </a>
+            </div>
+
             <!-- Technical Skills -->
             <div class="mt-10">
                 <h2 class="text-4xl font-bold text-center text-gray-800">Technical Skills</h2>
                 <ul class="mt-6 text-lg text-gray-600 list-disc list-inside">
                     <li><strong>Languages:</strong> HTML, CSS, JavaScript, PHP</li>
-                    <li><strong>Frameworks and Libraries:</strong> Node.js, React, Tailwind CSS</li>
+                    <li><strong>Frameworks and Libraries:</strong> Laravel, React, NodeJS, React Native, Tailwind CSS</li>
                     <li><strong>Databases:</strong> MySQL, MongoDB</li>
                     <li><strong>Development Practices:</strong> Responsive Design, RESTful Services, CRUD Operations</li>
                     <li><strong>Tools and Platforms:</strong> Git, GitHub, Postman, NPM</li>
@@ -27,10 +35,10 @@
                 <h2 class="text-4xl font-bold text-center text-gray-800">Specializations</h2>
                 <ul class="mt-6 text-lg text-gray-600 list-disc list-inside">
                     <li>
-                        <strong>Frontend Development:</strong> Building dynamic, interactive user interfaces using React and Tailwind CSS, with a strong foundation in HTML and CSS for layout and design.
+                        <strong>Frontend Development:</strong> Building dynamic, interactive user interfaces using Vanilla JavaScript, React and Tailwind CSS, with a strong foundation in HTML and CSS for layout and design.
                     </li>
                     <li>
-                        <strong>Backend Development:</strong> Proficient in Node.js and PHP for server-side logic; experienced in integrating databases using MySQL and MongoDB for efficient data storage and retrieval.
+                        <strong>Backend Development:</strong> Proficient in Laravel/PHP and NodeJS for server-side logic; experienced in integrating databases using MySQL and MongoDB for efficient data storage and retrieval.
                     </li>
                     <li>
                         <strong>API Development:</strong> Designing and implementing RESTful APIs, capable of handling CRUD operations across various web applications.
