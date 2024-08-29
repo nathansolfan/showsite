@@ -103,5 +103,19 @@
             </div>
         </div>
     </section>
+    <div class="tech-slider">
+        <div class="tech-track">
+            <div class="tech-item"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-item"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-item"><i class="fa-brands fa-js"></i></div>
+            <div class="tech-item"><i class="fa-brands fa-laravel"></i></div>
+            <div class="tech-item"><i class="fa-brands fa-react"></i></div>
+            <div class="tech-item"><i class="fa-brands fa-node-js"></i></div>
+            <div class="tech-item"><i class="fa-solid fa-database"></i></div>
+            <!-- Repeat the items for a continuous effect -->
+        </div>
+    </div>
 
 </x-layout>
+
+

@@ -2,3 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tech-item i {
+    font-size: 3rem;
+    color: #ff2d20; /* Laravel's red color */
+    margin: 0 10px;
+}
