@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Your Portfolio' }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
@@ -12,7 +14,7 @@
     <!-- Navigation -->
     <nav class="w-full py-6 bg-white shadow">
         <div class="container mx-auto flex items-center justify-between">
-            <div class="text-lg font-bold">YourName</div>
+            <div class="text-lg font-bold">Nathan Ferreira</div>
             <div class="block lg:hidden">
                 <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-800 border-gray-400 hover:text-gray-600 hover:border-gray-600">
                     <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +30,8 @@
                     {{-- route('works') is recommended--}}
                     <a href="/works" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Works</a>
                     <a href="/contact" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Contact</a>
+                    <a href="/projects" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Projects</a>
+
                     <a href="/services" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Services</a>
                 </div>
             </div>
@@ -36,17 +40,20 @@
 
     <!-- Main Content -->
     <main class="flex-grow">
+
         {{ $slot }}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-auto">
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 YourName. All rights reserved.</p>
+            <p>&copy; 2024 Nathan Ferreira. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+
+
         // Toggle the navigation menu on small screens
         document.getElementById('nav-toggle').onclick = function() {
             var navContent = document.getElementById('nav-content');
