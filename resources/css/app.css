@@ -3,3 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles (Light mode by default) */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Additional dark mode styles for other elements */
+.dark-mode .header {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .content {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+/* Example: Dark mode for links */
+.dark-mode a {
+    color: #bbbbbb;
+}
+
+.dark-mode a:hover {
+    color: #dddddd;
+}
+
+/* Example: Dark mode for a footer */
+.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #bbbbbb;
+}
