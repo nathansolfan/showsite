@@ -83,6 +83,45 @@
         </div>
     </section>
 
+    <section id="featured-projects" class="py-10 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-item relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="path/to/project1-thumbnail.jpg" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center text-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2">Project Title 1</h3>
+                        <p class="mb-4">Brief description of the project. Mention key features or technologies used.</p>
+                        <a href="/projects/project1" class="text-blue-400 underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="path/to/project2-thumbnail.jpg" alt="Project 2" class="w-full h-64 object-cover">
+                    <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center text-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2">Project Title 2</h3>
+                        <p class="mb-4">Brief description of the project. Mention key features or technologies used.</p>
+                        <a href="/projects/project2" class="text-blue-400 underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="path/to/project3-thumbnail.jpg" alt="Project 3" class="w-full h-64 object-cover">
+                    <div class="project-info absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center text-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2">Project Title 3</h3>
+                        <p class="mb-4">Brief description of the project. Mention key features or technologies used.</p>
+                        <a href="/projects/project3" class="text-blue-400 underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
     <!-- Static Tech Icons Section -->
     <section class="tech-slider py-10 bg-gray-50">
         <div class="tech-item" onclick="openModal('htmlModal')"><i class="fa-brands fa-html5"></i></div>
