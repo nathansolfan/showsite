@@ -122,6 +122,67 @@
         </div>
     </section>
 
+    <section id="skills" class="py-10 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- HTML & CSS -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">HTML & CSS</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 95%;"></div>
+                    </div>
+                    <p class="text-gray-600">Proficient in modern HTML5 and CSS3, including responsive design.</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">JavaScript</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 85%;"></div>
+                    </div>
+                    <p class="text-gray-600">Strong in JavaScript, including ES6+ features and DOM manipulation.</p>
+                </div>
+
+                <!-- Laravel/PHP -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">Laravel/PHP</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 90%;"></div>
+                    </div>
+                    <p class="text-gray-600">Extensive experience with Laravel framework and modern PHP practices.</p>
+                </div>
+
+                <!-- React.js -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">React.js</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 75%;"></div>
+                    </div>
+                    <p class="text-gray-600">Proficient in building dynamic user interfaces with React.js.</p>
+                </div>
+
+                <!-- Node.js -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">Node.js</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 70%;"></div>
+                    </div>
+                    <p class="text-gray-600">Experienced in server-side development using Node.js.</p>
+                </div>
+
+                <!-- MySQL & MongoDB -->
+                <div class="skill-item p-6 rounded-lg shadow-lg bg-white text-center">
+                    <h3 class="text-2xl font-bold mb-2">MySQL & MongoDB</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 80%;"></div>
+                    </div>
+                    <p class="text-gray-600">Skilled in database management with MySQL and MongoDB.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Static Tech Icons Section -->
     <section class="tech-slider py-10 bg-gray-50">
         <div class="tech-item" onclick="openModal('htmlModal')"><i class="fa-brands fa-html5"></i></div>
