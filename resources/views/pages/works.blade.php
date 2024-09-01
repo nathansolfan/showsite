@@ -51,18 +51,32 @@
 </x-layout>
 <script>
 
+
+
     const githubUsername = 'nathansolfan';
     const projectsContainer = document.getElementById('github-projects');
+    function getLivePreviewUrl(repoName) {
+    const livePreviewLinks = {
+        'dog-photo-app': 'https://dog-photo-app-one.vercel.app/', // Replace with your actual repo name if different
+        // Add more mappings for other projects as needed
+    };
+
+    return livePreviewLinks[repoName] || null;
+}
 
     fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=6`)
         .then(response => response.json())
         .then(data => {
             data.forEach(repo => {
+                const livePreviewUrl = getLivePreviewUrl(repo.name);
+
                 const projectCard = `
                     <div class="text-center bg-white p-6 rounded-lg shadow-lg">
                         <h3 class="text-2xl font-bold text-gray-800 mt-4">${repo.name}</h3>
                         <p class="mt-2 text-gray-600">${repo.description || 'No description available.'}</p>
                         <a href="${repo.html_url}" target="_blank" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700">View on GitHub</a>
+                        ${livePreviewUrl ? `<a href="${livePreviewUrl}" target="_blank" class="mt-4 ml-4 inline-block bg-green-600 text-white py-2 px-4 rounded-full hover:bg-green-700">Live Preview</a>` : ''}
+
                     </div>
                 `;
                 projectsContainer.innerHTML += projectCard;
