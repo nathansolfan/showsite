@@ -12,42 +12,6 @@
     </section>
 
 
-    <!-- Work Section -->
-    {{-- <section id="work" class="py-20 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">My Work</h2>
-            <p class="mt-4 text-lg text-gray-600 text-center">Here are some of my recent projects.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-                <!-- Project 1 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project-image-url.jpg" alt="Project 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800">Project Name</h3>
-                        <p class="mt-2 text-gray-600">Short description of the project.</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project-image-url.jpg" alt="Project 2" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800">Project Name</h3>
-                        <p class="mt-2 text-gray-600">Short description of the project.</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project-image-url.jpg" alt="Project 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800">Project Name</h3>
-                        <p class="mt-2 text-gray-600">Short description of the project.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 </x-layout>
 <script>
 
@@ -59,6 +23,11 @@
     const livePreviewLinks = {
         'dog-photo-app': 'https://dog-photo-app-one.vercel.app/', // Replace with your actual repo name if different
         // Add more mappings for other projects as needed
+
+        'ProjectManagement' : 'https://f4dc5472-7b94-4d5d-9d3c-47a593936bae-00-9rdbdkg59zgu.kirk.replit.dev/',
+        'cleaning-service' : 'https://b6e1d417-8813-4644-8809-ac80d0e28676-00-316gxfu84tyex.janeway.replit.dev/'
+
+
     };
 
     return livePreviewLinks[repoName] || null;
