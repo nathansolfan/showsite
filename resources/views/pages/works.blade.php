@@ -25,6 +25,7 @@
 
     function getLivePreviewUrl(repoName) {
         const livePreviewLinks = {
+            'LanguageCompanion' : 'https://b673d07e-05ae-47a6-91d2-1f03771b1cc6-00-29msu0h1kj7at.janeway.replit.dev/',
             'DogAPIGenerator': 'https://dog-photo-app-one.vercel.app/', // Replace with your actual repo name if different
             'ProjectManagement' : 'https://f4dc5472-7b94-4d5d-9d3c-47a593936bae-00-9rdbdkg59zgu.kirk.replit.dev/',
             'cleaning-service' : 'https://b6e1d417-8813-4644-8809-ac80d0e28676-00-316gxfu84tyex.janeway.replit.dev/'
