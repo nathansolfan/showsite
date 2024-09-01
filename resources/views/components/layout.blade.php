@@ -26,7 +26,7 @@
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
                 <div class="lg:flex-grow ">
                     <a href="/" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Home</a>
-                    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                    {{-- <button id="dark-mode-toggle">Toggle Dark Mode</button> --}}
 
                     <a href="/about" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">About</a>
                     {{-- route('works') is recommended--}}
