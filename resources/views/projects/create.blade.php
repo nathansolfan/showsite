@@ -4,6 +4,7 @@
             <h1 class="text-4xl font-bold text-center text-gray-800">Add New Project</h1>
 
             <div class="mt-10 max-w-lg mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
+                {{$errors}}
                 <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 

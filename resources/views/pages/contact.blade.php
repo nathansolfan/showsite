@@ -6,6 +6,7 @@
             <p class="mt-4 text-lg text-gray-600 text-center">I'd love to hear from you! Please fill out the form below to get in touch.</p>
 
             <div class="mt-10 max-w-lg mx-auto">
+
                 <form action="#" method="POST">
                     <div class="mb-6">
                         <label for="name" class="block text-gray-700">Name</label>
