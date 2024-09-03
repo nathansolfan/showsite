@@ -73,17 +73,17 @@
     </style>
 
     <!-- Hero Section -->
-    <section id="hero" class="w-full bg-cover bg-center h-auto" style="background-image: url('your-image-url.jpg');">
-        <div class="container mx-auto flex items-center justify-center py-20">
-            <div class="text-center">
-                <h1 class="text-5xl font-bold text-black">Welcome to My Portfolio</h1>
-                <p class="text-xl text-black-200 mt-4">I'm Nathan Ferreira, a passionate web developer skilled in both front-end and back-end tasks.</p>
-                <a href="{{ url('/works')}}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">See My Work</a>
-            </div>
+    <div class="hero bg-cover bg-center h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray">
+                Nathan Ferreira
+                <br>
+                <span id="typewriter-text" class="text-blue-500"></span>
+            </h1>
+            <p class="text-xl text-black-200 mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
+            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">See My Work</a>
         </div>
-    </section>
-
-
+    </div>
 
     <section id="skills" class="py-10 bg-gray-50">
         <div class="container mx-auto">
@@ -176,7 +176,6 @@
         </div>
     </section>
 
-
     <!-- Static Tech Icons Section -->
     <section class="tech-slider py-10 bg-gray-50">
         <div class="tech-item" onclick="openModal('htmlModal')"><i class="fa-brands fa-html5"></i></div>
@@ -261,6 +260,33 @@
 
     <!-- Add your JavaScript at the end of the body to load after the page content -->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = ["Web Developer", "Designer", "Freelancer", "Learner"];
+            let count = 0;
+            let index = 0;
+            let currentText = '';
+            let letter = '';
+
+            function type() {
+                if (count === texts.length) {
+                    count = 0;
+                }
+                currentText = texts[count];
+                letter = currentText.slice(0, ++index);
+
+                document.getElementById('typewriter-text').textContent = letter;
+                if (letter.length === currentText.length) {
+                    count++;
+                    index = 0;
+                    setTimeout(type, 2000); // Wait 2 seconds before starting the next word
+                } else {
+                    setTimeout(type, 150); // Adjust the typing speed here
+                }
+            }
+
+            type();
+        });
+
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
         }
@@ -269,5 +295,4 @@
             document.getElementById(modalId).style.display = 'none';
         }
     </script>
-
 </x-layout>
