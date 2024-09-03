@@ -29,6 +29,8 @@
                     {{-- <button id="dark-mode-toggle">Toggle Dark Mode</button> --}}
 
                     <a href="/about" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">About</a>
+                    <a href="/hero" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Hero</a>
+
                     {{-- route('works') is recommended--}}
                     <a href="/works" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Works</a>
                     <a href="/contact" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Contact</a>
