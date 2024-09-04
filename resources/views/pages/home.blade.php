@@ -100,16 +100,23 @@
 
             function type() {
 
-
-
+                // means if once count reaches 4 count goes to 0
                 if (count === texts.length) {
                     count = 0;
                 }
+                // pick work from text based on count
                 currentText = texts[count];
+
+                // takes the current word, first letter and go up to indexTH
+                // ++ means it increase by 1 before the slice on each type()
                 letter = currentText.slice(0, ++index);
 
+                // update the HTML to show the letter
                 document.getElementById('typewriter-text').textContent = letter;
+
+                //  letters.length typed so far and currentText.length total letters of a word
                 if (letter.length === currentText.length) {
+                    // if letter is equal then increase count and reset letterCount to 0
                     count++;
                     index = 0;
                     setTimeout(type, 2000); // Wait 2 seconds before starting the next word
@@ -117,7 +124,6 @@
                     setTimeout(type, 150); // Adjust the typing speed here
                 }
             }
-
             type();
         });
 
