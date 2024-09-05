@@ -71,14 +71,14 @@
             body.classList.add('dark-mode');
         }
 
-        // Toggle dark mode on button click
-        toggleButton.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
+        // toggleButton.addEventListener('click', function() {
+        //     body.classList.toggle('dark-mode');
 
-            // Save user preference in localStorage
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('dark-mode', isDarkMode);
-        });
+        //     // Save user preference in localStorage
+        //     const isDarkMode = body.classList.contains('dark-mode');
+        //     localStorage.setItem('dark-mode', isDarkMode);
+        // });
+
     });
     </script>
 

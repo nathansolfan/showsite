@@ -1,6 +1,4 @@
 // dogApi.js
-
-// Define DogAPIGenerator project data
 export const dogApiGenerator = {
     name: 'DogAPIGenerator',
     liveUrl: 'https://dog-photo-app-one.vercel.app/',
@@ -8,7 +6,6 @@ export const dogApiGenerator = {
     githubUrl: 'https://github.com/nathansolfan/DogAPIGenerator',
 };
 
-// Reusable function to create DogAPIGenerator card
 export function createDogApiProjectCard(container) {
     const projectCard = `
         <div class="project-item text-center bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
