@@ -16,14 +16,12 @@
     @include('pages.skillsStatic')
 
     <!-- Dog API Project Section -->
-    <section id="dog-api-project" class="py-20 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">Dog API Project</h2>
-            <div id="dog-api-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                <!-- Dog API project will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
+    @include('sections.dogApi', [
+        'name' => 'DogAPIGenerator',
+        'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.',
+        'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
+        'liveUrl' => 'https://dog-photo-app-one.vercel.app/'
+    ])
 
     <!-- Add your JavaScript at the end of the body to load after the page content -->
     <script type="module">
@@ -60,4 +58,28 @@
             createDogApiProjectCard(container);  // Call the function after loading the script
         });
     </script>
+
+    <style>
+        #dog-api-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Align items vertically */
+            flex-wrap: wrap;
+            gap: 1rem; /* Spacing between items */
+        }
+
+        .project-item {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #dog-api-project {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            text-align: center;
+        }
+    </style>
 </x-layout>
