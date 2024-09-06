@@ -16,12 +16,15 @@
     @include('pages.skillsStatic')
 
     <!-- Dog API Project Section -->
-    @include('sections.dogApi', [
-        'name' => 'DogAPIGenerator',
-        'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.',
-        'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
-        'liveUrl' => 'https://dog-photo-app-one.vercel.app/'
-    ])
+    <section id="dog-api-project" class="py-20 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Dog API Project</h2>
+            <div id="dog-api-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Include the Dog API project -->
+                @include('sections.dogApi')
+            </div>
+        </div>
+    </section>
 
     <!-- Add your JavaScript at the end of the body to load after the page content -->
     <script type="module">
