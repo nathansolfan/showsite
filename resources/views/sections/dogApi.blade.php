@@ -8,22 +8,25 @@
     ];
 @endphp
 
-<div class="project-item text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8">
+<div class="project-item flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px]">
     <!-- Project Title -->
     <h3 class="text-3xl font-semibold text-gray-900 mt-4">{{ $project['name'] }}</h3>
 
     <!-- Project Description -->
     <p class="text-base text-gray-500 mt-4 leading-relaxed">{{ $project['description'] }}</p>
 
-    <!-- GitHub Button -->
-    <a href="{{ $project['githubUrl'] }}" target="_blank" class="mt-6 inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
-        View on GitHub
-    </a>
+    <!-- Buttons Container -->
+    <div class="mt-6 flex space-x-4">
+        <!-- GitHub Button -->
+        <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
+            View on GitHub
+        </a>
 
-    <!-- Live Preview Button -->
-    <button class="mt-6 ml-4 inline-block bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:from-green-500 hover:to-green-600 hover:shadow-md transition duration-200 ease-in-out" onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')">
-        Live Preview
-    </button>
+        <!-- Live Preview Button -->
+        <button class="inline-block bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:from-green-500 hover:to-green-600 hover:shadow-md transition duration-200 ease-in-out" onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')">
+            Live Preview
+        </button>
+    </div>
 </div>
 
 <!-- Fullscreen Overlay for Project Preview -->
