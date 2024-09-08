@@ -19,6 +19,10 @@
         @include('sections.dogApi')
     </div>
 
+    {{-- <div class="mb-8">
+        @include('pages.contact')
+    </div> --}}
+
 
 
     <!-- Add your JavaScript at the end of the body to load after the page content -->
