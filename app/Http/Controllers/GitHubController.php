@@ -20,17 +20,19 @@ class GitHubController extends Controller
         ]);
 
         $repos = $response->json();
+        $totalRepos = (int) $response->header('X-Total-Count', count($repos)); // Fallback to the count of repos if the header is missing or invalid
+
 
         // Create a manual paginator
 
         $paginator = new LengthAwarePaginator(
             $repos,
-            $response->header('X-Total-Count'),
+            $totalRepos,  // Use the integer total
             $perPage,
             $page,
             ['path' => $request->url()]
         );
 
-        return view('projects', compact('paginator'));
+        return view('pages.works', compact('paginator'));
     }
 }
