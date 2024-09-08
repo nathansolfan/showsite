@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,11 @@ Route::get('/services', function () {
     return view('pages.services');
 });
 
-Route::get('/works', function () {
-    return view('pages.works');
-})->name('works');
+// Route::get('/works', function () {
+//     return view('pages.works');
+// })->name('works');
+
+Route::get('/works', [GitHubController::class, 'index'])->name('works');
 
 Route::get('contact', function (){
     return view('pages.contact');
