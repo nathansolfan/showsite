@@ -3,40 +3,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles (Light mode by default) */
+/* Default Light Mode */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --nav-background: #f8f8f8;
+    --footer-background: #333333;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: #121212;
+    --text-color: #f5f5f5;
+    --nav-background: #1a1a1a;
+    --footer-background: #1f1f1f;
+}
+
+/* Apply the variables */
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--background-color);
+    color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode styles */
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+nav {
+    background-color: var(--nav-background);
 }
 
-/* Additional dark mode styles for other elements */
-.dark-mode .header {
-    background-color: #1a1a1a;
+footer {
+    background-color: var(--footer-background);
 }
 
-.dark-mode .content {
-    background-color: #2a2a2a;
-    color: #ffffff;
+/* Dark Mode Switcher Styling */
+.theme-switcher {
+    display: flex;
+    align-items: center;
 }
 
-/* Example: Dark mode for links */
-.dark-mode a {
-    color: #bbbbbb;
-}
-
-.dark-mode a:hover {
-    color: #dddddd;
-}
-
-/* Example: Dark mode for a footer */
-.dark-mode footer {
-    background-color: #1a1a1a;
-    color: #bbbbbb;
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

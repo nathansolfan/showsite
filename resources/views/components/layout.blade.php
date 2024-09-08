@@ -24,18 +24,13 @@
                 </button>
             </div>
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
-                <div class="lg:flex-grow ">
+                <div class="lg:flex-grow">
                     <a href="/" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Home</a>
-                    {{-- <button id="dark-mode-toggle">Toggle Dark Mode</button> --}}
-
                     <a href="/about" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">About</a>
-                    <a href="/hero" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Hero</a>
-
-                    {{-- route('works') is recommended--}}
+                    {{-- <a href="/hero" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Hero</a> --}}
                     <a href="/works" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Works</a>
                     <a href="/contact" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Contact</a>
                     <a href="/projects" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Projects</a>
-
                     <a href="/services" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Services</a>
                 </div>
             </div>
@@ -44,7 +39,6 @@
 
     <!-- Main Content -->
     <main class="flex-grow">
-
         {{ $slot }}
     </main>
 
@@ -60,27 +54,7 @@
         document.getElementById('nav-toggle').onclick = function() {
             var navContent = document.getElementById('nav-content');
             navContent.classList.toggle('hidden');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-
-        // Check for saved user preference in localStorage
-        if (localStorage.getItem('dark-mode') === 'true') {
-            body.classList.add('dark-mode');
-        }
-
-        // toggleButton.addEventListener('click', function() {
-        //     body.classList.toggle('dark-mode');
-
-        //     // Save user preference in localStorage
-        //     const isDarkMode = body.classList.contains('dark-mode');
-        //     localStorage.setItem('dark-mode', isDarkMode);
-        // });
-
-    });
+        };
     </script>
-
 </body>
 </html>
