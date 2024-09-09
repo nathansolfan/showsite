@@ -22,9 +22,9 @@
                 @endforeach
             </div>
 
-            <!-- Pagination Links -->
             <div class="mt-8">
-                {{ $paginator->links() }}
+                {{ $paginator->total() }} total repositories
+                {{ $paginator->links('pagination::bootstrap-4') }}  <!-- Using Bootstrap for pagination styling -->
             </div>
         </div>
     </section>
@@ -34,6 +34,8 @@
 </x-layout>
 
 <script>
+
+
 
     // const githubUsername = 'nathansolfan';
     // const projectsContainer = document.getElementById('github-projects');

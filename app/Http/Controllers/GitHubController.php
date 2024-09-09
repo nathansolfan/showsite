@@ -20,8 +20,9 @@ class GitHubController extends Controller
         ]);
 
         $repos = $response->json();
-        $totalRepos = (int) $response->header('X-Total-Count', count($repos)); // Fallback to the count of repos if the header is missing or invalid
-
+        // Check if there are more repositories (via the 'Link' header)
+        $linkHeader = $response->header('Link');
+        $totalRepos = count($repos); // Fallback count
 
         // Create a manual paginator
 
@@ -34,5 +35,7 @@ class GitHubController extends Controller
         );
 
         return view('pages.works', compact('paginator'));
+
+
     }
 }
