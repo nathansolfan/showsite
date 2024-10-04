@@ -20,6 +20,10 @@ Route::get('/services', function () {
     return view('pages.services');
 });
 
+Route::get('/tropicalBeauty', function() {
+    return view('pages.tropicalBeauty');
+});
+
 // Route::get('/works', function () {
 //     return view('pages.works');
 // })->name('works');

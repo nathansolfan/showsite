@@ -26,7 +26,7 @@ class GitHubController extends Controller
         $linkHeader = $response->header('Link');
         // item x page if no header
         $totalRepos = count($repos); // Fallback count
-        dd($linkHeader);
+        // dd($linkHeader);
 
         // If 'Link' exists, we assume pagination info is there
         if ($linkHeader) {

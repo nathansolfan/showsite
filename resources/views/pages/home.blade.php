@@ -6,9 +6,9 @@
             <h1 class="text-5xl md:text-7xl font-bold text-gray">
                 Nathan Ferreira
                 <br>
-                <span id="typewriter-text" class="text-blue-500"></span>
+                <span id="typewriter-text" class="text-blue-500 "></span>
             </h1>
-            <p class="text-xl text-black-200 mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
+            <p class="text-xl text-black-200 mt-4">I'm a passionate webb developer skilled in both front-end and back-end tasks.</p>
             {{-- <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">See My Work</a> --}}
         </div>
     </div>

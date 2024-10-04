@@ -33,6 +33,8 @@
                     <a href="/contact" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Contact</a>
                     <a href="/projects" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Projects</a>
                     <a href="/services" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Services</a>
+                    <a href="/tropicalBeauty" class="block lg:inline-block text-gray-800 hover:text-gray-600 mx-4">Beauty</a>
+
                 </div>
             </div>
         </div>
