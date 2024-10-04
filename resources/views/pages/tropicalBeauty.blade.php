@@ -114,18 +114,49 @@
     </section>
 
     <!-- Newsletter Subscription -->
-    <section class="py-20 bg-gradient-to-r from-green-400 to-blue-500 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold">Stay Updated</h2>
-            <p class="mt-4">Subscribe to our newsletter to receive the latest updates and exclusive offers.</p>
-            <form class="mt-8 flex flex-col sm:flex-row justify-center items-center">
-                <input type="email" placeholder="Enter your email" class="w-full sm:w-1/3 p-3 rounded-l-lg focus:outline-none">
-                <button type="submit" class="mt-4 sm:mt-0 sm:ml-2 bg-white text-green-500 py-3 px-6 rounded-r-lg font-semibold hover:bg-gray-100 transition duration-300">Subscribe</button>
-            </form>
-        </div>
-    </section>
+<section class="py-20 bg-gradient-to-r from-green-400 to-blue-500 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-semibold">Stay Updated</h2>
+        <p class="mt-4">Subscribe to our newsletter to receive the latest updates and exclusive offers.</p>
+        <form class="mt-8 flex flex-col sm:flex-row justify-center items-center">
+            <!-- Email Input Field -->
+            <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full sm:w-1/3 py-4 px-6 bg-white text-gray-800 rounded-l-lg focus:outline-none"
+                required
+            >
+            <!-- Subscribe Button -->
+            <button
+                type="submit"
+                class="mt-4 sm:mt-0 sm:ml-2 bg-white text-green-500 py-2.5 px-2 rounded-r-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center justify-center"
+            >
+                Subscribe
+            </button>
+        </form>
 
-    <!-- Footer -->
+        <!-- Success Message -->
+        @if(session('success'))
+            <div class="mt-4 text-green-200">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Error Message -->
+        @if($errors->any())
+            <div class="mt-4 text-red-200">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
+</section>
+
+
+    {{-- <!-- Footer -->
     <footer class="bg-gray-800 text-gray-200 py-8">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p>&copy; {{ date('Y') }} Tropical Beauty. All rights reserved.</p>
@@ -135,7 +166,7 @@
                 <a href="#" class="hover:text-white">Twitter</a>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 
     <!-- JavaScript for Modal Functionality -->
     <script>
