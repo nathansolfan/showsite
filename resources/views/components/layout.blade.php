@@ -17,8 +17,14 @@
     <!-- Navigation -->
     <nav class="w-full py-6 shadow-lg bg-gradient-to-r from-blue-500 to-blue-400 sticky top-0 z-50">
         <div class="relative container mx-auto flex justify-center lg:justify-center items-center">
-            <!-- Left-aligned logo, absolutely positioned so it doesn't interfere with centering -->
-            <div class="absolute left-0 text-lg font-bold text-white">Nathan Ferreira</div>
+
+            {{-- <!-- Left-aligned logo, absolutely positioned so it doesn't interfere with centering -->
+            <div class="absolute left-0 text-lg font-bold text-white">Nathan Ferreira</div> --}}
+
+            <!-- Use the WebP logo instead of text -->
+            <div class="text-lg font-bold text-white">
+            <img src="/images/nf-logo.png.webp" alt="Nathan Ferreira Logo" class="h-10 w-auto"> <!-- Adjust height as needed -->
+        </div>
 
             <!-- Navigation links, centered using flexbox -->
             <div id="nav-content" class="flex space-x-6">
