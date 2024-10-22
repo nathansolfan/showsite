@@ -8,18 +8,21 @@
     ];
 @endphp
 
-<div class="project-item flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px]">
-    <!-- Project Title -->
-    <h3 class="text-3xl font-semibold text-gray-900 mt-4">{{ $project['name'] }}</h3>
+<div class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px] overflow-hidden">
+    <!-- Project Image -->
+    <div class="w-full h-48 overflow-hidden rounded-t-xl">
+        <img src=" {{ asset('images/dogscreenshot.jpg')}} " alt="Dog API Project" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+    </div>
 
-    <!-- Project Description -->
-    <p class="text-base text-gray-500 mt-4 leading-relaxed">{{ $project['description'] }}</p>
+    <!-- Project Title and Description -->
+    <h3 class="text-3xl font-semibold text-gray-900 mt-4 group-hover:text-blue-500">{{ $project['name'] }}</h3>
+    <p class="text-base text-gray-500 mt-4 leading-relaxed group-hover:text-gray-700">{{ $project['description'] }}</p>
 
     <!-- Buttons Container -->
-    <div class="mt-6 flex space-x-4">
+    <div class="mt-6 flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- GitHub Button -->
         <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
-            View on GitHubbb
+            View on GitHub
         </a>
 
         <!-- Live Preview Button -->
@@ -28,6 +31,7 @@
         </button>
     </div>
 </div>
+
 
 <!-- Fullscreen Overlay for Project Preview -->
 <div id="fullscreen-overlay" class="fullscreen-overlay">
