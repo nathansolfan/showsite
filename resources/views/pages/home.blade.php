@@ -19,9 +19,9 @@
         @include('sections.dogApi')
     </div>
 
-    <div class="mb-8">
+    {{-- <div class="mb-8">
         @include('sections.cards')
-    </div>
+    </div> --}}
 
     {{-- <div class="mb-8">
         @include('pages.contact')

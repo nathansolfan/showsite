@@ -1,66 +1,92 @@
 <x-layout>
-    <section id="about" class="py-20 bg-gray-100">
+    <!-- Profile Section -->
+    <section id="about" class="py-20 bg-gradient-to-r from-blue-50 to-white">
+        <div class="container mx-auto text-center">
+            {{-- <img src="{{ asset('images/profile-picture.jpg') }}" alt="Nathan Ferreira" class="rounded-full w-32 h-32 mx-auto mb-6"> --}}
+            <h1 class="text-5xl font-bold text-gray-800">Nathan Ferreira</h1>
+            <p class="text-xl text-gray-600">Web Developer | Frontend & Backend Specialist</p>
+        </div>
+    </section>
+
+    <!-- Personal Statement Section -->
+    <section id="statement" class="py-20 bg-white">
         <div class="container mx-auto">
-            <!-- Personal Statement -->
             <h2 class="text-4xl font-bold text-center text-gray-800">Personal Statement</h2>
-            <p class="mt-4 text-lg text-gray-600 text-center">
-                I'm a passionate web developer skilled in both front-end and back-end development. My expertise includes HTML, CSS, JavaScript, PHP, React.js, Node.js, Git, MySQL, and MongoDB. With strong communication skills, I speak four languages fluently, allowing me to think through complex concepts and explain them clearly and effectively.
+            <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
+                I'm a passionate web developer skilled in both front-end and back-end development. My expertise includes HTML, CSS, JavaScript, PHP, React.js, Node.js, Git, MySQL, and MongoDB.
             </p>
-            <p class="mt-4 text-lg text-gray-600 text-center">
-                I'm constantly seeking to learn and improve, staying up-to-date with the latest trends in web development to tackle exciting projects. My commitment to quality and exceeding expectations makes me a valuable addition to any team that values dedication, versatility, and excellence in web development.
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
+                I constantly seek to improve, staying updated with web development trends to tackle exciting projects. My commitment to quality makes me a valuable addition to any team.
             </p>
+        </div>
+    </section>
 
-            <!-- LinkedIn Link -->
-            <div class="flex justify-center mt-8">
-                <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" target="_blank" class="flex items-center space-x-2">
-                    <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn" class="w-8 h-8">
-                    <span class="text-blue-600 hover:underline text-lg">Connect with me on LinkedIn</span>
-                </a>
+    <!-- LinkedIn Button Section -->
+    <section class="py-10 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" target="_blank" class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn" class="w-6 h-6 mr-2">
+                Connect with me on LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Languages</h3>
+                    <p class="mt-4 text-gray-600">HTML, CSS, JavaScript, PHP</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Frameworks & Libraries</h3>
+                    <p class="mt-4 text-gray-600">Laravel, React, NodeJS, React Native, Tailwind CSS</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Databases</h3>
+                    <p class="mt-4 text-gray-600">MySQL, MongoDB</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Technical Skills -->
-            <div class="mt-10">
-                <h2 class="text-4xl font-bold text-center text-gray-800">Technical Skills</h2>
-                <ul class="mt-6 text-lg text-gray-600 list-disc list-inside">
-                    <li><strong>Languages:</strong> HTML, CSS, JavaScript, PHP</li>
-                    <li><strong>Frameworks and Libraries:</strong> Laravel, React, NodeJS, React Native, Tailwind CSS</li>
-                    <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                    <li><strong>Development Practices:</strong> Responsive Design, RESTful Services, CRUD Operations</li>
-                    <li><strong>Tools and Platforms:</strong> Git, GitHub, Postman, NPM</li>
-                </ul>
+    <!-- Specializations Section -->
+    <section id="specializations" class="py-20 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800">Specializations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Frontend Development</h3>
+                    <p class="mt-4 text-gray-600">Building dynamic, interactive user interfaces using JavaScript, React, and Tailwind CSS.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Backend Development</h3>
+                    <p class="mt-4 text-gray-600">Proficient in Laravel/PHP and NodeJS for server-side logic with database integration.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">API Development</h3>
+                    <p class="mt-4 text-gray-600">Designing and implementing RESTful APIs capable of handling CRUD operations.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Specializations -->
-            <div class="mt-10">
-                <h2 class="text-4xl font-bold text-center text-gray-800">Specializations</h2>
-                <ul class="mt-6 text-lg text-gray-600 list-disc list-inside">
-                    <li>
-                        <strong>Frontend Development:</strong> Building dynamic, interactive user interfaces using Vanilla JavaScript, React and Tailwind CSS, with a strong foundation in HTML and CSS for layout and design.
-                    </li>
-                    <li>
-                        <strong>Backend Development:</strong> Proficient in Laravel/PHP and NodeJS for server-side logic; experienced in integrating databases using MySQL and MongoDB for efficient data storage and retrieval.
-                    </li>
-                    <li>
-                        <strong>API Development:</strong> Designing and implementing RESTful APIs, capable of handling CRUD operations across various web applications.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Education -->
-            <div class="mt-10">
-                <h2 class="text-4xl font-bold text-center text-gray-800">Education</h2>
-                <div class="mt-6 text-lg text-gray-600">
-                    <div class="mb-6">
-                        <h3 class="font-semibold text-gray-700">Codenation</h3>
-                        <p>Web Developer Certificate, Graduated: 2023</p>
-                        <p>Concentration: HTML, CSS, JavaScript, PHP, React, Node.js, MySQL, Python</p>
-                        <p>Relevant Coursework: Frontend and Backend Development, API Design</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-700">I.S.I.S.S Dal Cero</h3>
-                        <p>Coursework: Civil Construction, Topography, Real Estate Appraisal, Technical Drawing</p>
-                        <p>Graduated: 2012</p>
-                    </div>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-700">Codenation</h3>
+                    <p class="mt-2 text-gray-600">Web Developer Certificate, Graduated: 2023</p>
+                    <p class="text-gray-600">HTML, CSS, JavaScript, PHP, React, Node.js, MySQL, Python</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-700">I.S.I.S.S Dal Cero</h3>
+                    <p class="mt-2 text-gray-600">Graduated: 2012</p>
+                    <p class="text-gray-600">Coursework: Civil Construction, Topography, Real Estate Appraisal, Technical Drawing</p>
                 </div>
             </div>
         </div>
