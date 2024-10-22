@@ -19,7 +19,7 @@
     <div class="mt-6 flex space-x-4">
         <!-- GitHub Button -->
         <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
-            View on GitHub
+            View on GitHubbb
         </a>
 
         <!-- Live Preview Button -->
