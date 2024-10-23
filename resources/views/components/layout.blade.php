@@ -11,6 +11,13 @@
     <!-- Tailwind CSS -->
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+
+    <!-- Smooth Scroll -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
