@@ -40,10 +40,15 @@
         </div>
     </section>
 
+
+
+
     <!-- Technical Skills Section -->
     <section id="skills" class="py-20 bg-white">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">Technical Skills</h2>
+            <h2 class="text-4xl font-bold text-center text-gray-800">
+                <i class="fas fa-tools mr-2"></i> Technical Skills
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Languages</h3>
