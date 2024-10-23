@@ -11,7 +11,7 @@
     {{-- Download PDF CV --}}
     <section class="py-10 text-center">
         <a href=" {{ asset('download/CVNathanFerreira.pdf.pdf')}} " download class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out" >
-        Download my CV
+            <i class="fas fa-download mr-2"></i> Download my CV
     </a>
 
     </section>
