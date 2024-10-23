@@ -1,4 +1,7 @@
 <x-layout>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
     <!-- Profile Section -->
     <section id="about" class="py-20 bg-gradient-to-r from-blue-50 to-white">
         <div class="container mx-auto text-center">
@@ -69,8 +72,9 @@
     <!-- Specializations Section -->
     <section id="specializations" class="py-20 bg-gray-100">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">Specializations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <h2 class="text-4xl font-bold text-center text-gray-800">
+                <i class="fas fa-code mr-2"></i> Specializations
+            </h2>            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Frontend Development</h3>
                     <p class="mt-4 text-gray-600">Building dynamic, interactive user interfaces using JavaScript, React, and Tailwind CSS.</p>
@@ -90,8 +94,9 @@
     <!-- Education Section -->
     <section id="education" class="py-20 bg-white">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">Education</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <h2 class="text-4xl font-bold text-center text-gray-800">
+                <i class="fas fa-graduation-cap mr-2"></i> Education
+            </h2>            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold text-gray-700">Codenation</h3>
                     <p class="mt-2 text-gray-600">Web Developer Certificate, Graduated: 2023</p>
