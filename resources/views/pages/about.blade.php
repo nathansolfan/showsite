@@ -2,17 +2,18 @@
     <!-- Profile Section -->
     <section id="about" class="py-20 bg-gradient-to-r from-blue-50 to-white">
         <div class="container mx-auto text-center">
-            {{-- <img src="{{ asset('images/profile-picture.jpg') }}" alt="Nathan Ferreira" class="rounded-full w-32 h-32 mx-auto mb-6"> --}}
+            <img src="{{ asset('images/profile-picture.jpg') }}" alt="Nathan Ferreira" class="rounded-full w-32 h-32 mx-auto mb-6">
             <h1 class="text-5xl font-bold text-gray-800">Nathan Ferreira</h1>
             <p class="text-xl text-gray-600">Web Developer | Frontend & Backend Specialist</p>
         </div>
     </section>
 
+
     {{-- Download PDF CV --}}
     <section class="py-10 text-center">
-        <a href=" {{ asset('download/CVNathanFerreira.pdf.pdf')}} " download class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out" >
-            <i class="fas fa-download mr-2"></i> Download my CV
-    </a>
+        <a href="{{ asset('download/CVNathanFerreira.pdf') }}" download class="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+            <i class="fas fa-download mr-2"></i> Download My CV
+        </a>
 
     </section>
 
