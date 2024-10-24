@@ -23,53 +23,51 @@
 
     <!-- Navigation -->
     <nav class="w-full py-6 shadow-lg bg-gradient-to-r from-blue-500 to-blue-400 sticky top-0 z-50">
-        <div class="relative container mx-auto flex justify-center lg:justify-center items-center">
-
-            {{-- <!-- Left-aligned logo, absolutely positioned so it doesn't interfere with centering -->
-            <div class="absolute left-0 text-lg font-bold text-white">Nathan Ferreira</div> --}}
-
-            <!-- Use the WebP logo instead of text -->
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
             <div class="text-lg font-bold text-white">
-            {{-- <img src="/images/nf-logo.png.webp" alt="Nathan Ferreira Logo" class="h-10 w-auto"> <!-- Adjust height as needed --> --}}
-        </div>
-
-            <!-- Navigation links, centered using flexbox -->
-            <div id="nav-content" class="flex space-x-6">
-                <a href="/" class="text-white hover:text-gray-100 {{ request()->is('/') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="/about" class="text-white hover:text-gray-100 {{ request()->is('about') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-user"></i> About
-                </a>
-                <a href="/works" class="text-white hover:text-gray-100 {{ request()->is('works') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-briefcase"></i> Works
-                </a>
-                <a href="/contact" class="text-white hover:text-gray-100 {{ request()->is('contact') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-envelope"></i> Contact
-                </a>
-                <a href="/projects" class="text-white hover:text-gray-100 {{ request()->is('projects') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-project-diagram"></i> Projects
-                </a>
-                <a href="/services" class="text-white hover:text-gray-100 {{ request()->is('services') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-concierge-bell"></i> Services
-                </a>
-                <a href="/tropicalBeauty" class="text-white hover:text-gray-100 {{ request()->is('tropicalBeauty') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    <i class="fas fa-spa"></i> Beauty
+                <a href="/">
+                    <img src="{{ asset('images/nf-logo.png.webp') }}" alt="Nathan Ferreira Logo" class="h-10 w-auto"> <!-- Adjust height as needed -->
                 </a>
             </div>
 
             <!-- Mobile menu button -->
-            <div class="absolute right-0 block lg:hidden">
+            <div class="lg:hidden">
                 <button id="nav-toggle" aria-label="Toggle Navigation Menu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200 transition-colors duration-300">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
+
+            <!-- Navigation links for desktop (hidden on mobile) -->
+            <div class="hidden lg:flex space-x-6" id="nav-content">
+                <a href="/" class="text-white hover:text-gray-100 {{ request()->is('/') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                    Home
+                </a>
+                <a href="/portfolio" class="text-white hover:text-gray-100 {{ request()->is('portfolio') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                    Portfolio
+                </a>
+                <a href="/projects" class="text-white hover:text-gray-100 {{ request()->is('projects') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                    Projects
+                </a>
+                <a href="/contact" class="text-white hover:text-gray-100 {{ request()->is('contact') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default, toggled on click) -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <div class="px-6 pt-4 pb-6 space-y-4">
+                <a href="/" class="block text-white hover:text-gray-100">Home</a>
+                <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
+                <a href="/projects" class="block text-white hover:text-gray-100">Projects</a>
+                <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
+            </div>
         </div>
     </nav>
-
 
     <!-- Main Content -->
     <main class="flex-grow">
@@ -86,8 +84,8 @@
     <script>
         // Toggle the navigation menu on small screens
         document.getElementById('nav-toggle').onclick = function() {
-            var navContent = document.getElementById('nav-content');
-            navContent.classList.toggle('hidden');
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         };
     </script>
 </body>
