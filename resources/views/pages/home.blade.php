@@ -1,15 +1,38 @@
 <x-layout>
 
     <!-- Hero Section -->
-    <div class="hero bg-cover bg-center h-screen flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-5xl md:text-7xl font-bold text-gray">
+    <!-- Hero Section -->
+    <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video class="absolute top-0 left-0 w-full h-full object-cover" src="https://videos.pexels.com/video-files/852421/852421-hd_1280_720_30fps.mp4" autoplay muted loop playsinline poster="https://images.pexels.com/videos/852421/free-video-852421.jpg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=630&amp;w=1200"></video>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold">
                 Nathan Ferreira
                 <br>
-                <span id="typewriter-text" class="text-blue-500 "></span>
+                <span id="typewriter-text" class="text-blue-500"></span>
             </h1>
-            <p class="text-xl text-black-200 mt-4">I'm a passionate webb developer skilled in both front-end and back-end tasks.</p>
-            {{-- <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">See My Work</a> --}}
+            <p class="text-xl mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
+
+            <!-- Optional Button -->
+            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">See My Work</a>
+
+            <!-- Optional Social Media Links (similar to WordPress) -->
+            <div class="mt-6 flex justify-center space-x-6">
+                <a href="https://www.instagram.com/" class="hover:text-gray-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="hover:text-gray-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="mailto:email@email.com" class="hover:text-gray-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
         </div>
     </div>
 

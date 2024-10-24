@@ -30,7 +30,7 @@
 
             <!-- Use the WebP logo instead of text -->
             <div class="text-lg font-bold text-white">
-            <img src="/images/nf-logo.png.webp" alt="Nathan Ferreira Logo" class="h-10 w-auto"> <!-- Adjust height as needed -->
+            {{-- <img src="/images/nf-logo.png.webp" alt="Nathan Ferreira Logo" class="h-10 w-auto"> <!-- Adjust height as needed --> --}}
         </div>
 
             <!-- Navigation links, centered using flexbox -->
