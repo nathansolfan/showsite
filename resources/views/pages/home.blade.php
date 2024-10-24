@@ -4,7 +4,8 @@
     <!-- Hero Section -->
     <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover" src="https://videos.pexels.com/video-files/852421/852421-hd_1280_720_30fps.mp4" autoplay muted loop playsinline poster="https://images.pexels.com/videos/852421/free-video-852421.jpg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=630&amp;w=1200"></video>
+<video class="absolute top-0 left-0 w-full h-full object-cover" src="{{ asset('videos/video1.mp4') }}" autoplay muted loop playsinline poster="{{ asset('images/your-poster.jpg') }}"></video>
+
 
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
