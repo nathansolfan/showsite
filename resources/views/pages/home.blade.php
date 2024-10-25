@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover" src="{{ asset('videos/video1.mp4') }}" autoplay muted loop playsinline poster="{{ asset('images/your-poster.jpg') }}"></video>
+        <video class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" autoplay muted loop playsinline></video>
 
 
         <!-- Overlay -->

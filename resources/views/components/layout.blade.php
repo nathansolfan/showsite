@@ -41,7 +41,7 @@
                 </button>
             </div>
 
-            <!-- Navigation links for desktop (hidden on mobile) -->
+            <!-- Desktop Navigation -->
             <div class="hidden lg:flex space-x-6" id="nav-content">
                 <a href="/" class="text-white hover:text-gray-100 {{ request()->is('/') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Home
@@ -58,9 +58,9 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (hidden by default, toggled on click) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="lg:hidden hidden">
-            <div class="px-6 pt-4 pb-6 space-y-4">
+            <div class="px-6 pt-4 pb-6 space-y-4 bg-blue-400">
                 <a href="/" class="block text-white hover:text-gray-100">Home</a>
                 <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
                 <a href="/projects" class="block text-white hover:text-gray-100">Projects</a>
@@ -82,7 +82,8 @@
     </footer>
 
     <script>
-        // Toggle the navigation menu on small screens
+        console.log('Script is running');
+        // Toggle the mobile menu visibility
         document.getElementById('nav-toggle').onclick = function() {
             var mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
