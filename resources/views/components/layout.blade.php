@@ -52,6 +52,9 @@
                 <a href="/contact" class="text-white hover:text-gray-100 {{ request()->is('contact') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Contact
                 </a>
+                <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 {{ request()->is('workss') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                    Works (New)
+                </a>
             </div>
         </div>
 
@@ -62,6 +65,8 @@
                 <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
                 <a href="/projects" class="block text-white hover:text-gray-100">Projects</a>
                 <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
+                <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Works (New)</a>
+
             </div>
         </div>
     </nav>

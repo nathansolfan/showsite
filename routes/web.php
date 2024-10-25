@@ -30,6 +30,8 @@ Route::get('/tropicalBeauty', function() {
 
 Route::get('/works', [GitHubController::class, 'index'])->name('works');
 
+Route::get('/workss', [GitHubController::class, 'index'])->name('workss');
+
 Route::get('contact', function (){
     return view('pages.contact');
 });
