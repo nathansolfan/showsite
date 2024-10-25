@@ -34,10 +34,7 @@
             <!-- Mobile menu button -->
             <div class="lg:hidden">
                 <button id="nav-toggle" aria-label="Toggle Navigation Menu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200 transition-colors duration-300">
-                    <svg class="fill-current h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                    <i id="menu-icon" class="fas fa-bars"></i> <!-- Initial bars icon -->
                 </button>
             </div>
 
@@ -83,10 +80,21 @@
 
     <script>
         console.log('Script is running');
-        // Toggle the mobile menu visibility
+        // Toggle the mobile menu visibility and the icon
         document.getElementById('nav-toggle').onclick = function() {
             var mobileMenu = document.getElementById('mobile-menu');
+            var menuIcon = document.getElementById('menu-icon');
+
             mobileMenu.classList.toggle('hidden');
+
+            // Toggle the icon between bars and times (X)
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
         };
     </script>
 </body>
