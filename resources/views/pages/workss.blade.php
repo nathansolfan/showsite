@@ -13,7 +13,7 @@
                 @foreach ($paginator->items() as $repo)
                     <div class="project-item bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 max-w-full mx-auto">
                         <!-- Project Image -->
-                        <div class="h-80 w-full mb-4 flex items-center justify-center overflow-hidden rounded-lg">
+                        <div class="h-64 w-full mb-4 flex items-center justify-center overflow-hidden rounded-lg">
                             <img src="https://via.placeholder.com/300x200" alt="{{ $repo['name'] }} project image" class="object-cover h-full w-full">
                         </div>
 
