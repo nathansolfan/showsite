@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,13 +25,16 @@ Route::get('/tropicalBeauty', function() {
     return view('pages.tropicalBeauty');
 });
 
-// Route::get('/works', function () {
-//     return view('pages.works');
-// })->name('works');
+// Route::get('/works', [GitHubController::class, 'index'])->name('works');
+// Route::get('/workss', [GitHubController::class, 'index'])->name('workss');
 
-Route::get('/works', [GitHubController::class, 'index'])->name('works');
+Route::get('/works', function(Request $request, GitHubController $controller) {
+    return $controller->index($request, 'pages.works');
+})->name('works');
 
-Route::get('/workss', [GitHubController::class, 'index'])->name('workss');
+Route::get('/workss', function(Request $request, GitHubController $controller) {
+    return $controller->index($request, 'pages.workss');
+})->name('workss');
 
 Route::get('contact', function (){
     return view('pages.contact');

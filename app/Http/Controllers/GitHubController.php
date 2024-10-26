@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class GitHubController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $view = 'pages.works')
     {
         $page = $request->input('page', 1); // current page
         $perPage = 6; // items per page
@@ -20,8 +20,6 @@ class GitHubController extends Controller
         ]);
 
         $repos = $response->json();
-
-
         // Check if there are more repositories (via the 'Link' header)
         $linkHeader = $response->header('Link');
         // item x page if no header
@@ -42,7 +40,7 @@ class GitHubController extends Controller
             ['path' => $request->url()]  // Pagination links generation
         );
 
-        return view('pages.works', compact('paginator'));
+        return view($view, compact('paginator'));
     }
 
     /**
