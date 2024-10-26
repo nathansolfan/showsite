@@ -8,6 +8,9 @@
     <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!--  AOS Initialization Script in Layout -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
@@ -102,5 +105,15 @@
             }
         };
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 400, // Adjust speed of animation
+            once: true // Only animate once per page load
+        });
+    </script>
+
+
 </body>
 </html>
