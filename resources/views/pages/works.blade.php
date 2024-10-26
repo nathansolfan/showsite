@@ -1,7 +1,7 @@
 <x-layout>
     <section id="projects" class="py-20 bg-gray-100">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">My GitHub Projects</h2>
+            <h2 class="text-4xl font-bold text-center text-gray-800">My GitHub Projectsz</h2>
             <p class="mt-4 text-lg text-gray-600 text-center">Here are some of the projects I have worked on.</p>
 
             <div id="github-projects" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
