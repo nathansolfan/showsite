@@ -6,7 +6,6 @@
     <!-- Profile Section -->
     <section id="about" class="py-20 bg-gradient-to-r from-blue-50 to-white">
         <div class="container mx-auto text-center">
-            <img src="{{ asset('images/profile-picture.jpg') }}" alt="Nathan Ferreira" class="rounded-full w-32 h-32 mx-auto mb-6">
             <h1 class="text-5xl font-bold text-gray-800">Nathan Ferreira</h1>
             <p class="text-xl text-gray-600">Web Developer | Frontend & Backend Specialist</p>
         </div>
