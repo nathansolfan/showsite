@@ -46,15 +46,14 @@
                 <a href="/" class="text-white hover:text-gray-100 {{ request()->is('/') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Home
                 </a>
-                <a href="/portfolio" class="text-white hover:text-gray-100 {{ request()->is('portfolio') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Portfolio
-                </a>
+
                 <a href="/about" class="text-white hover:text-gray-100 {{ request()->is('portfolio') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     About
                 </a>
-                <a href="/projects" class="text-white hover:text-gray-100 {{ request()->is('projects') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
+                {{-- RENAME TO WORKS --}}
+                {{-- <a href="/projects" class="text-white hover:text-gray-100 {{ request()->is('projects') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Projects
-                </a>
+                </a> --}}
                 <a href="/contact" class="text-white hover:text-gray-100 {{ request()->is('contact') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Contact
                 </a>
