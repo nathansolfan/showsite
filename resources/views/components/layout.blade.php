@@ -58,7 +58,7 @@
                     Contact
                 </a>
                 <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 {{ request()->is('workss') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Works (New)
+                    Workss
                 </a>
             </div>
         </div>
