@@ -3,7 +3,7 @@
     $project = [
         'name' => 'DriverApp',
         'description' => 'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
-        'githubUrl' => 'https://github.com/nathansolfan/DriverApp',
+        'githubUrl' => 'https://github.com/nathansolfan/financeTracker',
         'liveUrl' => 'https://financetrackeruk.duckdns.org/login',
     ];
 @endphp
@@ -11,7 +11,7 @@
 <div class="project-item relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px] overflow-hidden">
     <!-- Project Image -->
     <div class="w-full h-48 overflow-hidden rounded-t-xl">
-        <img src="{{ asset('images/driverAI.jpg') }}" alt="Driver App Project" class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110">
+        <img src="{{ asset('images/financephoto.jpg') }}" alt="Driver App Project" class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110">
     </div>
 
     <!-- Project Title and Description -->
