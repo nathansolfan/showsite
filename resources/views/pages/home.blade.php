@@ -3,8 +3,12 @@
     <!-- Hero Section -->
     <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" autoplay muted loop playsinline></video>
+        <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" autoplay muted loop playsinline></video>
 
+        <!-- Video Controls -->
+        <button id="toggle-video" class="absolute z-20 bottom-4 right-4 bg-white text-gray-900 px-2 py-2 rounded-lg shadow hover:bg-gray-200 transition">
+            Pause Video
+        </button>
 
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -23,10 +27,10 @@
 
             <!-- Optional Social Media Links (similar to WordPress) -->
             <div class="mt-6 flex justify-center space-x-6">
-                <a href="https://www.instagram.com/" class="hover:text-gray-300">
+                <a href="https://www.instagram.com/nathancacun/" class="hover:text-gray-300">
                     <i class="fab fa-instagram text-2xl"></i>
                 </a>
-                <a href="https://www.linkedin.com/" class="hover:text-gray-300">
+                <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" class="hover:text-gray-300">
                     <i class="fab fa-linkedin text-2xl"></i>
                 </a>
                 <a href="mailto:email@email.com" class="hover:text-gray-300">
@@ -64,6 +68,19 @@
     <!-- Add your JavaScript at the end of the body to load after the page content -->
     <script type="module">
         // import { createDogApiProjectCard } from '/js/dogApi.js';
+
+        const video = document.getElementById('background-video');
+        const toggleButton = document.getElementById('toggle-video');
+
+        toggleButton.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                toggleButton.textContent = 'Pause Video';
+            } else {
+                video.pause();
+                toggleButton.textContent = 'Play Video';
+            }
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             const texts = ["Web Developer", "Designer", "Freelancer", "Learner"];
