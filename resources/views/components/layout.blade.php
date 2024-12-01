@@ -25,7 +25,7 @@
 <body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <nav class="w-full fixed top-0 z-50 py-2 bg-gradient-to-r from-blue-500 to-blue-400">
+    <nav class="w-full fixed top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="text-lg font-bold text-white">
