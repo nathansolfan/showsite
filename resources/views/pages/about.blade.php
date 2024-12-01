@@ -3,35 +3,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-    <!-- Profile Section -->
-    <section id="about" class="py-20 bg-gradient-to-r from-blue-50 to-white">
+    <section class="relative bg-gradient-to-r from-blue-500 to-blue-400 text-white py-20">
         <div class="container mx-auto text-center">
-            <h1 class="text-5xl font-bold text-gray-800">Nathan Ferreira</h1>
-            <p class="text-xl text-gray-600">Web Developer | Frontend & Backend Specialist</p>
+            {{-- <img src="{{ asset('images/profile.jpg') }}" alt="Profile Photo" class="w-32 h-32 mx-auto rounded-full shadow-lg"> --}}
+            <h1 class="text-5xl font-bold mt-6">Nathan Ferreira</h1>
+            <p class="text-xl mt-4">Web Developer | Frontend & Backend Specialist</p>
+            <a href="{{ asset('download/CVNathanFerreira.pdf') }}" download class="mt-6 inline-block bg-white text-blue-500 py-2 px-4 rounded-lg shadow hover:bg-gray-100 transition">
+                <i class="fas fa-download mr-2"></i> Download My CV
+            </a>
         </div>
     </section>
 
-
-    {{-- Download PDF CV --}}
-    <section class="py-10 text-center">
-        <a href="{{ asset('download/CVNathanFerreira.pdf') }}" download class="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-            <i class="fas fa-download mr-2"></i> Download My CV
-        </a>
-
-    </section>
 
     <!-- Personal Statement Section -->
-    <section id="statement" class="py-20 bg-white">
+    <section id="statement" class="py-20 bg-gradient-to-r from-blue-50 to-white">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">Personal Statement</h2>
-            <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
-                I'm a passionate web developer skilled in both front-end and back-end development. My expertise includes HTML, CSS, JavaScript, PHP, React.js, Node.js, Git, MySQL, and MongoDB.
-            </p>
-            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
-                I constantly seek to improve, staying updated with web development trends to tackle exciting projects. My commitment to quality makes me a valuable addition to any team.
-            </p>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-4xl font-bold text-center text-gray-800">Personal Statement</h2>
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                    I'm a passionate web developer skilled in both front-end and back-end development. My expertise includes HTML, CSS, JavaScript, PHP, React.js, Node.js, Git, MySQL, and MongoDB.
+                </p>
+                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                    I constantly seek to improve, staying updated with web development trends to tackle exciting projects. My commitment to quality makes me a valuable addition to any team.
+                </p>
+            </div>
         </div>
     </section>
+
 
     <!-- LinkedIn Button Section -->
     <section class="py-10 bg-gray-50">
@@ -45,29 +43,38 @@
 
 
 
-
-    <!-- Technical Skills Section -->
-    <section id="skills" class="py-20 bg-white">
+    <!-- Techinical Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold text-center text-gray-800">
                 <i class="fas fa-tools mr-2"></i> Technical Skills
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Languages</h3>
-                    <p class="mt-4 text-gray-600">HTML, CSS, JavaScript, PHP</p>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-code text-4xl text-blue-500 mr-4"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Languages</h3>
+                        <p class="text-gray-600">HTML, CSS, JavaScript, PHP</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Frameworks & Libraries</h3>
-                    <p class="mt-4 text-gray-600">Laravel, React, NodeJS, React Native, Tailwind CSS</p>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-layer-group text-4xl text-blue-500 mr-4"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Frameworks & Libraries</h3>
+                        <p class="text-gray-600">Laravel, React, Node.js, Tailwind CSS</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Databases</h3>
-                    <p class="mt-4 text-gray-600">MySQL, MongoDB</p>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <i class="fas fa-database text-4xl text-blue-500 mr-4"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Databases</h3>
+                        <p class="text-gray-600">MySQL, MongoDB</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Specializations Section -->
     <section id="specializations" class="py-20 bg-gray-100">
