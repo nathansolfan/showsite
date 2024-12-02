@@ -6,8 +6,14 @@ export default {
       './resources/**/*.vue',
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'], // Add your custom font here
+          serif: ['Merriweather', 'serif'], // Optional serif font
+          mono: ['Source Code Pro', 'monospace'], // Optional monospace font
+        },
+      },
     },
     darkMode: 'class',
     plugins: [],
-  }
+  };
