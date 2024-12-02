@@ -55,4 +55,43 @@
             </div>
         </div>
     </section>
+
+    <section id="feedback" class="py-20 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800">Leave Your Feedback</h2>
+            <p class="text-lg text-gray-600 text-center mt-4">We value your feedback! Share your thoughts below.</p>
+
+            <form action="{{ route('feedback.store') }}" method="POST" class="max-w-2xl mx-auto mt-8 bg-white p-8 rounded-lg shadow-lg">
+                @csrf
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email (Optional)</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Display Feedback -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800">What Others Say</h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($feedbacks as $feedback)
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <p class="text-gray-700">"{{ $feedback->message }}"</p>
+                        <p class="mt-4 text-sm text-gray-500">- {{ $feedback->name }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 </x-layout>
