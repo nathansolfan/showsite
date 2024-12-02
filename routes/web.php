@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
@@ -25,8 +26,8 @@ Route::get('/services', function () {
     return view('pages.services');
 });
 
-Route::get('/tropicalBeauty', function() {
-    return view('pages.tropicalBeauty');
+Route::get('contact', function (){
+    return view('pages.contact');
 });
 
 // Route::get('/works', [GitHubController::class, 'index'])->name('works');
@@ -40,8 +41,8 @@ Route::get('/workss', function(Request $request, GitHubController $controller) {
     return $controller->index($request, 'pages.workss');
 })->name('workss');
 
-Route::get('contact', function (){
-    return view('pages.contact');
-});
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+
 
 Route::resource('projects', ProjectController::class);
