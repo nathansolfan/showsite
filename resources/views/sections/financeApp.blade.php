@@ -1,7 +1,7 @@
 @php
     // Define project data directly in the Blade template
     $project = [
-        'name' => 'DriverApp',
+        'name' => 'Finance Tracker',
         'description' => 'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
         'githubUrl' => 'https://github.com/nathansolfan/financeTracker',
         'liveUrl' => 'https://financetrackeruk.duckdns.org/login',
