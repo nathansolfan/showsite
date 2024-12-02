@@ -17,6 +17,10 @@ Route::get('/about', function() {
     return view('pages.about');
 });
 
+Route::get('/feedback', function() {
+    return view('pages.feedback');
+})->name('feedback');
+
 Route::get('/services', function () {
     return view('pages.services');
 });

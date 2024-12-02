@@ -60,6 +60,10 @@
                 <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 {{ request()->is('workss') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
                     Workss
                 </a>
+                <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">
+                    Feedback
+                </a>
+
             </div>
         </div>
 
