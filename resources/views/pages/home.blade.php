@@ -4,9 +4,9 @@
         <!-- Video Background with fallback poster -->
         <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
 
-        <!-- Video Controls -->
-        <button id="toggle-video" aria-label="Toggle Video Playback" class="absolute z-20 bottom-4 right-4 bg-white text-gray-900 px-3 py-2 rounded-lg shadow hover:bg-gray-200 transition">
-            Pause Video
+        <!-- Improved Video Toggle Button -->
+        <button id="toggle-video" aria-label="Toggle Video Playback" class="absolute z-20 bottom-4 right-4 bg-white text-gray-900 p-3 rounded-full shadow-lg hover:bg-gray-200 transition">
+            <i id="toggle-icon" class="fas fa-pause"></i>
         </button>
 
         <!-- Overlay -->
@@ -21,8 +21,10 @@
             </h1>
             <p class="text-xl mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
 
-            <!-- Call-to-Action Button -->
-            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">See My Work</a>
+            <!-- Enhanced Call-to-Action Button -->
+            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
+                See My Work
+            </a>
 
             <!-- Social Media Links -->
             <div class="mt-6 flex justify-center space-x-6">
@@ -55,14 +57,19 @@
     <script type="module">
         const video = document.getElementById('background-video');
         const toggleButton = document.getElementById('toggle-video');
+        const toggleIcon = document.getElementById('toggle-icon');
 
         toggleButton.addEventListener('click', () => {
             if (video.paused) {
                 video.play();
-                toggleButton.textContent = 'Pause Video';
+                // Change icon to pause
+                toggleIcon.classList.remove('fa-play');
+                toggleIcon.classList.add('fa-pause');
             } else {
                 video.pause();
-                toggleButton.textContent = 'Play Video';
+                // Change icon to play
+                toggleIcon.classList.remove('fa-pause');
+                toggleIcon.classList.add('fa-play');
             }
         });
 
