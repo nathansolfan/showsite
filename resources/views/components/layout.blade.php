@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Your Portfolio' }}</title>
+    <meta name="description" content="Nathan Ferreira Portfolio - Web Developer, Designer, and more.">
+    <meta name="keywords" content="Nathan Ferreira, Web Developer, Portfolio">
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
 
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-    <!--  AOS Initialization Script in Layout -->
+    <!-- Font Awesome & AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <!-- Tailwind CSS and Vite assets -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Smooth Scroll -->
     <style>
@@ -24,64 +24,52 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to Content</a>
+
     <!-- Navigation -->
-    <nav class="w-full fixed top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
-        <div class="container mx-auto flex justify-between items-center">
+    <nav role="navigation" class="w-full top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <!-- Logo -->
             <div class="text-lg font-bold text-white">
                 <a href="/">
-                    <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto"> <!-- Adjust height as needed -->
+                    <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto">
                 </a>
             </div>
 
             <!-- Mobile menu button -->
             <div class="lg:hidden">
                 <button id="nav-toggle" aria-label="Toggle Navigation Menu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200 transition-colors duration-300">
-                    <i id="menu-icon" class="fas fa-bars"></i> <!-- Initial bars icon -->
+                    <i id="menu-icon" class="fas fa-bars"></i>
                 </button>
             </div>
 
-            <!-- Desktop Navigation -->
+            <!-- Unified Navigation Links -->
             <div class="hidden lg:flex space-x-6" id="nav-content">
-                <a href="/" class="text-white hover:text-gray-100 {{ request()->is('/') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Home
-                </a>
-
-                <a href="/about" class="text-white hover:text-gray-100 {{ request()->is('portfolio') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    About
-                </a>
-                {{-- RENAME TO WORKS --}}
-                {{-- <a href="/projects" class="text-white hover:text-gray-100 {{ request()->is('projects') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Projects
-                </a> --}}
-                <a href="/contact" class="text-white hover:text-gray-100 {{ request()->is('contact') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Contact
-                </a>
-                <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 {{ request()->is('workss') ? 'font-bold text-white' : '' }} transition-transform duration-300 transform hover:scale-105">
-                    Workss
-                </a>
-                <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">
-                    Feedback
-                </a>
-
+                <a href="/" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Home</a>
+                <a href="/about" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">About</a>
+                <a href="/portfolio" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
+                <a href="/contact" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Contact</a>
+                <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Workss</a>
+                <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">Feedback</a>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden">
+        <!-- Mobile Menu (matching desktop links) -->
+        <div id="mobile-menu" class="lg:hidden hidden transition-all duration-300">
             <div class="px-6 pt-4 pb-6 space-y-4 bg-blue-400">
                 <a href="/" class="block text-white hover:text-gray-100">Home</a>
+                <a href="/about" class="block text-white hover:text-gray-100">About</a>
                 <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
-                <a href="/projects" class="block text-white hover:text-gray-100">Projects</a>
                 <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
-                <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Works (New)</a>
-
+                <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Workss</a>
+                <a href="{{ route('feedback') }}" class="block text-white hover:text-gray-100">Feedback</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow">
         {{ $slot }}
     </main>
 
@@ -92,22 +80,19 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Toggle Script -->
     <script>
-        console.log('Script is running');
-        // Toggle the mobile menu visibility and the icon
         document.getElementById('nav-toggle').onclick = function() {
             var mobileMenu = document.getElementById('mobile-menu');
             var menuIcon = document.getElementById('menu-icon');
 
             mobileMenu.classList.toggle('hidden');
 
-            // Toggle the icon between bars and times (X)
+            // Toggle icon between bars and times (X)
             if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.replace('fa-times', 'fa-bars');
             } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
+                menuIcon.classList.replace('fa-bars', 'fa-times');
             }
         };
     </script>
@@ -115,11 +100,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 400, // Adjust speed of animation
-            once: true // Only animate once per page load
+            duration: 400,
+            once: true
         });
     </script>
-
-
 </body>
 </html>
