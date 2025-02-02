@@ -21,13 +21,14 @@
     <!-- Buttons Container -->
     <div class="mt-6 flex space-x-4">
         <!-- GitHub Button -->
-        <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
-            View on GitHub
-        </a>
+        <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+            <i class="fab fa-github"></i> View on GitHub
+
 
         <!-- Live Preview Button -->
-        <a href="{{ $project['liveUrl'] }}" target="_blank" class="inline-block bg-green-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-green-600 hover:shadow-md transition duration-200 ease-in-out">
-            Live Preview
+        <a href="{{ $project['liveUrl'] }}" target="_blank" class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+            <i class="fas fa-external-link-alt"></i> Live Preview
+
         </a>
     </div>
 </div>

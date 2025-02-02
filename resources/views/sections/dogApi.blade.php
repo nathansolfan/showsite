@@ -8,7 +8,8 @@
     ];
 @endphp
 
-<div class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[520px] overflow-hidden">
+<div
+    class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[520px] overflow-hidden">
     <!-- Project Image -->
     <div class="w-full h-52 overflow-hidden rounded-xl">
         <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project"
@@ -21,7 +22,8 @@
     </h3>
 
     <!-- Description -->
-    <p class="text-lg text-gray-500 mt-3 leading-relaxed group-hover:text-gray-700 transition-colors duration-200 max-w-lg">
+    <p
+        class="text-lg text-gray-500 mt-3 leading-relaxed group-hover:text-gray-700 transition-colors duration-200 max-w-lg">
         {{ $project['description'] }}
     </p>
 
@@ -29,15 +31,15 @@
     <div class="mt-6 flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- GitHub Button -->
         <a href="{{ $project['githubUrl'] }}" target="_blank"
-        class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
-        <i class="fab fa-github"></i> View on GitHub
+            class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+            <i class="fab fa-github"></i> View on GitHub
         </a>
 
         <!-- Live Preview Button -->
         <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
-    class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
-    <i class="fas fa-external-link-alt"></i> Live Preview
-</button>
+            class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+            <i class="fas fa-external-link-alt"></i> Live Preview
+        </button>
 
     </div>
 </div>
@@ -72,7 +74,6 @@
 
 <!-- Styling for the Fullscreen Overlay -->
 <style>
-
     .fullscreen-overlay {
         display: none;
         position: fixed;
