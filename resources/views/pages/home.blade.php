@@ -1,45 +1,59 @@
 <x-layout>
     <!-- Hero Section -->
-    <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
-        <!-- Video Background with fallback poster -->
-        <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
+<div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background with Smooth Transition -->
+    <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
 
-        <!-- Draggable Video Toggle Button -->
-        <button id="toggle-video" aria-label="Toggle Video Playback" class="absolute z-20 bottom-4 right-4 w-14 h-14 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition">
-            <i id="toggle-icon" class="fas fa-pause text-lg"></i>
-        </button>
+    <!-- Overlay for Better Readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent"></div>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black opacity-60"></div>
+    <!-- Draggable Video Toggle Button -->
+    <button id="toggle-video" aria-label="Toggle Video Playback"
+        class="absolute z-20 bottom-6 right-6 w-16 h-16 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition-transform duration-300 ease-in-out">
+        <i id="toggle-icon" class="fas fa-pause text-xl"></i>
+    </button>
 
-        <!-- Hero Content -->
-        <div class="relative z-10 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold">
-                Nathan Ferreira
-                <br>
-                <span id="typewriter-text" class="text-blue-500"></span>
-            </h1>
-            <p class="text-xl mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight animate-fadeIn">
+            Nathan Ferreira
+            <br>
+            <span id="typewriter-text" class="text-blue-400"></span>
+        </h1>
+        <p class="text-xl mt-4 text-gray-300 max-w-3xl mx-auto animate-fadeInSlow">
+            Full-Stack Web Developer | Crafting Clean, Scalable, and High-Performance Applications.
+        </p>
 
-            <!-- Call-to-Action Button -->
-            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
-                See My Work
+        <!-- Call-to-Action Buttons -->
+        <div class="mt-8 flex flex-wrap justify-center gap-4 animate-fadeIn">
+            <a href="{{ url('/works') }}"
+            class="bg-transparent border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
+            See My Work
+</a>
+            <a href="{{ url('/contact') }}"
+            class="bg-transparent border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
+            Contact Me
             </a>
+        </div>
 
-            <!-- Social Media Links -->
-            <div class="mt-6 flex justify-center space-x-6">
-                <a href="https://www.instagram.com/nathancacun/" aria-label="Instagram" class="hover:text-gray-300">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" aria-label="LinkedIn" class="hover:text-gray-300">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="mailto:email@email.com" aria-label="Email" class="hover:text-gray-300">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
-            </div>
+        <!-- Social Media Links -->
+        <div class="mt-6 flex justify-center space-x-6">
+            <a href="https://www.instagram.com/nathancacun/" aria-label="Instagram"
+                class="hover:text-gray-300 transition duration-200">
+                <i class="fab fa-instagram text-3xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nathan-ferreira-023252b1/" aria-label="LinkedIn"
+                class="hover:text-gray-300 transition duration-200">
+                <i class="fab fa-linkedin text-3xl"></i>
+            </a>
+            <a href="mailto:email@email.com" aria-label="Email"
+                class="hover:text-gray-300 transition duration-200">
+                <i class="fas fa-envelope text-3xl"></i>
+            </a>
         </div>
     </div>
+</div>
+
 
     <!-- Additional Sections -->
     @include('pages.skillsStatic')

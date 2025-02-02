@@ -8,29 +8,40 @@
     ];
 @endphp
 
-<div class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px] overflow-hidden">
+<div class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[520px] overflow-hidden">
     <!-- Project Image -->
-    <div class="w-full h-48 overflow-hidden rounded-t-xl">
-        <img src=" {{ asset('images/dogsAI.jpg')}} " alt="Dog API Project" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+    <div class="w-full h-52 overflow-hidden rounded-xl">
+        <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project"
+            class="w-full h-full object-cover transition-transform duration-500 transform group-hover:scale-105">
     </div>
 
-    <!-- Project Title and Description -->
-    <h3 class="text-3xl font-semibold text-gray-900 mt-4 group-hover:text-blue-500">{{ $project['name'] }}</h3>
-    <p class="text-base text-gray-500 mt-4 leading-relaxed group-hover:text-gray-700">{{ $project['description'] }}</p>
+    <!-- Project Title -->
+    <h3 class="text-3xl font-bold text-gray-900 mt-5 group-hover:text-blue-600 transition-colors duration-200">
+        {{ $project['name'] }}
+    </h3>
+
+    <!-- Description -->
+    <p class="text-lg text-gray-500 mt-3 leading-relaxed group-hover:text-gray-700 transition-colors duration-200 max-w-lg">
+        {{ $project['description'] }}
+    </p>
 
     <!-- Buttons Container -->
     <div class="mt-6 flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- GitHub Button -->
-        <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:bg-blue-600 hover:shadow-md transition duration-200 ease-in-out">
-            View on GitHub
+        <a href="{{ $project['githubUrl'] }}" target="_blank"
+            class="inline-flex items-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-full font-medium shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out">
+            <i class="fab fa-github"></i> View on GitHub
         </a>
 
         <!-- Live Preview Button -->
-        <button class="inline-block bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-lg font-medium shadow hover:from-green-500 hover:to-green-600 hover:shadow-md transition duration-200 ease-in-out" onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')">
-            Live Preview
+        <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
+            class="inline-flex items-center gap-2 bg-gray-900 text-white py-3 px-6 rounded-full font-medium shadow-md hover:bg-gray-700 hover:shadow-lg transition duration-300 ease-in-out">
+            <i class="fas fa-external-link-alt"></i> Live Preview
         </button>
     </div>
 </div>
+
+
 
 
 <!-- Fullscreen Overlay for Project Preview -->
