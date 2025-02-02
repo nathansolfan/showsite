@@ -4,9 +4,9 @@
         <!-- Video Background with fallback poster -->
         <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
 
-        <!-- Video Controls -->
-        <button id="toggle-video" aria-label="Toggle Video Playback" class="absolute z-20 bottom-4 right-4 bg-white text-gray-900 px-3 py-2 rounded-lg shadow hover:bg-gray-200 transition">
-            Pause Video
+        <!-- Draggable Video Toggle Button -->
+        <button id="toggle-video" aria-label="Toggle Video Playback" class="absolute z-20 bottom-4 right-4 w-14 h-14 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition">
+            <i id="toggle-icon" class="fas fa-pause text-lg"></i>
         </button>
 
         <!-- Overlay -->
@@ -22,7 +22,9 @@
             <p class="text-xl mt-4">I'm a passionate web developer skilled in both front-end and back-end tasks.</p>
 
             <!-- Call-to-Action Button -->
-            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">See My Work</a>
+            <a href="{{ url('/works') }}" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
+                See My Work
+            </a>
 
             <!-- Social Media Links -->
             <div class="mt-6 flex justify-center space-x-6">
@@ -51,22 +53,53 @@
         @include('sections.financeApp')
     </div>
 
-    <!-- JavaScript for Video Toggle and Typewriter Effect -->
+    <!-- JavaScript for Video Toggle, Draggable Button, and Typewriter Effect -->
     <script type="module">
-        const video = document.getElementById('background-video');
-        const toggleButton = document.getElementById('toggle-video');
+        // Video toggle functionality
+        const video = document.getElementById("background-video");
+        const toggleButton = document.getElementById("toggle-video");
+        const toggleIcon = document.getElementById("toggle-icon");
 
-        toggleButton.addEventListener('click', () => {
+        toggleButton.addEventListener("click", () => {
             if (video.paused) {
                 video.play();
-                toggleButton.textContent = 'Pause Video';
+                toggleIcon.classList.remove("fa-play");
+                toggleIcon.classList.add("fa-pause");
             } else {
                 video.pause();
-                toggleButton.textContent = 'Play Video';
+                toggleIcon.classList.remove("fa-pause");
+                toggleIcon.classList.add("fa-play");
             }
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
+        // Make the toggle button draggable
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        toggleButton.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            const rect = toggleButton.getBoundingClientRect();
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
+            toggleButton.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                toggleButton.style.position = "absolute";
+                toggleButton.style.left = `${e.clientX - offsetX}px`;
+                toggleButton.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            toggleButton.style.cursor = "grab";
+        });
+
+        // Typewriter effect
+        document.addEventListener("DOMContentLoaded", () => {
             const texts = ["Web Developer", "Designer", "Freelancer", "Learner"];
             let count = 0;
             let index = 0;
@@ -74,7 +107,7 @@
                 if (count === texts.length) count = 0;
                 const currentText = texts[count];
                 const letter = currentText.slice(0, ++index);
-                document.getElementById('typewriter-text').textContent = letter;
+                document.getElementById("typewriter-text").textContent = letter;
 
                 if (letter.length === currentText.length) {
                     count++;
@@ -89,6 +122,17 @@
     </script>
 
     <style>
+        /* Video toggle button size and icon styles */
+        #toggle-video {
+            width: 56px; /* Button width */
+            height: 56px; /* Button height */
+        }
+
+        #toggle-icon {
+            font-size: 20px; /* Icon size */
+        }
+
+        /* Optional styles for sections */
         #dog-api-container {
             display: flex;
             justify-content: center;
@@ -96,6 +140,7 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .project-item {
             width: 100%;
             max-width: 600px;
@@ -103,6 +148,7 @@
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         #dog-api-project {
             padding-top: 3rem;
             padding-bottom: 3rem;
