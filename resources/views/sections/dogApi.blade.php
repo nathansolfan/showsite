@@ -29,15 +29,16 @@
     <div class="mt-6 flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- GitHub Button -->
         <a href="{{ $project['githubUrl'] }}" target="_blank"
-            class="inline-flex items-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-full font-medium shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out">
-            <i class="fab fa-github"></i> View on GitHub
+        class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+        <i class="fab fa-github"></i> View on GitHub
         </a>
 
         <!-- Live Preview Button -->
         <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
-            class="inline-flex items-center gap-2 bg-gray-900 text-white py-3 px-6 rounded-full font-medium shadow-md hover:bg-gray-700 hover:shadow-lg transition duration-300 ease-in-out">
-            <i class="fas fa-external-link-alt"></i> Live Preview
-        </button>
+    class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+    <i class="fas fa-external-link-alt"></i> Live Preview
+</button>
+
     </div>
 </div>
 
