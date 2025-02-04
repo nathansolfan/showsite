@@ -48,7 +48,6 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-
 /* Solar System Styling */
 .solar-system-wrapper {
     display: flex;
@@ -88,29 +87,58 @@ input[type="checkbox"] {
     transform: translate(-50%, -50%);
 }
 
-.planet {
+/* Planet Container - Moves Around the Sun */
+.planet-container {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 30px;
     height: 30px;
-    background-color: #659fd8;
-    border: 1px dashed rgba(207, 47, 47, 0.3);
-    border-radius: 50%;
-    transform-origin: 0 -125px; /* Set orbit radius */
+    transform-origin: 50% -125px; /* Orbit Center */
     animation: orbit 10s linear infinite;
 }
 
-.planet:hover {
-    animation-play-state: paused;
-    transform: scale(1.5); /* Highlight planet on hover */
+/* Planet - Inside the Container */
+.planet {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #659fd8;
+    border: 1px dashed rgba(207, 47, 47, 0.3);
+    border-radius: 50%;
 }
 
+/* Rocket Icon - FIXED Above the Planet */
+.rocket-icon {
+    position: absolute;
+    top: -35px; /* Move above the planet */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show the rocket icon on hover */
+.planet-container:hover .rocket-icon {
+    opacity: 1;
+}
+
+/* Stop orbiting on hover */
+.planet-container:hover {
+    animation-play-state: paused;
+}
+
+.planet-container:hover .planet {
+    transform: scale(1.5);
+}
+
+/* Orbit Animation - Fix Rotation for Rocket */
 @keyframes orbit {
     from {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translate(0, -125px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg) translate(0, -125px) rotate(-360deg);
     }
 }
