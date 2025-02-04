@@ -30,6 +30,10 @@ Route::get('contact', function (){
     return view('pages.contact');
 });
 
+Route::get('portfolio', function (){
+    return view('pages.portfolio');
+});
+
 // Route::get('/works', [GitHubController::class, 'index'])->name('works');
 // Route::get('/workss', [GitHubController::class, 'index'])->name('workss');
 
