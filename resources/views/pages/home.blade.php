@@ -1,6 +1,7 @@
 <x-layout>
     <!-- Hero Section -->
 <div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
+
     <!-- Video Background with Smooth Transition -->
     <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
 
@@ -52,7 +53,9 @@
             </a>
         </div>
     </div>
+
 </div>
+
 
 
     <!-- Additional Sections -->

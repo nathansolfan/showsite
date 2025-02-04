@@ -1,111 +1,112 @@
-<!-- Static Tech Icons Section -->
-<section class="tech-slider py-10 bg-gray-50">
-    @foreach ([
-        ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5', 'description' => 'It is the backbone of every website and ensures that content is structured and accessible'],
-        ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3', 'description' => 'Help control the look and feel of web pages, including advanced layout options and animations'],
-        ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript', 'description' => 'Powers dynamic content on the web from interactive elements to full-scale applications'],
-        ['id' => 'laravelModal', 'icon' => 'fa-laravel', 'title' => 'Laravel', 'description' => 'PHP framework that simplifies complex tasks, such as routing, authentication, and caching, making web development faster and more enjoyable.'],
-        ['id' => 'reactModal', 'icon' => 'fa-react', 'title' => 'React.js', 'description' => 'JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently in response to data changes'],
-        ['id' => 'nodeModal', 'icon' => 'fa-node-js', 'title' => 'Node.js', 'description' => 'Node.js is a runtime environment that lets developers use JavaScript on the server side. It’s known for its performance and scalability, especially for building APIs and real-time applications.'],
-        ['id' => 'databaseModal', 'icon' => 'fa-solid fa-database', 'title' => 'Databases', 'description' => 'Understanding databases like MySQL and MongoDB is crucial for building modern web applications. They store and manage data efficiently, allowing applications to retrieve and manipulate data as needed']
-    ] as $tech)
-    <div class="tech-item" onclick="openModal('{{ $tech['id'] }}')">
-        <i class="fa-brands {{ $tech['icon'] }}"></i>
-    </div>
+<!-- Tech Skills Section with Heading and Description -->
+<section class="tech-slider py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <!-- Section Heading -->
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">My Technical Skills</h2>
+      <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+        I work with a range of modern web technologies to build responsive and dynamic applications.
+      </p>
 
-    <!-- Modal -->
-    <div id="{{ $tech['id'] }}" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">{{ $tech['title'] }}</div>
-            <div class="modal-body">
+      <!-- Grid of Tech Icons -->
+      <!-- Using grid classes with "justify-items-center" to center items in incomplete rows -->
+      <div class="grid gap-8 justify-items-center" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        @foreach ([
+            ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5', 'description' => 'The backbone of every website, ensuring that content is structured and accessible.'],
+            ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3', 'description' => 'Controls the look and feel of web pages, including advanced layout options and animations.'],
+            ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript', 'description' => 'Powers dynamic content on the web, from interactive elements to full-scale applications.'],
+            ['id' => 'laravelModal', 'icon' => 'fa-laravel', 'title' => 'Laravel', 'description' => 'A robust PHP framework that simplifies complex tasks like routing and authentication.'],
+            ['id' => 'reactModal', 'icon' => 'fa-react', 'title' => 'React.js', 'description' => 'A JavaScript library for building user interfaces, enabling efficient data-driven updates.'],
+            ['id' => 'nodeModal', 'icon' => 'fa-node-js', 'title' => 'Node.js', 'description' => 'A runtime environment that allows JavaScript to be used on the server side for scalable applications.'],
+            ['id' => 'databaseModal', 'icon' => 'fa-solid fa-database', 'title' => 'Databases', 'description' => 'Expertise with databases like MySQL and MongoDB to store and manage data effectively.'],
+            ['id' => 'gitModal', 'icon' => 'fa-git-alt', 'title' => 'Git', 'description' => 'Version control system for tracking changes in code and collaborating with teams.']
+        ] as $tech)
+          <div class="tech-item cursor-pointer" onclick="openModal('{{ $tech['id'] }}')">
+            <i class="fa-brands {{ $tech['icon'] }} text-6xl text-blue-500 transition-transform duration-300 hover:scale-110"></i>
+            <p class="mt-2 text-sm font-medium text-gray-700">{{ $tech['title'] }}</p>
+          </div>
+
+          <!-- Modal for each tech -->
+          <div id="{{ $tech['id'] }}" class="modal">
+            <div class="modal-content">
+              <div class="modal-header text-2xl font-bold text-gray-800">{{ $tech['title'] }}</div>
+              <div class="modal-body mt-4 text-gray-600">
                 <p>{{ $tech['description'] }}</p>
+              </div>
+              <!-- Close Button with "X" Icon -->
+              <button class="modal-close mt-6" onclick="closeModal('{{ $tech['id'] }}')">
+                &times; Close
+              </button>
             </div>
-            <button class="modal-close" onclick="closeModal('{{ $tech['id'] }}')">Close</button>
-        </div>
+          </div>
+        @endforeach
+      </div>
     </div>
-    @endforeach
-</section>
+  </section>
 
-<!-- JavaScript for modals -->
-<script>
+  <!-- JavaScript for Modals -->
+  <script>
     function openModal(modalId) {
-        document.getElementById(modalId).style.display = 'flex';
+      document.getElementById(modalId).style.display = 'flex';
     }
 
     function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
+      document.getElementById(modalId).style.display = 'none';
     }
-</script>
+  </script>
 
-<style>
-    /* Styling for the Tech Icons Section */
+  <!-- CSS for the Skills Section and Modals -->
+  <style>
+    /* Styling for the Tech Icons Grid */
     .tech-slider {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap; /* Allow wrapping to multiple lines */
-        gap: 2rem; /* Space between icons */
-        padding: 2rem 0;
-        background-color: #f5f5f5;
+      /* Additional spacing/padding can be adjusted here if needed */
     }
-
     .tech-item {
-        font-size: 5rem; /* Make the icons larger */
-        color: #20b1ff;
-        transition: transform 0.3s ease, color 0.3s ease;
-        cursor: pointer; /* Indicate that the icon is clickable */
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-align: center;
+    }
+    .tech-item:hover i {
+      color: #4e54c8;
     }
 
-    .tech-item:hover {
-        transform: scale(1.2);
-        color: #4e54c8;
-    }
-
-    /* Modal backdrop and content */
+    /* Modal Backdrop and Content */
     .modal {
-        display: none; /* Hidden by default */
-        position: fixed;
-        z-index: 50;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
     }
-
     .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        width: 80%;
-        max-width: 600px;
-        text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
     }
-
     .modal-header {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+      font-size: 1.75rem;
     }
-
     .modal-body {
-        font-size: 1rem;
-        margin-bottom: 20px;
+      font-size: 1rem;
     }
-
     .modal-close {
-        background-color: #4e54c8;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+      background-color: #4e54c8;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-
     .modal-close:hover {
-        background-color: #8f94fb;
+      background-color: #8f94fb;
     }
-</style>
+  </style>
