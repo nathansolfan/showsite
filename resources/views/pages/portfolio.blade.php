@@ -100,8 +100,8 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -109,6 +109,8 @@
         }
 
         .planet:hover {
+            animation-play-state: paused;
+
             transform: scale(2.0);
             box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.8);
 
@@ -390,30 +392,29 @@
     </div>
 
     <!-- JavaScript for Modals -->
-    <script>
-        function openPlanetModal(planetId) {
-            document.getElementById(planetId + '-modal').style.display = 'flex';
-        }
-
-        function closePlanetModal(planetId) {
-            document.getElementById(planetId + '-modal').style.display = 'none';
-        }
-    </script>
+    <!-- JavaScript for Modals -->
+  <script>
+    function openPlanetModal(planetId) {
+      document.getElementById(planetId + '-modal').style.display = 'flex';
+    }
+    function closePlanetModal(planetId) {
+      document.getElementById(planetId + '-modal').style.display = 'none';
+    }
+  </script>
 
     <!-- Custom JS for 3D Perspective -->
     <script>
-        // This script moves the .solar-system element into a wrapper with perspective.
-        // Alternatively, you can add the wrapper directly in the HTML if you prefer.
+        // Wrap the .solar-system element in a .solar-system-wrapper for 3D perspective.
         document.addEventListener("DOMContentLoaded", () => {
-            const solarSystem = document.querySelector('.solar-system');
-            const wrapper = document.createElement('div');
-            wrapper.className = 'solar-system-wrapper';
-            solarSystem.parentNode.insertBefore(wrapper, solarSystem);
-            wrapper.appendChild(solarSystem);
-            // Apply the 45-degree tilt to the solar system (view from above)
-            solarSystem.style.transform = 'rotateX(10deg)';
+          const solarSystem = document.querySelector('.solar-system');
+          const wrapper = document.createElement('div');
+          wrapper.className = 'solar-system-wrapper';
+          solarSystem.parentNode.insertBefore(wrapper, solarSystem);
+          wrapper.appendChild(solarSystem);
+          // Apply a 45° tilt on the X-axis to view from above (you can adjust this angle)
+          solarSystem.style.transform = 'rotateX(45deg)';
         });
-    </script>
+      </script>
 </body>
 
 </html>
