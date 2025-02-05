@@ -200,10 +200,3 @@ input[type="checkbox"] {
     75% { transform: scale(1.1); }
     100% { z-index: 999; transform: scale(0.9); }
 }
-.planets-container:hover .route,
-.planets-container:hover .planet-container,
-.planets-container:hover #first-planet,
-.planets-container:hover #first-planet:after,
-.planets-container:hover #first-planet-index {
-    animation-play-state: paused;
-}
