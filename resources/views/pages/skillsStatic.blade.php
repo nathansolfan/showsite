@@ -17,7 +17,7 @@
 
         <!-- Grid of Tech Icons -->
         <!-- Using Tailwind grid classes for even columns -->
-        <div class="grid gap-8 justify-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <div class="grid gap-20 justify-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
           @foreach ([
               ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5', 'description' => 'The backbone of every website, ensuring that content is structured and accessible.'],
               ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3', 'description' => 'Controls the look and feel of web pages, including advanced layout options and animations.'],
