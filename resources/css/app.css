@@ -1,150 +1,209 @@
-/* resources/css/app.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Default Light Mode */
+/* =====================================
+   Theme Colors & Global Variables
+==================================== */
 :root {
-    --background-color: #ffffff;
-    --text-color: #000000;
-    --nav-background: #f8f8f8;
-    --footer-background: #333333;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --nav-background: #f8f8f8;
+  --footer-background: #333333;
 }
 
-/* Dark Mode */
 .dark-mode {
-    --background-color: #121212;
-    --text-color: #f5f5f5;
-    --nav-background: #1a1a1a;
-    --footer-background: #1f1f1f;
+  --background-color: #121212;
+  --text-color: #f5f5f5;
+  --nav-background: #1a1a1a;
+  --footer-background: #1f1f1f;
 }
 
-/* Apply the variables */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif; /* Add this line */
-
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 nav {
-    background-color: var(--nav-background);
+  background-color: var(--nav-background);
 }
 
 footer {
-    background-color: var(--footer-background);
+  background-color: var(--footer-background);
 }
 
-/* Dark Mode Switcher Styling */
+/* =====================================
+       Dark Mode Switcher
+==================================== */
 .theme-switcher {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
-/* Solar System Styling */
-.solar-system-wrapper {
+/* =====================================
+         Solar System Scene
+==================================== */
+.system-solar {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.system-solar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent url("data:image/svg+xml,%3Csvg width='3' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E") repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* =====================================
+            Orbits & Planets
+==================================== */
+.system-solar {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #000; /* Black background for the solar system */
-    overflow: hidden;
+    transform-style: preserve-3d; /* Added for potential 3D rendering improvement */
 }
 
-.solar-system {
+.system-solar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent url("data:image/svg+xml,%3Csvg width='3' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E") repeat;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.planets-container {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transform: scaleX(5);
+    will-change: transform; /* Performance hint */
 }
 
 .sun {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, #ffea00, #ff8c00, #f7642e); /* Simulate a fiery gradient */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow:
-        0 0 30px rgba(255, 200, 0, 0.8), /* Outer glow */
-        0 0 60px rgba(255, 140, 0, 0.6); /* Larger outer glow */
+    background: radial-gradient(circle, #fff5cc, #fbbf24, #f59e0b);
+    transform: translate(-50%, -50%) scaleX(0.2);
+    box-shadow: 0 0 60px rgba(253, 203, 163, 0.8),
+                0 0 98px rgba(184, 160, 26, 0.7);
 }
 
-.orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    border: 1px dashed rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adds a subtle glowing effect */
-}
-/* Planet Container - Moves Around the Sun */
-.planet-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    transform-origin: 50% -200px; /* Orbit Center */
-    animation: orbit 10s linear infinite;
-    border: 1px dashed rgba(179, 31, 31, 0.3);
-
-}
-
-/* Planet - Inside the Container */
 .planet {
     position: relative;
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle at 30% 30%, #87ceeb, #659fd8); /* Light source at top-left */
-    border: 1px dashed rgba(207, 47, 47, 0.3);
     border-radius: 50%;
-    box-shadow:
-        5px 5px 15px rgba(0, 0, 0, 0.8), /* Outer shadow for depth */
-        inset -3px -3px 8px rgba(255, 255, 255, 0.4); /* Inner glow for light effect */;
+    transform: scaleX(0.2);
+    transition: transform 0.4s ease;
+    will-change: transform; /* Performance hint */
 }
-/* Rocket Icon - FIXED Above the Planet */
-.rocket-icon {
+
+#first-planet {
+    animation: firstPlanetRender 12s infinite linear;
+}
+
+#first-planet:after {
+    content: '';
     position: absolute;
-    top: -55px; /* Move above the planet */
-    left: 50%;
-    transform: translateX(-00%);
-    font-size: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    inset: 0;
+    border-radius: 50%;
+    animation: firstPlanetRenderRotater 12s infinite linear;
 }
 
-/* Show the rocket icon on hover */
-.planet-container:hover .rocket-icon {
-    opacity: 1;
+.route {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 12s infinite linear;
 }
 
-/* Stop orbiting on hover */
-.planet-container:hover {
+.planet-container {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    animation: correct 12s infinite linear;
+}
+
+.planet-index {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#first-planet-index {
+    animation: hideFirstPlanet 12s infinite;
+}
+
+/* Keyframe animations remain exactly the same */
+@keyframes firstPlanetRender {
+    0%, 12% { background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
+    12.1%, 62% { background: linear-gradient(90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
+    62.1%, 100% { background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
+}
+
+@keyframes firstPlanetRenderRotater {
+    0% { transform: scaleX(0.2); background-color: rgb(86, 86, 253); }
+    12% { transform: scaleX(1); background-color: rgb(86, 86, 253); }
+    37% { transform: scaleX(0); background-color: rgb(86, 86, 253); }
+    37.1% { transform: scaleX(0); background-color: rgb(60, 60, 175); }
+    62% { transform: scaleX(1); background-color: rgb(60, 60, 175); }
+    87% { transform: scaleX(0); background-color: rgb(60, 60, 175); }
+    87.1% { transform: scaleX(0); background-color: rgb(86, 86, 253); }
+    100% { transform: scaleX(0.2); background-color: rgb(86, 86, 253); }
+}
+
+@keyframes rotate {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(360deg); }
+}
+
+@keyframes correct {
+    0% { transform: rotateZ(360deg); }
+    100% { transform: rotateZ(0deg); }
+}
+
+@keyframes hideFirstPlanet {
+    0% { z-index: 999; transform: scale(0.9); }
+    25% { z-index: -999; transform: scale(0.8); }
+    50% { transform: scale(0.9); }
+    75% { transform: scale(1.1); }
+    100% { z-index: 999; transform: scale(0.9); }
+}
+.planets-container:hover .route,
+.planets-container:hover .planet-container,
+.planets-container:hover #first-planet,
+.planets-container:hover #first-planet:after,
+.planets-container:hover #first-planet-index {
     animation-play-state: paused;
-}
-
-.planet-container:hover .planet {
-    transform: scale(1.5);
-}
-
-/* Orbit Animation - Fix Rotation for Rocket */
-@keyframes orbit {
-    from {
-        transform: rotate(0deg) translate(0, -200px) rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg) translate(0, -200px) rotate(-360deg);
-    }
 }
