@@ -40,7 +40,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-auto">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Nathan Ferreira. All rights reserved.</p>
+            <p>&copy; 2025 Nathan Ferreira. All rights reserved.</p>
         </div>
     </footer>
 
