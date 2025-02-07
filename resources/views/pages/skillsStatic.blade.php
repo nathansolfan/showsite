@@ -8,48 +8,45 @@
   </head>
   <body>
     <section class="tech-slider py-16 bg-gray-50">
-      <div class="container mx-auto px-4 text-center">
-        <!-- Section Heading -->
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">My Technical Skills</h2>
-        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-          I work with a range of modern web technologies to build responsive and dynamic applications.
-        </p>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+          <!-- Left Section: Skills -->
+          <div class="text-center md:text-left flex-1">
+            <!-- Section Heading -->
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">My Technical Skills</h2>
+            <p class="text-lg text-gray-600 mb-10 max-w-2xl">
+              I work with a range of modern web technologies to build responsive and dynamic applications.
+            </p>
 
-        <!-- Grid of Tech Icons -->
-        <!-- Using Tailwind grid classes for even columns -->
-        <div class="grid gap-20 justify-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          @foreach ([
-              ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5', 'description' => 'The backbone of every website, ensuring that content is structured and accessible.'],
-              ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3', 'description' => 'Controls the look and feel of web pages, including advanced layout options and animations.'],
-              ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript', 'description' => 'Powers dynamic content on the web, from interactive elements to full-scale applications.'],
-              ['id' => 'laravelModal', 'icon' => 'fa-laravel', 'title' => 'Laravel', 'description' => 'A robust PHP framework that simplifies complex tasks like routing and authentication.'],
-              ['id' => 'reactModal', 'icon' => 'fa-react', 'title' => 'React.js', 'description' => 'A JavaScript library for building user interfaces, enabling efficient data-driven updates.'],
-              ['id' => 'nodeModal', 'icon' => 'fa-node-js', 'title' => 'Node.js', 'description' => 'A runtime environment that allows JavaScript to be used on the server side for scalable applications.'],
-              ['id' => 'databaseModal', 'icon' => 'fa-solid fa-database', 'title' => 'Databases', 'description' => 'Expertise with databases like MySQL and MongoDB to store and manage data effectively.'],
-              ['id' => 'gitModal', 'icon' => 'fa-git-alt', 'title' => 'Git', 'description' => 'Version control system for tracking changes in code and collaborating with teams.']
-          ] as $tech)
-            <div class="tech-item cursor-pointer" onclick="openModal('{{ $tech['id'] }}')">
-              <i class="fa-brands {{ $tech['icon'] }} text-6xl text-blue-500 transition-transform duration-300 hover:scale-110"></i>
-              <p class="mt-2 text-sm font-medium text-gray-700">{{ $tech['title'] }}</p>
-            </div>
-
-            <!-- Modal for each tech -->
-            <div id="{{ $tech['id'] }}" class="modal">
-              <div class="modal-content">
-                <div class="modal-header text-2xl font-bold text-gray-800">{{ $tech['title'] }}</div>
-                <div class="modal-body mt-4 text-gray-600">
-                  <p>{{ $tech['description'] }}</p>
-                </div>
-                <!-- Close Button with "X" Icon -->
-                <button class="modal-close mt-6" onclick="closeModal('{{ $tech['id'] }}')">
-                  &times; Close
-                </button>
+            <!-- Grid of Tech Icons -->
+            <div class="grid gap-6 grid-cols-2 sm:grid-cols-3">
+              @foreach ([
+                ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5'],
+                ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3'],
+                ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript'],
+                ['id' => 'laravelModal', 'icon' => 'fa-laravel', 'title' => 'Laravel'],
+                ['id' => 'reactModal', 'icon' => 'fa-react', 'title' => 'React.js'],
+                ['id' => 'nodeModal', 'icon' => 'fa-node-js', 'title' => 'Node.js'],
+                ['id' => 'databaseModal', 'icon' => 'fa-database', 'title' => 'Databases'],
+                ['id' => 'gitModal', 'icon' => 'fa-git-alt', 'title' => 'Git']
+              ] as $tech)
+              <div class="tech-item text-center cursor-pointer">
+                <i class="fa-brands {{ $tech['icon'] }} text-5xl text-blue-500 transition-transform duration-300 hover:scale-110"></i>
+                <p class="mt-2 text-sm font-medium text-gray-700">{{ $tech['title'] }}</p>
               </div>
+              @endforeach
             </div>
-          @endforeach
+          </div>
+
+          <!-- Right Section: Image -->
+          <div class="flex-1 hidden md:block">
+            <img
+              src="{{ asset('images/bgimagecake.jpg') }}"
+              alt="Technical Skills"
+              class="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <!-- JavaScript for Modals -->
     <script>

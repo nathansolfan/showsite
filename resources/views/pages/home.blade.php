@@ -1,12 +1,19 @@
 <x-layout>
     <!-- Hero Section -->
-<div class="relative bg-gray-900 text-white h-screen flex items-center justify-center overflow-hidden">
+    <div class="relative bg-gray-900 text-white h-[400px] md:h-[700px] lg:h-[700px] flex items-center justify-center overflow-hidden">
 
     <!-- Video Background with Smooth Transition -->
-    <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500" src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline></video>
+    <div>
+    <video
+    id="background-video"
+    class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500"
+    src="/videos/video1.mp4"
+    poster="/images/video-poster.jpg"
+    autoplay muted loop playsinline></video>
 
     <!-- Overlay for Better Readability -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent"></div>
+</div>
 
     <!-- Draggable Video Toggle Button -->
     <button id="toggle-video" aria-label="Toggle Video Playback"
@@ -59,7 +66,9 @@
 
 
     <!-- Additional Sections -->
-    @include('pages.skillsStatic')
+    <div class="min-h-screen bg-gray-200 flex items-center justify-center">
+        @include('pages.skillsStatic')
+    </div>
     <div class="mb-8">
         @include('sections.dogApi')
     </div>
