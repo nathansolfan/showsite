@@ -66,19 +66,19 @@
 
 
     <!-- Additional Sections -->
-    <div class="min-h-screen bg-gray-200 flex items-center justify-center">
+    <div class="mb-24 h-[75vh] bg-gray-200 flex items-center justify-center">
         @include('pages.skillsStatic')
     </div>
-    <div class="mb-8">
+    <div class="mt-24 mb-24">
         @include('sections.dogApi')
     </div>
-    <div class="mb-8">
+    <div class="mt-24 mb-24">
         @include('sections.newDogApi')
     </div>
-    <div class="mb-8">
+    <div class="mt-24 mb-24">
         @include('sections.driverApp')
     </div>
-    <div class="mb-8">
+    <div class="mt-24 mb-24">
         @include('sections.financeApp')
     </div>
 

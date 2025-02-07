@@ -7,19 +7,19 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
-    <section class="tech-slider py-16 bg-gray-50">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+    <section class="tech-slider py-16 ">
+        <div class="container  mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <!-- Left Section: Skills -->
           <div class="text-center md:text-left flex-1">
             <!-- Section Heading -->
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">My Technical Skills</h2>
-            <p class="text-lg text-gray-600 mb-10 max-w-2xl">
+            <h2 class="text-4xl text-center font-bold text-gray-800 mb-4">My Technical Skills</h2>
+            <p class="text-lg text-center text-gray-600 mb-10 max-w-2xl">
               I work with a range of modern web technologies to build responsive and dynamic applications.
             </p>
 
             <!-- Grid of Tech Icons -->
-            <div class="grid gap-6 grid-cols-2 sm:grid-cols-3">
-              @foreach ([
+            <div class="grid gap-6 grid-cols-3 sm:grid-cols-2 justify-center items-center">
+                @foreach ([
                 ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5'],
                 ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3'],
                 ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript'],
