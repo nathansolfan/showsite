@@ -63,6 +63,8 @@ input[type="checkbox"] {
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d; /* Added for potential 3D rendering improvement */
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+
 }
 
 .system-solar::before {
@@ -72,6 +74,8 @@ input[type="checkbox"] {
     background: transparent url("data:image/svg+xml,%3Csvg width='3' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E") repeat;
     opacity: 0.05;
     pointer-events: none;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+
 }
 
 .planets-container {
@@ -81,6 +85,8 @@ input[type="checkbox"] {
     border-radius: 50%;
     transform: scaleX(5);
     will-change: transform; /* Performance hint */
+    /* border: 1px dashed rgba(255, 255, 255, 0.2); */
+
 }
 
 .sun {
@@ -104,10 +110,12 @@ input[type="checkbox"] {
     transform: scaleX(0.2);
     transition: transform 0.4s ease;
     will-change: transform; /* Performance hint */
+
 }
 
 #first-planet {
     animation: firstPlanetRender 12s infinite linear;
+
 }
 
 #first-planet:after {
@@ -120,9 +128,11 @@ input[type="checkbox"] {
 
 .route {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     animation: rotate 12s infinite linear;
+    /* border: 1px dashed rgba(255, 255, 255, 0.2); */
+
 }
 
 .planet-container {
@@ -144,9 +154,15 @@ input[type="checkbox"] {
 
 /* Keyframe animations remain exactly the same */
 @keyframes firstPlanetRender {
-    0%, 12% { background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
-    12.1%, 62% { background: linear-gradient(90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
-    62.1%, 100% { background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%); }
+    0%, 12% {
+      background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    12.1%, 62% {
+      background: linear-gradient(90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    62.1%, 100% {
+      background: linear-gradient(-90deg, rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
 }
 
 @keyframes firstPlanetRenderRotater {
