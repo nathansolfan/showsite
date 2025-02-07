@@ -38,12 +38,19 @@
           </div>
 
           <!-- Right Section: Image -->
-          <div class="flex-1 hidden md:block">
+          <div class="relative rounded-lg shadow-lg overflow-hidden w-full max-w-md mx-auto">
             <img
               src="{{ asset('images/bgimagecake.jpg') }}"
               alt="Technical Skills"
-              class="rounded-lg shadow-lg"
-            />
+              class="w-full h-auto object-cover"
+              />
+
+            <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-4 rounded-lg shadow-md">
+                <blockquote class="italic text-gray-800 text-sm">
+                    The difficulty lies not so much in developing new ideas as in escaping from old ones.
+                </blockquote>
+                <p class="text-gray-600 text-sm mt-1">- John Maynard Keynes</p>
+            </div>
           </div>
         </div>
       </section>

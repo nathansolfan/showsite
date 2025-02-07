@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Hero Section -->
-    <div class="relative bg-gray-900 text-white h-[400px] md:h-[700px] lg:h-[700px] flex items-center justify-center overflow-hidden">
+    <div class="relative bg-gray-900 text-white h-[400px] md:h-[700px] lg:h-[800px] flex items-center justify-center overflow-hidden">
 
     <!-- Video Background with Smooth Transition -->
     <div>
