@@ -21,6 +21,57 @@
                 <img src="{{ asset('images/bgimagecake.jpg') }}" alt="Cake Image" class="w-full max-w-md rounded-lg shadow-lg">
             </div>
 
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {{-- Product 1 --}}
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-4">
+                    {{-- SVG T-Shirt --}}
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="#F59E0B" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 4H20V10H18V22H6V10H4V4H9L12 2Z" stroke="black" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Example product title</h3>
+                <p class="text-gray-600 mt-1">£19.99 GBP</p>
+            </div>
+
+            {{-- Product 2 --}}
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-4">
+                    {{-- SVG T-Shirt --}}
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="#374151" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 4H20V10H18V22H6V10H4V4H9L12 2Z" stroke="black" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Example product title</h3>
+                <p class="text-gray-600 mt-1">£19.99 GBP</p>
+            </div>
+
+            {{-- Product 3 --}}
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-4">
+                    {{-- SVG T-Shirt --}}
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="#059669" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 4H20V10H18V22H6V10H4V4H9L12 2Z" stroke="black" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Example product title</h3>
+                <p class="text-gray-600 mt-1">£19.99 GBP</p>
+            </div>
+
+            {{-- Product 4 --}}
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-4">
+                    {{-- SVG T-Shirt --}}
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="#DC2626" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 4H20V10H18V22H6V10H4V4H9L12 2Z" stroke="black" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Example product title</h3>
+                <p class="text-gray-600 mt-1">£19.99 GBP</p>
+            </div>
+        </div>
+    </div>
+
         </div>
     </div>
 
