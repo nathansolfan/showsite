@@ -68,7 +68,7 @@
 
 
     <!-- Additional Sections -->
-    <div class="mb-24 h-[75vh] bg-gray-200 flex items-center justify-center">
+    <div class="mt-12 mb-24">
         @include('pages.skillsStatic')
     </div>
     <div class="mt-24 mb-24">
