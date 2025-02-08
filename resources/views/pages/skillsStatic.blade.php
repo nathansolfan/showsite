@@ -7,30 +7,20 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
-    <section class="tech-slider py-16 ">
-        <div class="container  mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+    <section class="tech-slider py-16">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
           <!-- Left Section: Skills -->
-          <div class="text-center md:text-left flex-1">
-            <!-- Section Heading -->
-            <h2 class="text-4xl text-center font-bold text-gray-800 mb-4">My Technical Skills</h2>
-            <p class="text-lg text-center text-gray-600 mb-10 max-w-2xl">
+          <div class="text-center lg:text-left flex-1">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">My Technical Skills</h2>
+            <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
               I work with a range of modern web technologies to build responsive and dynamic applications.
             </p>
 
             <!-- Grid of Tech Icons -->
-            <div class="grid gap-6 grid-cols-3 sm:grid-cols-2 justify-center items-center">
-                @foreach ([
-                ['id' => 'htmlModal', 'icon' => 'fa-html5', 'title' => 'HTML5'],
-                ['id' => 'cssModal', 'icon' => 'fa-css3-alt', 'title' => 'CSS3'],
-                ['id' => 'jsModal', 'icon' => 'fa-js', 'title' => 'JavaScript'],
-                ['id' => 'laravelModal', 'icon' => 'fa-laravel', 'title' => 'Laravel'],
-                ['id' => 'reactModal', 'icon' => 'fa-react', 'title' => 'React.js'],
-                ['id' => 'nodeModal', 'icon' => 'fa-node-js', 'title' => 'Node.js'],
-                ['id' => 'databaseModal', 'icon' => 'fa-database', 'title' => 'Databases'],
-                ['id' => 'gitModal', 'icon' => 'fa-git-alt', 'title' => 'Git']
-              ] as $tech)
-              <div class="tech-item text-center cursor-pointer">
-                <i class="fa-brands {{ $tech['icon'] }} text-5xl text-blue-500 transition-transform duration-300 hover:scale-110"></i>
+            <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 justify-center items-center">
+              @foreach ([['icon' => 'fa-html5', 'title' => 'HTML5'], ['icon' => 'fa-css3-alt', 'title' => 'CSS3'], ['icon' => 'fa-js', 'title' => 'JavaScript'], ['icon' => 'fa-laravel', 'title' => 'Laravel'], ['icon' => 'fa-react', 'title' => 'React.js'], ['icon' => 'fa-node-js', 'title' => 'Node.js'], ['icon' => 'fa-database', 'title' => 'Databases'], ['icon' => 'fa-git-alt', 'title' => 'Git']] as $tech)
+              <div class="tech-item text-center">
+                <i class="fa-brands {{ $tech['icon'] }} text-4xl text-blue-500 hover:scale-110 transition"></i>
                 <p class="mt-2 text-sm font-medium text-gray-700">{{ $tech['title'] }}</p>
               </div>
               @endforeach
@@ -43,17 +33,17 @@
               src="{{ asset('images/bgimagecake.jpg') }}"
               alt="Technical Skills"
               class="w-full h-auto object-cover"
-              />
-
+            />
             <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-4 rounded-lg shadow-md">
-                <blockquote class="italic text-gray-800 text-sm">
-                    The difficulty lies not so much in developing new ideas as in escaping from old ones.
-                </blockquote>
-                <p class="text-gray-600 text-sm mt-1">- John Maynard Keynes</p>
+              <blockquote class="italic text-gray-800 text-sm">
+                The difficulty lies not so much in developing new ideas as in escaping from old ones.
+              </blockquote>
+              <p class="text-gray-600 text-sm mt-1">- John Maynard Keynes</p>
             </div>
           </div>
         </div>
       </section>
+
 
     <!-- JavaScript for Modals -->
     <script>

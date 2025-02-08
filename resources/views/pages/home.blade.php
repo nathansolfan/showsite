@@ -4,15 +4,17 @@
 
     <!-- Video Background with Smooth Transition -->
     <div>
-    <video
-    id="background-video"
-    class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500"
-    src="/videos/video1.mp4"
-    poster="/images/video-poster.jpg"
-    autoplay muted loop playsinline></video>
+        <video
+        id="background-video"
+        class="absolute top-0 left-0 w-full h-full object-cover hidden sm:block"
+        src="/videos/video1.mp4"
+        poster="/images/video-poster.jpg"
+        autoplay muted loop playsinline>
+    </video>
+    <div class="absolute inset-0 bg-gray-900 sm:hidden">
+        <img src="/images/video-poster.jpg" alt="Video Fallback" class="w-full h-full object-cover" />
+    </div>
 
-    <!-- Overlay for Better Readability -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent"></div>
 </div>
 
     <!-- Draggable Video Toggle Button -->
