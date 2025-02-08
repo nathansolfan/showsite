@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="bg-gradient-to-b from-green-100 to-white py-16 px-6">
+    <div class="bg-gradient-to-b from-green-100 to-white min-h-screen py-16 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0">
 
             <!-- Text Section -->
