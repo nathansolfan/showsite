@@ -67,18 +67,35 @@
     <div class="mt-12 mb-24">
         @include('pages.skillsStatic')
     </div>
-    <div class="mt-24 mb-24">
-        @include('sections.dogApi')
+
+    <div class="relative bg-fixed bg-cover bg-center" style="background-image: url('{{ asset('images/your-parallax-image.jpg') }}');">
+        <div class="bg-gray-900/70 py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <h2 class="text-center text-base font-semibold text-indigo-400">My Projects</h2>
+                <p class="mx-auto mt-2 mb-12 max-w-lg text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                    A selection of my latest work
+                </p>
+    
+                <div class="h-full flex flex-col justify-center items-center gap-12">
+                    @include('sections.dogApi')
+                    @include('sections.newDogApi')
+                    @include('sections.driverApp')
+                    @include('sections.financeApp')
+                </div>
+    
+                <!-- View All Projects Button -->
+                <div class="mt-12 text-center">
+                    <a href="{{ url('/projects') }}" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:bg-indigo-700 shadow-md hover:shadow-lg">
+                        View All Projects
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mt-24 mb-24">
-        @include('sections.newDogApi')
-    </div>
-    <div class="mt-24 mb-24">
-        @include('sections.driverApp')
-    </div>
-    <div class="mt-24 mb-24">
-        @include('sections.financeApp')
-    </div>
+    
+
+
+
 
     <!-- JavaScript for Video Toggle, Draggable Button, and Typewriter Effect -->
     <script type="module">
