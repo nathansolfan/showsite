@@ -1,4 +1,4 @@
-<div class=" py-24 sm:py-32">
+<div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row gap-12 items-center">
       <!-- Left Section: Skills -->
       <div class="lg:flex-1 lg:pr-12">
@@ -13,86 +13,27 @@
         </div>
         <div class="mt-12">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
-            <!-- Skill 1 -->
+            <!-- Skill Items -->
+            @foreach([
+              ['icon' => 'fa-html5', 'title' => 'HTML5', 'desc' => 'The foundation of web structure, ensuring accessibility and semantic design.'],
+              ['icon' => 'fa-css3-alt', 'title' => 'CSS3', 'desc' => 'Creating visually engaging layouts with modern styling techniques.'],
+              ['icon' => 'fa-js', 'title' => 'JavaScript', 'desc' => 'Enhancing interactivity and dynamic features on web applications.'],
+              ['icon' => 'fa-laravel', 'title' => 'Laravel', 'desc' => 'A powerful PHP framework for building scalable web applications.'],
+              ['icon' => 'fa-react', 'title' => 'React.js', 'desc' => 'Efficiently managing UI with reusable components and state management.'],
+              ['icon' => 'fa-node-js', 'title' => 'Node.js', 'desc' => 'Building scalable backend services and APIs with JavaScript.'],
+              ['icon' => 'fa-database', 'title' => 'Databases', 'desc' => 'Efficient data management with MySQL, MongoDB, and more.'],
+              ['icon' => 'fa-git-alt', 'title' => 'Git', 'desc' => 'Version control and collaboration for seamless team development.']
+            ] as $skill)
             <div class="relative pl-16">
               <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-html5 text-white text-xl"></i>
+                <div class="absolute top-0 left-0 flex w-12 h-12 items-center justify-center rounded-lg bg-indigo-600 transition-transform duration-300 hover:-translate-y-2">
+                  <i class="fa-brands {{ $skill['icon'] }} text-white text-2xl"></i>
                 </div>
-                HTML5
+                {{ $skill['title'] }}
               </dt>
-              <dd class="mt-2 text-base text-gray-600">The foundation of web structure, ensuring accessibility and semantic design.</dd>
+              <dd class="mt-2 text-base text-gray-600">{{ $skill['desc'] }}</dd>
             </div>
-            <!-- Skill 2 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-css3-alt text-white text-xl"></i>
-                </div>
-                CSS3
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Creating visually engaging layouts with modern styling techniques.</dd>
-            </div>
-            <!-- Skill 3 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-js text-white text-xl"></i>
-                </div>
-                JavaScript
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Enhancing interactivity and dynamic features on web applications.</dd>
-            </div>
-            <!-- Skill 4 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-laravel text-white text-xl"></i>
-                </div>
-                Laravel
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">A powerful PHP framework for building scalable web applications.</dd>
-            </div>
-            <!-- Skill 5 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-react text-white text-xl"></i>
-                </div>
-                React.js
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Efficiently managing UI with reusable components and state management.</dd>
-            </div>
-            <!-- Skill 6 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-node-js text-white text-xl"></i>
-                </div>
-                Node.js
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Building scalable backend services and APIs with JavaScript.</dd>
-            </div>
-            <!-- Skill 7 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-solid fa-database text-white text-xl"></i>
-                </div>
-                Databases
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Efficient data management with MySQL, MongoDB, and more.</dd>
-            </div>
-            <!-- Skill 8 -->
-            <div class="relative pl-16">
-              <dt class="text-lg font-semibold text-gray-900">
-                <div class="absolute top-0 left-0 flex w-10 h-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="fa-brands fa-git-alt text-white text-xl"></i>
-                </div>
-                Git
-              </dt>
-              <dd class="mt-2 text-base text-gray-600">Version control and collaboration for seamless team development.</dd>
-            </div>
+            @endforeach
           </dl>
         </div>
       </div>
@@ -114,4 +55,7 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+
+
+

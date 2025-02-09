@@ -17,11 +17,12 @@
 
 </div>
 
-    <!-- Draggable Video Toggle Button -->
-    <button id="toggle-video" aria-label="Toggle Video Playback"
-        class="absolute z-20 bottom-6 right-6 w-16 h-16 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition-transform duration-300 ease-in-out">
-        <i id="toggle-icon" class="fas fa-pause text-xl"></i>
-    </button>
+   <!-- Draggable Video Toggle Button -->
+<button id="toggle-video" aria-label="Toggle Video Playback"
+class="absolute z-20 bottom-4 right-4 w-12 h-12 sm:w-16 sm:h-16 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition-transform duration-300 ease-in-out">
+<i id="toggle-icon" class="fas fa-pause text-lg sm:text-xl"></i>
+</button>
+
 
     <!-- Hero Content -->
     <div class="relative z-10 text-center px-6">
@@ -71,18 +72,24 @@
     <div class="mt-12 mb-24">
         @include('pages.skillsStatic')
     </div>
-    <div class="mt-24 mb-24">
-        @include('sections.dogApi')
+
+    <div class="flex-row
+">
+        <label for="" class="justify-center">Projects</label>
+        <div class="mt-24 mb-24">
+            @include('sections.dogApi')
+        </div>
+        <div class="mt-24 mb-24">
+            @include('sections.newDogApi')
+        </div>
+        <div class="mt-24 mb-24">
+            @include('sections.driverApp')
+        </div>
+        <div class="mt-24 mb-24">
+            @include('sections.financeApp')
+        </div>
     </div>
-    <div class="mt-24 mb-24">
-        @include('sections.newDogApi')
-    </div>
-    <div class="mt-24 mb-24">
-        @include('sections.driverApp')
-    </div>
-    <div class="mt-24 mb-24">
-        @include('sections.financeApp')
-    </div>
+
 
     <!-- JavaScript for Video Toggle, Draggable Button, and Typewriter Effect -->
     <script type="module">
