@@ -66,13 +66,34 @@
 
 
     <!-- Skills Section -->
-    <div class="mt-12 mb-24">
+    <div class="mt-12 mb-60">
         @include('pages.skillsStatic')
     </div>
 
 
-
     <!-- Projects Section -->
+<div class="flex flex-col justify-center items-center gap-12">
+    <div class="h-screen project-box">
+        @include('sections.dogApi')
+    </div>
+
+    <div class="h-screen project-box">
+        @include('sections.newDogApi')
+    </div>
+
+    <div class="h-screen project-box">
+        @include('sections.driverApp')
+    </div>
+
+    <div class="h-screen project-box">
+        @include('sections.financeApp')
+    </div>
+</div>
+
+
+
+
+    {{-- <!-- Projects Section -->
     <div class="relative bg-fixed bg-cover bg-center"
         style="background-image: url('{{ asset('images/cardbgimage.webp') }}');">
         <div class="bg-gray-900/70 py-24 sm:py-32">
@@ -99,10 +120,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Load Home-specific Scripts -->
     @vite(['resources/js/home.js'])
+    @vite(['resources/js/projectAnimation.js'])
+
     {{-- <script>
         gsap.registerPlugin(ScrollTrigger);
 
