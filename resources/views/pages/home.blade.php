@@ -1,9 +1,9 @@
 <x-layout>
+
     <!-- Hero Section -->
     <div
         class="relative bg-gray-900 text-white h-[400px] md:h-[700px] lg:h-[800px] flex items-center justify-center overflow-hidden">
-
-        <!-- Video Background with Smooth Transition -->
+        <!-- Video Background -->
         <div>
             <video id="background-video" class="absolute top-0 left-0 w-full h-full object-cover hidden sm:block"
                 src="/videos/video1.mp4" poster="/images/video-poster.jpg" autoplay muted loop playsinline>
@@ -11,14 +11,13 @@
             <div class="absolute inset-0 bg-gray-900 sm:hidden">
                 <img src="/images/video-poster.jpg" alt="Video Fallback" class="w-full h-full object-cover" />
             </div>
-
         </div>
 
-    <!-- Draggable Video Toggle Button -->
-    <button id="toggle-video" aria-label="Toggle Video Playback"
-        class="absolute z-20 bottom-6 right-6 w-16 h-16 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition-transform duration-300 ease-in-out">
-        <i id="toggle-icon" class="fas fa-pause text-xl"></i>
-    </button>
+        <!-- Draggable Video Toggle Button -->
+        <button id="toggle-video" aria-label="Toggle Video Playback"
+            class="absolute z-20 bottom-6 right-6 w-14 h-14 bg-white text-gray-900 flex items-center justify-center rounded-full shadow-lg hover:bg-gray-200 transition-transform duration-300 ease-in-out cursor-grab">
+            <i id="toggle-icon" class="fas fa-pause text-xl"></i>
+        </button>
 
         <!-- Hero Content -->
         <div class="relative z-10 text-center px-6">
@@ -34,11 +33,11 @@
             <!-- Call-to-Action Buttons -->
             <div class="mt-8 flex flex-wrap justify-center gap-4 animate-fadeIn">
                 <a href="{{ url('/works') }}"
-                    class="bg-transparent border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
+                    class="border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
                     See My Work
                 </a>
                 <a href="{{ url('/contact') }}"
-                    class="bg-transparent border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
+                    class="border-2 border-black text-white rounded-lg px-8 py-4 text-lg font-semibold transition-all hover:border-gray-400 hover:text-gray-300 active:translate-y-[1px]">
                     Contact Me
                 </a>
             </div>
@@ -58,149 +57,71 @@
                 </a>
             </div>
         </div>
+    </div>
 
+    <!-- Animated Square Section -->
+    <div class="absolute top-0 left-auto right-10 w-full h-full pointer-events-none z-50">
+        <div id="animated-square" class="w-16 h-16 bg-blue-500 fixed top-20 left-10"></div>
     </div>
 
 
-
-    <!-- Additional Sections -->
+    <!-- Skills Section -->
     <div class="mt-12 mb-24">
         @include('pages.skillsStatic')
     </div>
 
-    <div class="relative bg-fixed bg-cover bg-center" style="background-image: url('{{ asset('images/your-parallax-image.jpg') }}');">
+
+
+    <!-- Projects Section -->
+    <div class="relative bg-fixed bg-cover bg-center"
+        style="background-image: url('{{ asset('images/cardbgimage.webp') }}');">
         <div class="bg-gray-900/70 py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 class="text-center text-base font-semibold text-indigo-400">My Projects</h2>
-                <p class="mx-auto mt-2 mb-12 max-w-lg text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                <p
+                    class="mx-auto mt-2 mb-12 max-w-lg text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                     A selection of my latest work
                 </p>
-    
+
                 <div class="h-full flex flex-col justify-center items-center gap-12">
                     @include('sections.dogApi')
                     @include('sections.newDogApi')
                     @include('sections.driverApp')
                     @include('sections.financeApp')
                 </div>
-    
+
                 <!-- View All Projects Button -->
                 <div class="mt-12 text-center">
-                    <a href="{{ url('/projects') }}" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:bg-indigo-700 shadow-md hover:shadow-lg">
+                    <a href="{{ url('/projects') }}"
+                        class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:bg-indigo-700 shadow-md hover:shadow-lg">
                         View All Projects
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    
 
+    <!-- Load Home-specific Scripts -->
+    @vite(['resources/js/home.js'])
+    {{-- <script>
+        gsap.registerPlugin(ScrollTrigger);
 
-
-
-    <!-- JavaScript for Video Toggle, Draggable Button, and Typewriter Effect -->
-    <script type="module">
-        // Video toggle functionality
-        const video = document.getElementById("background-video");
-        const toggleButton = document.getElementById("toggle-video");
-        const toggleIcon = document.getElementById("toggle-icon");
-
-        toggleButton.addEventListener("click", () => {
-            if (video.paused) {
-                video.play();
-                toggleIcon.classList.remove("fa-play");
-                toggleIcon.classList.add("fa-pause");
-            } else {
-                video.pause();
-                toggleIcon.classList.remove("fa-pause");
-                toggleIcon.classList.add("fa-play");
-            }
+        gsap.to("#animated-square", {
+            scrollTrigger: {
+                trigger: "body", // The whole page
+                start: "top top", // Start when the page loads
+                end: "bottom bottom", // End when you reach the bottom
+                scrub: true, // Smooth scrolling effect
+                pin: false, // Don't stick it
+            },
+            y: window.innerHeight - 100, // Move down the full screen height
+            x: window.innerWidth - 100, // Move right as well
+            rotation: 360, // Rotate while moving
+            scale: 1.5, // Scale up
+            backgroundColor: "#4F46E5", // Change color
+            ease: "power2.out",
         });
+    </script> --}}
 
-        // Make the toggle button draggable
-        let isDragging = false;
-        let offsetX = 0;
-        let offsetY = 0;
 
-        toggleButton.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            const rect = toggleButton.getBoundingClientRect();
-            offsetX = e.clientX - rect.left;
-            offsetY = e.clientY - rect.top;
-            toggleButton.style.cursor = "grabbing";
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (isDragging) {
-                toggleButton.style.position = "absolute";
-                toggleButton.style.left = `${e.clientX - offsetX}px`;
-                toggleButton.style.top = `${e.clientY - offsetY}px`;
-            }
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-            toggleButton.style.cursor = "grab";
-        });
-
-        // Typewriter effect
-        document.addEventListener("DOMContentLoaded", () => {
-            const texts = ["Web Developer", "Designer", "Freelancer", "Learner"];
-            let count = 0;
-            let index = 0;
-
-            function type() {
-                if (count === texts.length) count = 0;
-                const currentText = texts[count];
-                const letter = currentText.slice(0, ++index);
-                document.getElementById("typewriter-text").textContent = letter;
-
-                if (letter.length === currentText.length) {
-                    count++;
-                    index = 0;
-                    setTimeout(type, 2000);
-                } else {
-                    setTimeout(type, 150);
-                }
-            }
-            type();
-        });
-    </script>
-
-    <style>
-        /* Video toggle button size and icon styles */
-        #toggle-video {
-            width: 56px;
-            /* Button width */
-            height: 56px;
-            /* Button height */
-        }
-
-        #toggle-icon {
-            font-size: 20px;
-            /* Icon size */
-        }
-
-        /* Optional styles for sections */
-        #dog-api-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .project-item {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #dog-api-project {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-            text-align: center;
-        }
-    </style>
 </x-layout>

@@ -23,11 +23,6 @@
     <p class="text-base text-gray-500 mt-4 leading-relaxed">{{ $project['description'] }}</p>
 
     <!-- Tech Stack Display -->
-    <div class="flex flex-wrap justify-center mt-4 space-x-2">
-        @foreach ($project['tech'] as $tech)
-            <span class="text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full">{{ $tech }}</span>
-        @endforeach
-    </div>
 
     <!-- Buttons Container -->
     <div class="mt-6 flex flex-wrap justify-center gap-4">
@@ -43,9 +38,50 @@
             <i class="fas fa-external-link-alt"></i> Live Preview
         </a>
 
-        <!-- Learn More Button -->
-        <a href="{{ $project['detailsUrl'] }}" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg active:translate-y-[1px]">
-            <i class="fas fa-info-circle"></i> Learn More
-        </a>
+        <div class="flex flex-wrap justify-center mt-4 gap-3">
+            @foreach ($project['tech'] as $tech)
+                <span class="tech-item text-sm bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full shadow-md font-medium transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer">
+                    {{ $tech }}
+                </span>
+            @endforeach
+        </div>
+
+        <div id="tech-details" class="mt-6 hidden text-center bg-gray-100 p-4 rounded-lg shadow-lg">
+            <p class="text-lg font-medium" id="tech-name"></p>
+            <p class="text-sm text-gray-600 mt-2" id="tech-description"></p>
+        </div>
+
+        <script>
+            const techDetails = {
+                'Laravel': 'A PHP framework for web artisans.',
+                'Livewire': 'A full-stack framework for Laravel.',
+                'Tailwind CSS': 'A utility-first CSS framework for rapid UI development.',
+                'Alpine.js': 'A minimal framework for JavaScript interactions.'
+            };
+
+            document.querySelectorAll('.tech-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const tech = this.innerText;
+                    const detailsDiv = document.getElementById('tech-details');
+                    document.getElementById('tech-name').innerText = tech;
+                    document.getElementById('tech-description').innerText = techDetails[tech] || 'Details not available.';
+                    detailsDiv.classList.remove('hidden');
+                    detailsDiv.classList.add('animate-fadeIn');
+                });
+            });
+        </script>
+
+        <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        </style>
+
+
+
     </div>
 </div>

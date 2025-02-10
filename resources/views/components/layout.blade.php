@@ -43,7 +43,7 @@
 
         <!-- Top Section -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-300 pb-10">
-            
+
             <!-- Company Info -->
             <div class="text-center md:text-left">
                 <h2 class="text-xl font-semibold">Nathan Ferreira</h2>
@@ -131,5 +131,18 @@
             once: true
         });
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
