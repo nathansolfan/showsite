@@ -60,9 +60,9 @@
     </div>
 
     <!-- Animated Square Section -->
-    <div class="absolute top-0 left-auto right-10 w-full h-full pointer-events-none z-50">
-        <div id="animated-square" class="w-16 h-16 bg-blue-500 fixed top-20 left-10"></div>
-    </div>
+<div class="absolute top-0 right-0 w-full h-full pointer-events-none z-50">
+    <div id="animated-square" class="w-16 h-16 bg-blue-500 fixed top-20 right-10"></div>
+</div>
 
 
     <!-- Skills Section -->

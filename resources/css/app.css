@@ -34,6 +34,21 @@ footer {
   background-color: var(--footer-background);
 }
 
+.smoke-trail {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(190, 18, 18, 0.6) 10%, transparent 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(10px); /* Bigger blur for softer effect */
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.3); /* Subtle glow effect */
+    z-index: 9999; /* Ensures smoke is visible above other elements */
+}
+
+
+
+
 /* =====================================
        Dark Mode Switcher
 ==================================== */
