@@ -9,11 +9,12 @@
     ];
 @endphp
 
+
 <div class="h-screen w-full flex flex-col lg:flex-row justify-center items-center text-center lg:text-left bg-white p-12">
 
     <!-- Left Side: Project Text -->
     <div class="lg:w-1/2 max-w-2xl">
-        <h2 class="text-5xl font-extrabold text-gray-900">{{ $project['name'] }}</h2>
+        <h2  id="driver" class="text-5xl font-extrabold text-gray-900">{{ $project['name'] }}</h2>
         <p class="mt-4 text-lg text-gray-600">{{ $project['description'] }}</p>
 
         <!-- Tech Stack -->

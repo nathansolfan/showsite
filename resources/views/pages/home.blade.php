@@ -150,6 +150,8 @@
     <!-- Load Home-specific Scripts -->
     @vite(['resources/js/home.js'])
     @vite(['resources/js/projectAnimation.js'])
+    @vite(['resources/js/textAnimation.js'])
+
 
 
 

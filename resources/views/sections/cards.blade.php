@@ -12,9 +12,13 @@
         ],
     ];
 @endphp
+            <h3 class="text-2xl font-bold text-gray-800">{{ $blog['title'] }}</h3>
+
 
 {{-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> --}}
 <div class="flex justify-center text-center">
+    <h3 class="text-2xl font-bold text-gray-800">{{ $blog['title'] }}</h3>
+
     @foreach ($blogs as $blog)
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-2xl font-bold text-gray-800">{{ $blog['title'] }}</h3>
