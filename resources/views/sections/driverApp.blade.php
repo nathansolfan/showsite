@@ -10,7 +10,34 @@
     ];
 @endphp
 
-<div class="h-screen project-item relative flex flex-col text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[900px] overflow-hidden border-4 border-red-500">
+<div class="project-item relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform  hover:-translate-y-5 duration-900 easy-in-out border border-red-500 " >
+    <div class="h-48 overflow-hidden rounded-t-xl">
+        {{-- image --}}
+        <img src=" {{asset('images/driverAI.jpg')}} " alt="" class="w-full h-full object-cover">
+    </div>
+
+    {{-- title / desc --}}
+    <h3> {{$project['name']}} </h3>
+    <p> {{$project['description']}} </p>
+
+    {{-- btn container --}}
+    <div>
+        {{-- github --}}
+        <a href="">
+            <i class=""></i> View on Github
+        </a>
+
+        {{-- live preview --}}
+        <a href="">
+            <i></i>Live Preview
+        </a>
+    </div>
+</div>
+
+
+
+
+{{-- <div class="h-screen project-item relative flex flex-col text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[900px] overflow-hidden border-4 border-red-500">
 
     <!-- Project Image -->
     <div class="w-full h-48 overflow-hidden rounded-t-xl border-4 border-blue-500">
@@ -84,4 +111,4 @@
 
 
     </div>
-</div>
+</div> --}}
