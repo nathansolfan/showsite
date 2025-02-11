@@ -8,26 +8,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const driverElement = document.getElementById('driver');
 
     // Check that the element exists before applying the animation
-    if (driverElement) {
+    if (!driverElement) {
+        console.error('Element with id "driver" not found');
+        return;
+    };
 
-        // Store the original text so we can revert back later
-        const originalText = driverElement.textContent;
+    // save original text
+    const originalText = driverElement.textContent;
+    const newText = "Projects keep coming";
 
-        gsap.to(driverElement, {
-            duration: 2,
-            text: "Projects keep coming", // New text to animate in
-            ease: "none",
-        });
+    // initial state
+    let isToggled = false;
 
-        // Add a click event listener that animates the text back to the original
-        driverElement.addEventListener('click', () => {
+    gsap.to(driverElement ,{
+        duration:2,
+        text: newText,
+        ease: 'none',
+        onComplete: () => {isToggled = true}
+    })
+
+    // click event
+    driverElement.addEventListener('click', () => {
+        if (isToggled) {
+            // if new test is currently displayed, animate back
             gsap.to(driverElement, {
                 duration: 2,
                 text: originalText,
-                ease: "none"
+                ease: "none",
+                onComplete: () => { isToggled = false }
             })
-        })
-    } else {
-        console.error('Element with id "driver" not found.');
-    }
+        } else {
+            // if original text, animate again to new one
+            gsap.to(driverElement, {
+                duration: 2,
+                text: newText,
+                ease: "none",
+                onComplete: () => { isToggled = true}
+            })
+        }
+    })
 });
