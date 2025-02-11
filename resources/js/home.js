@@ -13,29 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to create a smoke trail effect
 // Function to create a smoke trail effect
 // Function to create a smoke trail effect
-function createSmokeTrail(x, y) {
-    const smoke = document.createElement("div");
-    smoke.classList.add("smoke-trail");
-    document.body.appendChild(smoke);
+// function createSmokeTrail(x, y) {
+//     const smoke = document.createElement("div");
+//     smoke.classList.add("smoke-trail");
+//     document.body.appendChild(smoke);
 
-    gsap.set(smoke, {
-        position: "absolute",
-        top: `${y}px`,
-        left: `${x}px`,
-        opacity: 1,
-        scale: gsap.utils.random(0.8, 1.5), // Different sizes
-    });
+//     gsap.set(smoke, {
+//         position: "absolute",
+//         top: `${y}px`,
+//         left: `${x}px`,
+//         opacity: 1,
+//         scale: gsap.utils.random(0.8, 1.5), // Different sizes
+//     });
 
-    gsap.to(smoke, {
-        y: gsap.utils.random(-20, 20), // Moves randomly up/down
-        x: gsap.utils.random(-20, 20), // Moves randomly left/right
-        opacity: 0, // Fades out
-        scale: gsap.utils.random(1.5, 2.5), // Expands while fading
-        duration: 1.5, // Lasts longer before fading
-        ease: "power2.out",
-        onComplete: () => smoke.remove() // Removes after animation
-    });
-}
+//     gsap.to(smoke, {
+//         y: gsap.utils.random(-20, 20), // Moves randomly up/down
+//         x: gsap.utils.random(-20, 20), // Moves randomly left/right
+//         opacity: 0, // Fades out
+//         scale: gsap.utils.random(1.5, 2.5), // Expands while fading
+//         duration: 1.5, // Lasts longer before fading
+//         ease: "power2.out",
+//         onComplete: () => smoke.remove() // Removes after animation
+//     });
+// }
 
 
 
