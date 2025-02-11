@@ -1,10 +1,12 @@
 <!-- Navigation -->
 <nav role="navigation" class="  w-full top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <div class="container mx-auto flex justify-between items-center ">
         <!-- Logo -->
         <div class="text-lg font-bold text-white">
             <a href="/">
-                <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto">
+                {{-- <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto"> --}}
+                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto">
+
             </a>
         </div>
 

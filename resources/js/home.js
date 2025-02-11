@@ -52,8 +52,8 @@ const tl = gsap.timeline({
     onUpdate: () => {
         const square = document.getElementById("animated-square");
         const rect = square.getBoundingClientRect();
-        createSmokeTrail(rect.left + 10, rect.top + 10);
-        createSmokeTrail(rect.left + 15, rect.top + 15); // Creates extra smoke for better effect
+        // createSmokeTrail(rect.left + 10, rect.top + 10);
+        // createSmokeTrail(rect.left + 15, rect.top + 15); // Creates extra smoke for better effect
     }
 });
 
