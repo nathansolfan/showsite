@@ -10,16 +10,16 @@
     ];
 @endphp
 
-<div class="project-item relative flex flex-col text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px] overflow-hidden">
+<div class="h-screen project-item relative flex flex-col text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[900px] overflow-hidden border-4 border-red-500">
 
     <!-- Project Image -->
-    <div class="w-full h-48 overflow-hidden rounded-t-xl">
+    <div class="w-full h-48 overflow-hidden rounded-t-xl border-4 border-blue-500">
         <img src="{{ asset('images/driverAI.jpg') }}" alt="Driver App Project"
             class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110">
     </div>
 
     <!-- Project Title and Description -->
-    <h3 class="text-3xl font-semibold text-gray-900 mt-4 hover:text-blue-500">{{ $project['name'] }}</h3>
+    <h3 class="text-3xl font-semibold text-gray-900 mt-4 hover:text-blue-500 border-4 border-red-500">{{ $project['name'] }}</h3>
     <p class="text-base text-gray-500 mt-4 leading-relaxed">{{ $project['description'] }}</p>
 
     <!-- Tech Stack Display -->

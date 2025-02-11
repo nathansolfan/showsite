@@ -9,7 +9,7 @@
 @endphp
 
 <div
-    class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[520px] overflow-hidden">
+    class="project-item group relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[980px] overflow-hidden">
     <!-- Project Image -->
     <div class="w-full h-52 overflow-hidden rounded-xl">
         <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project"

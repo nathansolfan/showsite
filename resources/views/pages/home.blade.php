@@ -71,24 +71,38 @@
     </div>
 
 
-    <!-- Projects Section -->
-<div class="flex flex-col justify-center items-center gap-12">
-    <div class="h-screen project-box">
+<!-- Projects Section -->
+<div class="w-full min-h-screen flex flex-col justify-start items-center">
+    <div class="h-screen w-full flex items-center justify-center project-box bg-red-500">
         @include('sections.dogApi')
     </div>
 
-    <div class="h-screen project-box">
+    <div class="h-screen w-full flex items-center justify-center project-box bg-blue-500">
         @include('sections.newDogApi')
     </div>
 
-    <div class="h-screen project-box">
+    <div class="h-screen w-full flex items-center justify-center project-box bg-green-500">
         @include('sections.driverApp')
     </div>
 
-    <div class="h-screen project-box">
+    <div class="h-screen w-full flex items-center justify-center project-box bg-yellow-500">
         @include('sections.financeApp')
     </div>
+
+    <div class="h-screen w-full flex items-center justify-center project-box bg-purple-500">
+        @include('sections.box1')
+    </div>
+
+    <div class="h-screen w-full flex items-center justify-center project-box bg-pink-500">
+        @include('sections.box2')
+    </div>
+
+    <div class="h-screen w-full flex items-center justify-center project-box bg-indigo-500">
+        @include('sections.box3')
+    </div>
 </div>
+
+
 
 
 
