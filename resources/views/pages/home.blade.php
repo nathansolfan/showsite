@@ -84,6 +84,10 @@
             @include('sections.dogApi')
         </div>
 
+        <div class="h-screen w-full flex items-center justify-center project-box bg-red-500">
+            @include('sections.dogApi2')
+        </div>
+
         <div class="h-screen w-full flex items-center justify-center project-box bg-blue-500">
             @include('sections.newDogApi')
         </div>
