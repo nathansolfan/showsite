@@ -148,8 +148,11 @@
     </div> --}}
 
     <!-- Load Home-specific Scripts -->
+    @vite(['resources/js/textAnimation.js'])
     @vite(['resources/js/home.js'])
     @vite(['resources/js/projectAnimation.js'])
+
+
 
     {{-- <script>
         gsap.registerPlugin(ScrollTrigger);

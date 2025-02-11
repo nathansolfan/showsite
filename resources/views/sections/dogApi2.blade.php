@@ -19,7 +19,8 @@
 
     <div class="flex flex-col justify-center items-center text-center gap-6">
         <!-- Project Title -->
-        <h2 class="">{{ $project['name'] }}</h2>
+        <h2 id="dog-title-text" class="text-5xl font-extrabold text-gray-900">
+            {{ $project['name'] }}</h2>
 
 
         <!-- Description -->

@@ -17,9 +17,8 @@
     </div>
 
     <!-- Project Title -->
-    <h3 class="text-3xl font-bold text-gray-900 mt-5 group-hover:text-blue-600 transition-colors duration-200">
-        {{ $project['name'] }}
-    </h3>
+    <h2 id="title-text" class="text-5xl font-extrabold text-gray-900">{{ $project['name'] }}</h2>
+
 
     <!-- Description -->
     <p
