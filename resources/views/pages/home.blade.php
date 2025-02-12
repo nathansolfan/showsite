@@ -77,6 +77,16 @@
         @include('pages.skillsStatic')
     </div>
 
+ <!-- BIG LONG TEXT Section -->
+<div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100">
+    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Now we are digging more into projects</p>
+</div>
+
+
+
+
+
+
 
     <!-- Projects Section -->
     <div class="w-full min-h-screen flex flex-col justify-start items-center">
