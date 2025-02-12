@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top center',         // When the container reaches the top of the viewport.
                 end: `+=${scrollDistance}`,// The scroll distance over which the text scrolls.
                 scrub: true,              // Smoothly ties the tween's progress to the scrollbar.
-                pin: true,                // Pin the container during the scroll.
+                // pin: true,                // Pin the container during the scroll.
                 markers: true,         // Uncomment to see visual markers for debugging.
             }
         });
