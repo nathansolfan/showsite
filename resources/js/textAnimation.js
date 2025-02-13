@@ -23,13 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         text: newText,
         ease: "none",
         scrollTrigger: {
-            trigger: driverElement, // When the driver element is in view
-            start: "top center",     // Adjust as needed (e.g., when the top of the element reaches the center of the viewport)
-            end: "bottom center",    // Adjust as needed
+            trigger: driverElement,
+            start: "top center",
+            end: "bottom 80%",  // Adjusted end value stops the tween earlier
             scrub: true,
-            markers: true            // This will show markers for debugging
+            // markers: true  // Enable markers for debugging
         }
     });
+
 
     // Toggle the text on click (this remains independent of scrollTrigger)
     let isToggled = false;

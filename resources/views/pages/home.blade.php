@@ -73,14 +73,14 @@
 
 
     <!-- Skills Section -->
-    <div class="mt-12 mb-60">
+    <div class="mt-12 ">
         @include('pages.skillsStatic')
     </div>
-{{--
+
  <!-- BIG LONG TEXT Section -->
-<div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100">
-    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Now we are digging more into projects</p>
-</div> --}}
+<div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100 text-right mb-32">
+    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Some projects...</p>
+</div>
 
 
 
@@ -89,8 +89,8 @@
 
 
     <!-- Projects Section -->
-    <div class="w-full min-h-screen flex flex-col justify-start items-center">
-        <div class="h-screen w-full flex items-center justify-center project-box bg-red-500">
+    <div class="mt-20 w-full min-h-screen flex flex-col justify-start items-center">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-red-500  rounded-xl">
             @include('sections.dogApi')
         </div>
 

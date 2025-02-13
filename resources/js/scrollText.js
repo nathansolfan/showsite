@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const computedTime = baseDuration * (textWidth / containerWidth);
 
         // Decide on a scroll distance. For example, assume 100 pixels of scroll per second of computed time.
-        const scrollDistance = computedTime * 100;
+        const scrollDistance = computedTime * 65;
 
         gsap.to(scrollText, {
             x: -textWidth,
