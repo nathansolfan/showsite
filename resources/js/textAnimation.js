@@ -1,50 +1,53 @@
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
     // Select the element with the id "driver"
     const driverElement = document.getElementById('driver');
 
-    // Check that the element exists before applying the animation
     if (!driverElement) {
         console.error('Element with id "driver" not found');
         return;
-    };
+    }
 
-    // save original text
+    // Save original text and define the new text
     const originalText = driverElement.textContent;
     const newText = "Projects keep coming";
 
-    // initial state
-    let isToggled = false;
-
-    gsap.to(driverElement ,{
-        duration:2,
+    // Instead of running the tween immediately, tie it to the scroll position.
+    gsap.to(driverElement, {
+        duration: 2,
         text: newText,
-        ease: 'none',
-        onComplete: () => {isToggled = true}
-    })
+        ease: "none",
+        scrollTrigger: {
+            trigger: driverElement, // When the driver element is in view
+            start: "top center",     // Adjust as needed (e.g., when the top of the element reaches the center of the viewport)
+            end: "bottom center",    // Adjust as needed
+            scrub: true,
+            markers: true            // This will show markers for debugging
+        }
+    });
 
-    // click event
+    // Toggle the text on click (this remains independent of scrollTrigger)
+    let isToggled = false;
     driverElement.addEventListener('click', () => {
         if (isToggled) {
-            // if new test is currently displayed, animate back
             gsap.to(driverElement, {
                 duration: 2,
                 text: originalText,
                 ease: "none",
-                onComplete: () => { isToggled = false }
-            })
+                onComplete: () => { isToggled = false; }
+            });
         } else {
-            // if original text, animate again to new one
             gsap.to(driverElement, {
                 duration: 2,
                 text: newText,
                 ease: "none",
-                onComplete: () => { isToggled = true}
-            })
+                onComplete: () => { isToggled = true; }
+            });
         }
-    })
+    });
 });
