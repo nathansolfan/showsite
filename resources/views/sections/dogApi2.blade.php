@@ -1,7 +1,8 @@
 @php
     $project = [
-        'name' => 'DogAPIGenerator',
-        'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.',
+        'name' => 'Generate your random dog',
+        'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.
+        You can decide to save as it favourite and change dog if you don`t like it',
         'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
         'liveUrl' => 'https://dog-photo-app-one.vercel.app/',
         'tech' => [

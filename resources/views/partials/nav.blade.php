@@ -21,11 +21,11 @@
         <div class="hidden lg:flex space-x-6" id="nav-content">
             <a href="/" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Home</a>
             <a href="/about" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">About</a>
-            <a href="/portfolio" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
-            <a href="/portfolio2" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
+            {{-- <a href="/portfolio" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
+            <a href="/portfolio2" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a> --}}
 
             <a href="/contact" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Contact</a>
-            <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Workss</a>
+            <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a>
             <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">Feedback</a>
         </div>
     </div>
