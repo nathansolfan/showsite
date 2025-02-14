@@ -66,10 +66,10 @@
     </div>
 
 
-    <!-- Animated Square Section -->
+    {{-- <!-- Animated Square Section -->
     <div class="absolute top-0 right-0 w-full h-full pointer-events-none z-50">
         <div id="animated-square" class="w-16 h-16 bg-blue-500 fixed top-20 right-10"></div>
-    </div>
+    </div> --}}
 
 
     <!-- Skills Section -->
@@ -102,7 +102,7 @@
             @include('sections.newDogApi')
         </div>
 
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" fill="#000000">
+{{-- <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" fill="#000000">
   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
   <g id="SVGRepo_iconCarrier">
@@ -174,7 +174,7 @@
       <polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="18.5,23.5 22.5,19.5 22.5,16 20.5,12"></polyline>
     </g>
   </g>
-</svg>
+</svg> --}}
 
 
         <div class="h-screen w-full flex items-center justify-center project-box bg-green-500">
