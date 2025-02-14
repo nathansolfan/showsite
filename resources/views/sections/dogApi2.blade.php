@@ -1,14 +1,31 @@
 @php
-    // Define project data directly in the Blade template
     $project = [
         'name' => 'DogAPIGenerator',
         'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.',
         'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
         'liveUrl' => 'https://dog-photo-app-one.vercel.app/',
-        'tech' => ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'],
+        'tech' => [
+            [
+                'icon' => 'fab fa-laravel',
+                'title' => 'Laravel',
+                'desc' => 'A powerful PHP framework for building scalable web applications.',
+            ],
 
+            [
+                'icon'  => 'fab fa-react',
+                'title' => 'React.js',
+                'desc'  => 'Efficiently managing UI with reusable components and state management.'
+            ],
+
+            [
+                'icon'  => 'fab fa-js',
+                'title' => 'Javascript',
+                'desc'  => 'Enhancing interactivity and dynamic features on web applications.'
+            ],
+        ],
     ];
 @endphp
+
 
 <div class="flex gap-24">
 
@@ -29,13 +46,26 @@
         </p>
 
         <!-- Tech -->
-        <div class="flex gap-3">
-            @foreach ( $project['tech'] as $tech )
+        {{-- <div class="flex gap-3">
+            @foreach ($project['tech'] as $tech)
             <span class=" bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded shadow-md"> {{$tech}} </span>
-
             @endforeach
-
+        </div> --}}
+        <div class="flex gap-3">
+            @foreach ($project['tech'] as $item)
+                <div class="group flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded shadow-md">
+                    <!-- Icon is always visible -->
+                    <i class="{{ $item['icon'] }} text-2xl"></i>
+                    <!-- Title is hidden by default and only shows on hover -->
+                    <span class="hidden group-hover:block text-sm font-bold">
+                        {{ $item['title'] }}
+                    </span>
+                </div>
+            @endforeach
         </div>
+
+
+
 
         <!-- Buttons Container -->
         <div class="">
