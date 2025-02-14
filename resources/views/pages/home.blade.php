@@ -90,15 +90,15 @@
 
     <!-- Projects Section -->
     <div class="mt-20 w-full min-h-screen flex flex-col justify-start items-center">
-        <div class="h-screen w-full flex items-center justify-center project-box bg-red-500  rounded-xl">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-red-300  rounded-xl">
             @include('sections.dogApi')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-red-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-red-300">
             @include('sections.dogApi2')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-blue-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-blue-300">
             @include('sections.newDogApi')
         </div>
 
@@ -177,23 +177,23 @@
 </svg> --}}
 
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-green-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-green-300">
             @include('sections.driverApp')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-yellow-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-yellow-300">
             @include('sections.financeApp')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-purple-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-purple-300">
             @include('sections.box1')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-pink-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-pink-300">
             @include('sections.box2')
         </div>
 
-        <div class="h-screen w-full flex items-center justify-center project-box bg-indigo-500">
+        <div class="h-screen w-full flex items-center justify-center project-box bg-indigo-300">
             @include('sections.box3')
         </div>
     </div>
