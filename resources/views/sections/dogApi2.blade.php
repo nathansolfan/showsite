@@ -52,14 +52,15 @@
             <span class=" bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded shadow-md"> {{$tech}} </span>
             @endforeach
         </div> --}}
-        <div class="flex gap-3">
+        <div class="flex flex-wrap items-center gap-3">
+            <span class="text-gray-800 font-semibold">Technologies used:</span>
             @foreach ($project['tech'] as $item)
-                <div class="group flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded shadow-md">
-                    <!-- Icon is always visible -->
-                    <i class="{{ $item['icon'] }} text-2xl"></i>
-                    <!-- Title is hidden by default and only shows on hover -->
-                    <span class="hidden group-hover:block text-sm font-bold">
-                        {{ $item['title'] }}
+            <div class="group relative flex flex-col items-center p-2">
+                <!-- Icon is always visible -->
+                <i class="{{ $item['icon'] }} text-2xl text-blue-500"></i>
+                <!-- Title is hidden by default and only shows on hover -->
+                <span class="absolute bottom-0 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded w-max shadow-md transition-opacity duration-300">
+                    {{ $item['title'] }}
                     </span>
                 </div>
             @endforeach
