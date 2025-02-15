@@ -2,7 +2,7 @@
     $project = [
         'name' => 'Generate your random dog',
         'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.
-        You can decide to save as it favourite and change dog if you don`t like it',
+        You can decide to save it as a favorite and change the dog if you don’t like it.',
         'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
         'liveUrl' => 'https://dog-photo-app-one.vercel.app/',
         'tech' => [
@@ -11,88 +11,73 @@
                 'title' => 'Laravel',
                 'desc' => 'A powerful PHP framework for building scalable web applications.',
             ],
-
             [
                 'icon'  => 'fab fa-react',
                 'title' => 'React.js',
                 'desc'  => 'Efficiently managing UI with reusable components and state management.'
             ],
-
             [
                 'icon'  => 'fab fa-js',
-                'title' => 'Javascript',
+                'title' => 'JavaScript',
                 'desc'  => 'Enhancing interactivity and dynamic features on web applications.'
             ],
         ],
     ];
 @endphp
 
-
-<div class="flex gap-24">
+<!-- Project Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
     <!-- Project Image -->
-    <div class="lg:w-1/2 flex ">
-        <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="max-w-lg">
+    <div class="flex justify-center">
+        <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-full max-w-lg rounded-lg shadow-lg">
     </div>
 
-    <div class="flex flex-col justify-center items-center text-center gap-6">
-        <!-- Project Title -->
-        <h2 id="dog-title-text" class="text-5xl font-extrabold text-gray-900">
-            {{ $project['name'] }}</h2>
+    <!-- Project Info -->
+    <div class="flex flex-col items-center text-center gap-6">
 
+        <!-- Project Title -->
+        <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            {{ $project['name'] }}
+        </h2>
 
         <!-- Description -->
-        <p class="">
+        <p class="text-lg text-gray-700 leading-relaxed">
             {{ $project['description'] }}
         </p>
 
-        <!-- Tech -->
-        {{-- <div class="flex gap-3">
-            @foreach ($project['tech'] as $tech)
-            <span class=" bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded shadow-md"> {{$tech}} </span>
-            @endforeach
-        </div> --}}
-        <div class="flex flex-wrap items-center gap-3">
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap items-center gap-6">
             <span class="text-gray-800 font-semibold">Technologies used:</span>
             @foreach ($project['tech'] as $item)
-            <div class="group relative flex flex-col items-center p-2">
-                <!-- Icon is always visible -->
-                <i class="{{ $item['icon'] }} text-2xl text-blue-500"></i>
-                <!-- Title is hidden by default and only shows on hover -->
-                <span class="absolute bottom-0 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded w-max shadow-md transition-opacity duration-300">
-                    {{ $item['title'] }}
+                <div class="group flex flex-col items-center p-3">
+                    <!-- Icon -->
+                    <i class="{{ $item['icon'] }} text-4xl text-blue-600 group-hover:text-indigo-500 transition-transform duration-300"></i>
+                    <!-- Title always visible -->
+                    <span class="text-sm font-semibold text-gray-700 mt-1">
+                        {{ $item['title'] }}
                     </span>
                 </div>
             @endforeach
         </div>
 
-
-
-
-        <!-- Buttons Container -->
-        <div class="">
+        <!-- Buttons -->
+        <div class="flex gap-4">
             <!-- GitHub Button -->
             <a href="{{ $project['githubUrl'] }}" target="_blank"
-                class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+                class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
 
             <!-- Live Preview Button -->
             <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
-                class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
+                class="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
                 <i class="fas fa-external-link-alt"></i> Live Preview
             </button>
-
         </div>
     </div>
 
-
-
-
 </div>
-
-
-
 
 <!-- Fullscreen Overlay for Project Preview -->
 <div id="fullscreen-overlay" class="fullscreen-overlay">
@@ -100,14 +85,14 @@
     <iframe id="fullscreen-iframe" src=""></iframe>
 </div>
 
-<!-- JavaScript code directly in the Blade template -->
+<!-- JavaScript for Fullscreen Preview -->
 <script>
     function openFullscreenPreview(url) {
         const overlay = document.getElementById('fullscreen-overlay');
         const iframe = document.getElementById('fullscreen-iframe');
 
         iframe.src = url;
-        overlay.style.display = 'flex';
+        overlay.classList.add('show');
     }
 
     function closeFullscreenPreview() {
@@ -115,7 +100,7 @@
         const iframe = document.getElementById('fullscreen-iframe');
 
         iframe.src = ''; // Clear the iframe src to stop loading the page
-        overlay.style.display = 'none';
+        overlay.classList.remove('show');
     }
 </script>
 
@@ -128,10 +113,19 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.85);
         z-index: 1000;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .fullscreen-overlay.show {
+        display: flex;
+        opacity: 1;
+        transform: scale(1);
     }
 
     .fullscreen-overlay iframe {
@@ -143,15 +137,19 @@
 
     .fullscreen-overlay .close-btn {
         position: absolute;
-        top: 20px;
+        top: 15px;
         right: 20px;
-        background-color: #ffffff;
-        color: #333;
+        background-color: white;
+        color: black;
         padding: 10px 15px;
-        font-size: 18px;
+        font-size: 16px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 1100;
+        transition: background 0.2s;
+    }
+
+    .fullscreen-overlay .close-btn:hover {
+        background-color: rgb(200, 200, 200);
     }
 </style>
