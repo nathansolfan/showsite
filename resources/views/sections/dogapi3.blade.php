@@ -1,56 +1,53 @@
 @php
+    // Sample data you might pass from a controller or define right here
     $project = [
-        'name' => 'Generate your random dog',
-        'description' => 'A random dog image generator using an API to fetch adorable dog photos and information.
-        You can decide to save it as a favorite and change the dog if you don’t like it.',
-        'githubUrl' => 'https://github.com/nathansolfan/DogAPIGenerator',
+        'name' => 'Dog API Generator',
+        'subtitle' => 'We are all dog lovers now', // optional tagline
+        'description' => 'A random dog image generator using an API to fetch adorable dog photos...',
+        'tags' => ['Case Study', 'API', 'React.js', 'Laravel'],  // example tags
+        'githubUrl' => 'https://github.com/...',
         'liveUrl' => 'https://dog-photo-app-one.vercel.app/',
-        'tech' => [
-            [
-                'icon' => 'fab fa-laravel',
-                'title' => 'Laravel',
-                'desc' => 'A powerful PHP framework for building scalable web applications.',
-            ],
-            [
-                'icon'  => 'fab fa-react',
-                'title' => 'React.js',
-                'desc'  => 'Efficiently managing UI with reusable components and state management.'
-            ],
-            [
-                'icon'  => 'fab fa-js',
-                'title' => 'JavaScript',
-                'desc'  => 'Enhancing interactivity and dynamic features on web applications.'
-            ],
-        ],
+        'imageUrl' => asset('images/dogsAI.jpg'), // path to your image
     ];
 @endphp
 
+<div class="container mx-auto px-4 py-16 md:flex items-center">
+    <!-- LEFT COLUMN: Text & CTA -->
+    <div class="md:w-1/2 md:pr-8">
+        <!-- Project Title -->
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {{ $project['subtitle'] ?? $project['name'] }}
+        </h2>
 
-<div>
-    <div class="flex " >
-        <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-full max-w-lg justify-center ">
+        <!-- Tag/Category Chips (Optional) -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            @foreach($project['tags'] as $tag)
+                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    {{ $tag }}
+                </span>
+            @endforeach
+        </div>
 
-        <!-- Project Title (Centered at the Top) -->
-    <h2 id="test" class="col-start-2 row-start-3 col-span-2 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 text-center">
-        {{ $project['name'] }}
-    </h2>
+        <!-- Description -->
+        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+            {{ $project['description'] }}
+        </p>
+
+        <!-- Call-to-Actions -->
+        <div class="flex gap-4">
+            <a href="{{ $project['liveUrl'] }}"
+               class="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">
+               View Live
+            </a>
+            <a href="{{ $project['githubUrl'] }}"
+               class="inline-block border border-gray-800 text-gray-800 px-6 py-3 rounded hover:bg-gray-100 transition">
+               GitHub
+            </a>
+        </div>
     </div>
 
-    <!-- Tech Stack (Centered Below the Description) -->
-    <div class="col-start-2 row-start-5 col-span-2 flex flex-wrap justify-center gap-6">
-        <span class="text-gray-800 font-semibold">Technologies used:</span>
-        @foreach ($project['tech'] as $item)
-            <div class="group flex flex-col items-center p-3">
-                <i class="{{ $item['icon'] }} text-4xl text-blue-600 group-hover:text-indigo-500 transition-transform duration-300"></i>
-                <span class="text-sm font-semibold text-gray-700 mt-1">{{ $item['title'] }}</span>
-            </div>
-        @endforeach
+    <!-- RIGHT COLUMN: Image/Mockup -->
+    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img src="{{ $project['imageUrl'] }}" alt="Project Mockup" class="max-w-full h-auto rounded-lg shadow-md">
     </div>
-
-    <!-- Description (Below the Title) -->
-    <p class="col-start-2 row-start-4 col-span-2 text-lg text-gray-700 leading-relaxed text-center">
-        {{ $project['description'] }}
-    </p>
-
-
 </div>
