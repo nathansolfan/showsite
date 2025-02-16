@@ -54,3 +54,7 @@ Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.s
 
 
 Route::resource('projects', ProjectController::class);
+Route::get('/projects/dogapi1', [ProjectController::class, 'dogApi1'])->name('projects.dogapi1');
+Route::get('/projects/dogapi2', [ProjectController::class, 'dogApi2'])->name('projects.dogapi2');
+
+

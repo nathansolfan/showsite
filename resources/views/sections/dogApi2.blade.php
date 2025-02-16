@@ -26,58 +26,49 @@
 @endphp
 
 <!-- Project Section -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="grid grid-cols-4 grid-rows-4 gap-6 items-center max-w-6xl mx-auto py-12 px-6">
 
-    <!-- Project Image -->
-    <div class="flex justify-center">
+    <!-- Project Image (Takes up 2 Columns, 2 Rows) -->
+    <div class="col-start-2 row-start-1 col-span-2 row-span-2 flex justify-center">
         <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-full max-w-lg rounded-lg shadow-lg">
     </div>
 
-    <!-- Project Info -->
-    <div class="flex flex-col items-center text-center gap-6">
+    <!-- Project Title (Centered at the Top) -->
+    <h2 class="col-start-2 row-start-3 col-span-2 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 text-center">
+        {{ $project['name'] }}
+    </h2>
 
-        <!-- Project Title -->
-        <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-            {{ $project['name'] }}
-        </h2>
+    <!-- Description (Below the Title) -->
+    <p class="col-start-2 row-start-4 col-span-2 text-lg text-gray-700 leading-relaxed text-center">
+        {{ $project['description'] }}
+    </p>
 
-        <!-- Description -->
-        <p class="text-lg text-gray-700 leading-relaxed">
-            {{ $project['description'] }}
-        </p>
+    <!-- Tech Stack (Centered Below the Description) -->
+    <div class="col-start-2 row-start-5 col-span-2 flex flex-wrap justify-center gap-6">
+        <span class="text-gray-800 font-semibold">Technologies used:</span>
+        @foreach ($project['tech'] as $item)
+            <div class="group flex flex-col items-center p-3">
+                <i class="{{ $item['icon'] }} text-4xl text-blue-600 group-hover:text-indigo-500 transition-transform duration-300"></i>
+                <span class="text-sm font-semibold text-gray-700 mt-1">{{ $item['title'] }}</span>
+            </div>
+        @endforeach
+    </div>
 
-        <!-- Tech Stack -->
-        <div class="flex flex-wrap items-center gap-6">
-            <span class="text-gray-800 font-semibold">Technologies used:</span>
-            @foreach ($project['tech'] as $item)
-                <div class="group flex flex-col items-center p-3">
-                    <!-- Icon -->
-                    <i class="{{ $item['icon'] }} text-4xl text-blue-600 group-hover:text-indigo-500 transition-transform duration-300"></i>
-                    <!-- Title always visible -->
-                    <span class="text-sm font-semibold text-gray-700 mt-1">
-                        {{ $item['title'] }}
-                    </span>
-                </div>
-            @endforeach
-        </div>
+    <!-- Buttons (Spanning Two Columns at the Bottom) -->
+    <div class="col-start-2 row-start-6 col-span-2 flex justify-center gap-4 mt-4">
+        <a href="{{ $project['githubUrl'] }}" target="_blank"
+            class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
 
-        <!-- Buttons -->
-        <div class="flex gap-4">
-            <!-- GitHub Button -->
-            <a href="{{ $project['githubUrl'] }}" target="_blank"
-                class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-
-            <!-- Live Preview Button -->
-            <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
-                class="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
-                <i class="fas fa-external-link-alt"></i> Live Preview
-            </button>
-        </div>
+        <button onclick="openFullscreenPreview('{{ $project['liveUrl'] }}')"
+            class="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 bg-transparent px-6 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-lg transform hover:-translate-y-1">
+            <i class="fas fa-external-link-alt"></i> Live Preview
+        </button>
     </div>
 
 </div>
+
 
 <!-- Fullscreen Overlay for Project Preview -->
 <div id="fullscreen-overlay" class="fullscreen-overlay">

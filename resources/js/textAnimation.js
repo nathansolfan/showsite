@@ -51,4 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    const testElement = document.getElementById('test');
+
+    gsap.to(testElement, {
+        duration: 2,
+        text: newText,
+        ease: "none",
+
+    });
+
+
+
 });
+
+
