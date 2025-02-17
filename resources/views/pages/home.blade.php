@@ -80,9 +80,8 @@
  <!-- BIG LONG TEXT Section -->
 <div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100 text-right mb-32">
     <p class="scroll-text whitespace-nowrap text-9xl font-bold">Plentiful projects...</p>
-    <p id="line2" class="whitespace-nowrap text-9xl font-bold text-left">Adopting popular tools</p>
-    <p id="line3" class="whitespace-nowrap text-9xl font-bold text-left">Using many tools</p>
-
+    <p id="line2" class="whitespace-nowrap text-9xl font-bold text-left">Adopting great ideas</p>
+    <p id="line3" class="whitespace-nowrap text-9xl font-bold text-center">Though many tools</p>
 </div>
 
 
