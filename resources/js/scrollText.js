@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const scrollText = document.querySelector('.scroll-text');
     const scrollText2 = document.getElementById('line2')
+    const scrollText3 = document.getElementById('line3')
+
     const container = document.querySelector('.scroll-text-container');
 
     if (scrollText && container) {
@@ -35,17 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         gsap.to(scrollText2, {
-            x: -textWidth,
+            x: textWidth,
             ease: 'linear',
             scrollTrigger: {
                 trigger: container,
-                start: 'top left',         // When the container reaches the top of the viewport.
+                start: 'top center',         // When the container reaches the top of the viewport.
                 end: `+=${scrollDistance}`,// The scroll distance over which the text scrolls.
                 scrub: true,              // Smoothly ties the tween's progress to the scrollbar.
                 // pin: true,                // Pin the container during the scroll.
                 // markers: true,         // Uncomment to see visual markers for debugging.
             }
+        });
 
-        })
+        gsap.to(scrollText3, {
+            x: -textWidth,
+            ease: 'linear',
+            scrollTrigger: {
+                trigger: container,
+                start: 'top top',         // When the container reaches the top of the viewport.
+                end: `+=${scrollDistance}`,// The scroll distance over which the text scrolls.
+                scrub: true,              // Smoothly ties the tween's progress to the scrollbar.
+                // pin: true,                // Pin the container during the scroll.
+                // markers: true,         // Uncomment to see visual markers for debugging.
+            }
+        });
+
+
     }
 });

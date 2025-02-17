@@ -26,7 +26,7 @@
 @endphp
 
 <!-- Project Section -->
-<div class="grid grid-cols-4 grid-rows-4 gap-6 items-center max-w-6xl mx-auto py-12 px-6">
+<div class="grid grid-cols-4 gap-6 items-center max-w-6xl mx-auto py-12 px-6">
 
     <!-- Project Image (Takes up 2 Columns, 2 Rows) -->
     <div class="col-start-2 row-start-1 col-span-2 row-span-2 flex justify-center">

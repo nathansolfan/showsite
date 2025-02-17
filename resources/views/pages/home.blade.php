@@ -79,8 +79,10 @@
 
  <!-- BIG LONG TEXT Section -->
 <div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100 text-right mb-32">
-    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Some projects...</p>
-    <p id="line2" class="whitespace-nowrap text-9xl font-bold">Using many tools</p>
+    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Plentiful projects...</p>
+    <p id="line2" class="whitespace-nowrap text-9xl font-bold text-left">Adopting popular tools</p>
+    <p id="line3" class="whitespace-nowrap text-9xl font-bold text-left">Using many tools</p>
+
 </div>
 
 
@@ -88,42 +90,40 @@
 
 
 
-
-    <!-- Projects Section -->
-    <div class="mt-20 w-full min-h-screen flex flex-col justify-start items-center">
-        <div class="h-screen w-full flex items-center justify-center project-box bg-red-300  rounded-xl">
-            @include('sections.dogApi')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-red-300">
-            @include('sections.dogApi2')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-blue-300">
-            @include('sections.dogApi3')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-green-300">
-            @include('sections.driverApp')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-yellow-300">
-            @include('sections.financeApp')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-purple-300">
-            @include('sections.box1')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-pink-300">
-            @include('sections.box2')
-        </div>
-
-        <div class="h-screen w-full flex items-center justify-center project-box bg-indigo-300">
-            @include('sections.box3')
-        </div>
+ <!-- Projects Section -->
+ <section id="projects" class="mt-20">
+    <!-- Pinned First Project -->
+    <div class="first-project h-screen w-full flex items-center justify-center project-box bg-red-300 rounded-xl">
+        @include('sections.dogApi')
     </div>
 
+    <!-- Horizontal Scroll for Remaining Projects -->
+    <section class="horizontal-wrapper">
+        <div class="horizontal-container">
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-red-300">
+                @include('sections.dogApi2')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-blue-300">
+                @include('sections.dogApi3')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300">
+                @include('sections.driverApp')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-yellow-300">
+                @include('sections.financeApp')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-purple-300">
+                @include('sections.box1')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-pink-300">
+                @include('sections.box2')
+            </div>
+            <div class="panel h-screen w-full flex items-center justify-center project-box bg-indigo-300">
+                @include('sections.box3')
+            </div>
+        </div>
+    </section>
+</section>
 
 
 
