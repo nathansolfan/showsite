@@ -65,7 +65,12 @@
 
         {{-- right --}}
         <div class="flex justify-center border-2">
-            <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md">
+            {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
+            <div class="">
+                @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
+
+            </div>
+
         </div>
 
 
@@ -104,8 +109,8 @@
 
 </div>
 
-<h1>My Dog SVG</h1>
-    @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
+
+    @include('svgs.dogs')
 
 
 

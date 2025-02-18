@@ -27,7 +27,9 @@
 <div class="project-card">
     <!-- Project Image -->
     <div class="project-image">
-        <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project">
+        {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project">
+        <h1>My Dog SVG</h1> --}}
+    {{-- @include('svgs.dogs') <!-- This will inline the code from dog.blade.php --> --}}
     </div>
 
     <!-- Project Title -->
