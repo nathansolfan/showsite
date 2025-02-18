@@ -1,5 +1,7 @@
 
-<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1024 1024"
+preserveAspectRatio="xMidYMid meet"
+style="width: 300px; height: auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_1_33)">
     <path d="M0 0H1024V1024H0V0Z" fill="#FEFEFE"/>
     <path d="M336.741 596.213C337.433 596.54 337.886 596.847 338.431 597.404C339.7 598.704 340.36 601.254 340.206 603.034C340.05 604.828 339.873 605.257 338.561 606.471C336.926 604.683 334.581 602.099 334.724 599.494C334.816 597.838 335.676 597.288 336.741 596.213Z" fill="#231F20"/>

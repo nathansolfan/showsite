@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         start: 'top center',
         pin: true,
 
-        end: `+=${scrollDistance * 2.5}`,
+        end: `+=${scrollDistance * 1.5}`,
         scrub: true,
         markers: true, // Enable markers for debugging
       }
