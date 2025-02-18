@@ -30,16 +30,16 @@
 
 
 <div
-    class="flex flex-col justify-between  w-[90%] max-w-7xl min-h-[600px] mx-auto p-8 bg-yellow-400  border-2 border-gray-900">
+    class="mt-10 flex flex-col justify-between  w-[90%] max-w-7xl min-h-[600px] mx-auto p-8 bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg">
 
     {{-- header --}}
-    <div class="flex justify-between  items-center mb-6">
+    <div class="flex justify-between items-center mb-6 border-b-2 pb-2">
         {{-- logo --}}
-        <div class="text-xl font-bold  border-2">{{ $project['name'] }}</div>
+        <div class="text-2xl font-extrabold text-grey-900  border-2">{{ $project['name'] }}</div>
         {{-- buttons mid --}}
-        <div class="flex gap-4 border-2">
-            <button>View on GitHub</button>
-            <button>Live Preview</button>
+        <div class="flex gap-4 border-2 py-2">
+            <button class="px-4 ">View on GitHub</button>
+            <button class="px-4 ">Live Preview</button>
         </div>
         {{-- right --}}
         <div class="flex gap-4 border-2">
@@ -91,18 +91,18 @@
     {{-- footer --}}
     <div class="flex justify-between items-center mt-6 border-2">
         {{-- price --}}
-        <span class="border-2">25.50</span>
+        <span class="border-2">Completed 2024</span>
 
         {{-- quantity --}}
         <div class="border-2">
             <button>-</button>
-            <span>2</span>
+            <span>Pictures</span>
             <button>+</button>
         </div>
 
         {{-- buy now --}}
         <button class="border-2">
-            Buy now
+            Check blog
         </button>
 
     </div>
