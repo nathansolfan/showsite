@@ -38,25 +38,23 @@
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-grey-900  border-2">{{ $project['name'] }}</div>
         {{-- buttons mid --}}
-        <div class="flex flex-col sm:flex-row gap-4  py-2">
+        <div class="flex flex-col sm:flex-row gap-4 py-2">
             <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
             <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
         {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4 border-2 justify-center items-center">
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center">
 
-            <button class="flex items-center gap-2 px-4 py-2 border-2">
+            <button class="flex items-center gap-2 px-4 py-2">
                 @include('svgs.nexticon')
             </button>
-            <button class="px-4 py-2">Feedback</button>
         </div>
     </div>
 
     {{-- center part --}}
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
-        <div class="border-2">
-
+        <div class="">
             <div>
                 <h1 class="text-4xl font-bold text-gray-900">🚀 Dogerator: The Ultimate Dog Image Generator!
                 </h1>
@@ -68,7 +66,7 @@
 
 
         {{-- right --}}
-        <div class="flex justify-center ">
+        <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
@@ -78,7 +76,7 @@
         </div>
 
 
-        <div class="flex flex-col justify-center lg:items-end items-center p-4 gap-12 ">
+        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $item)
                 <div class="tech-item flex flex-col ">
                     @if (isset($item['image']))
