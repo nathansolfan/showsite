@@ -38,9 +38,9 @@
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-grey-900  border-2">{{ $project['name'] }}</div>
         {{-- buttons mid --}}
-        <div class="flex flex-col sm:flex-row gap-4 border-2 py-2">
-            <button class="px-4 ">View on GitHub</button>
-            <button class="px-4 ">Live Preview</button>
+        <div class="flex flex-col sm:flex-row gap-4  py-2">
+            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
+            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
         {{-- right --}}
         <div class="flex flex-wrap sm:flex-row flex-col gap-4 border-2 justify-center items-center">
@@ -53,7 +53,7 @@
     </div>
 
     {{-- center part --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
         <div class="border-2">
 
@@ -68,7 +68,7 @@
 
 
         {{-- right --}}
-        <div class="flex justify-center border-2">
+        <div class="flex justify-center ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
@@ -78,12 +78,12 @@
         </div>
 
 
-        <div class="flex flex-col justify-center items-center p-4 gap-12">
+        <div class="flex flex-col justify-center lg:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $item)
-                <div class="tech-item flex flex-col items-center">
+                <div class="tech-item flex flex-col ">
                     @if (isset($item['image']))
                         {{-- <img src="{{ asset($item['image']) }}" class="w-12 h-12 object-contain" alt="{{ $item['title'] }}"> --}}
-                        <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center items-center">
+                        <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center ">
                             @include('svgs.expoicon') <!-- This will inline the code from dog.blade.php -->
                         </div>
 
@@ -100,24 +100,23 @@
 
 
 
-    {{-- footer --}}
+    {{-- footer
     <div class="flex justify-between items-center mt-6 border-2">
-        {{-- price --}}
+
         <span class="border-2">Completed 2024</span>
 
-        {{-- quantity --}}
+
         <div class="border-2">
             <button>-</button>
             <span>Pictures</span>
             <button>+</button>
         </div>
 
-        {{-- buy now --}}
+
         <button class="border-2">
             Check blog
         </button>
-
-    </div>
+    </div> --}}
 
 </div>
 
