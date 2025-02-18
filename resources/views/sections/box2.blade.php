@@ -1,5 +1,4 @@
-<div class="h-screen w-full flex items-center justify-center bg-blue-200">
-    @php
+@php
     // Sample data you might pass from a controller or define right here
     $project = [
         'name' => 'Dogerator',
@@ -34,32 +33,35 @@
     class="mt-10 flex flex-col justify-between  w-[90%] max-w-7xl h-auto
  mx-auto p-8 bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg">
 
-    {{-- header --}}
-    <div class="flex justify-between items-center mb-6 border-b-2 pb-2">
+    {{-- header  border-b-2 --}}
+    <div class="flex justify-between items-center  ">
         {{-- logo --}}
-        <div class="text-2xl font-extrabold text-grey-900  border-2">{{ $project['name'] }}</div>
+        <div class="text-2xl font-extrabold text-gray-900  ">
+            <div class="scale-150">
+                @include('svgs.doglogo')
+            </div>
+
+        </div>
         {{-- buttons mid --}}
-        <div class="flex flex-col sm:flex-row gap-4  py-2">
-            <button class="px-4 ">View on GitHub</button>
-            <button class="px-4 ">Live Preview</button>
+        <div class="flex flex-col sm:flex-row gap-4 py-2">
+            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
+            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
         {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4 border-2 justify-center items-center">
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center">
 
-            <button class="flex items-center gap-2 px-4 py-2 border-2">
+            <button class="flex items-center gap-2 px-4 py-2">
                 @include('svgs.nexticon')
             </button>
-            <button class="px-4 py-2">Feedback</button>
         </div>
     </div>
 
     {{-- center part --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
-        <div class="border-2">
-
+        <div class="">
             <div>
-                <h1 class="text-4xl font-bold text-gray-900">🚀 Dogerator: The Ultimate Dog Image Generator!
+                <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator!
                 </h1>
                 <p class="text-lg text-gray-700 mt-2">This app generates
                     random adorable dog images using an API. </p>
@@ -69,7 +71,7 @@
 
 
         {{-- right --}}
-        <div class="flex justify-center ">
+        <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
@@ -79,7 +81,7 @@
         </div>
 
 
-        <div class="flex flex-col justify-center lg:items-end items-center p-4 gap-12 ">
+        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $item)
                 <div class="tech-item flex flex-col ">
                     @if (isset($item['image']))
@@ -87,7 +89,6 @@
                         <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center ">
                             @include('svgs.expoicon') <!-- This will inline the code from dog.blade.php -->
                         </div>
-
                     @else
                         <i class="{{ $item['icon'] }} text-5xl text-gray-900"></i>
                     @endif
@@ -121,9 +122,4 @@
 
 </div>
 
-{{--`x --}}
-
-
-
-
-</div>
+{{-- `x --}}
