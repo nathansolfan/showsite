@@ -10,9 +10,9 @@
         'imageUrl' => asset('images/dogsAI.jpg'), // path to your image
         'tech' => [
             [
-                'icon' => 'fab fa-laravel',
-                'title' => 'Laravel',
-                'desc' => 'A powerful PHP framework for building scalable web applications.',
+                'image' => asset('images/expogo.png'), // Correct path to the image in public/images
+                'title' => 'Expo Go',
+                'desc' => 'An open-source platform for building React Native apps.',
             ],
             [
                 'icon' => 'fab fa-react',
@@ -30,26 +30,30 @@
 
 
 <div
-    class="mt-10 flex flex-col justify-between  w-[90%] max-w-7xl min-h-[600px] mx-auto p-8 bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg">
+    class="mt-10 flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+ mx-auto p-8 bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg">
 
     {{-- header --}}
     <div class="flex justify-between items-center mb-6 border-b-2 pb-2">
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-grey-900  border-2">{{ $project['name'] }}</div>
         {{-- buttons mid --}}
-        <div class="flex gap-4 border-2 py-2">
+        <div class="flex flex-col sm:flex-row gap-4 border-2 py-2">
             <button class="px-4 ">View on GitHub</button>
             <button class="px-4 ">Live Preview</button>
         </div>
         {{-- right --}}
-        <div class="flex gap-4 border-2">
-            <button>Next</button>
-            <button>Feedback</button>
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4 border-2 justify-center items-center">
+
+            <button class="flex items-center gap-2 px-4 py-2 border-2">
+                @include('svgs.nexticon')
+            </button>
+            <button class="px-4 py-2">Feedback</button>
         </div>
     </div>
 
     {{-- center part --}}
-    <div class="grid grid-cols-3 gap-8 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
         {{-- left --}}
         <div class="border-2">
 
@@ -74,14 +78,22 @@
         </div>
 
 
-        <div class="border-2 flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center p-4 gap-12">
             @foreach ($project['tech'] as $item)
-                <div class="tech-item ">
-                    <i class="{{ $item['icon'] }}"></i>
-                    <span>{{ $item['title'] }}</span>
+                <div class="tech-item flex flex-col items-center">
+                    @if (isset($item['image']))
+                        {{-- <img src="{{ asset($item['image']) }}" class="w-12 h-12 object-contain" alt="{{ $item['title'] }}"> --}}
+                        <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center items-center">
+                            @include('svgs.expoicon') <!-- This will inline the code from dog.blade.php -->
+                        </div>
+
+                    @else
+                        <i class="{{ $item['icon'] }} text-5xl text-gray-900"></i>
+                    @endif
                 </div>
             @endforeach
         </div>
+
 
     </div>
 
@@ -109,8 +121,7 @@
 
 </div>
 
-
-    @include('svgs.dogs')
+{{--`x --}}
 
 
 
