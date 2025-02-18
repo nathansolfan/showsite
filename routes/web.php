@@ -58,3 +58,7 @@ Route::get('/projects/dogapi1', [ProjectController::class, 'dogApi1'])->name('pr
 Route::get('/projects/dogapi2', [ProjectController::class, 'dogApi2'])->name('projects.dogapi2');
 
 
+// SVG
+Route::get('/dogs', function () {
+    return view('svgs.dogs');
+});

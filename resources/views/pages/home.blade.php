@@ -102,7 +102,7 @@
             <div class="panel h-screen w-full flex items-center justify-center project-box bg-red-300">
                 @include('sections.dogApi2')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-blue-300">
+            <div class="">
                 @include('sections.dogApi3')
             </div>
             <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300">
