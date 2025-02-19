@@ -31,7 +31,7 @@
 
 <div
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
- mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg">
+ mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
     <div class="flex justify-between items-center  ">
@@ -43,7 +43,7 @@
 
         </div>
         {{-- buttons mid --}}
-        <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-2">
+        <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-2 ">
             <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
             <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
@@ -59,7 +59,7 @@
     {{-- center part --}}
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
-        <div class="">
+        <div class="p-8">
             <div>
                 <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator!
                 </h1>

@@ -10,9 +10,9 @@
         'imageUrl' => asset('images/dogsAI.jpg'), // path to your image
         'tech' => [
             [
-                'image' => asset('images/expogo.png'), // Correct path to the image in public/images
-                'title' => 'Expo Go',
-                'desc' => 'An open-source platform for building React Native apps.',
+                'icon' => 'fab fa-laravel',
+                'title' => 'Laravel',
+                'desc' => 'Efficiently managing UI with reusable components and state management.',
             ],
             [
                 'icon' => 'fab fa-react',
@@ -102,24 +102,7 @@
 
 
 
-    {{-- footer
-    <div class="flex justify-between items-center mt-6 border-2">
-
-        <span class="border-2">Completed 2024</span>
-
-
-        <div class="border-2">
-            <button>-</button>
-            <span>Pictures</span>
-            <button>+</button>
-        </div>
-
-
-        <button class="border-2">
-            Check blog
-        </button>
-    </div> --}}
 
 </div>
 
-{{-- `x --}}
+
