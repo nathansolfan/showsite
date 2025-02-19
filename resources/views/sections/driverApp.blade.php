@@ -47,3 +47,32 @@
 
 </div>
 
+<div class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
+
+{{-- header  border-b-2 --}}
+<div class="flex justify-between items-center  ">
+    {{-- logo --}}
+    <div class="text-2xl font-extrabold text-gray-900  ">
+        <div class="scale-125">
+            @include('svgs.doglogo')
+        </div>
+
+    </div>
+    {{-- buttons mid --}}
+    <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-2 ">
+        <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
+        <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
+    </div>
+
+    {{-- right --}}
+    <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center -mt-12 pr-2">
+
+        <button class="flex items-center gap-2">
+            @include('svgs.nexticon')
+        </button>
+    </div>
+</div>
+
+</div>
+
