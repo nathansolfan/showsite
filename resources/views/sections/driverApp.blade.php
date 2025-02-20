@@ -27,7 +27,8 @@
 
 
 <div
-class="border-2">
+    class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+ mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
     <div class=" ">

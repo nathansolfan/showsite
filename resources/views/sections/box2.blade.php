@@ -3,16 +3,16 @@
     $project = [
         'name' => 'Dogerator',
         'subtitle' => 'We are all dog lovers now', // optional tagline
-        'description' => 'A random dog image generator using an API to fetch adorable dog photos...',
+        'description' => 'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
         'tags' => ['Case Study', 'API', 'React.js', 'Laravel'], // example tags
-        'githubUrl' => 'https://github.com/...',
-        'liveUrl' => 'https://dog-photo-app-one.vercel.app/',
+        'githubUrl' => 'https://github.com/nathansolfan/DriverApp',
+        'liveUrl' => 'https://driverapp.duckdns.org/',
         'imageUrl' => asset('images/dogsAI.jpg'), // path to your image
         'tech' => [
             [
-                'image' => asset('images/expogo.png'), // Correct path to the image in public/images
-                'title' => 'Expo Go',
-                'desc' => 'An open-source platform for building React Native apps.',
+                'icon' => 'fab fa-laravel',
+                'title' => 'Laravel',
+                'desc' => 'Efficiently managing UI with reusable components and state management.',
             ],
             [
                 'icon' => 'fab fa-react',
@@ -30,11 +30,11 @@
 
 
 <div
-    class="flex flex-col justify-around  w-[90%] max-w-7xl h-[50%]
- mx-auto bg-red-400  border-2 border-gray-900 rounded-lg shadow-lg ">
+    class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+ mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-center ml-0 -mt-20  ">
+    <div class="flex justify-between items-center  ">
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-gray-900  ">
             <div class="scale-125">
@@ -43,42 +43,45 @@
 
         </div>
         {{-- buttons mid --}}
-        <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-20 ">
+        <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-2 ">
             <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
             <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
 
         {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4 justify-center items-center -mt-12 pr-2">
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center -mt-12 pr-2">
+
             <button class="flex items-center gap-2">
                 @include('svgs.nexticon')
             </button>
         </div>
     </div>
 
-    {{-- MIDDLE --}}
+    {{-- center part --}}
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
         <div class="p-8">
             <div>
-                <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
-                {{-- <p class="text-lg text-gray-700 mt-2">This app generates
-                    random adorable dog images using an API. </p> --}}
+                <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator!
+                </h1>
+                <p class="text-lg text-gray-700 mt-2">This app generates
+                    random adorable dog images using an API. </p>
             </div>
         </div>
 
 
 
-        {{-- ceneter --}}
+        {{-- right --}}
         <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
+
             </div>
+
         </div>
 
 
-        {{-- right --}}
         <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $item)
                 <div class="tech-item flex flex-col ">
@@ -93,29 +96,14 @@
                 </div>
             @endforeach
         </div>
+
+
     </div>
 
 
 
 
-    {{-- footer
-    <div class="flex justify-between items-center mt-6 border-2">
-
-        <span class="border-2">Completed 2024</span>
-
-
-        <div class="border-2">
-            <button>-</button>
-            <span>Pictures</span>
-            <button>+</button>
-        </div>
-
-
-        <button class="border-2">
-            Check blog
-        </button>
-    </div> --}}
 
 </div>
 
-{{-- `x --}}
+

@@ -99,9 +99,7 @@
     <!-- Horizontal Scroll for Remaining Projects -->
     <section class="horizontal-wrapper">
         <div class="horizontal-container">
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-red-300">
-                @include('sections.dogApi2')
-            </div>
+
             <div class="">
                 @include('sections.dogApi3')
             </div>
@@ -109,7 +107,7 @@
                 <div>
                 @include('sections.driverApp')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-yellow-300">
+            <div class="">
                 @include('sections.financeApp')
             </div>
             <div class="">
