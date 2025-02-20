@@ -2,19 +2,19 @@
     $project = [
         'name' => 'Hire Your Driver',
         'description' =>
-            'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
+            'Route management, bookings, payments, and driver performance analytics.',
         'githubUrl' => 'https://github.com/nathansolfan/DriverApp',
         'liveUrl' => 'https://driverapp.duckdns.org/',
         'detailsUrl' => url('/projects/driverApp'),
         'tech' => [
             [
-                'image' => asset('images/expogo.png'), // Correct path to the image in public/images
-                'title' => 'Expo Go',
+                'icon' => 'fab fa-laravel',
+                'title' => 'Laravel',
                 'desc' => 'An open-source platform for building React Native apps.',
             ],
             [
-                'icon' => 'fab fa-react',
-                'title' => 'React.js',
+                'icon' => 'fab fa-php',
+                'title' => 'PHP',
                 'desc' => 'Efficiently managing UI with reusable components and state management.',
             ],
             [
@@ -68,19 +68,19 @@
 
 <div
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
-mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
+mx-auto bg-blue-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
     <div class="flex justify-between items-center  ">
         {{-- logo --}}
-        <div class="text-2xl font-extrabold text-gray-900  ">
+        <div class="text-2xl font-extrabold text-gray-900 ml-6 -mt-2 ">
             <div class="scale-125">
-                @include('svgs.doglogo')
+                @include('svgs.driverlogo')
             </div>
 
         </div>
         {{-- buttons mid --}}
-        <div class="flex flex-wrap justify-center gap-2 -mt-12 pr-2 ">
+        <div class="flex flex-wrap justify-center gap-2 -mt-4 pr-20 ">
             <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
             <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
@@ -98,7 +98,7 @@ mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
     {{-- MIDDLE --}}
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
-        <div>
+        <div class="p-8">
             <div>
                 <h1 class="text-4xl font-bold text-gray-900"> {{$project['description']}} </h1>
                 <p class="text-lg text-gray-700 mt-2"> This app generates random adorable dog images using an API.</p>
@@ -106,25 +106,26 @@ mx-auto bg-yellow-400  border-2 border-gray-900 rounded-lg shadow-lg ">
         </div>
 
         {{-- center --}}
-        <div>
+        <div class="flex justify-end mt-4 ">
             <div>
                 @include('svgs.driver')
             </div>
         </div>
 
         {{-- right --}}
+
         <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $tech)
     <div class="tech-item flex flex-col">
         @if (isset($tech['image']))
-            <div class="w-14 h-14 flex justify-center">
+                        <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center ">
                 @include('svgs.expoicon')
             </div>
         @else
             <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
         @endif
-        <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3>
-        <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p>
+        {{-- <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3> --}}
+        {{-- <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p> --}}
     </div>
 @endforeach
 
