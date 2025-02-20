@@ -70,7 +70,7 @@
 
 
 
-        {{-- right --}}
+        {{-- ceneter --}}
         <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
@@ -81,6 +81,7 @@
         </div>
 
 
+        {{-- right --}}
         <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $item)
                 <div class="tech-item flex flex-col ">
