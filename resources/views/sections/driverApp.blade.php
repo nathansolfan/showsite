@@ -1,8 +1,7 @@
 @php
     $project = [
         'name' => 'Hire Your Driver',
-        'description' =>
-            'Route management, bookings, payments, and driver performance analytics.',
+        'description' => 'Route, bookings, payments, and driver performance analytics.',
         'githubUrl' => 'https://github.com/nathansolfan/DriverApp',
         'liveUrl' => 'https://driverapp.duckdns.org/',
         'detailsUrl' => url('/projects/driverApp'),
@@ -67,13 +66,13 @@
 </div> --}}
 
 <div
-    class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+class="flex flex-col justify-around  w-[90%] max-w-7xl h-[50%]
 mx-auto bg-blue-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-center  ">
+    <div class="flex justify-between items-center ml-2 -mt-12 ">
         {{-- logo --}}
-        <div class="text-2xl font-extrabold text-gray-900 ml-6 -mt-2 ">
+        <div class="text-2xl font-extrabold text-gray-900  ">
             <div class="scale-125">
                 @include('svgs.driverlogo')
             </div>
@@ -100,37 +99,34 @@ mx-auto bg-blue-400  border-2 border-gray-900 rounded-lg shadow-lg ">
         {{-- left --}}
         <div class="p-8">
             <div>
-                <h1 class="text-4xl font-bold text-gray-900"> {{$project['description']}} </h1>
-                <p class="text-lg text-gray-700 mt-2"> This app generates random adorable dog images using an API.</p>
+                <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
+                {{-- <p class="text-lg text-gray-700 mt-2"> This app generates random adorable dog images using an API.</p> --}}
             </div>
         </div>
 
         {{-- center --}}
-        <div class="flex justify-end mt-4 ">
-            <div>
+        <div class=" ">
+            <div class=>
                 @include('svgs.driver')
             </div>
         </div>
 
         {{-- right --}}
-
         <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
             @foreach ($project['tech'] as $tech)
-    <div class="tech-item flex flex-col">
-        @if (isset($tech['image']))
+                <div class="tech-item flex flex-col">
+                    @if (isset($tech['image']))
                         <div class="w-14 h-14 md:w-14 md:h-14 flex justify-center ">
-                @include('svgs.expoicon')
-            </div>
-        @else
-            <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
-        @endif
-        {{-- <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3> --}}
-        {{-- <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p> --}}
-    </div>
-@endforeach
-
+                            @include('svgs.expoicon')
+                        </div>
+                    @else
+                        <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
+                    @endif
+                    {{-- <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3> --}}
+                    {{-- <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p> --}}
+                </div>
+            @endforeach
         </div>
-
     </div>
 
 

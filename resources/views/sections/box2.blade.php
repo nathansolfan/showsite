@@ -30,11 +30,11 @@
 
 
 <div
-    class="flex flex-col justify-around  w-[90%] max-w-7xl h-auto
+    class="flex flex-col justify-around  w-[90%] max-w-7xl h-[50%]
  mx-auto bg-red-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-center  ">
+    <div class="flex justify-between items-center ml-0 -mt-20  ">
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-gray-900  ">
             <div class="scale-125">
@@ -56,15 +56,14 @@
         </div>
     </div>
 
-    {{-- center part --}}
+    {{-- MIDDLE --}}
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 items-center justify-center">
         {{-- left --}}
         <div class="p-8">
             <div>
-                <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator!
-                </h1>
-                <p class="text-lg text-gray-700 mt-2">This app generates
-                    random adorable dog images using an API. </p>
+                <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
+                {{-- <p class="text-lg text-gray-700 mt-2">This app generates
+                    random adorable dog images using an API. </p> --}}
             </div>
         </div>
 
@@ -75,9 +74,7 @@
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
-
             </div>
-
         </div>
 
 
@@ -96,8 +93,6 @@
                 </div>
             @endforeach
         </div>
-
-
     </div>
 
 
