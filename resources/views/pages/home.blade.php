@@ -100,9 +100,9 @@
     <section class="horizontal-wrapper">
         <div class="horizontal-container">
 
-            <div class="">
+            {{-- <div class="">
                 @include('sections.dogApi3')
-            </div>
+            </div> --}}
             {{-- <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300"> --}}
                 <div>
                 @include('sections.driverApp')
