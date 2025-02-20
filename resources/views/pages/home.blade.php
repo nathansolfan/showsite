@@ -105,19 +105,20 @@
             <div class="">
                 @include('sections.dogApi3')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300">
+            {{-- <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300"> --}}
+                <div>
                 @include('sections.driverApp')
             </div>
             <div class="panel h-screen w-full flex items-center justify-center project-box bg-yellow-300">
                 @include('sections.financeApp')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-purple-300">
+            <div class="">
                 @include('sections.box1')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-pink-300">
+            <div class="">
                 @include('sections.box2')
             </div>
-            <div class="panel h-screen w-full flex items-center justify-center project-box bg-indigo-300">
+            <div class="">
                 @include('sections.box3')
             </div>
         </div>
