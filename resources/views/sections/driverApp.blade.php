@@ -41,8 +41,8 @@
         </div>
         {{-- buttons mid --}}
         <div class="flex gap-4 ">
-            <button class="text-4xl"> <i class="fa-brands fa-github"></i> </button>
-            <button class="text-4xl"> <i class="fa-solid fa-eye"></i> </button>
+            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
+            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
         </div>
 
         {{-- right --}}
@@ -89,16 +89,5 @@
             @endforeach
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 </div>

@@ -5,30 +5,100 @@
         'description' => 'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
         'githubUrl' => 'https://github.com/nathansolfan/financeTracker',
         'liveUrl' => 'https://financetrackeruk.duckdns.org/login',
+        'tech' => [
+            [
+                'icon' => 'fab fa-laravel',
+                'title' => 'Laravel',
+                'desc' => 'Efficiently managing UI with reusable components and state management.',
+            ],
+            [
+                'icon' => 'fab fa-react',
+                'title' => 'React.js',
+                'desc' => 'Efficiently managing UI with reusable components and state management.',
+            ],
+            [
+                'icon' => 'fab fa-js',
+                'title' => 'JavaScript',
+                'desc' => 'Enhancing interactivity and dynamic features on web applications.',
+            ],
+        ],
     ];
 @endphp
 
-<div class="project-item relative flex flex-col justify-center items-center text-center bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 duration-300 ease-in-out border border-gray-200 mb-8 min-h-[500px] overflow-hidden">
-    <!-- Project Image -->
-    <div class="w-full h-48 overflow-hidden rounded-t-xl">
-        <img src="{{ asset('images/financephoto.jpg') }}" alt="Driver App Project" class="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110">
+<div
+    class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
+ mx-auto bg-red-400  border-2 border-gray-900 rounded-lg shadow-lg ">
+
+    {{-- header  border-b-2 --}}
+    <div class="flex justify-between items-center  ">
+        {{-- logo --}}
+        <div class="text-2xl font-extrabold text-gray-900  ">
+            <div class="scale-125">
+                @include('svgs.doglogo')
+            </div>
+
+        </div>
+        {{-- buttons mid --}}
+        <div class="flex gap-4 ">
+            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
+            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
+        </div>
+
+        {{-- right --}}
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center -mt-12 pr-2">
+
+            <button class="flex items-center gap-2">
+                @include('svgs.nexticon')
+            </button>
+        </div>
     </div>
 
-    <!-- Project Title and Description -->
-    <h3 class="text-3xl font-semibold text-gray-900 mt-4 hover:text-blue-500">{{ $project['name'] }}</h3>
-    <p class="text-base text-gray-500 mt-4 leading-relaxed">{{ $project['description'] }}</p>
+    {{-- MIDDLE --}}
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-center">
+        {{-- left --}}
+        <div class="p-8">
+            <div>
+                <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
+                <p class="text-lg text-gray-700 mt-2">This app generates
+                    random adorable dog images using an API. </p>
+            </div>
+        </div>
 
-    <!-- Buttons Container -->
-    <div class="mt-6 flex space-x-4">
-        <!-- GitHub Button -->
-        <a href="{{ $project['githubUrl'] }}" target="_blank" class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
-            <i class="fab fa-github"></i> View on GitHub
 
 
-        <!-- Live Preview Button -->
-        <a href="{{ $project['liveUrl'] }}" target="_blank" class="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 bg-transparent px-7 py-3 rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-gray-900 hover:text-white hover:shadow-lg active:translate-y-[1px]">
-            <i class="fas fa-external-link-alt"></i> Live Preview
+        {{-- right --}}
+        <div class="flex justify-center mt-4 ">
+            {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
+            <div class="">
+                @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
 
-        </a>
+            </div>
+        </div>
+
+        {{-- right --}}
+        <div class="flex flex-col-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-4">
+            @foreach ($project['tech'] as $tech)
+                <div class="tech-item flex flex-col">
+                    @if (isset($tech['image']))
+                        <div class="">
+                            @include('svgs.expoicon')
+                        </div>
+                    @else
+                        <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
+                    @endif
+                    {{-- <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3> --}}
+                    {{-- <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p> --}}
+                </div>
+            @endforeach
+        </div>
+
+
     </div>
+
+
+
+
+
 </div>
+
+
