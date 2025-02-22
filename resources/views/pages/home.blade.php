@@ -82,32 +82,31 @@
         @include('sections.dogApi')
     </div> --}}
 
-    <!-- Horizontal Scroll for Remaining Projects -->
-    <section class="horizontal-wrapper">
-        <div class="horizontal-container">
+    <section id="projects" class="mt-20">
+        <div class="flex flex-col space-y-8">
+          <!-- First Project Card -->
+          <div class="min-h-screen w-full flex items-center">
+            <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto rounded-lg shadow-lg">
+              @include('sections.driverApp')
+            </div>
+          </div>
 
-            {{-- <div class="">
-                @include('sections.dogApi3')
-            </div> --}}
-            {{-- <div class="panel h-screen w-full flex items-center justify-center project-box bg-green-300"> --}}
-                <div>
-                @include('sections.driverApp')
+          <!-- Second Project Card -->
+          <div class="min-h-screen w-full flex items-center">
+            <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto  rounded-lg shadow-lg">
+              @include('sections.financeApp')
             </div>
-            <div class="">
-                @include('sections.financeApp')
+          </div>
+
+          <!-- Third Project Card (if needed) -->
+          <div class="min-h-screen w-full flex items-center">
+            <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto rounded-lg shadow-lg">
+              @include('sections.box2')
             </div>
-            {{-- <div class="">
-                @include('sections.box1')
-            </div> --}}
-            <div class="">
-                @include('sections.box2')
-            </div>
-            {{-- <div class="">
-                @include('sections.box3')
-            </div> --}}
+          </div>
         </div>
-    </section>
-</section>
+      </section>
+
 
 
 

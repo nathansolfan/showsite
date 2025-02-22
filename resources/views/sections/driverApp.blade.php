@@ -56,7 +56,7 @@
 
 
     {{-- MIDDLE --}}
-    <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-center">
         {{-- left --}}
         <div class="p-8">
             <div>
