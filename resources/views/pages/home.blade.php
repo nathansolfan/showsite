@@ -92,9 +92,9 @@
  <!-- Projects Section -->
  <section id="projects" class="mt-20">
     <!-- Pinned First Project -->
-    <div class="first-project h-screen w-full flex items-center justify-center project-box bg-red-300 rounded-xl">
+    {{-- <div class="first-project h-screen w-full flex items-center justify-center project-box bg-red-300 rounded-xl">
         @include('sections.dogApi')
-    </div>
+    </div> --}}
 
     <!-- Horizontal Scroll for Remaining Projects -->
     <section class="horizontal-wrapper">
@@ -110,15 +110,15 @@
             <div class="">
                 @include('sections.financeApp')
             </div>
-            <div class="">
+            {{-- <div class="">
                 @include('sections.box1')
-            </div>
+            </div> --}}
             <div class="">
                 @include('sections.box2')
             </div>
-            <div class="">
+            {{-- <div class="">
                 @include('sections.box3')
-            </div>
+            </div> --}}
         </div>
     </section>
 </section>

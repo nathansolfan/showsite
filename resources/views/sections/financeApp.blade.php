@@ -25,7 +25,7 @@
     ];
 @endphp
 
-<div class="h-screen w-full flex items-center">
+<div class="h-screen w-full flex items-center border-2 border-gray-900 ">
 
 <div
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
@@ -61,8 +61,8 @@
         <div class="p-8">
             <div>
                 <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
-                <p class="text-lg text-gray-700 mt-2">This app generates
-                    random adorable dog images using an API. </p>
+                {{-- <p class="text-lg text-gray-700 mt-2">This app generates
+                    random adorable dog images using an API. </p> --}}
             </div>
         </div>
 
@@ -72,7 +72,7 @@
         <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
-                @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
+                @include('svgs.finance') <!-- This will inline the code from dog.blade.php -->
 
             </div>
         </div>
@@ -93,8 +93,6 @@
                 </div>
             @endforeach
         </div>
-
-
     </div>
 </div>
 </div>
