@@ -66,26 +66,12 @@
     </div>
 
 
-    {{-- <!-- Animated Square Section -->
-    <div class="absolute top-0 right-0 w-full h-full pointer-events-none z-50">
-        <div id="animated-square" class="w-16 h-16 bg-blue-500 fixed top-20 right-10"></div>
-    </div> --}}
 
 
     <!-- Skills Section -->
     <div class="mt-12 ">
         @include('pages.skillsStatic')
     </div>
-
- {{-- <!-- BIG LONG TEXT Section -->
-<div class="scroll-text-container overflow-hidden w-full py-6 bg-gray-100 text-right mb-32">
-    <p class="scroll-text whitespace-nowrap text-9xl font-bold">Plentiful projects...</p>
-    <p id="line2" class="whitespace-nowrap text-9xl font-bold text-left">Adopting great ideas</p>
-    <p id="line3" class="whitespace-nowrap text-9xl font-bold text-center">Though many tools</p>
-</div> --}}
-
-
-
 
 
 
@@ -164,25 +150,6 @@
 
 
 
-    {{-- <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to("#animated-square", {
-            scrollTrigger: {
-                trigger: "body", // The whole page
-                start: "top top", // Start when the page loads
-                end: "bottom bottom", // End when you reach the bottom
-                scrub: true, // Smooth scrolling effect
-                pin: false, // Don't stick it
-            },
-            y: window.innerHeight - 100, // Move down the full screen height
-            x: window.innerWidth - 100, // Move right as well
-            rotation: 360, // Rotate while moving
-            scale: 1.5, // Scale up
-            backgroundColor: "#4F46E5", // Change color
-            ease: "power2.out",
-        });
-    </script> --}}
 
 
 </x-layout>

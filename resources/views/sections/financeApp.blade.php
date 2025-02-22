@@ -25,7 +25,7 @@
     ];
 @endphp
 
-<div class="h-screen w-full flex items-center border-2 border-gray-900 ">
+<div class="min-h-screen w-full flex items-center  ">
 
 <div
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
