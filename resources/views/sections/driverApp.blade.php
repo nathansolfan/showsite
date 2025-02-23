@@ -30,29 +30,30 @@
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
  mx-auto bg-blue-400  border-2 border-gray-900 rounded-lg shadow-lg  ">
 
-    {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-center ">
-        {{-- logo --}}
-        <div class="text-2xl font-extrabold text-gray-900  ">
-            <div class="">
-                @include('svgs.driverlogo')
-            </div>
-
-        </div>
-        {{-- buttons mid --}}
-        <div class="flex gap-4 ">
-            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
-            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
-        </div>
-
-        {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4 justify-center items-center -mt-12 pr-2">
-
-            <button class="">
-                @include('svgs.nexticon')
-            </button>
-        </div>
+ <div class="flex justify-between items-start ">
+    <!-- logo -->
+    <div class="text-2xl font-extrabold text-gray-900">
+        @include('svgs.driverlogo')
     </div>
+
+    <!-- buttons mid -->
+    <div class="flex">
+        <button class="px-4 text-4xl">
+            <i class="fa-brands fa-github"></i>
+        </button>
+        <button class="px-4 text-4xl">
+            <i class="fa-solid fa-eye"></i>
+        </button>
+    </div>
+
+    <!-- right -->
+    <div class="flex flex-wrap sm:flex-row flex-col gap-4 justify-center items-center">
+        <button>
+            @include('svgs.nexticon')
+        </button>
+    </div>
+</div>
+
 
 
     {{-- MIDDLE --}}
@@ -73,7 +74,7 @@
         </div>
 
         {{-- right --}}
-        <div class="flex flex-col-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-4">
+        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
             @foreach ($project['tech'] as $tech)
                 <div class="tech-item flex flex-col">
                     @if (isset($tech['image']))

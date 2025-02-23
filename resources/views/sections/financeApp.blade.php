@@ -78,7 +78,7 @@
         </div>
 
         {{-- right --}}
-        <div class="flex flex-col-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-4">
+        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
             @foreach ($project['tech'] as $tech)
                 <div class="tech-item flex flex-col">
                     @if (isset($tech['image']))

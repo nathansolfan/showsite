@@ -62,7 +62,7 @@
         {{-- left --}}
         <div class="p-8">
             <div>
-                <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator!
+                <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator! Choose your favorite dog or change to a new one
                 </h1>
                 {{-- <p class="text-lg text-gray-700 mt-2">This app generates
                     random adorable dog images using an API. </p> --}}
@@ -76,13 +76,11 @@
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
             <div class="">
                 @include('svgs.dogs') <!-- This will inline the code from dog.blade.php -->
-
             </div>
-
         </div>
 
 
-        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-12 ">
+        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
             @foreach ($project['tech'] as $item)
                 <div class="tech-item flex flex-col ">
                     @if (isset($item['image']))
