@@ -64,8 +64,8 @@
             <div>
                 <h1 class="text-4xl font-bold text-gray-900">🐾 <br> The Ultimate Dog Image Generator! Choose your favorite dog or change to a new one
                 </h1>
-                {{-- <p class="text-lg text-gray-700 mt-2">This app generates
-                    random adorable dog images using an API. </p> --}}
+                <p class="text-lg text-gray-700 mt-2">This app generates
+                    random adorable dog images using an API. </p>
             </div>
         </div>
 
