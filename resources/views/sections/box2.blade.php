@@ -32,7 +32,7 @@
   <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto bg-yellow-400 border-2 border-gray-900 rounded-lg shadow-lg">
 
     {{-- header --}}
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center p-4">
         {{-- logo --}}
         <div class="text-2xl font-extrabold text-gray-900">
             <div class="text-2xl scale-125 font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-150">

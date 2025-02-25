@@ -26,15 +26,14 @@
 @endphp
 
 <div class="min-h-screen w-full flex items-center  ">
-
 <div
     class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
  mx-auto bg-red-400  border-2 border-gray-900 rounded-lg shadow-lg ">
 
     {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-center  ">
+    <div class="flex justify-between items-start p-4">
         {{-- logo --}}
-        <div class="text-2xl font-extrabold text-gray-900  ">
+        <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-105">
             <div class="scale-125">
                 @include('svgs.doglogo')
             </div>
@@ -42,14 +41,14 @@
         </div>
         {{-- buttons mid --}}
         <div class="flex gap-4 ">
-            <button class="px-4 text-4xl"> <i class="fa-brands fa-github"></i> </button>
-            <button class="px-4 text-4xl"> <i class="fa-solid fa-eye"></i> </button>
+            <button class="px-4 text-4xl transition duration-300 transform hover:scale-110"> <i class="fa-brands fa-github"></i> </button>
+            <button class="px-4 text-4xl transition duration-300 transform hover:scale-110"> <i class="fa-solid fa-eye"></i> </button>
         </div>
 
         {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center -mt-12 pr-2">
+        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center ">
 
-            <button class="flex items-center gap-2">
+            <button class="transition duration-300 transform hover:rotate-12">
                 @include('svgs.nexticon')
             </button>
         </div>
@@ -71,7 +70,7 @@
         {{-- right --}}
         <div class="flex justify-center mt-4 ">
             {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
-            <div class="">
+            <div class="transition duration-300 transform hover:scale-105">
                 @include('svgs.finance') <!-- This will inline the code from dog.blade.php -->
 
             </div>
@@ -80,7 +79,7 @@
         {{-- right --}}
         <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
             @foreach ($project['tech'] as $tech)
-                <div class="tech-item flex flex-col">
+                <div class="tech-item flex flex-col items-center transition duration-300 transform hover:scale-105">
                     @if (isset($tech['image']))
                         <div class="">
                             @include('svgs.expoicon')
