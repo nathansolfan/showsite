@@ -27,6 +27,8 @@
             <a href="/contact" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Contact</a>
             <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a>
             <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">Feedback</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
+
         </div>
     </div>
 
@@ -39,6 +41,8 @@
             <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
             <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Workss</a>
             <a href="{{ route('feedback') }}" class="block text-white hover:text-gray-100">Feedback</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
+
         </div>
     </div>
 </nav>

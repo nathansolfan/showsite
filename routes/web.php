@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
@@ -52,10 +53,9 @@ Route::get('/workss', function(Request $request, GitHubController $controller) {
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
+// BLOG Route
+Route::resource('/blog', BlogController::class);
 
-Route::resource('projects', ProjectController::class);
-Route::get('/projects/dogapi1', [ProjectController::class, 'dogApi1'])->name('projects.dogapi1');
-Route::get('/projects/dogapi2', [ProjectController::class, 'dogApi2'])->name('projects.dogapi2');
 
 
 // SVG
