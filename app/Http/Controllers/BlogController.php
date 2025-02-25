@@ -35,7 +35,11 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Here, $id could be a slug. For now, we check if it's 'dogProject'
+        if ($id === 'dogProject') {
+            return view('blog.dogProject');
+        }
+
     }
 
     /**

@@ -10,9 +10,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-white rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold mb-4">Blog Post Title 1</h2>
-            <p class="text-gray-700 mb-4">
-              This is a short excerpt from the first blog post. More details coming soon!
-            </p>
+            <a href="{{ route('blog.show', 'dogProject') }}" class="text-blue-600 hover:underline">View Dog Project Post</a>
             <a href="#" class="text-blue-600 hover:underline">Read More &rarr;</a>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6">
