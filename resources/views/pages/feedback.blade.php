@@ -1,32 +1,28 @@
 <x-layout>
     <!-- Display Feedback Section -->
     <section id="display-feedback" class="py-20 bg-gradient-to-r from-blue-50 to-white">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center text-gray-800">
-                <i class="fas fa-comments mr-2"></i> Feedback & Testimonials
-            </h2>
-            <p class="text-lg text-gray-600 text-center mt-4">Here’s what people I’ve worked with have to say about me.</p>
+        <div class="container mx-auto text-center">
+          <h2 class="text-4xl font-bold text-gray-800">
+            <i class="fas fa-comments mr-2"></i> Feedback & Testimonials
+          </h2>
+          <p class="text-lg text-gray-600 mt-4">
+            Here’s what people I’ve worked with have to say about me.
+          </p>
 
-            @if ($feedbacks->isEmpty())
-                <p class="text-center text-gray-500 mt-8">No feedback available yet. Be the first to leave one!</p>
-            @else
-                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach ($feedbacks as $feedback)
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                            <p class="text-gray-700 italic">"{{ $feedback->message }}"</p>
-                            <p class="mt-4 text-sm text-gray-500">- {{ $feedback->name }}</p>
-                        </div>
-                    @endforeach
+          @if ($feedbacks->isEmpty())
+            <p class="text-gray-500 mt-8">No feedback available yet. Be the first to leave one!</p>
+          @else
+            <div class="mt-10 flex flex-wrap justify-center gap-8">
+              @foreach ($feedbacks as $feedback)
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition max-w-md">
+                  <p class="text-gray-700 italic">"{{ $feedback->message }}"</p>
+                  <p class="mt-4 text-sm text-gray-500">- {{ $feedback->name }}</p>
                 </div>
-            @endif
-
-            {{-- <div class="text-center mt-10">
-                <a href="#leave-feedback" class="inline-block bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition">
-                    Leave Your Feedback
-                </a>
-            </div> --}}
+              @endforeach
+            </div>
+          @endif
         </div>
-    </section>
+      </section>
 
     <!-- Leave Feedback Section -->
     <section id="leave-feedback" class="py-20 bg-gray-50">
