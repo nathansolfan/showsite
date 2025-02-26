@@ -1,97 +1,135 @@
 @php
-    // Define project data directly in the Blade template
     $project = [
         'name' => 'Finance Tracker',
-        'description' => 'A comprehensive application for route management, bookings, payments, and driver performance analytics.',
+        'description' => 'Personal budgeting, expense tracking, and financial analytics dashboard.',
+        'tagline' => 'Take control of your financial future',
         'githubUrl' => 'https://github.com/nathansolfan/financeTracker',
         'liveUrl' => 'https://financetrackeruk.duckdns.org/login',
+        'detailsUrl' => url('/projects/financeTracker'),
+        'features' => [
+            'Expense categorization',
+            'Budget planning tools',
+            'Visual spending reports',
+        ],
         'tech' => [
             [
                 'icon' => 'fab fa-laravel',
                 'title' => 'Laravel',
-                'desc' => 'Efficiently managing UI with reusable components and state management.',
+                'desc' => 'Backend API and data management',
             ],
             [
                 'icon' => 'fab fa-react',
                 'title' => 'React.js',
-                'desc' => 'Efficiently managing UI with reusable components and state management.',
+                'desc' => 'Dynamic UI and data visualization',
             ],
             [
                 'icon' => 'fab fa-js',
                 'title' => 'JavaScript',
-                'desc' => 'Enhancing interactivity and dynamic features on web applications.',
+                'desc' => 'Interactive charts and graphs',
             ],
         ],
     ];
 @endphp
 
-<div class="min-h-screen w-full flex items-center  ">
-<div
-    class="flex flex-col justify-between  w-[90%] max-w-7xl h-auto
- mx-auto bg-red-400  border-2 border-gray-900 rounded-lg shadow-lg ">
+<div class="min-h-screen w-full flex items-center py-12">
+  <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto bg-gradient-to-br from-red-400 to-red-500 border-2 border-gray-900 rounded-2xl shadow-xl overflow-hidden transform transition-all hover:shadow-2xl">
 
-    {{-- header  border-b-2 --}}
-    <div class="flex justify-between items-start p-4">
-        {{-- logo --}}
-        <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-105">
-            <div class="scale-125">
-                @include('svgs.doglogo')
-            </div>
-
+    <!-- Header with improved contrast and spacing -->
+    <div class="flex justify-between items-start p-6 border-b-2 border-gray-800/20">
+      <!-- Logo with enhanced hover scale -->
+      <div class="flex items-center">
+        <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-110 mr-4 scale-125">
+            @include('svgs.doglogo')
         </div>
-        {{-- buttons mid --}}
-        <div class="flex gap-4 ">
-            <button class="px-4 text-4xl transition duration-300 transform hover:scale-110"> <i class="fa-brands fa-github"></i> </button>
-            <button class="px-4 text-4xl transition duration-300 transform hover:scale-110"> <i class="fa-solid fa-eye"></i> </button>
+        <div>
+          <h2 class="text-2xl font-bold text-white drop-shadow-sm">{{ $project['name'] }}</h2>
+          <p class="text-red-100">{{ $project['tagline'] }}</p>
         </div>
+      </div>
 
-        {{-- right --}}
-        <div class="flex flex-wrap sm:flex-row flex-col gap-4  justify-center items-center ">
-
-            <button class="transition duration-300 transform hover:rotate-12">
-                @include('svgs.nexticon')
-            </button>
-        </div>
+      <!-- Action buttons with labels -->
+      <div class="flex gap-4">
+        <a href="{{ $project['githubUrl'] }}" target="_blank" class="group flex flex-col items-center">
+          <div class="p-3 bg-white/90 text-red-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+            <i class="fab fa-github text-2xl"></i>
+          </div>
+          <span class="mt-1 text-xs font-medium text-white">Source</span>
+        </a>
+        <a href="{{ $project['liveUrl'] }}" target="_blank" class="group flex flex-col items-center">
+          <div class="p-3 bg-white/90 text-red-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+            <i class="fas fa-eye text-2xl"></i>
+          </div>
+          <span class="mt-1 text-xs font-medium text-white">Demo</span>
+        </a>
+      </div>
     </div>
 
-    {{-- MIDDLE --}}
-    <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-center">
-        {{-- left --}}
-        <div class="p-8">
-            <div>
-                <h1 class="text-4xl font-bold text-gray-900"> {{ $project['description'] }} </h1>
-                {{-- <p class="text-lg text-gray-700 mt-2">This app generates
-                    random adorable dog images using an API. </p> --}}
-            </div>
-        </div>
+    <!-- Middle content with better structure -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-8 p-6">
+      <!-- Left: Project Description with enhanced content -->
+      <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+        <h1 class="text-3xl font-bold text-white mb-4 drop-shadow-sm">
+          {{ $project['description'] }}
+        </h1>
 
-
-
-        {{-- right --}}
-        <div class="flex justify-center mt-4 ">
-            {{-- <img src="{{ asset('images/dogsAI.jpg') }}" alt="Dog API Project" class="w-60 h-auto rounded-lg shadow-md"> --}}
-            <div class="transition duration-300 transform hover:scale-105">
-                @include('svgs.finance') <!-- This will inline the code from dog.blade.php -->
-
-            </div>
-        </div>
-
-        {{-- right --}}
-        <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
-            @foreach ($project['tech'] as $tech)
-                <div class="tech-item flex flex-col items-center transition duration-300 transform hover:scale-105">
-                    @if (isset($tech['image']))
-                        <div class="">
-                            @include('svgs.expoicon')
-                        </div>
-                    @else
-                        <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
-                    @endif
-                    {{-- <h3 class="text-sm font-medium">{{ $tech['title'] }}</h3> --}}
-                    {{-- <p class="text-xs text-gray-600">{{ $tech['desc'] }}</p> --}}
-                </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-white mb-2">Key Features:</h3>
+          <ul class="space-y-2">
+            @foreach($project['features'] as $feature)
+              <li class="flex items-start">
+                <span class="text-white/90 mr-2">✓</span>
+                <span class="text-white/90">{{ $feature }}</span>
+              </li>
             @endforeach
+          </ul>
         </div>
+
+        <a href="{{ $project['detailsUrl'] }}" class="inline-flex items-center px-4 py-2 bg-white text-red-600 rounded-lg font-medium mt-6 hover:bg-red-50 transition-colors">
+          View Project Details
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Center: Main SVG with enhanced hover effect -->
+      <div class="flex justify-center">
+        <div class="transition-all duration-300 transform hover:scale-105 hover:rotate-1 filter drop-shadow-xl">
+          @include('svgs.finance')
+        </div>
+      </div>
+
+      <!-- Right: Tech stack with improved layout -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+        <h3 class="text-xl font-bold text-white mb-4">Tech Stack</h3>
+
+        <div class="space-y-4">
+          @foreach ($project['tech'] as $tech)
+            <div class="tech-item flex items-center gap-4 p-3 bg-white/20 rounded-lg transition-all duration-300 hover:bg-white/30 hover:transform hover:translate-x-1">
+              <div class="flex-shrink-0">
+                <i class="{{ $tech['icon'] }} text-3xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-white">{{ $tech['title'] }}</h4>
+                <p class="text-sm text-red-100">{{ $tech['desc'] }}</p>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
     </div>
-</div>
+
+    <!-- Footer with additional info -->
+    <div class="bg-red-600/30 backdrop-blur-sm p-4 border-t border-white/20 flex justify-between items-center">
+      <div class="text-white/90 text-sm">
+        <span class="mr-4"><i class="far fa-calendar-alt mr-1"></i> Last updated: Jan 2025</span>
+        <span><i class="fas fa-code-branch mr-1"></i> Version 1.3</span>
+      </div>
+
+      <a href="{{ $project['detailsUrl'] }}" class="text-white flex items-center gap-1 group">
+        Next Project
+        <div class="transition duration-300 transform group-hover:translate-x-1">
+          @include('svgs.nexticon')
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
