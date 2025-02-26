@@ -1,90 +1,135 @@
 @php
     $project = [
         'name' => 'Hire Your Driver',
-        'description' => 'Route, bookings, payments, and driver performance analytics.',
+        'description' => 'Route management, bookings, payments, and driver performance analytics.',
+        'tagline' => 'A comprehensive solution for transportation businesses',
         'githubUrl' => 'https://github.com/nathansolfan/DriverApp',
         'liveUrl' => 'https://driverapp.duckdns.org/',
         'detailsUrl' => url('/projects/driverApp'),
+        'features' => [
+            'Real-time route tracking',
+            'Secure payment processing',
+            'Performance analytics dashboard',
+        ],
         'tech' => [
             [
                 'icon' => 'fab fa-laravel',
                 'title' => 'Laravel',
-                'desc' => 'An open-source platform for building React Native apps.',
+                'desc' => 'Backend API and admin dashboard',
             ],
             [
                 'icon' => 'fab fa-php',
                 'title' => 'PHP',
-                'desc' => 'Efficiently managing UI with reusable components and state management.',
+                'desc' => 'Server-side logic and data processing',
             ],
             [
                 'icon' => 'fab fa-js',
                 'title' => 'JavaScript',
-                'desc' => 'Enhancing interactivity and dynamic features on web applications.',
+                'desc' => 'Interactive maps and real-time updates',
             ],
         ],
     ];
 @endphp
 
-<div class="min-h-screen w-full flex items-center">
-  <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto bg-blue-400 border-2 border-gray-900 rounded-lg shadow-lg">
+<div class="min-h-screen w-full flex items-center py-12">
+  <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto bg-gradient-to-br from-blue-400 to-blue-500 border-2 border-gray-900 rounded-2xl shadow-xl overflow-hidden transform transition-all hover:shadow-2xl">
 
-    <!-- Header -->
-    <div class="flex justify-between items-start p-4">
-      <!-- Logo with hover scale -->
-      <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-105">
-          @include('svgs.driverlogo')
+    <!-- Header with improved contrast and spacing -->
+    <div class="flex justify-between items-start p-6 border-b-2 border-gray-800/20">
+      <!-- Logo with enhanced hover scale -->
+      <div class="flex items-center">
+        <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-110 mr-4">
+            @include('svgs.driverlogo')
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white drop-shadow-sm">{{ $project['name'] }}</h2>
+          <p class="text-blue-100">{{ $project['tagline'] }}</p>
+        </div>
       </div>
 
-      <!-- Buttons mid with hover scale -->
-      <div class="flex">
-          <button class="px-4 text-4xl transition duration-300 transform hover:scale-110">
-              <i class="fa-brands fa-github"></i>
-          </button>
-          <button class="px-4 text-4xl transition duration-300 transform hover:scale-110">
-              <i class="fa-solid fa-eye"></i>
-          </button>
-      </div>
-
-      <!-- Next icon with a slight rotation on hover -->
-      <div class="flex flex-wrap sm:flex-row flex-col gap-4 justify-center items-center">
-          <button class="transition duration-300 transform hover:rotate-12">
-              @include('svgs.nexticon')
-          </button>
+      <!-- Action buttons with labels -->
+      <div class="flex gap-4">
+        <a href="{{ $project['githubUrl'] }}" target="_blank" class="group flex flex-col items-center">
+          <div class="p-3 bg-white/90 text-blue-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+            <i class="fab fa-github text-2xl"></i>
+          </div>
+          <span class="mt-1 text-xs font-medium text-white">Source</span>
+        </a>
+        <a href="{{ $project['liveUrl'] }}" target="_blank" class="group flex flex-col items-center">
+          <div class="p-3 bg-white/90 text-blue-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+            <i class="fas fa-eye text-2xl"></i>
+          </div>
+          <span class="mt-1 text-xs font-medium text-white">Demo</span>
+        </a>
       </div>
     </div>
 
-    <!-- MIDDLE -->
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-center">
-      <!-- Left: Project Description -->
-      <div class="p-8">
-          <div>
-              <h1 class="text-4xl font-bold text-gray-900">
-                  {{ $project['description'] }}
-              </h1>
-          </div>
+    <!-- Middle content with better structure -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-8 p-6">
+      <!-- Left: Project Description with enhanced content -->
+      <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+        <h1 class="text-3xl font-bold text-white mb-4 drop-shadow-sm">
+          {{ $project['description'] }}
+        </h1>
+
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-white mb-2">Key Features:</h3>
+          <ul class="space-y-2">
+            @foreach($project['features'] as $feature)
+              <li class="flex items-start">
+                <span class="text-white/90 mr-2">✓</span>
+                <span class="text-white/90">{{ $feature }}</span>
+              </li>
+            @endforeach
+          </ul>
+        </div>
+
+        <a href="{{ $project['detailsUrl'] }}" class="inline-flex items-center px-4 py-2 bg-white text-blue-600 rounded-lg font-medium mt-6 hover:bg-blue-50 transition-colors">
+          View Project Details
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
       </div>
 
-      <!-- Center: Main SVG with hover scale -->
-      <div class="flex justify-center mt-4">
-          <div class="transition duration-300 transform hover:scale-105">
-              @include('svgs.driver')
-          </div>
+      <!-- Center: Main SVG with enhanced hover effect -->
+      <div class="flex justify-center">
+        <div class="transition-all duration-300 transform hover:scale-105 hover:rotate-1 filter drop-shadow-xl">
+          @include('svgs.driver')
+        </div>
       </div>
 
-      <!-- Right: Tech Icons with hover scale -->
-      <div class="flex flex-col justify-center lg:items-end md:items-end items-center p-4 gap-6">
+      <!-- Right: Tech stack with improved layout -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+        <h3 class="text-xl font-bold text-white mb-4">Tech Stack</h3>
+
+        <div class="space-y-4">
           @foreach ($project['tech'] as $tech)
-              <div class="tech-item flex flex-col items-center transition duration-300 transform hover:scale-110">
-                  @if (isset($tech['image']))
-                      <div>
-                          @include('svgs.expoicon')
-                      </div>
-                  @else
-                      <i class="{{ $tech['icon'] }} text-5xl text-gray-900"></i>
-                  @endif
+            <div class="tech-item flex items-center gap-4 p-3 bg-white/20 rounded-lg transition-all duration-300 hover:bg-white/30 hover:transform hover:translate-x-1">
+              <div class="flex-shrink-0">
+                <i class="{{ $tech['icon'] }} text-3xl text-white"></i>
               </div>
+              <div>
+                <h4 class="font-medium text-white">{{ $tech['title'] }}</h4>
+                <p class="text-sm text-blue-100">{{ $tech['desc'] }}</p>
+              </div>
+            </div>
           @endforeach
+        </div>
       </div>
+    </div>
+
+    <!-- Footer with additional info -->
+    <div class="bg-blue-600/30 backdrop-blur-sm p-4 border-t border-white/20 flex justify-between items-center">
+      <div class="text-white/90 text-sm">
+        <span class="mr-4"><i class="far fa-calendar-alt mr-1"></i> Last updated: Feb 2025</span>
+        <span><i class="fas fa-code-branch mr-1"></i> Version 2.1</span>
+      </div>
+
+      <a href="{{ $project['detailsUrl'] }}" class="text-white flex items-center gap-1 group">
+        Next Project
+        <div class="transition duration-300 transform group-hover:translate-x-1">
+          @include('svgs.nexticon')
+        </div>
+      </a>
     </div>
   </div>
 </div>
