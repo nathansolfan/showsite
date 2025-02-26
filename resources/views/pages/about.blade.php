@@ -429,7 +429,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-2">Location</h3>
-                        <p class="text-blue-300">London, United Kingdom</p>
+                        <p class="text-blue-300">Liverpool, United Kingdom</p>
                     </div>
 
                     <div class="bg-gray-800 p-6 rounded-xl">
