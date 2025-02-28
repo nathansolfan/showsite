@@ -34,35 +34,35 @@
 <div class="min-h-screen w-full flex items-center py-12">
   <div class="flex flex-col justify-between w-[90%] max-w-7xl h-auto mx-auto bg-gradient-to-br from-red-400 to-red-500 border-2 border-gray-900 rounded-2xl shadow-xl overflow-hidden transform transition-all hover:shadow-2xl">
 
-    <!-- Header with improved contrast and spacing -->
-    <div class="flex justify-between items-start p-6 border-b-2 border-gray-800/20">
-      <!-- Logo with enhanced hover scale -->
-      <div class="flex items-center">
-        <div class="text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-110 mr-4 scale-125">
-            @include('svgs.doglogo')
-        </div>
-        <div>
-          <h2 class="text-2xl font-bold text-white drop-shadow-sm">{{ $project['name'] }}</h2>
-          <p class="text-red-100">{{ $project['tagline'] }}</p>
-        </div>
+    <!-- Header mobile responsiveness -->
+<div class="flex flex-col sm:flex-row justify-between items-center p-4 sm:p-6 border-b-2 border-gray-800/20 gap-4 sm:gap-0">
+    <!-- Logo with enhanced hover scale - better aligned for mobile -->
+    <div class="flex items-center">
+      <div class="text-xl sm:text-2xl font-extrabold text-gray-900 transition-transform duration-300 transform hover:scale-110 mr-3 sm:mr-4">
+          @include('svgs.driverlogo')
       </div>
-
-      <!-- Action buttons with labels -->
-      <div class="flex gap-4">
-        <a href="{{ $project['githubUrl'] }}" target="_blank" class="group flex flex-col items-center">
-          <div class="p-3 bg-white/90 text-red-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
-            <i class="fab fa-github text-2xl"></i>
-          </div>
-          <span class="mt-1 text-xs font-medium text-white">Source</span>
-        </a>
-        <a href="{{ $project['liveUrl'] }}" target="_blank" class="group flex flex-col items-center">
-          <div class="p-3 bg-white/90 text-red-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
-            <i class="fas fa-eye text-2xl"></i>
-          </div>
-          <span class="mt-1 text-xs font-medium text-white">Demo</span>
-        </a>
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white drop-shadow-sm">{{ $project['name'] }}</h2>
+        <p class="text-sm sm:text-base text-blue-100">{{ $project['tagline'] }}</p>
       </div>
     </div>
+
+    <!-- Action buttons with labels - better sized for mobile -->
+    <div class="flex gap-4 mt-3 sm:mt-0">
+      <a href="{{ $project['githubUrl'] }}" target="_blank" class="group flex flex-col items-center">
+        <div class="p-2 sm:p-3 bg-white/90 text-blue-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+          <i class="fab fa-github text-2xl sm:text-3xl"></i>
+        </div>
+        <span class="mt-1 text-[10px] sm:text-xs font-medium text-white">Source</span>
+      </a>
+      <a href="{{ $project['liveUrl'] }}" target="_blank" class="group flex flex-col items-center">
+        <div class="p-2 sm:p-3 bg-white/90 text-blue-600 rounded-full shadow-md transition duration-300 transform group-hover:scale-110 group-hover:bg-white">
+          <i class="fas fa-eye text-2xl sm:text-3xl"></i>
+        </div>
+        <span class="mt-1 text-[10px] sm:text-xs font-medium text-white">Demo</span>
+      </a>
+    </div>
+  </div>
 
     <!-- Middle content with better structure -->
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-center gap-8 p-6">
