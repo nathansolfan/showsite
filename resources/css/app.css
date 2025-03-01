@@ -5,12 +5,43 @@
 /* =====================================
    Theme Colors & Global Variables
 ==================================== */
+
+/* Add this to the top of your app.css file */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: inherit;
+  }
+
+  /* Fix for the absolute positioned elements with negative margins */
+  .absolute {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  /* Fix for the -inset-[10%] issue */
+  [class*="-inset-"] {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  /* Fix for the negative left positions */
+  [class*="-left-"] {
+    max-width: 100%;
+  }
+
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
   --nav-background: #f8f8f8;
   --footer-background: #333333;
 }
+
+
 
 .dark-mode {
   --background-color: #121212;
