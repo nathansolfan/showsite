@@ -106,3 +106,50 @@
         </div>
     </div>
 </footer>
+
+<!-- Add this to your partials/footer.blade.php file before the closing tag -->
+<script>
+    // Performance optimizations for animations
+    (function() {
+      // Detect mobile/low-power devices
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Apply optimizations based on device capabilities
+      if (isMobile || prefersReducedMotion) {
+        // 1. Disable or simplify blob animations on mobile
+        const blobElements = document.querySelectorAll('.animate-blob');
+        blobElements.forEach(blob => {
+          // Option 1: Completely disable animations
+          blob.style.animation = 'none';
+
+          // Option 2: Or use a simplified static position instead
+          blob.classList.remove('animate-blob');
+          blob.style.transform = 'none';
+
+          // Reduce blur for better performance
+          blob.style.filter = 'blur(5px)';
+        });
+
+        // 2. Optimize AOS animations
+        // You can access the global AOS object after it's initialized
+        if (typeof AOS !== 'undefined') {
+          // Make animations simpler and less frequent on mobile
+          AOS.init({
+            duration: 600, // Slightly longer for smoother appearance
+            once: true, // Only animate once
+            disable: 'phone', // Disable on phones completely (optional)
+            throttleDelay: 200, // Less frequent scroll checks
+            offset: 50 // Trigger earlier to prevent janky appearance
+          });
+        }
+
+        // 3. Remove any other intensive animations or effects
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+          // Remove any hover animations that might cause jank during scrolling
+          card.style.transition = 'none';
+        });
+      }
+    })();
+  </script>
