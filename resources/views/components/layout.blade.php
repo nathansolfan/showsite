@@ -59,12 +59,57 @@
 
     {{-- AOS --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 400,
-            once: true
+    <!-- Replace your current AOS initialization script with this optimized version -->
+<script>
+    // Detect mobile/tablet devices or reduced motion preference
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Configure AOS differently based on device capabilities
+    if (isMobile || prefersReducedMotion) {
+      // Mobile-optimized AOS settings - minimal or no animations
+      AOS.init({
+        disable: 'mobile', // Completely disable on mobile for best performance
+        once: true
+      });
+
+      // Instead of AOS animations, use simple CSS classes
+      document.addEventListener('DOMContentLoaded', function() {
+        // Make project cards visible immediately without animations
+        document.querySelectorAll('[data-aos]').forEach(function(el) {
+          el.removeAttribute('data-aos');
+          el.classList.add('aos-animate'); // Add the final animation state
         });
-    </script>
+      });
+    } else {
+      // Desktop-friendly AOS settings
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    }
+
+    // Disable scroll animations temporarily during scroll to prevent lag
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (!isMobile) return; // Only apply to mobile
+
+      // Disable AOS updates during scroll
+      if (typeof AOS !== 'undefined') {
+        AOS.disabled = true;
+      }
+
+      // Re-enable after scrolling stops with a delay
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        if (typeof AOS !== 'undefined') {
+          AOS.disabled = false;
+        }
+      }, 200);
+    }, { passive: true }); // Use passive listener for better scroll performance
+  </script>
 
 </body>
 
