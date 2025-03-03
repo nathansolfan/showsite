@@ -19,12 +19,12 @@
             <!-- Call-to-Action Buttons -->
             <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="zoom-in" data-aos-delay="600">
                 <a href="{{ url('/works') }}"
-                    class="bg-black text-white rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-800 hover:shadow-lg">
+                    class="bg-black text-white rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-900 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none">
                     See My Work
                 </a>
 
                 <a href="{{ url('/contact') }}"
-                    class="bg-white text-black border border-gray-900 rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-300 hover:shadow-lg">
+                    class="bg-white text-black border-2 border-gray-900 rounded-lg px-6 sm:px-8 py-[10px] sm:py-[14px] text-base sm:text-lg font-semibold transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none">
                     Contact Me
                 </a>
             </div>
@@ -86,13 +86,15 @@
         </div>
 
         <!-- View All Projects Button -->
-        <div class="mt-8 sm:mt-12 text-center" data-aos="zoom-in" data-aos-offset="100">
+        <!-- View All Projects Button - Refined and Compact -->
+        <div class="mt-10 sm:mt-12 text-center" data-aos="zoom-in" data-aos-offset="100">
             <a href="{{ url('/projects') }}"
-                class="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all hover:bg-blue-700 shadow-md hover:shadow-lg inline-flex items-center">
+                class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-md text-sm shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all inline-flex items-center">
                 <span>View All Projects</span>
-                <i class="fas fa-arrow-right ml-2"></i>
+                <i class="fas fa-arrow-right ml-2 text-xs"></i>
             </a>
         </div>
+
     </section>
 
     <!-- Testimonial or Additional Content Section -->
@@ -104,9 +106,10 @@
                     I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
                 </p>
                 <a href="{{ url('/contact') }}"
-                   class="bg-black text-white rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-800 hover:shadow-lg inline-block">
-                    Get in Touch
-                </a>
+   class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-md text-sm shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all inline-flex items-center">
+    <span>Get in Touch</span>
+    <i class="fas fa-envelope ml-2 text-xs"></i>
+</a>
             </div>
         </div>
     </section>
