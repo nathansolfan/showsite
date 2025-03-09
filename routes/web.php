@@ -7,9 +7,12 @@ use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// Route::get('/admin/visits', [App\Http\Controllers\VisitController::class, 'index'])
+//     ->name('visits.index')
+//     ->middleware('auth'); // Add auth middleware to protect this page
+
 Route::get('/admin/visits', [App\Http\Controllers\VisitController::class, 'index'])
-    ->name('visits.index')
-    ->middleware('auth'); // Add auth middleware to protect this page
+    ->name('visits.index');
 
 Route::get('/', function () {
     return view('pages.home');
