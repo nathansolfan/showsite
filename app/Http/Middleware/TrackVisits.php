@@ -38,3 +38,8 @@ class TrackVisits
         return preg_match('/bot|crawl|slurp|spider|mediapartners/i', $path);
     }
 }
+
+
+
+
+
