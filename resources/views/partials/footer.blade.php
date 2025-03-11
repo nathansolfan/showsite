@@ -52,7 +52,6 @@
                     </button>
                 </form>
                 <p class="text-gray-500 text-xs mt-2">No spam, unsubscribe anytime.</p>
-                <p class="text-gray-500 text-xs mt-2">No spam, unsubscribe anytime.</p>
 
             </div>
         </div>
