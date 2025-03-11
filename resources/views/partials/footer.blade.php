@@ -43,6 +43,8 @@
             <!-- Right: Newsletter -->
             <div>
                 <h3 class="text-lg font-semibold mb-3 text-white">Stay Updated</h3>
+                <h3 class="text-lg font-semibold mb-3 text-white">Stay Updated</h3>
+
                 <form class="flex">
                     <input type="email" placeholder="Your email"
                            class="bg-gray-800 text-sm text-white px-3 py-2 rounded-l-md focus:outline-none w-full border-r-0 border border-gray-700">
