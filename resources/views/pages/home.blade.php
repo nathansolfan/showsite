@@ -18,10 +18,7 @@
 
             <!-- Call-to-Action Buttons -->
             <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="zoom-in" data-aos-delay="600">
-                <a href="{{ url('/works') }}"
-                    class="bg-black text-white rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-900 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none">
-                    See My Work
-                </a>
+
 
                 <a href="{{ url('/contact') }}"
                     class="bg-white text-black border-2 border-gray-900 rounded-lg px-6 sm:px-8 py-[10px] sm:py-[14px] text-base sm:text-lg font-semibold transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none">
