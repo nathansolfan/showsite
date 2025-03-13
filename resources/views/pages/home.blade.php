@@ -32,7 +32,7 @@
 
             <!-- Social Media Links -->
             <div class="mt-6 flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="800">
-                {{-- <a href="https://www.instagram.com/nathancacun/" aria-label="Instagram"
+                <a href="https://www.instagram.com/nathancacun/" aria-label="Instagram"
                     class="text-white hover:text-gray-300 transition duration-200">
                     <i class="fab fa-instagram text-2xl sm:text-3xl"></i>
                 </a>
@@ -42,7 +42,7 @@
                 </a>
                 <a href="mailto:email@email.com" aria-label="Email" class="text-white hover:text-gray-300 transition duration-200">
                     <i class="fas fa-envelope text-2xl sm:text-3xl"></i>
-                </a> --}}
+                </a>
             </div>
         </div>
     </div>
