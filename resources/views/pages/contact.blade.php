@@ -33,7 +33,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-x-20">
                     <!-- Form Section -->
                     <div class="md:col-span-7">
-                        <form action="#" method="POST" class="space-y-10">
+                        <form action="/contact-submit" method="POST" class="space-y-10">
+
                             @csrf
                             <div class="space-y-10">
                                 <!-- Name Field -->
