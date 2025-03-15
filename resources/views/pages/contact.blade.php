@@ -1,4 +1,13 @@
 <x-layout>
+
+
+    {{-- success msg --}}
+    @if (session('success'))
+    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-8" role="alert">
+        <p>{{ session('success') }}</p>
+    </div>
+@endif
+
     <!-- Hero Section with Subtle Animation -->
     <section class="relative overflow-hidden bg-white py-24 md:py-36">
         <!-- Subtle animated background gradient -->
@@ -25,6 +34,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Contact Content Section -->
     <section class="pb-24 md:pb-36">
