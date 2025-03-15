@@ -28,9 +28,9 @@
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-gray-900 mb-6">
                     Let's create<br />something <span class="italic">great</span>.
                 </h1>
-                {{-- <p class="text-lg md:text-xl text-gray-600 max-w-lg">
+                <p class="text-lg md:text-xl text-gray-600 max-w-lg">
                     Available for freelance projects, collaborations, and interesting opportunities.
-                </p> --}}
+                </p>
             </div>
         </div>
     </section>
