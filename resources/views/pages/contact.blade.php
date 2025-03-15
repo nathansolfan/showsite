@@ -25,9 +25,9 @@
         <div class="container relative z-10 mx-auto px-6">
             <div class="max-w-3xl">
                 <span class="block mb-3 text-sm font-medium tracking-widest text-gray-500 uppercase">Get in touch</span>
-                {{-- <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-gray-900 mb-6">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-gray-900 mb-6">
                     Let's create<br />something <span class="italic">great</span>.
-                </h1> --}}
+                </h1>
                 <p class="text-lg md:text-xl text-gray-600 max-w-lg">
                     Available for freelance projects, collaborations, and interesting opportunities.
                 </p>
