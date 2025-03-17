@@ -73,5 +73,5 @@ Route::get('/dogs', function () {
 
 // CONTACT
 
-Route::post('/contact-submit', 'ContactController@store')->name('contact.store');
+Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
