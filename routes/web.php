@@ -66,9 +66,9 @@ Route::resource('/blog', BlogController::class);
 
 
 // SVG
-// Route::get('/dogs', function () {
-//     return view('svgs.dogs');
-// });
+Route::get('/dogs', function () {
+    return view('svgs.dogs');
+});
 
 
 // CONTACT
