@@ -65,10 +65,10 @@ Route::resource('/blog', BlogController::class);
 
 
 
-// // SVG
-// Route::get('/dogs', function () {
-//     return view('svgs.dogs');
-// });
+// SVG
+Route::get('/dogs', function () {
+    return view('svgs.dogs');
+});
 
 
 // CONTACT
