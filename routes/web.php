@@ -73,5 +73,5 @@ Route::resource('/blog', BlogController::class);
 
 // CONTACT
 
-Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
+// Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
