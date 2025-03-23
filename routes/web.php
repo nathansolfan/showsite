@@ -71,7 +71,7 @@ Route::get('/dogs', function () {
 });
 
 
-CONTACT
+// CONTACT
 
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
