@@ -17,10 +17,10 @@
             </div>
         </div>
 
-        {{-- <!-- Decorative element -->
+        <!-- Decorative element -->
         <div class="absolute top-0 right-0 -mt-16 -mr-16 hidden md:block">
             <div class="w-64 h-64 border border-gray-200 rounded-full"></div>
-        </div> --}}
+        </div>
 
         <div class="container relative z-10 mx-auto px-6">
             <div class="max-w-3xl">
