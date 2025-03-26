@@ -8,14 +8,14 @@
     </div>
 @endif
 
-    {{-- <!-- Hero Section with Subtle Animation -->
+    <!-- Hero Section with Subtle Animation -->
     <section class="relative overflow-hidden bg-white py-24 md:py-36">
         <!-- Subtle animated background gradient -->
         <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="absolute -inset-[10%] opacity-10 blur-3xl" aria-hidden="true">
                 <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 via-purple-400 to-blue-300 animate-slow-pulse"></div>
             </div>
-        </div> --}}
+        </div>
 
         <!-- Decorative element -->
         <div class="absolute top-0 right-0 -mt-16 -mr-16 hidden md:block">
