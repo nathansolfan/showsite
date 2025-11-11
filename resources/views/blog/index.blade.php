@@ -143,7 +143,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-12 bg-blue-50">
+    <section class="py-12 bg-blue-500">
         <div class="container mx-auto px-4">
             <div class="max-w-xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Subscribe to my newsletter</h2>

@@ -327,9 +327,12 @@
                                 </div>
                                 <div class="pl-6">
                                     <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-2">
-                                        2022 - Present
+                                        2025 - 2025
                                     </span>
-                                    <h4 class="text-xl font-bold text-gray-800">Freelance Web Developer</h4>
+                                    <h4 class="text-xl font-bold text-gray-800">Junior Web Developer</h4>
+                                    <p class="text-gray-700 mt-2 font-semibold">
+                                        Entigy Software - Crewe/UK
+                                    </p>
                                     <p class="text-gray-700 mt-2">
                                         Building custom websites and web applications for clients across various industries. Specializing in Laravel and React development.
                                     </p>
@@ -343,9 +346,12 @@
                                 </div>
                                 <div class="pl-6">
                                     <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-2">
-                                        2021 - 2022
+                                        2023-Present
                                     </span>
-                                    <h4 class="text-xl font-bold text-gray-800">Junior Web Developer</h4>
+                                    <h4 class="text-xl font-bold text-gray-800">Web Developer</h4>
+                                    <p class="text-gray-700 mt-2 font-semibold">
+                                        Upwork - UK
+                                    </p>
                                     <p class="text-gray-700 mt-2">
                                         Worked on frontend development projects, focusing on responsive design and user experience. Collaborated with design and backend teams.
                                     </p>
