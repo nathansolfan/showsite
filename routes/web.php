@@ -36,7 +36,7 @@ Route::get('/services', function () {
 });
 
 Route::get('contact', function (){
-    return view('pages.contact');
+    return view('contacts.contact');
 });
 
 Route::get('portfolio', function (){
@@ -75,4 +75,7 @@ Route::get('/dogs', function () {
 // CONTACT
 
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/messages', [ContactController::class, 'viewMessages']);
+
+//Route::post('/contact-submit', [ContactController::class, 'messages']);
 

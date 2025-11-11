@@ -10,6 +10,49 @@ use Illuminate\Support\Str;
 class ContactController extends Controller
 
 {
+    public function index()
+    {
+
+
+    }
+
+
+    public function viewMessages()
+    {
+        $content = [];
+        $storages = Storage::disk('local')->files('contacts');
+        foreach ($storages as $storage) {
+
+            $fileData = Storage::disk('local')->get($storage);
+            $lines = explode("\n", $fileData);
+
+            $name =  trim(str_replace('Name', '', $lines[0] ?? '' ));
+            $email = trim(str_replace('Email', '', $lines[1] ?? ''));
+            $date =  trim(str_replace('Date', '', $lines[2] ?? ''));
+            $message = trim(implode("\n", array_slice($lines, 4)));
+
+            $messageData = [
+                'name' => $name,
+                'email' => $email,
+                'date' => $date,
+                'message' => $message,
+            ];
+
+            $content[] = $messageData;
+            dd($content);
+
+        }
+        return view('contacts.index', ['content' => $content]);
+//        return view('contacts.index', ['result' => $result]);
+
+
+    }
+
+
+
+
+
+    //storage
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -21,7 +64,7 @@ class ContactController extends Controller
 
 
         // Create document content
-        $content = "Name: " . $validated['name'] . "\n";
+        $content  = "Name: " . $validated['name'] . "\n";
         $content .= "Email: " . $validated['email'] . "\n";
         $content .= "Date: " . now()->format('Y-m-d H:i:s') . "\n";
         $content .= "Message:\n" . $validated['message'] . "\n";
@@ -37,3 +80,5 @@ class ContactController extends Controller
 
     }
 }
+
+
