@@ -1,3 +1,3 @@
 @foreach($content as $message)
-    {{$message['name']}}
+  Name{{$message['name']}}
 @endforeach

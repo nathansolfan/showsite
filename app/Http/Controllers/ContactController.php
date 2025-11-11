@@ -28,7 +28,7 @@ class ContactController extends Controller
 
             $name =  trim(str_replace('Name', '', $lines[0] ?? '' ));
             $email = trim(str_replace('Email', '', $lines[1] ?? ''));
-            $date =  trim(str_replace('Date', '', $lines[2] ?? ''));
+            $date =  trim(str_replace('Date', '' , $lines[2] ?? ''));
             $message = trim(implode("\n", array_slice($lines, 4)));
 
             $messageData = [
@@ -39,7 +39,7 @@ class ContactController extends Controller
             ];
 
             $content[] = $messageData;
-            dd($content);
+//            dd($content);
 
         }
         return view('contacts.index', ['content' => $content]);
