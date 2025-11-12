@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-gray-900 text-white py-10">
+<footer class="bg-gray-900 text-white py-8">
     <div class="max-w-6xl mx-auto px-6">
         <!-- Main Section -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
@@ -42,7 +42,6 @@
 
             <!-- Right: Newsletter -->
             <div>
-                <h3 class="text-lg font-semibold mb-3 text-white">Stay Updated</h3>
                 <h3 class="text-lg font-semibold mb-3 text-white">Stay Updated</h3>
 
                 <form class="flex">

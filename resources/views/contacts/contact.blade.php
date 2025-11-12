@@ -118,7 +118,7 @@
                         <div class="space-y-16">
                             <!-- Personal Info -->
                             <div>
-                                <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wide mb-6">Contact Information</h3>
+                                <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wide mb-6 mt-0.25">Contact Information</h3>
 
                                 <div class="space-y-8">
                                     <!-- Email -->
@@ -130,9 +130,9 @@
                                                 </svg>
                                             </div>
                                             <div class="ml-6">
-                                                <p class="text-sm text-gray-400 group-hover:text-gray-500 transition-colors">Email</p>
+                                                <p class="text-md text-gray-400 group-hover:text-gray-500 transition-colors">Email</p>
                                                 <div class="relative">
-                                                    <p id="email-value" class="mt-1 text-lg text-gray-900">nathansolfan@gmail.com</p>
+                                                    <p id="email-value" class="mt-1 text-sm text-gray-900">nathansolfan@gmail.com</p>
                                                     <button id="copy-email-btn" class="absolute -right-7 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100">
                                                         <svg class="w-5 h-5 text-gray-400 hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"></path>
@@ -157,8 +157,8 @@
                                                 </svg>
                                             </div>
                                             <div class="ml-6">
-                                                <p class="text-sm text-gray-400 group-hover:text-gray-500 transition-colors">Location</p>
-                                                <p class="mt-1 text-lg text-gray-900">Liverpool, United Kingdom</p>
+                                                <p class="text-md text-gray-400 group-hover:text-gray-500 transition-colors">Location</p>
+                                                <p class="mt-1 text-md text-gray-900">Liverpool, United Kingdom</p>
                                             </div>
                                         </div>
                                     </div>
