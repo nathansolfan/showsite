@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="relative h-[400px] md:h-[700px] lg:h-[800px] flex items-center justify-center overflow-hidden bg-cover bg-center"
+    <div class="relative h-[400px] md:h-[700px] lg:h-[830px] flex items-center justify-center overflow-hidden bg-cover bg-center"
         style="background-image: url('{{ asset('images/bgimage1.jpg') }}');">
 
         <!-- Dark Overlay -->

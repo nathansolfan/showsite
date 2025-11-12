@@ -65,17 +65,25 @@
 {{--                                {{ $feedback->message }}--}}
 {{--                            </p>--}}
 
+                            <p class="text-gray-700 text-lg mb-6 leading-relaxed text-center">
+                                We will show your message here
+
+                            </p>
+
                             <!-- Author Info -->
                             <div class="flex items-center">
                                 <!-- Avatar Placeholder -->
                                 <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
                                     {{ strtoupper(substr($feedback->name, 0, 1)) }}
+
                                 </div>
                                 <div class="ml-3">
-                                    <h4 class="font-semibold text-gray-900">{{ $feedback->name }}</h4>
+{{--                                    <h4 class="font-semibold text-gray-900">{{ $feedback->name }}</h4>--}}
+
                                     @if ($feedback->email)
                                         <p class="text-sm text-gray-500">
-                                            {{ Str::mask($feedback->email, '*', 3, -4) }}
+{{--                                            {{ Str::mask($feedback->email, '*', 3, -4) }}--}}
+                                            And your email here
                                         </p>
                                     @endif
                                 </div>
