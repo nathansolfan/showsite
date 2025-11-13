@@ -1,38 +1,39 @@
 <div id="quote-board">
+    <p>Carregando</p>
 
-    <div id="quote-board">
-        @foreach(array_slice($quotes, 0, 5) as $quote)
-            <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-left: 5px solid #ccc;">
-                <p style="font-size: 18px; font-style: italic;">"{{ $quote['q'] }}"</p>
-                <p style="text-align: right; font-weight: bold;">— {{ $quote['a'] }}</p>
-            </div>
-        @endforeach
-    </div>
+
 
 
 </div>
 
 <script>
-    $.ajax({
-        url: '/quotes',
-        method: 'GET',
-        success: function (data) {
+    document.addEventListener('DOMContentLoaded', function () {
+        $.ajax({
+            url: '/quotes',
+            method: 'GET',
+            success: function (data) {
 
-            const board = $('#quote-board')
-            board.empty()
+                const board = $('#quote-board')
+                board.empty()
 
-            data.slice(0,5).forEach(function (quote) {
-                board.append(
-                    `
+                data.slice(0,1).forEach(function (quote) {
+                    board.append(
+                        `
                      <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-left: 5px solid #ccc;">
                         <p style="font-size: 18px; font-style: italic;">"${quote.q}"</p>
                         <p style="text-align: right; font-weight: bold;">— ${quote.a}</p>
                     </div>
                     `
-                )
-            })
-        }
+                    )
+                })
+            },
+            error: function (xhr) {
+                $('#quote-board').html('<p style="color:red;">Erro ao carregar frases.</p>');
+                console.error(xhr);
+            }
+        })
     })
+
 
 
 

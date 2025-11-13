@@ -24,6 +24,7 @@
     </style>
 </head>
 
+
 <body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
     <!-- Skip Navigation Link -->
@@ -31,6 +32,9 @@
 
     <!-- Navigation -->
     @include('partials.nav')
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 
 
 
@@ -40,7 +44,6 @@
     <!-- Main Content -->
     <main id="main-content" class="flex-grow">
         {{ $slot }}
-
     </main>
 
   <!-- Navigation -->

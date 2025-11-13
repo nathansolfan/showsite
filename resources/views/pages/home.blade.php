@@ -30,8 +30,7 @@
 
             </div>
 
-            <x-apiWeather
-            :quotes="$quotes"/>
+
 
             <!-- Social Media Links -->
             <div class="mt-6 flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="800">
@@ -54,6 +53,8 @@
     <div class="mt-8 sm:mt-12" data-aos="fade-up" data-aos-duration="1000">
         @include('pages.skillsStatic')
     </div>
+
+    <x-apiWeather/>
 
     <!-- Projects Section -->
     <section id="projects" class="mt-12 sm:mt-20">
