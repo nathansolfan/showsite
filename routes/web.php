@@ -72,13 +72,16 @@ Route::get('/dogs', function () {
 
 // API
 
-Route::get('/quotes', function () {
-    return cache()->remember('quotes', 60, function () {
+Route::get('quotes', function () {
+    $quotes = cache()->remember('quotes', 60, function () {
         $response = Http::withOptions(['verify' => false])->get('https://zenquotes.io/api/quotes');
+
         return $response->json();
     });
-
+    return view('api.weatherApi', ['quotes' => $quotes]);
 });
+
+
 
 // CONTACT
 
