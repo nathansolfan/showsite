@@ -6,6 +6,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/admin/visits', [App\Http\Controllers\VisitController::class, 'index'])
@@ -64,13 +65,20 @@ Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.s
 // BLOG Route
 Route::resource('/blog', BlogController::class);
 
-
-
 // SVG
 Route::get('/dogs', function () {
     return view('svgs.dogs');
 });
 
+// API
+
+Route::get('/quotes', function () {
+    return cache()->remember('quotes', 60, function () {
+        $response = Http::withOptions(['verify' => false])->get('https://zenquotes.io/api/quotes');
+        return $response->json();
+    });
+
+});
 
 // CONTACT
 

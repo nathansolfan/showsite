@@ -30,6 +30,8 @@
 
             <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100">Feedback</a>
             <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
+
 
         </div>
     </div>
