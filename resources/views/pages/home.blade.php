@@ -30,6 +30,9 @@
 
             </div>
 
+            <x-apiWeather
+            :quotes="$quotes"/>
+
             <!-- Social Media Links -->
             <div class="mt-6 flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="800">
                 <a href="https://www.instagram.com/nathancacun/" aria-label="Instagram"

@@ -34,9 +34,13 @@
 
 
 
+
+
+
     <!-- Main Content -->
     <main id="main-content" class="flex-grow">
         {{ $slot }}
+
     </main>
 
   <!-- Navigation -->
