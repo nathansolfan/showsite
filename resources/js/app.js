@@ -1,6 +1,10 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
 import 'flowbite';
+import {createApp} from "vue";
+import Oracle from './components/Oracle.vue'
+createApp(Oracle).mount('#app')
+
 // import $ from 'jquery';
 // window.$ = $;
 // window.jQuery = $;

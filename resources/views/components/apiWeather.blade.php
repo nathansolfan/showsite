@@ -31,6 +31,8 @@
 
 
     let quotes = [];
+    let currentIndex = 0
+
     $(document).ready(function () {          //.ready only works when page is loaded
 
         $.ajax({ //request
@@ -42,11 +44,10 @@
             }
         })
     })
-    let currentIndex = 0
 
-    function showQuotes(index) {
+    function showQuote(index) {
         const quote = quotes[index];
-        $('#quote-board').html(`<p style="text-align:center;">"${quote.q}</p>`)
+        $('#quote-board').html(`<p style="text-align:center;">"${quote.q}" - ${quote.q}</p>`)
     }
 
     $('#next-quote').click(function () {
@@ -55,8 +56,12 @@
         if (currentIndex >= quotes.length) {
             currentIndex = 0
         }
-        showQuotes(currentIndex)
+        showQuote(currentIndex)
     })
+
+
+
+
 
 
 
