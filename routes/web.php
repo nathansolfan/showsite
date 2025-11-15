@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TextAnalysisController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
@@ -80,7 +81,7 @@ Route::get('/quotes', function () {
 });
 
 // ANALYZE
-Route::post('/analyze', [TextAnalysisController::class, 'analyze']);
+Route::post('/analyze', [TextAnalysisController::class, 'analysis']);
 
 
 

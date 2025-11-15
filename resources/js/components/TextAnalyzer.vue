@@ -15,6 +15,8 @@
         <div v-if="result" class="mt-6 bg-gray-900 p-4 rounded">
             <p>Words: {{result.word_count}}</p>
             <p>Characters: {{result.chars}}</p>
+            <p>Feeling: {{result.feeling}}</p>
+            <p>Feelings Score: {{result.feeling_score}}</p>
         </div>
 
     </div>
@@ -24,7 +26,7 @@
 export default {
     data() {
         return {
-            object: '',
+            input: '',
             result: null
         }
     },
@@ -37,7 +39,7 @@ export default {
                     'Accept': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
                 },
-                body: JSON.stringify({ object: this.object })
+                body: JSON.stringify({ text: this.input })
             })
 
             this.result = await  response.json();
