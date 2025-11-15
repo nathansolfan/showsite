@@ -3,7 +3,10 @@ import Alpine from 'alpinejs';
 import 'flowbite';
 import {createApp} from "vue";
 import TextAnalyzer from './components/TextAnalyzer.vue'
-createApp(TextAnalyzer).mount('#app')
+
+createApp({
+    components: { TextAnalyzer}
+}).mount('#app')
 
 // import $ from 'jquery';
 // window.$ = $;

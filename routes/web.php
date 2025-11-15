@@ -82,6 +82,9 @@ Route::get('/quotes', function () {
 
 // ANALYZE
 Route::post('/analyze', [TextAnalysisController::class, 'analysis']);
+Route::get('/analyze', function () {
+    return view('analyze.analyze');
+});
 
 
 

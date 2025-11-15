@@ -40,16 +40,14 @@ class TextAnalysisController extends Controller
         //count emotions
         foreach ($words as $word) {
             $word = trim(strtolower($word),  " \t\n\r\0\x0B.,;:!?'\"()[]{}");
+
             if (isset($nrc[$word])) {
                 foreach ($nrc[$word] as $emotion => $v ) {
-                    if (isset($emotions[$emotion])) {
-                        $emotions[$emotion] += 1;
-                    } else {
-                        $emotions[$emotion] = 1;
-                    }
+                    $emotions[$emotion] += 1;
                 }
             }
         }
+
         return response()->json([
             'word_count'    => count($words),
             'chars'         => mb_strlen($text),
