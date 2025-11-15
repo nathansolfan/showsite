@@ -1,0 +1,48 @@
+<template>
+    <div class="p-4 text-white">
+        <textarea
+            v-model="input"
+            class="w-full h-40 bg-gray-800 p-3 rounded"
+            placeholder="Type your text"
+        ></textarea>
+
+        <button
+        @click="analyze"
+        class="mt-3 bg-blue-600 px-4 py-2 rounded"
+
+        >Analyze</button>
+
+        <div v-if="result" class="mt-6 bg-gray-900 p-4 rounded">
+            <p>Words: {{result.word_count}}</p>
+            <p>Characters: {{result.chars}}</p>
+        </div>
+
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            object: '',
+            result: null
+        }
+    },
+    methods: {
+        async analyze() {
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector("meta[name='csrf-token']").content
+                },
+                body: JSON.stringify({ object: this.object })
+            })
+
+            this.result = await  response.json();
+        }
+
+    }
+}
+</script>

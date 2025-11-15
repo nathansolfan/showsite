@@ -71,21 +71,20 @@ Route::get('/dogs', function () {
 });
 
 // API
-
 Route::get('/quotes', function () {
-
     $quotes = cache()->remember('quotes', 60, function () {
         $response = Http::withOptions(['verify' => false])->get('https://zenquotes.io/api/quotes');
         return $response->json();
     });
     return response()->json($quotes);
-
 });
+
+// ANALYZE
+Route::post('/analyze', [TextAnalysisController::class, 'analyze']);
 
 
 
 // CONTACT
-
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/messages', [ContactController::class, 'viewMessages']);
 
