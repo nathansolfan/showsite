@@ -43,7 +43,9 @@ export default {
             })
 
             this.result = await  response.json();
-        }
+        },
+        // async analyze() {alert('Vue')}
+
 
     }
 }

@@ -12,7 +12,7 @@ class TextAnalysisController extends Controller
         //get words
         $words = str_word_count($text, 1);
 
-        $afinn = json_decode(file_get_contents(storage_path('app/afinn/afinn.json.txt')), true);
+        $afinn = json_decode(file_get_contents(storage_path('app/afinn/afinn.json')), true);
         $score = 0;
 
         foreach ($words as $word) {

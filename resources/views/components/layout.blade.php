@@ -9,6 +9,8 @@
     <meta name="keywords" content="Nathan Ferreira, Web Developer, Portfolio">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Font Awesome & AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">

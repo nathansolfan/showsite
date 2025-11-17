@@ -8,9 +8,9 @@ createApp({
     components: { TextAnalyzer}
 }).mount('#app')
 
-// import $ from 'jquery';
-// window.$ = $;
-// window.jQuery = $;
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
 
 
 window.Alpine = Alpine;
