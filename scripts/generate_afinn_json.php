@@ -1,7 +1,7 @@
 <?php
 
 $afinnPath  = __DIR__ . '/../storage/app/afinn';
-$outputFile = __DIR__ . '/../storage/app/afinn.json';
+$outputFile = __DIR__ . '/../storage/app/afinn/afinn.json';
 
 $afinn = [];
 
