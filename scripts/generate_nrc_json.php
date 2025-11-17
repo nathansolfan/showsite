@@ -1,10 +1,8 @@
 <?php
-
 $lexiconPath = __DIR__ . '/../storage/app/lexicons';
 $outputFile  = __DIR__ . '/../storage/app/nrc.json';
 
 $nrc = [];
-
 $files = glob($lexiconPath . '/*.txt');
 
 foreach ($files as $file) {
@@ -15,7 +13,6 @@ foreach ($files as $file) {
 
     //read lines
     $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
     foreach ($lines as $line) {
         $wordParts = preg_split('/\s+/', $line);
         $word = strtolower($wordParts[0]);

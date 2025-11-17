@@ -17,6 +17,17 @@
             <p>Characters: {{result.chars}}</p>
             <p>Feeling: {{result.feeling}}</p>
             <p>Feelings Score: {{result.feeling_score}}</p>
+            <p>Positive Words: {{result.positive_words}}</p>
+            <p>Negative Words: {{result.negative_words}}</p>
+
+            <div>
+                <h3>Emotions:</h3>
+                <ul>
+                    <li v-for="(value, emotion) in result.emotions" :key="emotion" >
+                        {{emotion}} : {{value}}
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </div>
