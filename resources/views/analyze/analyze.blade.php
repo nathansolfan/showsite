@@ -1,5 +1,54 @@
 <x-layout>
+
+
+
     <div class="min-h-screen bg-gray-950 text-white p-8 sm:p-16 flex flex-col items-center">
+
+        <!-- Application Description / Provenance -->
+        <section class="max-w-3xl w-full text-center mb-12 bg-gray-900 border border-teal-700 p-6 rounded-lg shadow-lg shadow-teal-900/40">
+            <h2 class="text-2xl font-extrabold text-teal-400 mb-3 tracking-widest uppercase">
+                About This Analyzer
+            </h2>
+
+            <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                This application performs lexical and affective evaluation using established sentiment-analysis
+                resources from the scientific community. The scoring model used here ranges from <strong>-5</strong> (highly
+                negative) to <strong>+5</strong> (highly positive), based on internationally recognized lexicons.
+            </p>
+
+            <h3 class="text-lg font-bold text-white mt-4 mb-2 tracking-wide">
+                AFINN Sentiment Lexicon
+            </h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                Developed by <strong>Finn Årup Nielsen</strong>, a Danish researcher in cognitive systems and machine learning.
+                The AFINN lexicon assigns integer polarity scores to English terms ranging from -5 to +5.
+                Original publication and documentation are available on the author’s official page:
+                <a href="https://finnaarupnielsen.wordpress.com/2011/03/16/afinn-a-new-word-list-for-sentiment-analysis/"
+                   class="text-teal-400 underline hover:text-teal-300" target="_blank">
+                    finnaarupnielsen.wordpress.com
+                </a>.
+            </p>
+
+            <h3 class="text-lg font-bold text-white mt-4 mb-2 tracking-wide">
+                NRC Emotion Lexicon (EmoLex)
+            </h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                Created by <strong>Saif M. Mohammad</strong> and <strong>Peter D. Turney</strong> at the
+                <strong>National Research Council Canada (NRC)</strong>. The lexicon maps words to
+                basic emotions (such as joy, fear, anger, trust) and sentiment polarity. The resource is
+                officially maintained by the NRC and documented at:
+                <a href="https://nrc.canada.ca/en/research-development/products-services/technical-advisory-services/sentiment-emotion-lexicons"
+                   class="text-teal-400 underline hover:text-teal-300" target="_blank">
+                    nrc.canada.ca
+                </a>.
+            </p>
+
+            <p class="text-xs text-gray-500 mt-6 font-mono uppercase tracking-wider">
+                This interface aggregates information from these public research lexicons to provide a transparent
+                sentiment breakdown for educational and analytical purposes.
+            </p>
+        </section>
+
 
         {{-- Header --}}
         <header class="text-center mb-16 max-w-4xl pt-4 w-full border-b border-teal-700 pb-4">
@@ -108,7 +157,7 @@
                         {{-- Positive Words --}}
                         <div class="border border-teal-900 p-5 rounded-lg bg-gray-900 shadow-lg shadow-teal-900/40">
                             <p class="text-md font-bold text-green-500 mb-4 tracking-wide border-b border-green-600/60 pb-2 flex items-center gap-2">
-                                POSITIVE LOG STREAM
+                                POSITIVE
                             </p>
 
                             <div class="space-y-1">
@@ -129,7 +178,7 @@
                         {{-- Negative Words --}}
                         <div class="border border-teal-900 p-5 rounded-lg bg-gray-900 shadow-lg shadow-teal-900/40">
                             <p class="text-md font-bold text-amber-400 mb-4 tracking-wide border-b border-amber-600/60 pb-2 flex items-center gap-2">
-                                NEGATIVE LOG STREAM
+                                NEGATIVE
                             </p>
 
                             <div class="space-y-1">
