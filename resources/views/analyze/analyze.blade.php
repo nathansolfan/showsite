@@ -195,28 +195,28 @@
                             </div>
                         </div>
 
-                        {{-- Negative Words --}}
-                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> {{-- Borda cinza escura --}}
-                            <p class="text-md font-semibold text-amber-300 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">
-                                NEGATIVE
-                            </p>
+{{--                        --}}{{-- Negative Words --}}
+{{--                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> --}}{{-- Borda cinza escura --}}
+{{--                            <p class="text-md font-semibold text-amber-300 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">--}}
+{{--                                NEGATIVE--}}
+{{--                            </p>--}}
 
-                            <div class="space-y-1">
-                                @if ($result['negative_words'])
-                                    @foreach (explode(', ', $result['negative_words']) as $word)
-                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-amber-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">
-                                            › {{ $word }}
-                                        </p>
-                                    @endforeach
-                                @else
-                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">
-                                        [EMPTY] No negative lexical entries found.
-                                    </p>
-                                @endif
-                            </div>
-                        </div>
+{{--                            <div class="space-y-1">--}}
+{{--                                @if ($result['negative_words'])--}}
+{{--                                    @foreach (explode(', ', $result['negative_words']) as $word)--}}
+{{--                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-amber-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">--}}
+{{--                                            › {{ $word }}--}}
+{{--                                        </p>--}}
+{{--                                    @endforeach--}}
+{{--                                @else--}}
+{{--                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">--}}
+{{--                                        [EMPTY] No negative lexical entries found.--}}
+{{--                                    </p>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                    </div>
+{{--                    </div>--}}
                 </div>
             </div>
         @endisset
