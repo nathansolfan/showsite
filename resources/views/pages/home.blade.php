@@ -54,7 +54,8 @@
         @include('pages.skillsStatic')
     </div>
 
-    <x-apiWeather/>
+{{--    <x-apiWeather/>--}}
+    <x-apiQuotes/>
 
     <!-- Projects Section -->
     <section id="projects" class="mt-12 sm:mt-20">
