@@ -42,66 +42,93 @@
         {{-- CONTAINER: Aumentado para 4xl e removida a borda colorida --}}
         <section class="max-w-4xl w-full text-center mb-16 p-0">
 
-            <h2 class="text-2xl font-bold text-teal-400 mb-6 tracking-wider uppercase border-b border-gray-800 pb-2">
-                About This Analyzer
+            {{-- TÍTULO CENTRAL --}}
+            <h2 class="text-3xl font-bold text-white mb-2 tracking-wider uppercase border-b border-gray-800 pb-3"> {{-- Fonte maior --}}
+                Lexical Analyzer Resources
             </h2>
 
-            <p class="text-base text-gray-400 leading-relaxed mb-8"> {{-- Texto levemente mais claro --}}
-                This analytical module evaluates text using academic-grade lexical and affective resources widely adopted in
-                computational linguistics, natural language processing (NLP), and sentiment research.
-                The polarity scale used here spans from <strong class="text-teal-300">-5</strong> (extreme negativity) to <strong class="text-teal-300">+5</strong>
-                (extreme positivity), following internationally recognized scoring methodologies.
+            {{-- INTRODUÇÃO E ESCALA --}}
+            <p class="text-base text-gray-400 leading-relaxed mb-10">
+                This module evaluates text using academic-grade lexical and affective resources adopted in computational linguistics.
+                <span class="font-medium text-white">Polarity Scale:</span>
+                <strong class="text-amber-400 font-semibold">-5</strong> (Negative) to
+                <strong class="text-green-400 font-semibold">+5</strong> (Positive).
             </p>
 
-            {{-- LAYOUT WIDE: Grid de 2 colunas --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{-- LAYOUT WIDE: Grid de 2 colunas para os léxicos --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> {{-- Aumento do gap --}}
 
-                {{-- AFINN --}}
-                {{-- REMOÇÃO: Removido o bg-gray-800/40 e a borda. Focado em linhas simples. --}}
-                <div class="text-left p-5 border border-gray-800 rounded-lg">
-                    <h3 class="text-lg font-semibold text-white mb-2 tracking-wide border-b border-gray-700 pb-1">
-                        AFINN Sentiment Lexicon
+                {{-- AFINN SENTIMENT LEXICON CARD --}}
+                {{-- MUDANÇA: Sem borda externa. Background mais claro (bg-gray-900) para criar separação --}}
+                <div class="text-left p-6 bg-gray-900 rounded-lg shadow-xl shadow-gray-950/50">
+
+                    {{-- TÍTULO + ÍCONE (Divisor mais fino) --}}
+                    <h3 class="text-xl font-bold text-white mb-4 tracking-wide flex items-center gap-3 border-b border-gray-700/50 pb-3">
+                        <svg class="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <span class="text-teal-400">AFINN</span> LEXICON
                     </h3>
 
-                    <p class="text-sm text-gray-400 leading-relaxed pt-2">
-                        The AFINN lexicon was developed by <strong class="text-teal-300">Finn Årup Nielsen</strong>, a Danish researcher and professor
-                        specializing in cognitive systems, data mining, and neuroinformatics.
-                        AFINN assigns integer sentiment values ranging from –5 to +5 to English words, making it one of the most
-                        widely used resources for polarity-based sentiment analysis.
-                        Official documentation and history can be found on the author’s publication archive:
+                    {{-- FATOS CHAVE (Informação mais densa e compacta) --}}
+                    <div class="space-y-4 mb-5">
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">AUTHOR:</span> <span class="font-medium">Finn Årup Nielsen</span>
+                        </p>
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">SCORE TYPE:</span> Integer Polarity ($\pm$5)
+                        </p>
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">SCOPE:</span> Highly reliable for general English sentiment analysis.
+                        </p>
+                    </div>
+
+                    {{-- LINK FOOTER (Divisor mais sutil) --}}
+                    <p class="text-xs text-gray-500 italic pt-4 border-t border-gray-800">
+                        Documentation:
                         <a href="https://finnaarupnielsen.wordpress.com/2011/03/16/afinn-a-new-word-list-for-sentiment-analysis/"
-                           class="text-teal-400 underline hover:text-teal-300 transition-colors" target="_blank">
+                           class="text-teal-400 hover:text-teal-300 transition-colors" target="_blank"> {{-- Removida a linha underline para um look mais clean --}}
                             finnaarupnielsen.wordpress.com
-                        </a>.
+                        </a>
                     </p>
                 </div>
 
-                {{-- NRC --}}
-                <div class="text-left p-5 border border-gray-800 rounded-lg">
-                    <h3 class="text-lg font-semibold text-white mb-2 tracking-wide border-b border-gray-700 pb-1">
-                        NRC Emotion Lexicon (EmoLex)
+                {{-- NRC EMOTION LEXICON (EMOLEX) CARD --}}
+                <div class="text-left p-6 bg-gray-900 rounded-lg shadow-xl shadow-gray-950/50">
+
+                    {{-- TÍTULO + ÍCONE (Divisor mais fino) --}}
+                    <h3 class="text-xl font-bold text-white mb-4 tracking-wide flex items-center gap-3 border-b border-gray-700/50 pb-3">
+                        <svg class="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-teal-400">NRC</span> EMOTION LEXICON
                     </h3>
 
-                    <p class="text-sm text-gray-400 leading-relaxed pt-2">
-                        The NRC Emotion Lexicon was created by computational linguists <strong class="text-teal-300">Saif M. Mohammad</strong> and
-                        <strong class="text-teal-300">Peter D. Turney</strong> at the <strong class="text-teal-300">National Research Council Canada (NRC)</strong>.
-                        This resource associates words with sentiment polarity and with eight fundamental emotions
-                        (joy, trust, fear, surprise, sadness, disgust, anger, anticipation).
-                        It is officially maintained by the NRC and is frequently referenced in affective computing research:
+                    {{-- FATOS CHAVE (Informação mais densa e compacta) --}}
+                    <div class="space-y-4 mb-5">
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">CREATED BY:</span> NRC Canada (Mohammad & Turney)
+                        </p>
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">FOCUS:</span> Polarity (Pos/Neg) and <strong class="text-white">8 Basic Emotions</strong>
+                        </p>
+                        <p class="text-sm text-gray-400 leading-snug">
+                            <span class="font-semibold text-gray-300">EMOTIONS:</span> Joy, Trust, Fear, Surprise, Sadness, Disgust, Anger, Anticipation.
+                        </p>
+                    </div>
+
+                    {{-- LINK FOOTER (Divisor mais sutil) --}}
+                    <p class="text-xs text-gray-500 italic pt-4 border-t border-gray-800">
+                        Official source:
                         <a href="https://nrc.canada.ca/en/research-development/products-services/technical-advisory-services/sentiment-emotion-lexicons"
-                           class="text-teal-400 underline hover:text-teal-300 transition-colors" target="_blank">
+                           class="text-teal-400 hover:text-teal-300 transition-colors" target="_blank">
                             nrc.canada.ca
-                        </a>.
+                        </a>
                     </p>
                 </div>
             </div>
 
-            <p class="text-xs text-gray-500 mt-8 font-ibm-plex-mono uppercase tracking-wider">
-                This interface integrates both resources to generate transparent, research-backed sentiment interpretation for
-                educational, analytical, and experimental NLP purposes.
+            {{-- FOOTER FINAL --}}
+            <p class="text-xs text-gray-600 mt-10 font-ibm-plex-mono uppercase tracking-wider"> {{-- Cor cinza mais escura --}}
+                This interface integrates both resources for transparent, research-backed sentiment interpretation.
             </p>
         </section>
-
 
         {{-- Results --}}
         @isset($result)
@@ -159,7 +186,8 @@
 
                         <div class="p-4 text-center"> {{-- Removida a última borda direita --}}
                             <h3 class="text-xs font-ibm-plex-mono uppercase text-amber-300">Negative</h3>
-                            <p class="text-3xl font-ibm-plex-mono font-bold text-amber-300 mt-1">{{ count(explode(', ', $result['negative_words'])) }}</p>
+                            <p class="text-3xl font-ibm-plex-mono font-bold text-amber-300 mt-1"
+                            >{{ $result['negative_words'] ? count(explode(', ', $result['negative_words'])) : 0 }}</p>
                         </div>
                     </div>
                 </div>
