@@ -1,5 +1,53 @@
-<div id="quote-board"><p>Carrgegando...</p></div>
-<button id="next-quote">Next</button>
+<div class="max-w-4xl w-full mx-auto px-4 py-8">
+
+    <!-- Descrição da API -->
+    <div id="api-info" class="p-5 bg-gray-100 rounded-xl border border-gray-200 shadow-sm mb-6 text-center">
+        <h2 class="text-xl font-bold font-merriweather text-gray-900">Quote Generator</h2>
+        <p class="text-gray-600 mt-1 text-sm tracking-wide">
+            This module retrieves inspirational quotes from an external REST API.
+        </p>
+    </div>
+
+    <div class="p-4 bg-white rounded-xl shadow-xl border border-gray-100">
+
+        <!-- Quote (inicialmente escondido) -->
+        <div id="quote-board"
+             class="h-48 flex flex-col items-center justify-center text-center opacity-0 transition-all duration-500">
+            <p class="text-lg italic text-gray-700 font-serif"></p>
+        </div>
+
+
+        <div class="my-4 border-t border-gray-200 w-1/3 mx-auto"></div>
+
+        <button id="next-quote"
+                class="mt-4 w-full bg-black font-merriweather text-white font-semibold py-3 rounded-lg transition-all hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none uppercase tracking-widest">
+            Start / Next Quote
+            <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+    </div>
+</div>
+
+<style>
+    .fade-hide {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .quote-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #quote-board {
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+</style>
+
+
+
+
 
 <script>
     // document.addEventListener('DOMContentLoaded', function () {
@@ -31,33 +79,54 @@
 
 
     let quotes = [];
-    let currentIndex = 0
+    let currentIndex = 0;
+    let initialized = false;
 
-    $(document).ready(function () {          //.ready only works when page is loaded
-
-        $.ajax({ //request
+    $(document).ready(function () {
+        $.ajax({
             url: '/quotes',
             method: 'GET',
-            success: function (data){        //success when api answer
+            success: function (data){
                 quotes = data;
-                $('#quote-board').html(`<p>${quotes[0].q} - ${quotes[0].a}</p>`)
             }
-        })
-    })
+        });
+    });
 
     function showQuote(index) {
         const quote = quotes[index];
-        $('#quote-board').html(`<p style="text-align:center;">"${quote.q}" - ${quote.q}</p>`)
+        $('#quote-board').html(
+            `<p class="text-xl italic text-gray-800 font-serif">
+            "${quote.q}"
+        </p>
+        <p class="text-sm text-gray-600 mt-2">— ${quote.a}</p>`
+        );
     }
 
     $('#next-quote').click(function () {
-        currentIndex++
 
-        if (currentIndex >= quotes.length) {
-            currentIndex = 0
+        if (!initialized) {
+
+            // Fade suave sem alterar altura
+            $('#api-info').addClass('fade-hide');
+
+            // Mostrar quote suavemente
+            $('#quote-board').removeClass('hidden');
+            setTimeout(() => {
+                $('#quote-board').addClass('quote-visible');
+            }, 10);
+
+            initialized = true;
         }
-        showQuote(currentIndex)
-    })
+
+        if (quotes.length === 0) return;
+
+        currentIndex++;
+        if (currentIndex >= quotes.length) currentIndex = 0;
+
+        showQuote(currentIndex);
+    });
+
+
 
 
 
