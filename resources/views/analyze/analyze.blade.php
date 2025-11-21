@@ -26,16 +26,30 @@
 
                     <div class="flex flex-col"></div>
 
-                    <button type="submit"
-                            class="px-8 py-3 bg-teal-600 hover:bg-teal-500 text-white font-semibold text-base transition-colors duration-300 uppercase tracking-widest rounded focus:outline-none focus:ring-4 focus:ring-teal-200/50 flex items-center shadow-md shadow-teal-700/30">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        Analyze Text
-                    </button>
+                    <div>
+                        <button type="submit"
+                                class="px-8 py-3 bg-teal-600 hover:bg-teal-500 text-white font-semibold text-base transition-colors duration-300 uppercase tracking-widest rounded focus:outline-none focus:ring-4 focus:ring-teal-200/50 flex items-center shadow-md shadow-teal-700/30">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            {{ session('error') ? session('error') : 'Analyze Text' }}
+                        </button>
+
+                    </div>
+
                 </div>
             </form>
         </div>
 
-        <section class="max-w-4xl w-full text-center mb-16 p-0">
+{{--        <div class="space-y-4">--}}
+{{--            @if(session('error'))--}}
+{{--                <x-alert type="error" >--}}
+{{--                    {{ session('error') }}--}}
+
+{{--                </x-alert>--}}
+{{--            @endif--}}
+{{--        </div>--}}
+
+
+        <section class="max-w-4xl w-full text-center mb-8 p-0 ">
 
             <h2 class="text-3xl font-bold text-white mb-2 tracking-wider uppercase border-b border-gray-800 pb-3"> {{-- Fonte maior --}}
                 Lexical Analyzer Resources

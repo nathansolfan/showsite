@@ -1,4 +1,7 @@
-@props(['type' => 'info'])
+@props([
+    'type',
+    'message'
+    ])
 
 @php
 
@@ -10,7 +13,7 @@ $typeClasses = match($type) {
 
 @endphp
 
-<div {{ $attributes->merge(['class' => "p-4 rounded text-sm mb-4 $typeClasses"]) }} >
+<div {{ $attributes->merge(['class' => "p-3 rounded text-sm mb-4 $typeClasses"]) }} >
 
     {{$slot}}
 
