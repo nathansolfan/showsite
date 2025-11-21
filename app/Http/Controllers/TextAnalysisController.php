@@ -10,7 +10,7 @@ class TextAnalysisController extends Controller
     {
         $text = strtolower($request->input('text'));
         if (empty($text)) {
-            return back()->with('error', 'No text provided');
+            return back()->with('error', 'Provide Text');
         }
 
         $words = str_word_count($text, 1);

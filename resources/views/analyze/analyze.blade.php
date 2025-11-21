@@ -27,9 +27,8 @@
                     <div class="flex flex-col"></div>
 
                     <div>
-                        <button type="submit"
+                        <button type="submit" id="analyze-btn"
                                 class="px-8 py-3 bg-teal-600 hover:bg-teal-500 text-white font-semibold text-base transition-colors duration-300 uppercase tracking-widest rounded focus:outline-none focus:ring-4 focus:ring-teal-200/50 flex items-center shadow-md shadow-teal-700/30">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             {{ session('error') ? session('error') : 'Analyze Text' }}
 
                         </button>
@@ -232,4 +231,29 @@
             </div>
         @endisset
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var btn = $('#analyze-btn');
+
+            @if(session('error'))
+            btn.text("{{session('error')}}")
+
+            setTimeout(function () {
+
+                btn.text('Analyze Text')
+            }, 1500)
+            @endif
+
+             btn.closest('form').on('submit', function () {
+                 btn.prop('disabled', true)
+             })
+
+
+        })
+
+    </script>
+
+
 </x-layout>
