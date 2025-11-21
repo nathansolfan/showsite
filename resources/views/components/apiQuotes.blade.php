@@ -12,10 +12,8 @@
 
         <!-- Quote (inicialmente escondido) -->
         <div id="quote-board"
-             class="h-48 flex flex-col items-center justify-center text-center opacity-0 transition-all duration-500">
-            <p class="text-lg italic text-gray-700 font-serif"></p>
+             class="hidden opacity-0 flex flex-col items-center justify-center text-center transition-all duration-500">
         </div>
-
 
         <div class="my-4 border-t border-gray-200 w-1/3 mx-auto"></div>
 
@@ -26,6 +24,7 @@
         </button>
     </div>
 </div>
+
 
 <style>
     .fade-hide {
