@@ -23,9 +23,15 @@ class TextAnalysisController extends Controller
         foreach ($words as $word) {
             $word = trim($word, "\t\n\r\0\x0B.,;:!?'\"()[]{}");
             if (isset($afinn[$word])) {
-                $score += $afinn[$word];
-                if ($afinn[$word] > 0) $positiveWords[] = $word;
-                if ($afinn[$word] < 0) $negativeWords[] = $word;
+
+                $score += $afinn[$word]; //add total - or +
+                if ($afinn[$word] > 0) {
+                    $positiveWords[] = $word;
+                }
+
+                if ($afinn[$word] < 0 ) {
+                    $negativeWords[] = $word;
+                }
             }
         }
 
