@@ -98,7 +98,7 @@
     <!-- ==========================================
          LEAVE FEEDBACK SECTION
          ========================================== -->
-    <section id="leave-feedback" class="py-24 md:py-36 bg-gray-50">
+    <section id="leave-feedback" class="py-20 md:py-36 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <!-- Section Header -->
@@ -112,7 +112,7 @@
                 </div>
 
                 <!-- Feedback Form -->
-                <form action="{{ route('feedback.store') }}" method="POST" class="space-y-10 bg-white p-10 rounded-3xl shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                <form action="{{ route('feedback.store') }}" method="POST" class="space-y-10 bg-white p-10 rounded shadow-xl" data-aos="fade-up" data-aos-delay="150">
                     @csrf
 
                     <!-- Name Field -->
@@ -179,10 +179,10 @@
                     </div>
                 </form>
 
-                <!-- Thank You Note -->
-                <div class="mt-12 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="250">
-                    <p>Thank you for sharing your thoughts — every testimonial makes a difference 💬</p>
-                </div>
+{{--                <!-- Thank You Note -->--}}
+{{--                <div class="mt-12 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="250">--}}
+{{--                    <p>Thank you for sharing your thoughts — every testimonial makes a difference 💬</p>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -190,7 +190,7 @@
     <!-- ==========================================
          CALL-TO-ACTION SECTION
          ========================================== -->
-    <section class="py-16 bg-blue-600 text-white">
+    <section class="py-12 bg-blue-600 text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl md:text-3xl font-bold mb-6" data-aos="fade-up">
                 Ready to Start Your Project?

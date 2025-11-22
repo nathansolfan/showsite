@@ -427,7 +427,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-2">Email</h3>
-                        <p class="text-blue-300">contact@nathanferreira.com</p>
+                        <p class="text-blue-300">nathansolfan@gmail.com</p>
                     </div>
 
                     <div class="bg-gray-800 p-6 rounded-xl">
