@@ -19,6 +19,7 @@ class TextAnalysisController extends Controller
         $score = 0;
         $positiveWords = [];
         $negativeWords = [];
+        $yea = [];
 
         foreach ($words as $word) {
             $word = trim($word, "\t\n\r\0\x0B.,;:!?'\"()[]{}");
