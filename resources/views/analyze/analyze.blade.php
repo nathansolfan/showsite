@@ -38,9 +38,119 @@
             </form>
         </div>
 
+        @isset($result)
+            @php
+                $feeling = strtolower($result['feeling']);
+                $sentimentTextColor = match($feeling) {
+                    'positive' => 'text-green-400',
+                    'negative' => 'text-amber-300',
+                    default => 'text-gray-400',
+                };
+            @endphp
 
+            <div class="w-full max-w-4xl space-y-12 mt-16">
 
-        <section class="max-w-4xl w-full text-center mb-8 p-0 ">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-wider border-b border-teal-600 pb-2 mb-6"> {{-- Borda de destaque para resultados --}}
+                    Analysis Results
+                </h2>
+
+                <div class="p-4 sm:p-6 bg-gray-900 border border-teal-900 rounded-lg"> {{-- Fundo escuro para destaque --}}
+
+                    <div class="flex justify-between items-start mb-4">
+                        <p class="text-sm text-gray-500 uppercase tracking-widest font-ibm-plex-mono">Detected Feeling</p>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest font-ibm-plex-mono">Score</p>
+                    </div>
+
+                    <div class="flex justify-between items-end border-t border-gray-800 pt-2">
+                        <p class="text-5xl font-bold capitalize {{ $sentimentTextColor }} tracking-tight">
+                            {{ $result['feeling'] }}
+                        </p>
+                        <p class="text-5xl font-ibm-plex-mono font-bold text-teal-400">
+                            {{ $result['feeling_score'] }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 rounded-md overflow-hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-4">
+
+                        <div class="p-4 border-r border-gray-800 text-center">
+                            <h3 class="text-xs font-ibm-plex-mono text-gray-400 uppercase">Words</h3>
+                            <p class="text-3xl font-ibm-plex-mono font-bold text-white mt-1">{{ $result['word_count'] }}</p>
+                        </div>
+
+                        <div class="p-4 border-r border-gray-800 text-center">
+                            <h3 class="text-xs font-ibm-plex-mono text-gray-400 uppercase">Characters</h3>
+                            <p class="text-3xl font-ibm-plex-mono font-bold text-white mt-1">{{ $result['chars'] }}</p>
+                        </div>
+
+                        <div class="p-4 border-r border-gray-800 text-center">
+                            <h3 class="text-xs font-ibm-plex-mono uppercase text-green-400">Positive</h3>
+                            <p class="text-3xl font-ibm-plex-mono font-bold text-green-400 mt-1">{{ count(explode(', ', $result['positive_words'])) }}</p>
+                        </div>
+
+                        <div class="p-4 text-center"> {{-- Removida a última borda direita --}}
+                            <h3 class="text-xs font-ibm-plex-mono uppercase text-amber-300">Negative</h3>
+                            <p class="text-3xl font-ibm-plex-mono font-bold text-amber-300 mt-1"
+                            >{{ $result['negative_words'] ? count(explode(', ', $result['negative_words'])) : 0 }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800"> {{-- Linha divisória sutil --}}
+                    {{-- Title --}}
+                    <h3 class="text-xl font-bold text-teal-400 mb-6 uppercase tracking-wider">
+                        LEXICAL RECORD BREAKDOWN
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> {{-- Borda cinza escura --}}
+                            <p class="text-md font-semibold text-green-400 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">
+                                POSITIVE
+                            </p>
+
+                            <div class="space-y-1">
+                                @if ($result['positive_words'])
+                                    @foreach (explode(', ', $result['positive_words']) as $word)
+                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-green-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">
+                                            › {{ $word }}
+                                        </p>
+                                    @endforeach
+                                @else
+                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">
+                                        No positive lexical entries found.
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> {{-- Borda cinza escura --}}
+                            <p class="text-md font-semibold text-amber-300 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">
+                                NEGATIVE
+                            </p>
+
+                            <div class="space-y-1">
+                                @if ($result['negative_words'])
+                                    @foreach (explode(', ', $result['negative_words']) as $word)
+                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-amber-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">
+                                            › {{ $word }}
+                                        </p>
+                                    @endforeach
+                                @else
+                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">
+                                        [EMPTY] No negative lexical entries found.
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        @endisset
+
+        <section class="max-w-4xl w-full text-center mt-8 p-0 ">
 
             <h2 class="text-3xl font-bold text-white mb-2 tracking-wider uppercase border-b border-gray-800 pb-3"> {{-- Fonte maior --}}
                 Lexical Analyzer Resources
@@ -118,118 +228,6 @@
             </p>
         </section>
 
-        @isset($result)
-            @php
-                $feeling = strtolower($result['feeling']);
-                $sentimentTextColor = match($feeling) {
-                    'positive' => 'text-green-400',
-                    'negative' => 'text-amber-300',
-                    default => 'text-gray-400',
-                };
-            @endphp
-
-            <div class="w-full max-w-4xl space-y-12 mt-16">
-
-                <h2 class="text-2xl font-bold text-white uppercase tracking-wider border-b border-teal-600 pb-2 mb-6"> {{-- Borda de destaque para resultados --}}
-                    Analysis Results
-                </h2>
-
-                <div class="p-4 sm:p-6 bg-gray-900 border border-teal-900 rounded-lg"> {{-- Fundo escuro para destaque --}}
-
-                    <div class="flex justify-between items-start mb-4">
-                        <p class="text-sm text-gray-500 uppercase tracking-widest font-ibm-plex-mono">Detected Feeling</p>
-                        <p class="text-sm text-gray-500 uppercase tracking-widest font-ibm-plex-mono">Score</p>
-                    </div>
-
-                    <div class="flex justify-between items-end border-t border-gray-800 pt-2">
-                        <p class="text-5xl font-bold capitalize {{ $sentimentTextColor }} tracking-tight">
-                            {{ $result['feeling'] }}
-                        </p>
-                        <p class="text-5xl font-ibm-plex-mono font-bold text-teal-400">
-                            {{ $result['feeling_score'] }}
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 border border-gray-800 rounded-md overflow-hidden">
-                    <div class="grid grid-cols-2 md:grid-cols-4">
-
-                        <div class="p-4 border-r border-gray-800 text-center">
-                            <h3 class="text-xs font-ibm-plex-mono text-gray-400 uppercase">Words</h3>
-                            <p class="text-3xl font-ibm-plex-mono font-bold text-white mt-1">{{ $result['word_count'] }}</p>
-                        </div>
-
-                        <div class="p-4 border-r border-gray-800 text-center">
-                            <h3 class="text-xs font-ibm-plex-mono text-gray-400 uppercase">Characters</h3>
-                            <p class="text-3xl font-ibm-plex-mono font-bold text-white mt-1">{{ $result['chars'] }}</p>
-                        </div>
-
-                        <div class="p-4 border-r border-gray-800 text-center">
-                            <h3 class="text-xs font-ibm-plex-mono uppercase text-green-400">Positive</h3>
-                            <p class="text-3xl font-ibm-plex-mono font-bold text-green-400 mt-1">{{ count(explode(', ', $result['positive_words'])) }}</p>
-                        </div>
-
-                        <div class="p-4 text-center"> {{-- Removida a última borda direita --}}
-                            <h3 class="text-xs font-ibm-plex-mono uppercase text-amber-300">Negative</h3>
-                            <p class="text-3xl font-ibm-plex-mono font-bold text-amber-300 mt-1"
-                            >{{ $result['negative_words'] ? count(explode(', ', $result['negative_words'])) : 0 }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8 border-t border-gray-800"> {{-- Linha divisória sutil --}}
-                    {{-- Title --}}
-                    <h3 class="text-xl font-bold text-teal-400 mb-6 uppercase tracking-wider">
-                        LEXICAL RECORD BREAKDOWN
-                    </h3>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> {{-- Borda cinza escura --}}
-                            <p class="text-md font-semibold text-green-400 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">
-                                POSITIVE
-                            </p>
-
-                            <div class="space-y-1">
-                                @if ($result['positive_words'])
-                                    @foreach (explode(', ', $result['positive_words']) as $word)
-                                        {{-- Destaque suave na cor de fundo --}}
-                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-green-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">
-                                            › {{ $word }}
-                                        </p>
-                                    @endforeach
-                                @else
-                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">
-                                        [EMPTY] No positive lexical entries found.
-                                    </p>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="border border-gray-800 p-5 rounded-lg bg-gray-900"> {{-- Borda cinza escura --}}
-                            <p class="text-md font-semibold text-amber-300 mb-4 tracking-wide border-b border-gray-700/60 pb-2 flex items-center gap-2">
-                                NEGATIVE
-                            </p>
-
-                            <div class="space-y-1">
-                                @if ($result['negative_words'])
-                                    @foreach (explode(', ', $result['negative_words']) as $word)
-                                        <p class="text-sm font-ibm-plex-mono text-white px-3 py-1.5 border-l-4 border-amber-500 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-sm">
-                                            › {{ $word }}
-                                        </p>
-                                    @endforeach
-                                @else
-                                    <p class="text-gray-500 italic text-sm font-ibm-plex-mono">
-                                        [EMPTY] No negative lexical entries found.
-                                    </p>
-                                @endif
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        @endisset
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
