@@ -1,6 +1,8 @@
 <?php
 $afinnPath  = __DIR__ . '/../storage/app/afinn';
-$outputFile = __DIR__ . '/../storage/app/afinn/afinn.json';
+//$outputFile = __DIR__ . '/../storage/app/afinn/afinn.json';
+$outputFile = __DIR__ . '/../resources/afinn/afinn.json';
+
 
 $afinn = [];
 $files = glob($afinnPath . '/*.txt');
@@ -16,6 +18,6 @@ foreach ($files as $file) {
     }
 }
 
-// salva JSON
+
 file_put_contents($outputFile, json_encode($afinn, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 echo "✅ AFINN JSON criado com " . count($afinn) . " palavras.\n";
