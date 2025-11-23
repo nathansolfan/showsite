@@ -181,7 +181,7 @@
                             <span class="font-semibold text-gray-300">SCORE TYPE:</span> Integer Polarity ($\pm$5)
                         </p>
                         <p class="text-sm text-gray-400 leading-snug">
-                            <span class="font-semibold text-gray-300">SCOPE:</span> Highly reliable for general English sentiment analysis.
+                            <span class="font-semibold text-gray-300">SCOPE:</span> Highly reliable for general English feelings analysis.
                         </p>
                     </div>
 
@@ -224,7 +224,7 @@
             </div>
 
             <p class="text-xs text-gray-600 mt-10 font-ibm-plex-mono uppercase tracking-wider"> {{-- Cor cinza mais escura --}}
-                This interface integrates both resources for transparent, research-backed sentiment interpretation.
+                This interface integrates both resources for transparent, research-backed feelings interpretation.
             </p>
         </section>
 

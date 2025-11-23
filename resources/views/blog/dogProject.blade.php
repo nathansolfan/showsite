@@ -57,7 +57,7 @@
 
         <!-- Features -->
         <div class="mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">Key Features</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Key Features:</h3>
             <ul class="list-disc pl-5 space-y-2 text-gray-700">
                 @foreach ($project['features'] as $feature)
                     <li>{{ $feature }}</li>
@@ -67,7 +67,7 @@
 
         <!-- Tech Stack -->
         <div class="mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">Tech Stack</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Tech Stack:</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 @foreach ($project['tech'] as $tech)
                     <div class="bg-gray-100 p-3 rounded-lg flex items-start gap-3">

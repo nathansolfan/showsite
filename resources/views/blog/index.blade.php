@@ -56,23 +56,25 @@
     </section>
 
     <!-- Latest Posts -->
-    <section id="latest-posts" class="py-16 bg-gray-50">
+    <section id="latest-articles" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Latest Articles</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 <!-- Post Card 1 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">API</span>
-                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Feb 15, 2025</span>
+                        <span class="bg-blue-200 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">API</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Feb, 2024</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Creating the Ultimate Dog Image Generator</h3>
                     <p class="text-gray-600 mb-4">
                         Learn how I built a fun dog image generator using the Dog API, with step-by-step explanations
                         of the code behind the scenes.
                     </p>
-                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 8 min read</span>
                         <a href="{{ route('blog.show', 'dogProject') }}" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -81,42 +83,47 @@
                 </div>
 
                 <!-- Post Card 2 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-green-200" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-green-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Laravel</span>
-                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Feb 8, 2025</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Nov, 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Building a Finance Tracker with Laravel</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Feelings Analyzer</h3>
                     <p class="text-gray-600 mb-4">
-                        A comprehensive walkthrough of creating a finance tracking application
-                        with Laravel, including authentication, database design, and front-end implementation.
+                        Here we use Finn with a lexicon of all words related to feelings with a scale that goes from -5 to +5.
+                        <br>
+                        A script was made and generated the json for the feelings and based on the input you have the final result.
                     </p>
-                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 12 min read</span>
-                        <a href="{{ route('blog.show', 'finance-tracker') }}" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        <a href="/analyze" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Post Card 3 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">Case Study</span>
-                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Jan 30, 2025</span>
+                        <span class="bg-blue-200 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">API</span>
+                        <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Sep, 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Driver App: A Complete Case Study</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Quote API</h3>
                     <p class="text-gray-600 mb-4">
-                        Exploring the architecture and development process behind the driver management
-                        application, including route management and performance analytics.
+                        Quotes are taken from an API on this little project.
+                        Jquery is used for the interaction and it`s displayed on the homepage
+
                     </p>
-                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 15 min read</span>
-                        <a href="{{ route('blog.show', 'driver-app') }}" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        <a href="/#quotes-section" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
                 </div>
+
             </div>
 
             <!-- Pagination -->

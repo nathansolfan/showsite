@@ -18,7 +18,7 @@
 
             <!-- Call-to-Action Buttons -->
             <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="zoom-in" data-aos-delay="600">
-                <a href="{{ url('/works') }}"
+                <a href="/blog/#latest-articles"
                     class="bg-black text-white rounded-lg px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all hover:bg-gray-900 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none">
                     See My Work
                 </a>
@@ -54,8 +54,10 @@
         @include('pages.skillsStatic')
     </div>
 
-{{--    <x-apiWeather/>--}}
-    <x-apiQuotes/>
+    <div id="quotes-section">
+        <x-apiQuotes/>
+    </div>
+
 
     <!-- Projects Section -->
     <section id="projects" class="mt-12 sm:mt-20">
