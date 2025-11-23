@@ -7,7 +7,7 @@
             title="Create your account"
             paragraph=""
             button="Create"
-            action="/user"
+            action="/user/"
         />
     </div>
 

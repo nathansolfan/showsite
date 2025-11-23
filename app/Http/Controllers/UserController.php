@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::all();
+        return view('user.index', ['users' => $users] );
+
+    }
+
     public function create()
     {
         return view('user.create');
@@ -17,14 +24,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'   => ['required','string'],
-            'email'  => ['required','email']
+            'name'     => ['required','string'],
+            'email'    => ['required','email'],
+            'password' => ['required', 'min:3', 'string']
         ]);
-        $validated['password'] = Hash::make($request['password']);
+        $validated['password'] = Hash::make($validated['password']);
 
-        $blog = User::create($validated);
+        $user = User::create($validated);
 
         return redirect('/');
-
     }
+
+//    public function show(User $id)
+//    {
+//        $users = User::findOrFail($id);
+//
+//        return view('user.index', ['users' => $users]);
+//
+//    }
 }
