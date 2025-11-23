@@ -11,7 +11,7 @@
                     <a href="#latest-posts" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                         Read Latest
                     </a>
-                    <a href="/blog/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                    <a href="/user/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                         Create
                     </a>
                     {{-- <a href="{{ route('blog.categories') }}" class="bg-transparent border-2 border-white hover:bg-white/10 transition px-6 py-3 rounded-lg font-medium">
