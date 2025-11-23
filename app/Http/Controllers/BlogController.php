@@ -29,15 +29,6 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'   => ['required','string'],
-            'email'  => ['required','email']
-        ]);
-        $validated['password'] = Hash::make($validated['password']);
-
-        $blog = Blog::create($validated);
-
-        return redirect('/');
 
     }
 
