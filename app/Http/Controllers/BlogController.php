@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -33,6 +34,10 @@ class BlogController extends Controller
             'email'  => ['required','email']
         ]);
         $validated['password'] = Hash::make($validated['password']);
+
+        $blog = Blog::create($validated);
+
+        return redirect('/');
 
     }
 
