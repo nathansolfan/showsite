@@ -60,11 +60,9 @@ Route::get('/workss', function(Request $request, GitHubController $controller) {
     return $controller->index($request, 'pages.workss');
 })->name('workss');
 
+// FEEDBACK
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
-
-// BLOG Route
-Route::resource('/blog', BlogController::class);
 
 // SVG
 Route::get('/dogs', function () {
@@ -86,6 +84,8 @@ Route::get('/analyze', function () {
     return view('analyze.analyze');
 });
 
+// BLOG Route
+Route::resource('/blog', BlogController::class);
 
 
 // CONTACT
