@@ -1,9 +1,9 @@
 @props([
     'action',
-    'title' => '',
+    'title'     => '',
     'paragraph' => '',
-    'button' => ''
-
+    'button'    => '',
+    'value'     => null,
 ])
 
 
@@ -33,6 +33,7 @@
                         type="text"
                         id="name"
                         name="name"
+                        value="{{ old('name', $value->name ?? '') }}"
                         placeholder="Your name"
                         class="block w-full border-0 bg-transparent focus:ring-0 p-0 pb-2 placeholder-gray-300 text-gray-900 text-lg"
                         required>
