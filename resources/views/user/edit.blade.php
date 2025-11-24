@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-forms.createForm
+    <x-forms.userForm
         action="/user"
         title="Edit your account"
 {{--        paragraph="Edit your account"--}}

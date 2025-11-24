@@ -45,12 +45,20 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('user.edit', ['user' => $user]);
-//        dd($user);
+        dd($user);
     }
 
-    public function update(User $user)
+    public function update(User $user, Request $request)
     {
-        dd();
+        $validated = $request->validate([
+            'name'  => ['required', 'string'],
+            'email' => ['required', 'email', 'string']
+        ]);
+        $validated['password'] = Hash::make($request['password']);
+
+        $user->update($validated);
+
+
 
     }
 

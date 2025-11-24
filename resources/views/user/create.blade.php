@@ -3,7 +3,7 @@
     <div>
 
 
-        <x-forms.createForm
+        <x-forms.userForm
             title="Create your account"
             paragraph=""
             button="Create"
