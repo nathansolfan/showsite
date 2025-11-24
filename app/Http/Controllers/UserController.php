@@ -13,7 +13,6 @@ class UserController extends Controller
     {
         $users = User::all();
         return view('user.index', ['users' => $users] );
-
     }
 
     public function create()
@@ -35,11 +34,25 @@ class UserController extends Controller
         return redirect('/');
     }
 
-//    public function show(User $id)
-//    {
-//        $users = User::findOrFail($id);
-//
-//        return view('user.index', ['users' => $users]);
-//
-//    }
+    public function show($id)
+    {
+//        dd($id);
+        $user = User::findOrFail($id);
+
+        return view('user.show', ['user' => $user]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('user.edit');
+        dd($user);
+
+
+
+
+    }
+
+
+
+
 }

@@ -1,9 +1,16 @@
 <x-layout>
 
-    <h1>yo</h1>
-    @foreach($users as $user)
-        {{$user->name}}
-    @endforeach
+    <div class="flex flex-col">
+        @foreach($users as $user)
+            {{$user->name}}
+            <a href="/user/{{$user->id}}">Check</a>
+
+        @endforeach
+
+    </div>
+
+
+
 
 
 </x-layout>
