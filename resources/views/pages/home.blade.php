@@ -96,7 +96,7 @@
         <!-- View All Projects Button -->
         <!-- View All Projects Button - Refined and Compact -->
         <div class="mt-10 sm:mt-12 text-center" data-aos="zoom-in" data-aos-offset="100">
-            <a href="{{ url('/projects') }}"
+            <a href="/blog/#latest-articles"
                 class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-md text-sm shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all inline-flex items-center">
                 <span>View All Projects</span>
                 <i class="fas fa-arrow-right ml-2 text-xs"></i>
