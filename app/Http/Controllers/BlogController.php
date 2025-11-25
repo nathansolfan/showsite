@@ -67,4 +67,10 @@ class BlogController extends Controller
     {
         //
     }
+
+    public function article()
+    {
+        return view('blog.article');
+
+    }
 }

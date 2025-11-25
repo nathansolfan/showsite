@@ -86,6 +86,7 @@ Route::get('/analyze', function () {
 });
 
 // BLOG Route
+Route::get('/blog/article', [BlogController::class, 'article']);
 Route::resource('/blog', BlogController::class);
 
 // USER

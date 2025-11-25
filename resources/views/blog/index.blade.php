@@ -49,7 +49,7 @@
                         A deep dive into creating a modern, responsive portfolio website using Laravel,
                         TailwindCSS, and interactive SVG animations. Learn how I built this site from scratch.
                     </p>
-                    <a href="{{ route('blog.show', 'portfolio-development') }}"
+                    <a href="/blog/article"
                        class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                         Read Full Article <i class="fas fa-arrow-right ml-2 text-sm"></i>
                     </a>
