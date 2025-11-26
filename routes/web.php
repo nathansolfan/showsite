@@ -92,6 +92,11 @@ Route::resource('/blog', BlogController::class);
 // USER
 Route::resource('/user', UserController::class);
 
+//DINIS
+Route::get('/kitchen', function () {
+    return view('kitchen.index');
+});
+
 
 // CONTACT
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
