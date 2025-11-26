@@ -1,187 +1,219 @@
-# Nathan Ferreira Portfolio Website
+Nathan Ferreira — Portfolio Website
 
-A modern, responsive portfolio website built with Laravel 11, Tailwind CSS, Vue 3, and interactive SVG/JS-powered modules.
+A modern full-stack portfolio built with Laravel 11, Vue 3, TailwindCSS, and interactive SVG/JS animations.
+Live Demo: https://nathanferreira.com
 
-## 🚀 Features
+🚀 Overview
 
-* **Responsive Design** – Mobile-first layout for a great experience on all devices
-* **Interactive Project Cards** – Animated project cards with SVG illustrations
-* **Text Analysis Module** – Research-backed sentiment analysis of user input
-* **Quote Generator** – External API integration with smooth in-page transitions
-* **GitHub Works Pages** – Dynamic pages to showcase GitHub projects
-* **Feedback & Contact System** – Feedback page, contact form, and stored messages
-* **Smooth Animations** – AOS (Animate on Scroll) + custom JavaScript animations
-* **Clean Component Structure** – Modular Blade components and pages for easy maintenance
+This project serves as a portfolio platform showcasing my development skills across backend, frontend, UI/UX, API integration, data processing, animations, and architectural best practices.
 
-## 🛠️ Technology Stack
+It includes:
 
-* **Backend**: Laravel 11 (PHP 8.2)
-* **Frontend**: Tailwind CSS, JavaScript, Vue 3, Alpine.js
-* **Animations**: AOS (Animate on Scroll), custom JS (Vite-bundled)
-* **Icons**: Font Awesome
-* **HTTP / API**: Laravel HTTP client, Axios (via Vue components)
-* **Build Tools**: Vite, NPM
+Custom-built UI components
 
-## 📁 Project Structure (Key Folders)
+Interactive SVG animations
 
-```
+A sentiment-analysis module
+
+Blog system
+
+API integrations
+
+Contact & feedback system
+
+GitHub project showcase pages
+
+Admin analytics
+
+Designed with a clean structure, scalable codebase, and modern Laravel standards.
+
+✨ Features
+🖥️ Frontend
+
+Fully responsive layout
+
+TailwindCSS + custom animations
+
+Vue 3 + Axios + Vite
+
+AOS scroll animations
+
+SVG-based interactive modules
+
+Modular Blade components
+
+🧠 Text Analysis Module
+
+Sentiment score (positive / negative / neutral)
+
+Word and character counts
+
+Highlighted positive/negative words
+
+Powered by a Vue 3 component (TextAnalyzer.vue)
+
+Backend processing using pre-generated lexicon JSON files
+
+🎨 Portfolio & GitHub Works
+
+Animated project cards
+
+Two layout variations (/portfolio and /portfolio2)
+
+GitHub project showcases at /works and /workss
+
+🔌 External API Integration
+
+Quote generator using a third-party API
+
+Backend proxy endpoint /quotes
+
+Smooth transitions and cached responses
+
+📝 Blog System
+
+Resourceful routes
+
+Create / edit / delete posts
+
+Clean admin UX
+
+SEO-ready structure
+
+💬 Contact & Feedback System
+
+/contact — form with validation
+
+/feedback — user feedback submission
+
+/messages — admin message viewer
+
+Stored in the database
+
+📊 Admin Visits / Analytics
+
+/admin/visits displays visit tracking
+
+Designed for future extension (charts, logs, user insights)
+
+🛠️ Technology Stack
+Backend
+
+Laravel 11
+
+PHP 8.2
+
+Laravel HTTP Client
+
+Eloquent ORM
+
+Blade templates
+
+Frontend
+
+Vue 3
+
+TailwindCSS
+
+Alpine.js
+
+AOS animations
+
+Vite bundler
+
+Other
+
+Font Awesome
+
+Axios
+
+MySQL or SQLite
+
+Deployed via Laravel Forge on a VPS
+
+📁 Project Structure
 resources/
-├── css/
-│   └── app.css
+├── css/app.css
 ├── js/
 │   ├── app.js
 │   ├── home.js
 │   ├── projectAnimation.js
 │   ├── textAnimation.js
-│   └── components/
-│       └── TextAnalyzer.vue
+│   └── components/TextAnalyzer.vue
 └── views/
-    ├── components/
-    │   └── layout.blade.php
-    ├── partials/
-    │   ├── nav.blade.php
-    │   └── footer.blade.php
-    ├── pages/
-    │   ├── home.blade.php
-    │   ├── about.blade.php
-    │   ├── services.blade.php
-    │   ├── feedback.blade.php
-    │   ├── portfolio.blade.php
-    │   ├── portfolio2.blade.php
-    │   ├── works.blade.php
-    │   └── workss.blade.php
-    ├── contacts/
-    │   └── contact.blade.php
-    ├── analyze/
-    │   └── analyze.blade.php
-    ├── sections/
-    │   ├── box2.blade.php
-    │   ├── driverApp.blade.php
-    │   ├── financeApp.blade.php
-    │   └── svgs/
-    └── svgs/
-        └── dogs.blade.php
-```
+├── components/
+├── partials/
+├── pages/
+├── contacts/
+├── analyze/
+├── sections/
+└── svgs/
 
-## 🌟 Main Modules
+🧭 Routes Overview
+Route	Description
+/	Home
+/about	About
+/services	Services
+/portfolio, /portfolio2	Portfolio layouts
+/works, /workss	GitHub project pages
+/feedback	Feedback
+/contact	Contact form
+/messages	View stored messages
+/blog	Blog CRUD
+/analyze	Text analysis
+/quotes	Quote API via backend
+/dogs	SVG demo
+/admin/visits	Admin analytics
+🧪 Testing (PHPUnit)
 
-### 1. Featured Projects
+This project includes initial Laravel feature tests.
+Recommended future additions:
 
-* Modular project cards with hover/scroll animations
-* Technology stacks displayed via icons
-* Links to GitHub and live demos
-* Adding a new project: create a new section and include in the page
+Blog CRUD tests
 
-### 2. Text Analysis Module
+Contact form validation tests
 
-* Paste text and receive:
+API integration tests
 
-    * Word & character counts
-    * Sentiment score (positive, negative, neutral)
-    * Lists of positive/negative words
-* Vue component `TextAnalyzer.vue` handles API-driven analysis
+Vue component tests via Dusk or Playwright
 
-### 3. Quote Generator
+🛠️ Automated CI (GitHub Actions)
 
-* Backend `/quotes` endpoint proxies external API
-* Smooth fade-in/out transitions
-* Button cycles through cached quotes
+You can enable continuous integration with:
 
-### 4. GitHub “Works” Pages
+Composer install
 
-* `/works` and `/workss` showcase GitHub projects in different layouts
-* Ready for API integration or local data
+Node build
 
-### 5. Feedback & Contact
+PHPUnit tests
 
-* `/feedback` – Feedback submission and listing
-* `/contact` – Contact form for clients/collaborators
-* `/messages` – View stored contact messages (admin use)
+Laravel Pint (code style)
 
-### 6. Blog & Admin Visits
+If you want, I can generate this file for you:
 
-* `/blog` – Resourceful routes (index, show, create, update)
-* `/admin/visits` – Admin-facing analytics/visit view
+.github/workflows/ci.yml
 
-### 7. Layout, Navigation & Animations
 
-* Global layout handles meta tags, SEO, and skip-to-content link
-* Navigation fully responsive with mobile toggled menu
-* AOS animations initialized and tuned for devices
+Just say:
+👉 “Generate GitHub Actions for Laravel 11”
 
-## 🧭 Routes Overview
-
-| Route                       | Description                     |
-| --------------------------- | ------------------------------- |
-| `/`                         | Home                            |
-| `/about`                    | About page                      |
-| `/services`                 | Services page                   |
-| `/portfolio`, `/portfolio2` | Portfolio layouts               |
-| `/works`, `/workss`         | GitHub works pages              |
-| `/feedback`                 | Feedback page                   |
-| `/contact`                  | Contact form                    |
-| `/messages`                 | Stored messages                 |
-| `/blog`                     | Blog (resourceful routes)       |
-| `/analyze` (GET/POST)       | Text analysis form & processing |
-| `/quotes`                   | JSON quotes API                 |
-| `/dogs`                     | SVG demo page                   |
-| `/admin/visits`             | Visits/analytics page           |
-
-## 📝 Setup Instructions
-
-1. **Clone the repository**
-
-```bash
+🧑‍💻 Local Setup
 git clone https://github.com/nathansolfan/showsite.git
 cd showsite
-```
 
-2. **Install PHP dependencies**
-
-```bash
 composer install
-```
-
-3. **Install Node.js dependencies**
-
-```bash
 npm install
-```
 
-4. **Configure environment**
-
-```bash
 cp .env.example .env
 php artisan key:generate
-```
 
-Update `.env` with database and API configs.
-
-5. **Run database migrations**
-
-```bash
 php artisan migrate
-```
-
-6. **Compile assets**
-
-```bash
 npm run dev
-# npm run build for production
-```
 
-7. **Serve the application**
-
-```bash
 php artisan serve
-```
 
-Open `http://127.0.0.1:8000` in your browser.
+🌍 Live Demo
 
-## 🚀 Live Demo
+https://nathanferreira.com
 
-[https://nathanferreira.com](https://nathanferreira.com)
-
-## 📄 License
-
-MIT License
+Hosted on Laravel Forge + VPS
