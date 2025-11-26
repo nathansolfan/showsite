@@ -23,15 +23,15 @@
     </style>
 </head>
 <body class="font-['Inter']">
-<div class="relative min-h-screen bg-repeat flex items-center justify-center p-4 overflow-hidden"
-     style="background-image: url('{{ asset('images/kitchen.jpg') }}');
+<div class="relative min-h-screen bg-cover bg-center flex items-center justify-center p-4 overflow-hidden"
+     style="background-image: url('{{ asset('images/kitchen.jpg') }}');">
             background-size: 400px auto;">
 
     <!-- Overlay com gradiente -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40"></div>
 
     <!-- Vinheta nas bordas -->
-    <div class="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]"></div>
+    <div class="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.5)]"></div>
 
     <!-- Conteúdo principal -->
     <div class="relative z-10 text-center max-w-4xl animate-float">
