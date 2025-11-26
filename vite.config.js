@@ -6,11 +6,16 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
+                'resources/css/kitchen.css',
+
                 'resources/js/app.js',
+                'resources/js/kitchen.js',
+
+
                 'resources/js/home.js',
                 'resources/js/projectAnimation.js',
                 'resources/js/textAnimation.js',
-                'resources/js/scrollText.js' // add new file here
+                'resources/js/scrollText.js' //
                 ],
             refresh: true,
         }),
