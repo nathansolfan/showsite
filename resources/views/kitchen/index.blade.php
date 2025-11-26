@@ -23,9 +23,13 @@
     </style>
 </head>
 <body class="font-['Inter']">
-<div class="relative min-h-screen bg-cover bg-center flex items-center justify-center p-4 overflow-hidden"
-     style="background-image: url('{{ asset('images/kitchen.jpg') }}');">
-            background-size: 400px auto;">
+<div class="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-repeat"
+     style="
+        background-image: url('{{ asset('images/kitchen.jpg') }}');
+        background-size: 410px auto;
+        background-position: top left;
+     ">
+
 
     <!-- Overlay com gradiente -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40"></div>
