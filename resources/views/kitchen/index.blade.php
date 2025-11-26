@@ -26,7 +26,7 @@
 <div class="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-repeat"
      style="
         background-image: url('{{ asset('images/kitchen.jpg') }}');
-        background-size: 410px auto;
+        background-size: 450px auto;
         background-position: top left;
      ">
 
