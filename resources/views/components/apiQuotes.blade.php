@@ -1,6 +1,6 @@
 <div class="max-w-4xl w-full mx-auto px-4 py-8">
 
-    <!-- Descrição da API -->
+    <!-- API -->
     <div id="api-info" class="p-5 bg-gray-100 rounded-xl border border-gray-200 shadow-sm mb-6 text-center">
         <h2 class="text-xl font-bold font-merriweather text-gray-900">Quote Generator</h2>
         <p class="text-gray-600 mt-1 text-sm tracking-wide">
@@ -10,7 +10,7 @@
 
     <div class="p-4 bg-white rounded-xl shadow-xl border border-gray-100">
 
-        <!-- Quote (inicialmente escondido) -->
+        <!-- QUOTE - Hidden at start -->
         <div id="quote-board"
              class="hidden opacity-0 flex flex-col items-center justify-center text-center transition-all duration-500">
         </div>
@@ -105,10 +105,10 @@
 
         if (!initialized) {
 
-            // Fade suave sem alterar altura
+            // fade
             $('#api-info').addClass('fade-hide');
 
-            // Mostrar quote suavemente
+            // show quote
             $('#quote-board').removeClass('hidden');
             setTimeout(() => {
                 $('#quote-board').addClass('quote-visible');

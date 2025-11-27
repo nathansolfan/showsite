@@ -22,7 +22,7 @@ class TextAnalysisTest extends TestCase
     public function analyze_returns_feeling_and_counts()
     {
         $payload = [
-            'text' => 'I lvoe programming but hate bugs'
+            'text' => 'I love programming but hate bugs'
         ];
         $response = $this->postJson('analyze', $payload);
 
