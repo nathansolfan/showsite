@@ -97,6 +97,11 @@ Route::get('/kitchen', function () {
     return view('kitchen.index');
 });
 
+//FARM
+Route::get('/farm', function () {
+    return view('farm.index');
+});
+
 
 // CONTACT
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
