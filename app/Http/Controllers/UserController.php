@@ -36,7 +36,6 @@ class UserController extends Controller
 
     public function show($id)
     {
-//        dd($id);
         $user = User::findOrFail($id);
 
         return view('user.show', ['user' => $user]);
@@ -45,12 +44,11 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('user.edit', ['user' => $user]);
-//        dd($user);
+
     }
 
     public function update(User $user, Request $request)
     {
-//        dd();
         $validated = $request->validate([
             'name'  => ['required', 'string'],
             'email' => ['required', 'email', 'string']
