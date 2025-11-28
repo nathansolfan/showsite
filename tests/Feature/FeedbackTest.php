@@ -15,7 +15,7 @@ class FeedbackTest extends TestCase
     {
         $response = $this->get('/feedback');
         $response->assertStatus(200);
-        $response->assertSee('form');
+        $response->assertSee('<form', false);
     }
 
     public function test_feedback_post()
