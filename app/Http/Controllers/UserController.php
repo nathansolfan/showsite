@@ -60,9 +60,6 @@ class UserController extends Controller
         $user->update($validated);
 
         return redirect('/');
-
-
-
     }
 
 

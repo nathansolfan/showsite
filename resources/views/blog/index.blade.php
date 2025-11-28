@@ -16,9 +16,9 @@
                             Create
                         </a>
                     @endguest
-                    @foreach($blogs as $blog)
-                        {{$blog->name}}
-                    @endforeach
+{{--                    @foreach($blogs as $blog)--}}
+{{--                        {{$blog->name}}--}}
+{{--                    @endforeach--}}
 
                     {{-- <a href="{{ route('blog.categories') }}" class="bg-transparent border-2 border-white hover:bg-white/10 transition px-6 py-3 rounded-lg font-medium">
                         Browse Categories

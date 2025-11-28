@@ -14,8 +14,11 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return view('blog.index', ['blogs' => $blogs]);
+        if (auth()) {
+            return view('blog.index');
+        };
+        return view('blog.index');
+
     }
 
     /**
@@ -37,7 +40,7 @@ class BlogController extends Controller
 //        ]);
 //        $validated['password'] = Hash::make($request['password']);
 //
-//        $project = Blog::create($validated);
+//        $blog = Blog::create($validated);
 //
 //        return redirect('/');
 
