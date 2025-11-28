@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\TrackVisits;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,7 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(append: [
             // Existing middleware
-            \App\Http\Middleware\TrackVisits::class,
+            TrackVisits::class,
+        ]);
+
+        $middleware->alias([
+            'admin' => IsAdmin::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
