@@ -40,7 +40,7 @@
             </div>
 
             {{-- Users Table Card --}}
-            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+{{--            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">--}}
 
                 {{-- Table Header --}}
                 <div class="px-6 py-4 border-b border-gray-200">
