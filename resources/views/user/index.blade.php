@@ -24,7 +24,6 @@
                     </a>
                 </div>
             </div>
-
             {{-- Stats Card --}}
             <div class="bg-gray-50 rounded-2xl p-6 mb-8 border border-gray-100">
                 <div class="flex items-center justify-between">

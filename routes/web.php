@@ -90,7 +90,7 @@ Route::get('/blog/article', [BlogController::class, 'article']);
 Route::resource('/blog', BlogController::class);
 
 // USER
-Route::resource('/user', UserController::class);
+Route::resource('/user', UserController::class)->middleware(['auth', 'is_admin']);
 
 //DINIS
 Route::get('/kitchen', function () {
