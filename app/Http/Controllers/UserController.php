@@ -15,10 +15,10 @@ class UserController extends Controller
         return view('user.index', ['users' => $users] );
     }
 
-//    public function create()
-//    {
-//        return view('user.create');
-//    }
+    public function create()
+    {
+        return view('user.create');
+    }
 
     public function store(Request $request)
     {
