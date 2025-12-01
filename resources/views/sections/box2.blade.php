@@ -154,7 +154,7 @@
           </span>
         </div>
 
-        <a href="#next-project" class="group flex items-center text-xs text-gray-800 hover:text-amber-600 transition-colors">
+          <a href="/blog/#latest-articles" class="group flex items-center text-xs text-gray-800 hover:text-amber-600 transition-colors">
           <span>Next Project</span>
           <svg class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>

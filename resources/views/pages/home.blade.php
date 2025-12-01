@@ -79,11 +79,11 @@
             </div> --}}
 
             <!-- Second Project Card -->
-            <div class="py-8 sm:py-16 w-full flex items-center" data-aos="fade-left" data-aos-duration="800" data-aos-offset="200">
-                <div class="flex flex-col justify-between w-[95%] sm:w-[90%] max-w-7xl h-auto mx-auto rounded-lg shadow-lg">
-                    @include('sections.financeApp')
-                </div>
-            </div>
+{{--            <div class="py-8 sm:py-16 w-full flex items-center" data-aos="fade-left" data-aos-duration="800" data-aos-offset="200">--}}
+{{--                <div class="flex flex-col justify-between w-[95%] sm:w-[90%] max-w-7xl h-auto mx-auto rounded-lg shadow-lg">--}}
+{{--                    @include('sections.financeApp')--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <!-- Third Project Card (if needed) -->
             <div class="py-8 sm:py-16 w-full flex items-center" data-aos="fade-up" data-aos-duration="800" data-aos-offset="200">
