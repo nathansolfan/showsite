@@ -105,10 +105,17 @@ Route::get('/kitchen', function () {
     return view('kitchen.index');
 });
 
+Route::get('/raluca', function () {
+    return view('raluca.index');
+});
+
 //FARM
 Route::get('/farm', function () {
     return view('farm.index');
 });
+
+
+
 
 
 // CONTACT
