@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
@@ -90,10 +91,14 @@ Route::get('/blog/article', [BlogController::class, 'article']);
 Route::resource('/blog', BlogController::class);
 
 // USER
-Route::resource('/user', UserController::class)->middleware(['auth', 'is_admin']);
+
+Route::resource('/user', UserController::class)->except(['index']);
+Route::get('user', [UserController::class, 'index'])->middleware(['auth', 'is_admin']);
+
 
 // AUTH
-Route::get('/login', [AuthController::class]);
+Route::get('/login', [AuthController::class, 'loginForm']);
+Route::post('/login',[AuthController::class,'login']);
 
 //DINIS
 Route::get('/kitchen', function () {

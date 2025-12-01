@@ -6,7 +6,8 @@
         <x-forms.userForm
             title="Create your account"
             paragraph=""
-            button="Create"
+            button1="Login"
+            button2="Create"
             action="/user/"
         />
     </div>
