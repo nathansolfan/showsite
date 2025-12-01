@@ -92,6 +92,9 @@ Route::resource('/blog', BlogController::class);
 // USER
 Route::resource('/user', UserController::class)->middleware(['auth', 'is_admin']);
 
+// AUTH
+Route::get('/login', [AuthController::class]);
+
 //DINIS
 Route::get('/kitchen', function () {
     return view('kitchen.index');
