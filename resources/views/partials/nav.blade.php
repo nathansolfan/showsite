@@ -1,68 +1,51 @@
-<!-- Apple-Style Navigation -->
-<nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-gray-200/50">
-    <div class="max-w-[980px] mx-auto px-6">
-        <div class="flex items-center justify-between h-12">
+<!-- Navigation -->
+<nav role="navigation" class="  w-full top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
+    <div class="container mx-auto flex justify-between items-center ">
+        <!-- Logo -->
+        <div class="text-lg font-bold text-white">
+            <a href="/">
+                {{-- <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto"> --}}
+                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto">
 
-            <!-- Logo -->
-            <a href="/" class="flex items-center -ml-2">
-                <img src="{{ asset('images/logoNF.png') }}" alt="NF" class="h-7 opacity-90 hover:opacity-100 transition-opacity">
             </a>
+        </div>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/" class="text-xs text-gray-800 hover:text-black transition-colors">Home</a>
-                <a href="/about" class="text-xs text-gray-800 hover:text-black transition-colors">About</a>
-                <a href="/contact" class="text-xs text-gray-800 hover:text-black transition-colors">Contact</a>
-                <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="text-xs text-gray-800 hover:text-black transition-colors">Github</a>
-                <a href="{{ route('feedback') }}" class="text-xs text-gray-800 hover:text-black transition-colors">Feedback</a>
-                <a href="{{ route('blog.index') }}" class="text-xs text-gray-800 hover:text-black transition-colors">Projects</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden p-1 -mr-1">
-                <svg id="menu-open" class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-                <svg id="menu-close" class="w-5 h-5 text-gray-800 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+        <!-- Mobile menu button -->
+        <div class="lg:hidden">
+            <button id="nav-toggle" aria-label="Toggle Navigation Menu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200 transition-colors duration-300">
+                <i id="menu-icon" class="fas fa-bars"></i>
             </button>
+        </div>
+
+        <!-- Unified Navigation Links -->
+        <div class="hidden lg:flex space-x-6" id="nav-content">
+            <a href="/" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Home</a>
+            <a href="/about" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">About</a>
+            {{-- <a href="/portfolio" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
+            <a href="/portfolio2" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a> --}}
+
+            <a href="/contact" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Contact</a>
+            {{-- <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a> --}}
+            <a href="https://github.com/nathansolfan?tab=repositories" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a>
+
+            <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100 transition-transform duration-330 transform hover:scale-105 ">Feedback</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100  transition-transform duration-300 transform hover:scale-105  ">Projects</a>
+
+
+        </div>
+    </div>
+
+    <!-- Mobile Menu (matching desktop links) -->
+    <div id="mobile-menu" class="lg:hidden hidden transition-all duration-300">
+        <div class="px-6 pt-4 pb-6 space-y-4 bg-blue-400">
+            <a href="/" class="block text-white hover:text-gray-100">Home</a>
+            <a href="/about" class="block text-white hover:text-gray-100">About</a>
+            <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
+            <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
+            <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Workss</a>
+            <a href="{{ route('feedback') }}" class="block text-white hover:text-gray-100">Feedback</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
+
         </div>
     </div>
 </nav>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed w-full top-12 bg-white/95 backdrop-blur-2xl border-b border-gray-200/50 hidden md:hidden z-40">
-    <div class="max-w-[980px] mx-auto px-6 py-6">
-        <div class="space-y-4">
-            <a href="/" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">Home</a>
-            <a href="/about" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">About</a>
-            <a href="/contact" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">Contact</a>
-            <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">Github</a>
-            <a href="{{ route('feedback') }}" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">Feedback</a>
-            <a href="{{ route('blog.index') }}" class="block text-2xl text-gray-900 hover:text-gray-600 transition-colors">Projects</a>
-        </div>
-    </div>
-</div>
-
-<script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const open = document.getElementById('menu-open');
-    const close = document.getElementById('menu-close');
-
-    btn.onclick = () => {
-        menu.classList.toggle('hidden');
-        open.classList.toggle('hidden');
-        close.classList.toggle('hidden');
-    };
-
-    // Close menu when clicking links
-    menu.querySelectorAll('a').forEach(a => {
-        a.onclick = () => {
-            menu.classList.add('hidden');
-            open.classList.remove('hidden');
-            close.classList.add('hidden');
-        };
-    });
-</script>
