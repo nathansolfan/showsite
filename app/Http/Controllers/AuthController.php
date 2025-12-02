@@ -20,9 +20,16 @@ class AuthController extends Controller
             'email'    => ['required', 'email'],
             'password' => ['required', 'min:3'],
         ]);
-        Auth::attempt($validated);
-        $request->session()->regenerate();
-        return redirect('/');
+
+        if (Auth::attempt($validated)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+        return back()->withErrors([
+            'email' => 'Invalid Email'
+        ]);
+
+
     }
 
     public function logout()

@@ -14,10 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        if (auth()) {
-            return view('blog.index');
-        };
-        return view('blog.index');
+        $blogs = Blog::all();
+        return view('blog.index', ['blogs' => $blogs]);
 
     }
 
