@@ -17,22 +17,22 @@
                     @csrf
 
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">1. Your Contact Information</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 border-b mb-1">1. Your Contact Information</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div>
-                                <label for="name" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Your Name *</label>
+                                <label for="name" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Your Name *</label>
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
                                        class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
                                        required>
                             </div>
                             <div>
-                                <label for="email" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Email Address *</label>
+                                <label for="email" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Email Address *</label>
                                 <input type="email" id="email" name="email" value="{{ old('email') }}"
                                        class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
                                        required>
                             </div>
                             <div>
-                                <label for="phone" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Phone Number (Optional)</label>
+                                <label for="phone" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Phone Number (Optional)</label>
                                 <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
                                        class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
                             </div>
@@ -41,17 +41,17 @@
 
 
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">2. Project Scope & Requirements</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-6 border-b mb-1">2. Project Scope & Requirements</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div>
-                                <label for="title" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Project Title *</label>
+                                <label for="title" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Project Title *</label>
                                 <input type="text" id="title" name="title" value="{{ old('title') }}"
                                        class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
                                        required>
                             </div>
 
                             <div>
-                                <label for="budget" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Estimated Budget</label>
+                                <label for="budget" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Estimated Budget</label>
                                 <input type="text" id="budget" name="budget" value="{{ old('budget') }}"
                                        class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400">
                             </div>
@@ -63,13 +63,13 @@
                                       class="w-full border border-gray-300 rounded-xl p-5 text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400 text-lg"
                                       placeholder="Describe the scope, key features, target audience, and primary goals you hope to achieve with this project."
                                       required>{{ old('content') }}</textarea>
-                            <p class="text-xs text-gray-500 mt-2">Markdown is supported. Detail helps create a better proposal.</p>
+                            <p class="text-xs text-gray-500 mb-4">Markdown is supported. Detail helps create a better proposal.</p>
                         </div>
                     </div>
 
 
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">3. Technical Specs & References</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b">3. Technical Specs & References</h3>
 
                         <div class="mb-8">
                             <label for="technologies" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Key Technologies or Stack</label>
