@@ -22,6 +22,18 @@
                     </form>
                 @endauth
                 <a href="{{ route('blog.index') }}" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-md">Projects</a>
+                    <p class="text-white hover:text-blue-100 font-medium transition-colors">
+{{--                        Hi,{{ auth()->check() ? auth()->user()->name : '' }}--}}
+{{--                        Hi, {{auth()->user()->name}}--}}
+
+                        @if(auth()->user())
+                            Hi, {{auth()->user()->name}}
+                        @else
+                           @if(request()->is('/') || request()->is('/blog'))
+                               Welcome
+                           @endif
+                        @endif
+                    </p>
 
             </div>
 
