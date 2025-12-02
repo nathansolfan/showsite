@@ -5,7 +5,7 @@
 
             <!-- Logo -->
             <a href="/" class="transform hover:scale-110 transition-transform duration-300">
-                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira" class="h-12 drop-shadow-lg">
+                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira" class="h-36 drop-shadow-lg mt-4">
             </a>
 
             <!-- Desktop Links -->
@@ -29,7 +29,7 @@
                         @if(auth()->user())
                             Hi, {{auth()->user()->name}}
                         @else
-                           @if(request()->is('/') || request()->is('/blog'))
+                           @if(request()->is('/') || request()->routeIs('blog.index'))
                                Welcome
                            @endif
                         @endif
