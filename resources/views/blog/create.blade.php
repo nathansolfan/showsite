@@ -1,14 +1,13 @@
 <x-layout>
 
     <div>
-
-
-{{--        <x-forms.createForm--}}
-{{--        title="Create your account"--}}
-{{--        paragraph=""--}}
-{{--        button="Create"--}}
-{{--        action="/blog"--}}
-{{--        />--}}
+        <x-forms.userForm
+            title="Create your account"
+            paragraph=""
+            button="Create"
+            action="/blog"
+        >
+        </x-forms.userForm>
     </div>
 
 

@@ -17,7 +17,7 @@
                         </a>
                     @endguest
                     @auth
-                        <a href="/user/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                        <a href="/blog/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                             Project
                         </a>
                     @endauth
