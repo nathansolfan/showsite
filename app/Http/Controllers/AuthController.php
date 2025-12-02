@@ -23,8 +23,12 @@ class AuthController extends Controller
         Auth::attempt($validated);
         $request->session()->regenerate();
         return redirect('/');
+    }
 
-
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/blog');
 
     }
 }

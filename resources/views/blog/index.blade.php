@@ -16,9 +16,12 @@
                             Create
                         </a>
                     @endguest
-{{--                    @foreach($blogs as $blog)--}}
-{{--                        {{$blog->name}}--}}
-{{--                    @endforeach--}}
+                    @auth
+                        <a href="/user/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                            Project
+                        </a>
+                    @endauth
+
 
                     {{-- <a href="{{ route('blog.categories') }}" class="bg-transparent border-2 border-white hover:bg-white/10 transition px-6 py-3 rounded-lg font-medium">
                         Browse Categories

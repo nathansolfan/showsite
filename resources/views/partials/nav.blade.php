@@ -15,7 +15,14 @@
                 <a href="/contact" class="text-white hover:text-blue-100 font-medium transition-colors">Contact</a>
                 <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="text-white hover:text-blue-100 font-medium transition-colors">Github</a>
                 <a href="{{ route('feedback') }}" class="text-white hover:text-blue-100 font-medium transition-colors">Feedback</a>
+                @auth
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button class="text-white hover:text-blue-100 font-medium transition-colors" type="submit">Logout</button>
+                    </form>
+                @endauth
                 <a href="{{ route('blog.index') }}" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-md">Projects</a>
+
             </div>
 
             <!-- Mobile Button -->
@@ -39,6 +46,9 @@
             <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Github</a>
             <a href="{{ route('feedback') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
             <a href="{{ route('blog.index') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Projects</a>
+            @auth
+                <a href="{{ route('feedback') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
+            @endauth
         </div>
     </div>
 </nav>

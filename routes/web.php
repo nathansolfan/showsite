@@ -63,7 +63,7 @@ Route::get('/workss', function(Request $request, GitHubController $controller) {
 })->name('workss');
 
 // FEEDBACK
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get( '/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 // SVG
@@ -82,7 +82,7 @@ Route::get('/quotes', function () {
 
 // ANALYZE
 Route::post('/analyze', [TextAnalysisController::class, 'analysis']);
-Route::get('/analyze', function () {
+Route::get( '/analyze', function () {
     return view('analyze.analyze');
 });
 
@@ -97,8 +97,9 @@ Route::get('user', [UserController::class, 'index'])->middleware(['auth', 'is_ad
 
 
 // AUTH
-Route::get('/login', [AuthController::class, 'loginForm']);
-Route::post('/login',[AuthController::class,'login']);
+Route::get( '/login' ,[AuthController::class, 'loginForm']);
+Route::post('/login' ,[AuthController::class, 'login']);
+Route::post('/logout',[AuthController::class, 'logout']);
 
 //DINIS
 Route::get('/kitchen', function () {
