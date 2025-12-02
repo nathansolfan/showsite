@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Hero Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <section class="py-16 md:py-24 bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">Developer Insights</h1>
@@ -166,7 +166,7 @@
         <div class="container mx-auto px-4">
             <div class="max-w-xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Subscribe to my newsletter</h2>
-                <p class="text-gray-600 mb-6">Get the latest articles, tutorials, and project updates delivered directly to your inbox.</p>
+                <p class="text-black-600 mb-6">Get the latest articles, tutorials, and project updates delivered directly to your inbox.</p>
 
                 <form class="flex flex-col sm:flex-row gap-2">
                     <input type="email" placeholder="Your email address"
@@ -176,7 +176,7 @@
                         Subscribe
                     </button>
                 </form>
-                <p class="text-gray-500 text-sm mt-3">I respect your privacy. Unsubscribe at any time.</p>
+                <p class="text-black-500 text-sm mt-3">I respect your privacy. Unsubscribe at any time.</p>
             </div>
         </div>
     </section>
