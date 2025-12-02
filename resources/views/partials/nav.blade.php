@@ -1,51 +1,44 @@
 <!-- Navigation -->
-<nav role="navigation" class="  w-full top-0 z-50 bg-gradient-to-r from-blue-500 to-blue-400">
-    <div class="container mx-auto flex justify-between items-center ">
-        <!-- Logo -->
-        <div class="text-lg font-bold text-white">
-            <a href="/">
-                {{-- <img src="{{ asset('images/bgimage.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto"> --}}
-                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira Logo" class="h-20 w-auto">
+<nav class="sticky top-0 z-50 bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
 
+            <!-- Logo -->
+            <a href="/" class="transform hover:scale-110 transition-transform duration-300">
+                <img src="{{ asset('images/logoNF.png') }}" alt="Nathan Ferreira" class="h-12 drop-shadow-lg">
             </a>
-        </div>
 
-        <!-- Mobile menu button -->
-        <div class="lg:hidden">
-            <button id="nav-toggle" aria-label="Toggle Navigation Menu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200 transition-colors duration-300">
-                <i id="menu-icon" class="fas fa-bars"></i>
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/" class="text-white hover:text-blue-100 font-medium transition-colors">Home</a>
+                <a href="/about" class="text-white hover:text-blue-100 font-medium transition-colors">About</a>
+                <a href="/contact" class="text-white hover:text-blue-100 font-medium transition-colors">Contact</a>
+                <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="text-white hover:text-blue-100 font-medium transition-colors">Github</a>
+                <a href="{{ route('feedback') }}" class="text-white hover:text-blue-100 font-medium transition-colors">Feedback</a>
+                <a href="{{ route('blog.index') }}" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-md">Projects</a>
+            </div>
+
+            <!-- Mobile Button -->
+            <button id="nav-toggle" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
             </button>
-        </div>
-
-        <!-- Unified Navigation Links -->
-        <div class="hidden lg:flex space-x-6" id="nav-content">
-            <a href="/" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Home</a>
-            <a href="/about" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">About</a>
-            {{-- <a href="/portfolio" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a>
-            <a href="/portfolio2" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Portfolio</a> --}}
-
-            <a href="/contact" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Contact</a>
-            {{-- <a href="{{ route('workss') }}" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a> --}}
-            <a href="https://github.com/nathansolfan?tab=repositories" class="text-white hover:text-gray-100 transition-transform duration-300 transform hover:scale-105">Github</a>
-
-            <a href="{{ route('feedback') }}" class="text-white hover:text-gray-100 transition-transform duration-330 transform hover:scale-105 ">Feedback</a>
-            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100  transition-transform duration-300 transform hover:scale-105  ">Projects</a>
-
-
         </div>
     </div>
 
-    <!-- Mobile Menu (matching desktop links) -->
-    <div id="mobile-menu" class="lg:hidden hidden transition-all duration-300">
-        <div class="px-6 pt-4 pb-6 space-y-4 bg-blue-400">
-            <a href="/" class="block text-white hover:text-gray-100">Home</a>
-            <a href="/about" class="block text-white hover:text-gray-100">About</a>
-            <a href="/portfolio" class="block text-white hover:text-gray-100">Portfolio</a>
-            <a href="/contact" class="block text-white hover:text-gray-100">Contact</a>
-            <a href="{{ route('workss') }}" class="block text-white hover:text-gray-100">Workss</a>
-            <a href="{{ route('feedback') }}" class="block text-white hover:text-gray-100">Feedback</a>
-            <a href="{{ route('blog.index') }}" class="block text-white hover:text-gray-100">Blog</a>
-
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-blue-500 border-t border-blue-400">
+        <div class="px-6 py-4 space-y-3">
+            <a href="/" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Home</a>
+            <a href="/about" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">About</a>
+            <a href="/contact" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Contact</a>
+            <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Github</a>
+            <a href="{{ route('feedback') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
+            <a href="{{ route('blog.index') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Projects</a>
         </div>
     </div>
 </nav>

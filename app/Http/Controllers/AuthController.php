@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -15,11 +17,14 @@ class AuthController extends Controller
     {
 
         $validated = $request->validate([
-            'name'     => ['required', 'string'],
             'email'    => ['required', 'email'],
             'password' => ['required', 'min:3'],
         ]);
-        dd($validated);
+        Auth::attempt($validated);
+        $request->session()->regenerate();
+        return redirect('/');
+
+
 
     }
 }

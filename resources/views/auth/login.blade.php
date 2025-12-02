@@ -8,6 +8,7 @@
             paragraph=""
             button2="Login"
             action="/login"
+            :showName="false"
         />
     </div>
 

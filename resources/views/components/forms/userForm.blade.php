@@ -2,9 +2,10 @@
     'action',
     'title'     => '',
     'paragraph' => '',
-    'button1'    => '',
-    'button2'    => '',
+    'button1'   => '',
+    'button2'   => '',
     'value'     => null,
+    'showName'  => true
 ])
 
 
@@ -25,20 +26,23 @@
             <form action="{{$action}}" method="POST" class="space-y-10 bg-white p-10 rounded shadow-xl" data-aos="fade-up" data-aos-delay="150">
                 @csrf
 
-                <!-- Name Field -->
-                <div class="group border-b border-gray-200 focus-within:border-gray-900 pb-1 transition-all duration-300">
-                    <label for="name" class="block text-xs font-medium text-gray-400 uppercase tracking-wide mb-2 group-focus-within:text-gray-900 transition-colors">
-                        Your Name
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value="{{ old('name', $value->name ?? '') }}"
-                        placeholder="Your name"
-                        class="block w-full border-0 bg-transparent focus:ring-0 p-0 pb-2 placeholder-gray-300 text-gray-900 text-lg"
-                        required>
-                </div>
+                @if($showName)
+                    <!-- Name Field -->
+                    <div class="group border-b border-gray-200 focus-within:border-gray-900 pb-1 transition-all duration-300">
+                        <label for="name" class="block text-xs font-medium text-gray-400 uppercase tracking-wide mb-2 group-focus-within:text-gray-900 transition-colors">
+                            Your Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value="{{ old('name', $value->name ?? '') }}"
+                            placeholder="Your name"
+                            class="block w-full border-0 bg-transparent focus:ring-0 p-0 pb-2 placeholder-gray-300 text-gray-900 text-lg"
+                            required>
+                    </div>
+                @endif
+
 
                 <!-- Email Field -->
                 <div class="group border-b border-gray-200 focus-within:border-gray-900 pb-1 transition-all duration-300">
@@ -78,7 +82,7 @@
 
 
                 <!-- Login Button -->
-                <div class="pt-8 flex justify-end gap-2">
+                <div class="pt-4 flex justify-end gap-2">
 
                     <!-- good to remember -->
                     @if(!empty($button1))
@@ -99,7 +103,7 @@
                 <!-- Submit Button -->
                     <button
                         type="submit"
-                        class="inline-flex items-center bg-gray-900 text-white px-8 py-4 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
+                        class="inline-flex items-center bg-gray-900 text-white px-3 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
                         <span class="relative z-10">{{$button2}}</span>
                         <span class="absolute inset-0 bg-gray-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                         <svg class="ml-2 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform"
