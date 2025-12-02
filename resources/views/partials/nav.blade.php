@@ -27,7 +27,7 @@
 {{--                        Hi, {{auth()->user()->name}}--}}
 
                         @if(auth()->user())
-                            Hi, {{auth()->user()->name}}
+                            Hi, <a href="/user/ {{ auth()->id() }}"> {{auth()->user()->name}} </a>
                         @else
                            @if(request()->is('/') || request()->routeIs('blog.index'))
                                Welcome
