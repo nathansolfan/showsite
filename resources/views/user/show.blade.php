@@ -62,33 +62,30 @@
                 </div>
             </div>
 
-            {{-- Stats & Info Grid --}}
+            {{-- Statistics Cards (Full Width) --}}
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
+                    <p class="text-sm font-medium text-gray-600 mb-1">Total Projects</p>
+                    <p class="text-3xl font-semibold text-gray-900">0</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
+                    <p class="text-sm font-medium text-gray-600 mb-1">Member Since</p>
+                    <p class="text-3xl font-semibold text-gray-900">{{ $user->created_at->diffInDays(now()) }}</p>
+                    <p class="text-xs text-gray-500 mt-1">days</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
+                    <p class="text-sm font-medium text-gray-600 mb-1">Last Active</p>
+                    <p class="text-sm font-semibold text-gray-900">{{ $user->updated_at->diffForHumans() }}</p>
+                </div>
+            </div>
+
+            {{-- Two Column Grid --}}
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-                {{-- Stats Column --}}
-                <div class="lg:col-span-2 space-y-6">
-
-                    {{-- Statistics Cards --}}
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
-                            <p class="text-sm font-medium text-gray-600 mb-1">Total Projects</p>
-                            <p class="text-3xl font-semibold text-gray-900">0</p>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
-                            <p class="text-sm font-medium text-gray-600 mb-1">Member Since</p>
-                            <p class="text-3xl font-semibold text-gray-900">{{ $user->created_at->diffInDays(now()) }}</p>
-                            <p class="text-xs text-gray-500 mt-1">days</p>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
-                            <p class="text-sm font-medium text-gray-600 mb-1">Last Active</p>
-                            <p class="text-sm font-semibold text-gray-900">{{ $user->updated_at->diffForHumans() }}</p>
-                        </div>
-                    </div>
-
-                    {{-- Account Information --}}
+                {{-- Left Column: Account Information (2/3 width) --}}
+                <div class="lg:col-span-2">
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200">
                         <div class="px-6 py-4 border-b border-gray-200">
                             <h2 class="text-lg font-semibold text-gray-900">Account Information</h2>
@@ -131,7 +128,7 @@
                     </div>
                 </div>
 
-                {{-- Actions Sidebar --}}
+                {{-- Right Column: Actions & Activity (1/3 width) --}}
                 <div class="space-y-6">
 
                     {{-- Quick Actions --}}
