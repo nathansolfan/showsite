@@ -90,35 +90,35 @@
                         <h2 class="text-lg font-semibold text-gray-900">Account Information</h2>
                     </div>
                     <div class="p-6">
-                        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14">
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">User ID</dt>
-                                <dd class="mt-1 text-sm text-gray-900 font-semibold">#{{ $user->id }}</dd>
+                                <dt class="text-lg font-medium text-gray-500">User ID</dt>
+                                <dd class="mt-1 text-xl text-gray-900 font-semibold">#{{ $user->id }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Email Address</dt>
-                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->email }}</dd>
+                                <dt class="text-lg font-medium text-gray-500">Email Address</dt>
+                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->email }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Registration Date</dt>
-                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->created_at->format('F d, Y') }}</dd>
+                                <dt class="text-lg font-medium text-gray-500">Registration Date</dt>
+                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->created_at->format('F d, Y') }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Last Updated</dt>
-                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->updated_at->format('F d, Y') }}</dd>
+                                <dt class="text-lg font-medium text-gray-500">Last Updated</dt>
+                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->updated_at->format('F d, Y') }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Account Status</dt>
+                                <dt class="text-lg font-medium text-gray-500">Account Status</dt>
                                 <dd class="mt-1">
                                     <span class="inline-flex items-center gap-1.5 text-sm text-green-700 font-semibold">
-                                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
                                         Active
                                     </span>
                                 </dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Role</dt>
-                                <dd class="mt-1 text-sm text-gray-900 font-semibold">
+                                <dt class="text-lg font-medium text-gray-500">Role</dt>
+                                <dd class="mt-1 text-xl text-gray-900 font-semibold">
                                     {{ $user->is_admin ? 'Administrator' : 'Standard User' }}
                                 </dd>
                             </div>
