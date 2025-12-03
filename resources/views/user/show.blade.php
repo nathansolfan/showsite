@@ -81,36 +81,36 @@
                 </div>
             </div>
 
-            {{-- Two Equal Columns --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {{-- Main Grid: 2/3 left + 1/3 right --}}
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-                {{-- Left Column: Account Information --}}
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                {{-- Left Column: Account Information (2/3 width) --}}
+                <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-200 h-full">
                     <div class="px-6 py-4 border-b border-gray-200">
                         <h2 class="text-lg font-semibold text-gray-900">Account Information</h2>
                     </div>
-                    <div class="p-6 flex-1">
-                        <dl class="grid grid-cols-1 gap-y-5">
+                    <div class="p-6">
+                        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">User ID</dt>
-                                <dd class="mt-1 text-sm text-gray-900">#{{ $user->id }}</dd>
+                                <dd class="mt-1 text-sm text-gray-900 font-semibold">#{{ $user->id }}</dd>
                             </div>
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">Email Address</dt>
-                                <dd class="mt-1 text-sm text-gray-900">{{ $user->email }}</dd>
+                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->email }}</dd>
                             </div>
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">Registration Date</dt>
-                                <dd class="mt-1 text-sm text-gray-900">{{ $user->created_at->format('F d, Y') }}</dd>
+                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->created_at->format('F d, Y') }}</dd>
                             </div>
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">Last Updated</dt>
-                                <dd class="mt-1 text-sm text-gray-900">{{ $user->updated_at->format('F d, Y') }}</dd>
+                                <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ $user->updated_at->format('F d, Y') }}</dd>
                             </div>
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">Account Status</dt>
                                 <dd class="mt-1">
-                                    <span class="inline-flex items-center gap-1.5 text-sm text-green-700">
+                                    <span class="inline-flex items-center gap-1.5 text-sm text-green-700 font-semibold">
                                         <span class="w-2 h-2 bg-green-500 rounded-full"></span>
                                         Active
                                     </span>
@@ -118,7 +118,7 @@
                             </div>
                             <div>
                                 <dt class="text-sm font-medium text-gray-500">Role</dt>
-                                <dd class="mt-1 text-sm text-gray-900">
+                                <dd class="mt-1 text-sm text-gray-900 font-semibold">
                                     {{ $user->is_admin ? 'Administrator' : 'Standard User' }}
                                 </dd>
                             </div>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
 
-                {{-- Right Column: Actions & Activity --}}
+                {{-- Right Column: Actions & Activity (1/3 width) --}}
                 <div class="space-y-6">
 
                     {{-- Quick Actions --}}
