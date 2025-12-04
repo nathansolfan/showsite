@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            {{-- Statistics Cards (Full Width) --}}
+            {{-- Statistics Cards --}}
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5">
                     <p class="text-sm font-medium text-gray-600 mb-1">Total Projects</p>
@@ -81,52 +81,61 @@
                 </div>
             </div>
 
-            {{-- Main Grid: 2/3 left + 1/3 right --}}
+            {{-- Main Grid --}}
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-                {{-- Left Column: Account Information (2/3 width) --}}
-                <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-200 h-full">
+                {{-- Account Information --}}
+                <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-200">
                     <div class="px-6 py-4 border-b border-gray-200">
                         <h2 class="text-lg font-semibold text-gray-900">Account Information</h2>
                     </div>
                     <div class="p-6">
-                        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14">
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">User ID</dt>
-                                <dd class="mt-1 text-xl text-gray-900 font-semibold">#{{ $user->id }}</dd>
+                        <div class="flex flex-col justify-between h-full space-y-8">
+                            {{-- Row 1 --}}
+                            <div class="flex justify-between gap-8">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">User ID</p>
+                                    <p class="text-lg font-semibold text-gray-900">#{{ $user->id }}</p>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">Email Address</p>
+                                    <p class="text-lg font-semibold text-gray-900">{{ $user->email }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">Email Address</dt>
-                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->email }}</dd>
+
+                            {{-- Row 2 --}}
+                            <div class="flex justify-between gap-8">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">Registration Date</p>
+                                    <p class="text-lg font-semibold text-gray-900">{{ $user->created_at->format('F d, Y') }}</p>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">Last Updated</p>
+                                    <p class="text-lg font-semibold text-gray-900">{{ $user->updated_at->format('F d, Y') }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">Registration Date</dt>
-                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->created_at->format('F d, Y') }}</dd>
-                            </div>
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">Last Updated</dt>
-                                <dd class="mt-1 text-xl text-gray-900 font-semibold">{{ $user->updated_at->format('F d, Y') }}</dd>
-                            </div>
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">Account Status</dt>
-                                <dd class="mt-1">
+
+                            {{-- Row 3 --}}
+                            <div class="flex justify-between gap-8">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">Account Status</p>
                                     <span class="inline-flex items-center gap-1.5 text-sm text-green-700 font-semibold">
-                                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                                        <span class="w-3 h-3 bg-green-500 rounded-full"></span>
                                         Active
                                     </span>
-                                </dd>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-500 mb-1">Role</p>
+                                    <p class="text-lg font-semibold text-gray-900">
+                                        {{ $user->is_admin ? 'Administrator' : 'Standard User' }}
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <dt class="text-lg font-medium text-gray-500">Role</dt>
-                                <dd class="mt-1 text-xl text-gray-900 font-semibold">
-                                    {{ $user->is_admin ? 'Administrator' : 'Standard User' }}
-                                </dd>
-                            </div>
-                        </dl>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Right Column: Actions & Activity (1/3 width) --}}
+                {{-- Right Column --}}
                 <div class="space-y-6">
 
                     {{-- Quick Actions --}}
@@ -156,7 +165,7 @@
                         </div>
                     </div>
 
-                    {{-- Activity Summary --}}
+                    {{-- Activity --}}
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200">
                         <div class="px-6 py-4 border-b border-gray-200">
                             <h2 class="text-lg font-semibold text-gray-900">Activity</h2>
