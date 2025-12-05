@@ -50,20 +50,20 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="grid gap-2 text-center">--}}
-{{--                            --}}{{-- Edit Button --}}
-{{--                            @if(auth()->id() === $user->id)--}}
-{{--                                <a href="/user/{{ $user->id }}/edit"--}}
-{{--                                   class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">--}}
-{{--                                    Edit Profile--}}
-{{--                                </a>--}}
-{{--                            @endif--}}
-{{--                            @if(auth()->id() === $user->id)--}}
-{{--                                <form class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">--}}
-{{--                                    Delete--}}
-{{--                                </form>--}}
-{{--                            @endif--}}
-{{--                        </div>--}}
+                        <div class="grid gap-2 text-center">
+                            {{-- Edit Button --}}
+                            @if(auth()->id() === $user->id)
+                                <a href="/user/{{ $user->id }}/edit"
+                                   class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                    Edit Profile
+                                </a>
+                            @endif
+                            @if(auth()->id() === $user->id)
+                                <form class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                    Delete
+                                </form>
+                            @endif
+                        </div>
 
 
                     </div>
