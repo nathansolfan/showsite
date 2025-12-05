@@ -61,6 +61,13 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect('/');
+
+    }
+
 
 
 

@@ -1,5 +1,6 @@
 @props([
     'action',
+    'method' => 'POST',
     'title'     => '',
     'paragraph' => '',
     'btnLogin'   => '',
@@ -25,6 +26,9 @@
             <!-- Create Form -->
             <form action="{{$action}}" method="POST" class="space-y-10 bg-white p-10 rounded shadow-xl" data-aos="fade-up" data-aos-delay="150">
                 @csrf
+                @if($method !== 'POST')
+                    @method($method)
+                @endif
 
                 @if($showName)
                     <!-- Name Field -->
@@ -85,7 +89,7 @@
                 <div class="pt-4 flex justify-end gap-2">
 
                     <!-- good to remember -->
-                    @if(!empty($button1))
+                    @if(!empty($btnLogin))
                         <a
                             href="/login"
                             class="inline-flex items-center bg-gray-900 text-white px-3 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
