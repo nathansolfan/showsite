@@ -5,7 +5,7 @@
         action="/user/{{$user->id}}"
         title="Edit your account"
 {{--        paragraph="Edit your account"--}}
-        button="Update"
+        btn-submit="Update"
         :value="$user"
 
 

@@ -2,8 +2,8 @@
     'action',
     'title'     => '',
     'paragraph' => '',
-    'button1'   => '',
-    'button2'   => '',
+    'btnLogin'   => '',
+    'btnSubmit'   => '',
     'value'     => null,
     'showName'  => true
 ])
@@ -89,7 +89,7 @@
                         <a
                             href="/login"
                             class="inline-flex items-center bg-gray-900 text-white px-3 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
-                            <span class="relative z-10">{{$button1}}</span>
+                            <span class="relative z-10">{{$btnLogin}}</span>
                             <span class="absolute inset-0 bg-gray-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                             <svg class="ml-2 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform"
                                  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +104,7 @@
                     <button
                         type="submit"
                         class="inline-flex items-center bg-gray-900 text-white px-2 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
-                        <span class="relative z-10">{{$button2}}</span>
+                        <span class="relative z-10">{{$btnSubmit}}</span>
                         <span class="absolute inset-0 bg-gray-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                         <svg class="ml-2 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform"
                              fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

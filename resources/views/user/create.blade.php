@@ -1,13 +1,11 @@
 <x-layout>
 
     <div>
-
-
         <x-forms.userForm
             title="Create your account"
             paragraph=""
-            button1="Login"
-            button2="Create"
+            btn-login="Login"
+            btn-submit="Create"
             action="/user/"
         />
     </div>
