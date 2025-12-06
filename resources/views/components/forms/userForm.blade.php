@@ -6,7 +6,9 @@
     'btnLogin'   => '',
     'btnSubmit'   => '',
     'value'     => null,
-    'showName'  => true
+    'showName'  => true,
+    'alternativeText' => '',
+    'alternativeLink' => ''
 ])
 
 
@@ -21,6 +23,17 @@
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     {{$paragraph}}
                 </p>
+
+                <!-- LOGIN-->
+                @if($alternativeText && $alternativeLink)
+                    <div class="text-center text-sm text-gray-600">
+                        {{ $alternativeText }}
+                        <a href="{{ $alternativeLink }}" class="font-semibold text-gray-900 hover:underline ml-1">
+                            {{ str_contains($alternativeText, 'account') ? 'Sign in' : 'Create account' }}
+                        </a>
+                    </div>
+                @endif
+
             </div>
 
             <!-- Create Form -->
@@ -90,20 +103,21 @@
                 <div class="pt-4 flex justify-end gap-2">
 
                     <!-- good to remember -->
-                    @if(!empty($btnLogin))
-                        <a
-                            href="/login"
-                            class="inline-flex items-center bg-gray-900 text-white px-3 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">
-                            <span class="relative z-10">{{$btnLogin}}</span>
-                            <span class="absolute inset-0 bg-gray-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                            <svg class="ml-2 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform"
-                                 fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
+{{--                    @if(!empty($btnLogin))--}}
+{{--                        <a--}}
+{{--                            href="/login"--}}
+{{--                            class="inline-flex items-center bg-gray-900 text-white px-3 py-3 text-base hover:bg-gray-800 transition-colors group relative overflow-hidden rounded-xl">--}}
+{{--                            <span class="relative z-10">{{$btnLogin}}</span>--}}
+{{--                            <span class="absolute inset-0 bg-gray-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>--}}
+{{--                            <svg class="ml-2 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform"--}}
+{{--                                 fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+{{--                                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                    @endif--}}
 
-                    @endif
+
 
                 <!-- Submit Button -->
                     <button

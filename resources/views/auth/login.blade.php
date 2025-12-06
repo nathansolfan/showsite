@@ -9,6 +9,7 @@
             button2="Login"
             action="/login"
             :showName="false"
+            btn-submit="Login"
         />
     </div>
 
