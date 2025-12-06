@@ -41,6 +41,7 @@
                 </a>
             </div>
 
+            {{-- First FEATURED POST--}}
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
                 <div class="p-8 md:p-12">
                     <div class="flex items-center gap-4 mb-4">
@@ -64,6 +65,31 @@
                     </a>
                 </div>
             </div>
+
+            {{-- 2nd FEATURED POST--}}
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden mt-6" data-aos="fade-up">
+                <div class="p-8 md:p-12">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+                            Web Development
+                        </span>
+                        <span class="text-gray-500 text-sm">
+                            <i class="far fa-calendar-alt mr-1"></i> Feb 22, 2025
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                        Creating a 2 Men and a Van Website
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Our client has requested this beautiful website reactive, using Blade, SQL
+                    </p>
+                    <a href="/blog/article"
+                       class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        Read Full Article <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
