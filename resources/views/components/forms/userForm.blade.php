@@ -57,6 +57,7 @@
                         type="email"
                         id="email"
                         name="email"
+                        value="{{ old('email', $value->email ?? '') }}"
                         placeholder="Type your email"
                         class="block w-full border-0 bg-transparent focus:ring-0 p-0 pb-2 placeholder-gray-300 text-gray-900 text-lg">
                 </div>

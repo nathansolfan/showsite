@@ -4,10 +4,10 @@
         title="Edit your account"
         action="/user/{{$user->id}}"
         method="PATCH"
-{{--        paragraph="Edit your account"--}}
+        paragraph=""
         btn-submit="Update"
         :value="$user"
-        value="{{old('email', $value->email ?? '')}}"
+{{--        value="{{old('email', $value->email ?? '')}}"--}}
 
 
     />
