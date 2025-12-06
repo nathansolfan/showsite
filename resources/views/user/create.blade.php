@@ -3,6 +3,7 @@
     <div>
         <x-forms.userForm
             title="Create your account"
+            :value="null"
             paragraph=""
             btn-login="Login"
             btn-submit="Create"
