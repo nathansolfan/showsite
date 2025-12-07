@@ -14,4 +14,10 @@ class ServiceController extends Controller
 
         return view('loadUp/index');
     }
+
+    public function create()
+    {
+        return view('loadUp/create');
+
+    }
 }

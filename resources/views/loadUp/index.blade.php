@@ -1,25 +1,32 @@
 <x-layout>
 
-    <div class="flex flex-col items-center text-center">
+
 
         {{-- Hero Section --}}
-        <div class="hero-section border-2 bg-blue-200 p-8  ">
-            <div class="container">
-                <h1>Move anything, anywhere</h1>
-                <p>Compare quotes from local transport providers. Save up to 75%.</p>
-                <a href="/loadup/bookings/create">Get a Quote</a>
+
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+            <div class="px-6 text-center">
+                <h1 class="text-5xl font-bold mb-6" >Move anything, anywhere</h1>
+                <p class="text-xl mb-8" >Compare quotes from local transport providers. Save up to 75%.</p>
+                <a href="/loadup/bookings/create"
+                   class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+
+                    Get a Quote</a>
             </div>
+
         </div>
 
+
+
         {{-- Services Grid --}}
-        <div class="services-section bg-red-100 p-4 mt-4 ">
-            <div class="container  ">
-                <h2>What do you need to move?</h2>
+        <div class="services-section  p-4 mt-4 ">
+            <div class="  ">
+                <h2 class="text-3xl font-bold mb-10 text-center" >What do you need to move?</h2>
 
                 <div class="services-grid flex gap-4 p-8">
                     {{-- Furniture --}}
                     <div class="service-card">
-                        <div class="service-icon">🪑</div>
+                        <div class="text-5xl  mb-2">🪑</div>
                         <h3>Furniture Removal</h3>
                         <p>Move furniture & appliances</p>
                         <a href="/loadup/bookings/create?service=furniture">
@@ -61,7 +68,7 @@
         </div>
 
         {{-- How it Works --}}
-        <div class="how-it-works-section bg-green-200 p-8 mt-4">
+        <div class="how-it-works-section  p-8 mt-4">
             <div class="container">
                 <h2>How it works</h2>
 
@@ -87,6 +94,6 @@
             </div>
         </div>
 
-    </div>
+
 
 </x-layout>
