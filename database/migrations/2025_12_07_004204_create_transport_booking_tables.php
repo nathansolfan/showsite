@@ -15,10 +15,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string( 'name');
-            $table->text(   'description');
             $table->string( 'icon')->nullable();
-            $table->decimal('base_price', 10,2)->default(0);
-            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
 
@@ -36,11 +33,10 @@ return new class extends Migration
             //delivery info
             $table->text(   'item_description');
             $table->string( 'item_size'   )->nullable();
-            $table->integer('helper_count')->default(0)->nullable();
 
             //pricing
-            $table->decimal('estimated_price', 10, 2)->nullable();
-            $table->decimal('final_price',     10, 2)->nullable();
+//            $table->decimal('estimated_price', 10, 2)->nullable();
+//            $table->decimal('final_price',     10, 2)->nullable();
 
             //status
             $table->enum('status', [

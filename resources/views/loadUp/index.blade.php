@@ -1,7 +1,92 @@
 <x-layout>
 
+    <div class="flex flex-col items-center text-center">
 
+        {{-- Hero Section --}}
+        <div class="hero-section border-2 bg-blue-200 p-8  ">
+            <div class="container">
+                <h1>Move anything, anywhere</h1>
+                <p>Compare quotes from local transport providers. Save up to 75%.</p>
+                <a href="/loadup/bookings/create">Get a Quote</a>
+            </div>
+        </div>
 
+        {{-- Services Grid --}}
+        <div class="services-section bg-red-100 p-4 mt-4 ">
+            <div class="container  ">
+                <h2>What do you need to move?</h2>
 
+                <div class="services-grid flex gap-4 p-8">
+                    {{-- Furniture --}}
+                    <div class="service-card">
+                        <div class="service-icon">🪑</div>
+                        <h3>Furniture Removal</h3>
+                        <p>Move furniture & appliances</p>
+                        <a href="/loadup/bookings/create?service=furniture">
+                            Get Quote →
+                        </a>
+                    </div>
+
+                    {{-- House Moving --}}
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>House Moving</h3>
+                        <p>Full house or flat moving</p>
+                        <a href="/loadup/bookings/create?service=house">
+                            Get Quote →
+                        </a>
+                    </div>
+
+                    {{-- Storage --}}
+                    <div class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3>Storage</h3>
+                        <p>Secure storage solutions</p>
+                        <a href="/loadup/bookings/create?service=storage">
+                            Get Quote →
+                        </a>
+                    </div>
+
+                    {{-- Other --}}
+                    <div class="service-card">
+                        <div class="service-icon">🚐</div>
+                        <h3>Other</h3>
+                        <p>Custom transport needs</p>
+                        <a href="/loadup/bookings/create?service=other">
+                            Get Quote →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- How it Works --}}
+        <div class="how-it-works-section bg-green-200 p-8 mt-4">
+            <div class="container">
+                <h2>How it works</h2>
+
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Tell us what you need</h3>
+                        <p>Describe your item and pickup/delivery details</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Compare quotes</h3>
+                        <p>Receive quotes from verified providers</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Book & relax</h3>
+                        <p>Choose your provider and let them handle it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </x-layout>
