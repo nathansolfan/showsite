@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
+use App\Http\Controllers\LoadUp\ServiceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TextAnalysisController;
 use App\Http\Controllers\UserController;
@@ -115,6 +116,8 @@ Route::get('/farm', function () {
     return view('farm.index');
 });
 
+//LOADUP
+Route::resource('/loadUp', ServiceController::class);
 
 
 
