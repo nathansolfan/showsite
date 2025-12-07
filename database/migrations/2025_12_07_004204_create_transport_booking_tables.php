@@ -61,7 +61,7 @@ return new class extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->foreignId( 'booking_id' )->constrained()->onDelete('cascade');
-            $table->foreignId( 'provider_id')->constrained()->onDelete('cascade');
+            $table->foreignId( 'provider_id')->constrained('users')->onDelete('cascade');
 
             $table->decimal('quoted_price', 10, 2);
             $table->text(   'message')->nullable();
