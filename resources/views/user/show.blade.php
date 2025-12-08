@@ -54,27 +54,25 @@
                         </div>
                         <div class="grid gap-2 text-center">
                             {{-- Edit Button --}}
-                            @if(auth()->check() && auth()->user()->id === 1)
-                                <form action="" method="post">
-                                    <button type="submit">
-                                        class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
-                                        Edit Profile
-
-                                    </button>
-
-                                </form>
-
+                            @if(auth()->id() === $user->id)
+                                <a href="/user/{{ $user->id }}/edit"
+                                   class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                    Edit Profile
+                                </a>
                             @endif
                             @if(auth()->id() === $user->id)
-                                <form
-                                    class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                <form class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+
                                     Delete
                                 </form>
                             @endif
-                            @if(User::findOrFail($id === 1))
-                                <form
-                                    class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
-                                    Set to Admin
+                            @if(auth()->check() && auth()->user()->id === 1)
+                                <form method="post" action="/user/{{ $user->id }}/make-admin">
+                                    @csrf
+                                    <button type="submit" class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                        Admin
+                                    </button>
+
                                 </form>
                             @endif
                         </div>

@@ -73,9 +73,6 @@ class UserController extends Controller
 
     public function makeAdmin(User $user)
     {
-        if (!auth()->user()->is_admin){
-            abort(403, 'Not Authorized');
-        }
         $user->update(['is_admin' => true]);
         return redirect()->back()->with('User is now an Admin');
 
