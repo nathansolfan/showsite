@@ -53,23 +53,24 @@
                             </div>
                         </div>
                         <div class="grid gap-2 text-center">
-                            {{-- Edit Button --}}
+
                             @if(auth()->id() === $user->id)
                                 <a href="/user/{{ $user->id }}/edit"
                                    class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
                                     Edit Profile
                                 </a>
                             @endif
+
                             @if(auth()->id() === $user->id)
                                 <form class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
-
                                     Delete
                                 </form>
                             @endif
+
                             @if(auth()->check() && auth()->user()->id === 1)
-                                <form method="post" action="/user/{{ $user->id }}/make-admin">
+                                <form method="post" action="/user/{{ $user->id }}/make-admin" class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
                                     @csrf
-                                    <button type="submit" class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                    <button type="submit" >
                                         Admin
                                     </button>
 
@@ -101,7 +102,7 @@
                 </div>
             </div>
 
-            {{-- Main Grid --}}
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                 {{-- Account Information --}}
@@ -123,7 +124,7 @@
                                 </div>
                             </div>
 
-                            {{-- Row 2 --}}
+
                             <div class="flex justify-between gap-8">
                                 <div class="flex-1">
                                     <p class="text-sm font-medium text-gray-500 mb-1">Registration Date</p>
@@ -135,7 +136,7 @@
                                 </div>
                             </div>
 
-                            {{-- Row 3 --}}
+
                             <div class="flex justify-between gap-8">
                                 <div class="flex-1">
                                     <p class="text-sm font-medium text-gray-500 mb-1">Account Status</p>
@@ -155,10 +156,10 @@
                     </div>
                 </div>
 
-                {{-- Right Column --}}
+
                 <div class="space-y-6">
 
-                    {{-- Quick Actions --}}
+
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200">
                         <div class="px-6 py-4 border-b border-gray-200">
                             <h2 class="text-lg font-semibold text-gray-900">Quick Actions</h2>
@@ -186,7 +187,6 @@
                         </div>
                     </div>
 
-                    {{-- Activity --}}
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200">
                         <div class="px-6 py-4 border-b border-gray-200">
                             <h2 class="text-lg font-semibold text-gray-900">Activity</h2>
