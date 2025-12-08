@@ -30,7 +30,7 @@ class UserController extends Controller
         $validated['password'] = Hash::make($validated['password']);
 
         $user = User::create($validated);
-        $user->login();
+        auth()->login($user);
 
         return redirect('/');
     }
@@ -55,7 +55,9 @@ class UserController extends Controller
             'name'  => ['required', 'string'],
             'email' => ['required', 'email', 'string']
         ]);
-        $validated['password'] = Hash::make($request['password']);
+        if ($request->filled('password')) {
+            $validated['password'] = Hash::make($request['password']);
+        };
 
         $user->update($validated);
 

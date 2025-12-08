@@ -19,23 +19,26 @@
 
 
         {{-- Services Grid --}}
-        <div class="services-section  p-4 mt-4 ">
+        <div class="py-16 ">
             <div class="  ">
                 <h2 class="text-3xl font-bold mb-10 text-center" >What do you need to move?</h2>
 
-                <div class="services-grid flex gap-4 p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
                     {{-- Furniture --}}
-                    <div class="service-card">
-                        <div class="text-5xl  mb-2">🪑</div>
-                        <h3>Furniture Removal</h3>
-                        <p>Move furniture & appliances</p>
-                        <a href="/loadup/bookings/create?service=furniture">
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-shadow">
+                        <div class="text-5xl  mb-2 text-center">🪑</div>
+                        <h3 class="text-xl font-bold mb-2">Furniture Removal</h3>
+                        <p class="mb-4">Move furniture & appliances</p>
+                        <a
+                            href="/loadup/bookings/create?service=furniture"
+                            class="text-blue-600 font-semibold hover:underline"
+                        >
                             Get Quote →
                         </a>
                     </div>
 
                     {{-- House Moving --}}
-                    <div class="service-card">
+                    <div class="bg-white p-6 rounded shadow-md">
                         <div class="service-icon">🏠</div>
                         <h3>House Moving</h3>
                         <p>Full house or flat moving</p>

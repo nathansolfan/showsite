@@ -48,10 +48,6 @@ class ContactController extends Controller
 
     }
 
-
-
-
-
     //storage
     public function store(Request $request)
     {
