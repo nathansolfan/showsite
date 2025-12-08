@@ -1,3 +1,4 @@
+@php use App\Models\User; @endphp
 <x-layout>
     <div class="min-h-screen bg-gray-50">
 
@@ -25,7 +26,8 @@
                                         {{ strtoupper(substr($user->name, 0, 2)) }}
                                     </span>
                                 </div>
-                                <div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+                                <div
+                                    class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
                             </div>
 
                             {{-- User Info --}}
@@ -52,15 +54,27 @@
                         </div>
                         <div class="grid gap-2 text-center">
                             {{-- Edit Button --}}
-                            @if(auth()->id() === $user->id)
-                                <a href="/user/{{ $user->id }}/edit"
-                                   class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
-                                    Edit Profile
-                                </a>
+                            @if(auth()->check() && auth()->user()->id === 1)
+                                <form action="" method="post">
+                                    <button type="submit">
+                                        class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                        Edit Profile
+
+                                    </button>
+
+                                </form>
+
                             @endif
                             @if(auth()->id() === $user->id)
-                                <form class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                <form
+                                    class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
                                     Delete
+                                </form>
+                            @endif
+                            @if(User::findOrFail($id === 1))
+                                <form
+                                    class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                                    Set to Admin
                                 </form>
                             @endif
                         </div>
@@ -166,7 +180,8 @@
                                 </a>
                             @endif
 
-                            <button class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                            <button
+                                class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                                 <span>Share Profile</span>
                                 <span class="text-gray-400">→</span>
                             </button>
