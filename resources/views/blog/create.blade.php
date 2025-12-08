@@ -1,148 +1,225 @@
 <x-layout>
-    <section class="py-24 md:py-36 bg-gray-900 min-h-screen flex items-center">
+    <div class="bg-gray-50 min-h-screen py-16 md:py-24">
         <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-4xl mx-auto">
 
-                <div class="text-center mb-16">
-                    <h2 class="text-6xl font-extrabold text-white tracking-tight leading-tight">
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
                         Start Your Project
-                    </h2>
-                    <p class="text-xl text-gray-400 mt-4 max-w-3xl mx-auto">
-                        Share your vision, and let's plan the next steps together.
+                    </h1>
+                    <p class="text-xl text-gray-600">
+                        Share your vision, and let's plan the next steps together
                     </p>
                 </div>
 
-                <form action="/proposals" method="POST" enctype="multipart/form-data"
-                      class="bg-white p-12 md:p-16 rounded-3xl shadow-2xl shadow-blue-500/10 space-y-12 border border-gray-100">
-                    @csrf
-
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 border-b mb-1">1. Your Contact Information</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div>
-                                <label for="name" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Your Name *</label>
-                                <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                       class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
-                                       required>
-                            </div>
-                            <div>
-                                <label for="email" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Email Address *</label>
-                                <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                       class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
-                                       required>
-                            </div>
-                            <div>
-                                <label for="phone" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Phone Number (Optional)</label>
-                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
-                                       class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
-                            </div>
-                        </div>
+                <!-- Progress Steps -->
+                <div class="flex items-center justify-center gap-4 mb-12">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">1</div>
+                        <span class="text-sm font-medium text-gray-700 hidden sm:inline">Contact</span>
                     </div>
-
-
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mt-6 border-b mb-1">2. Project Scope & Requirements</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div>
-                                <label for="title" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Project Title *</label>
-                                <input type="text" id="title" name="title" value="{{ old('title') }}"
-                                       class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
-                                       required>
-                            </div>
-
-                            <div>
-                                <label for="budget" class="text-sm text-gray-700 uppercase font-bold tracking-wider block">Estimated Budget</label>
-                                <input type="text" id="budget" name="budget" value="{{ old('budget') }}"
-                                       class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="content" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Project Details & Goals *</label>
-                            <textarea id="content" name="content" rows="10"
-                                      class="w-full border border-gray-300 rounded-xl p-5 text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400 text-lg"
-                                      placeholder="Describe the scope, key features, target audience, and primary goals you hope to achieve with this project."
-                                      required>{{ old('content') }}</textarea>
-                            <p class="text-xs text-gray-500 mb-4">Markdown is supported. Detail helps create a better proposal.</p>
-                        </div>
+                    <div class="w-16 h-0.5 bg-gray-300"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                        <span class="text-sm font-medium text-gray-500 hidden sm:inline">Details</span>
                     </div>
+                    <div class="w-16 h-0.5 bg-gray-300"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-semibold">3</div>
+                        <span class="text-sm font-medium text-gray-500 hidden sm:inline">Technical</span>
+                    </div>
+                </div>
 
+                <!-- Form Card -->
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+                    <form action="/proposals" method="POST" enctype="multipart/form-data" class="space-y-12">
+                        @csrf
 
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b">3. Technical Specs & References</h3>
-
-                        <div class="mb-8">
-                            <label for="technologies" class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-2 block">Key Technologies or Stack</label>
-                            <input type="text" id="technologies" name="technologies" value="{{ old('technologies') }}"
-                                   class="w-full border border-gray-300 rounded-xl p-4 text-lg text-gray-900 focus:ring-blue-600 focus:border-blue-600 transition placeholder-gray-400"
-                                   placeholder="">
-                        </div>
-
+                        <!-- Section 1: Contact -->
                         <div>
-                            <label class="text-sm text-gray-700 uppercase font-bold tracking-wider mb-3 block">Upload Reference Files</label>
+                            <div class="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-100">
+                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold">1</div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-gray-900">Your Information</h2>
+                                    <p class="text-sm text-gray-500">Tell us who you are</p>
+                                </div>
+                            </div>
 
-                            <div class="border-2 border-dashed border-gray-300 rounded-2xl p-10 text-center hover:border-blue-600 hover:bg-blue-50 transition relative cursor-pointer group">
-                                <input type="file" name="attachments[]" multiple accept="image/*, application/pdf, .doc, .docx"
-                                       class="absolute inset-0 opacity-0 cursor-pointer"
-                                       onchange="previewFiles(event)">
-
-                                <div id="preview-container" class="mb-4">
-                                    <ul id="file-list" class="text-sm text-gray-700 list-disc list-inside space-y-1"></ul>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Your Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value="{{ old('name') }}"
+                                        placeholder="John Doe"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        required>
                                 </div>
 
-                                <div id="upload-placeholder">
-                                    <svg class="w-12 h-12 text-gray-400 group-hover:text-blue-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                    </svg>
-                                    <p class="text-lg font-medium text-gray-700">Click to upload files (Wireframes, Briefs, Docs)</p>
-                                    <p class="text-sm text-gray-500 mt-1">Max: 5 files, 10MB total.</p>
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Email <span class="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value="{{ old('email') }}"
+                                        placeholder="john@example.com"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        required>
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Phone (Optional)
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        value="{{ old('phone') }}"
+                                        placeholder="+44 7123 456789"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="pt-8 flex flex-col sm:flex-row justify-end items-center border-t border-gray-200 mt-12">
-                        <a href="/" class="text-gray-500 hover:text-gray-900 flex items-center gap-2 text-base font-medium order-2 sm:order-1 mt-4 sm:mt-0 mr-auto">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                            Back to Home
-                        </a>
+                        <!-- Section 2: Project -->
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-100">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold">2</div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-gray-900">Project Details</h2>
+                                    <p class="text-sm text-gray-500">What do you want to build?</p>
+                                </div>
+                            </div>
 
-                        <button type="submit"
-                                class="w-full sm:w-auto px-12 py-4 bg-blue-700 text-white rounded-xl text-xl font-bold shadow-xl shadow-blue-700/30 hover:bg-blue-800 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98] order-1 sm:order-2">
-                            Send Proposal
-                        </button>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="title" class="block text-sm font-semibold text-gray-700 mb-2">
+                                            Project Title <span class="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="title"
+                                            name="title"
+                                            value="{{ old('title') }}"
+                                            placeholder="E.g., E-commerce Platform"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                            required>
+                                    </div>
+
+                                    <div>
+                                        <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">
+                                            Budget
+                                        </label>
+                                        <select
+                                            id="budget"
+                                            name="budget"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                            <option value="">Select a range</option>
+                                            <option value="<5k">Less than £5,000</option>
+                                            <option value="5k-10k">£5,000 - £10,000</option>
+                                            <option value="10k-25k">£10,000 - £25,000</option>
+                                            <option value="25k+">£25,000+</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="content" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Project Description <span class="text-red-500">*</span>
+                                    </label>
+                                    <textarea
+                                        id="content"
+                                        name="content"
+                                        rows="8"
+                                        placeholder="Describe your project, key features, target audience, and goals..."
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        required>{{ old('content') }}</textarea>
+                                    <p class="text-xs text-gray-500 mt-2">More detail helps create a better proposal</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Technical -->
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-100">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600 font-bold">3</div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-gray-900">Technical Details</h2>
+                                    <p class="text-sm text-gray-500">Optional but helpful</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="technologies" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Preferred Technologies
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="technologies"
+                                        name="technologies"
+                                        value="{{ old('technologies') }}"
+                                        placeholder="E.g., Laravel, React, Vue.js, Tailwind"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+
+                                <div>
+                                    <label for="attachments" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Reference Files
+                                    </label>
+                                    <input
+                                        type="file"
+                                        id="attachments"
+                                        name="attachments[]"
+                                        multiple
+                                        accept="image/*,application/pdf,.doc,.docx"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-50 file:text-blue-700 file:font-semibold hover:file:bg-blue-100">
+                                    <p class="text-xs text-gray-500 mt-2">Max 5 files, 10MB total</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-gray-200 gap-4">
+                            <a href="/" class="text-gray-600 hover:text-gray-900 font-medium">
+                                ← Back to Home
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                                Send Proposal →
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>Free Consultation</span>
                     </div>
-                </form>
+                    <div class="flex items-center gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>24h Response</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>No Commitment</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <script>
-        function previewFiles(event) {
-            const files = event.target.files;
-            const fileList = document.getElementById('file-list');
-            const placeholder = document.getElementById('upload-placeholder');
-            const previewContainer = document.getElementById('preview-container');
-
-            fileList.innerHTML = ''; // Clear previous list
-
-            if (files.length > 0) {
-                // Hide the placeholder
-                placeholder.classList.add('hidden');
-                previewContainer.classList.remove('hidden');
-
-                // Add each file to the list
-                Array.from(files).forEach(file => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
-                    fileList.appendChild(listItem);
-                });
-            } else {
-                // Show the placeholder if no files are selected
-                placeholder.classList.remove('hidden');
-                previewContainer.classList.add('hidden');
-            }
-        }
-    </script>
+    </div>
 </x-layout>
