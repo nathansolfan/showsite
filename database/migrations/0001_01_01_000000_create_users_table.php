@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    //            $table->boolean('is_admin')->default(false);
     /**
      * Run the migrations.
      */
