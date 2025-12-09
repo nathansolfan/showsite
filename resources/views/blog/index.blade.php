@@ -74,7 +74,7 @@
                             Web Development
                         </span>
                         <span class="text-gray-500 text-sm">
-                            <i class="far fa-calendar-alt mr-1"></i> Feb 22, 2025
+                            <i class="far fa-calendar-alt mr-1"></i> Nov 05, 2025
                         </span>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">

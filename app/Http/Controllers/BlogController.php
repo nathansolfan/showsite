@@ -34,12 +34,13 @@ class BlogController extends Controller
     {
         $validated = $request->validate([
             'name'  => ['required'],
-            'email' => ['required'],
+            'email' => ['required', 'email'],
+            'title' => ['required'],
             'content' => ['required'],
         ]);
-        $project = Blog::create($validated);
-        dd($project);
 
+        Blog::create($validated);
+        return redirect('/blog');
 
     }
 
@@ -49,11 +50,11 @@ class BlogController extends Controller
     public function show(string $id)
     {
         $blogs = Blog::all();
-        // Here, $id could be a slug. For now, we check if it's 'dogProject'
+        // Here, $id could be a slug. For now, check if it's 'dogProject'
         if ($id === 'dogProject') {
             return view('blog.dogProject');
         }
-        return view('');
+        return view('blog.show');
 
 
     }

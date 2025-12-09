@@ -14,7 +14,7 @@
 
             <!-- Form Card -->
             <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-10">
-                <form action="/blog" method="POST" enctype="multipart/form-data" class="space-y-10">
+                <form action="/blog/" method="POST" enctype="multipart/form-data" class="space-y-10">
                     @csrf
 
                     <!-- Contact Section -->
