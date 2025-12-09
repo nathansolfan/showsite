@@ -9,6 +9,15 @@ class Blog extends Model
     protected $fillable = [
         'name',
         'email',
-        'password'
+        'phone',
+        'title',
+        'budget',
+        'content',
+        'technologies',
+        'attachments',
+    ];
+
+    protected $casts = [
+        'attachments' => 'array'
     ];
 }

@@ -32,9 +32,13 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-//        $validated = $request->validate([
-//
-//        ]);
+        $validated = $request->validate([
+            'name'  => ['required'],
+            'email' => ['required'],
+            'content' => ['required'],
+        ]);
+        $project = Blog::create($validated);
+        dd($project);
 
 
     }

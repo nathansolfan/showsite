@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('password');
+            $table->integer('phone')->nullable();
+            $table->string('title');
+            $table->integer('budget')->nullable();
+            $table->text('content');
+            $table->string('technologies')->nullable();
+            $table->json('attachments')->nullable();
             $table->timestamps();
         });
     }
