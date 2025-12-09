@@ -15,6 +15,8 @@ class Blog extends Model
         'content',
         'technologies',
         'attachments',
+
+        'user_id'
     ];
 
     protected $casts = [
