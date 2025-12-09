@@ -37,10 +37,14 @@ class UserController extends Controller
 
     public function show($id)
     {
-//        dd($id);
-        $user = User::findOrFail($id);
 
-        return view('user.show', ['user' => $user]);
+        $user = User::findOrFail($id);
+        $blogs = $user->blogs;
+
+        return view('user.show', [
+            'user' => $user,
+            'blogs' => $blogs,
+        ]);
     }
 
     public function edit(User $user)
@@ -75,6 +79,16 @@ class UserController extends Controller
     {
         $user->update(['is_admin' => true]);
         return redirect()->back()->with('User is now an Admin');
+
+    }
+
+    public function blogs(User $user)
+    {
+        $blogs = $user->blogs;
+        return view('user.blogs', [
+            'blogs' => $blogs,
+            'user' => $user
+        ]);
 
     }
 

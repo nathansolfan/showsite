@@ -38,6 +38,7 @@ class BlogController extends Controller
             'title' => ['required'],
             'content' => ['required'],
         ]);
+        $validated['user_id'] = auth()->id();
 
         Blog::create($validated);
         return redirect('/blog');
@@ -49,14 +50,12 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        $blogs = Blog::all();
+        $blog = Blog::findOrFail($id);
         // Here, $id could be a slug. For now, check if it's 'dogProject'
         if ($id === 'dogProject') {
             return view('blog.dogProject');
         }
-        return view('blog.show');
-
-
+        return view('blog.show', ['blog' => $blog]);
     }
 
     /**

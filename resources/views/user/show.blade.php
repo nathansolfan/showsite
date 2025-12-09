@@ -165,7 +165,7 @@
                             <h2 class="text-lg font-semibold text-gray-900">Quick Actions</h2>
                         </div>
                         <div class="p-4 space-y-2">
-                            <a href="/blog?user={{ $user->id }}"
+                            <a href="/user/{{$user->id}}/blogs"
                                class="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                                 <span>View Projects</span>
                                 <span class="text-gray-400">→</span>

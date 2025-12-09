@@ -20,4 +20,9 @@ class Blog extends Model
     protected $casts = [
         'attachments' => 'array'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
