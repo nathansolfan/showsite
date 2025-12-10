@@ -82,6 +82,7 @@ class UserController extends Controller
 
     }
 
+    //Shows user list of blogs
     public function blogs(User $user)
     {
         $blogs = $user->blogs;
