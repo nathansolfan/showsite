@@ -8,7 +8,7 @@
             <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl shadow-lg mb-6">
                 <span class="text-4xl">📦</span>
             </div>
-            <h1 class="text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent mb-3">
+            <h1 class="text-5xl font-bold bg-gradient-to-r text-orange-600 mb-3">
                 {{ $service->name }}
             </h1>
             <p class="text-gray-600 text-lg">Fill in the details below to complete your booking</p>
