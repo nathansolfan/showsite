@@ -8,9 +8,11 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'], // Add your custom font here
-          serif: ['Merriweather', 'serif'], // Optional serif font
-          mono: ['Source Code Pro', 'monospace'], // Optional monospace font
+          // sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          // serif: ['Merriweather', 'serif'],
+          // mono: ['Source Code Pro', 'monospace'],
+
+            sans: ['Poppins', ...defaultTheme.fontFamily.sans],
         },
       },
     },
