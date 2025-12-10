@@ -1,7 +1,7 @@
 ,<x-layout>
     @php
     $fakeService = (object) [
-        'id' => 1,
+        'id' => 2,
         'name' => 'Recicyling Centre'
         ]
     @endphp

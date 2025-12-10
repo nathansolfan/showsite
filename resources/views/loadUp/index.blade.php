@@ -67,7 +67,7 @@
                     <div class="text-6xl mb-4 text-orange-600">🚚</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-900">Small Moves</h3>
                     <p class="mb-4 text-gray-600">Ideal for students, single-room moves and partial relocations.</p>
-                    <a href="/loadup/bookings/create?service=small-moves"
+                    <a href="/loadup/small-moves"
                        class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
                         Book Now
                         <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -79,7 +79,7 @@
                     <div class="text-6xl mb-4 text-orange-600">🔧</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-900">Additional Services</h3>
                     <p class="mb-4 text-gray-600">Furniture assembly, pickups, deliveries & more.</p>
-                    <a href="/loadup/bookings/create?service=extras"
+                    <a href="/loadup/additional"
                        class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
                         Book Now
                         <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
