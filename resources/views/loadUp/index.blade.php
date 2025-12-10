@@ -1,121 +1,131 @@
 <x-layout>
 
     {{-- Hero Section --}}
-    <section class="bg-blue-700 text-white py-24">
-        <div class="px-6 text-center max-w-3xl mx-auto">
-            <h1 class="text-5xl font-extrabold tracking-tight mb-6">
-                Move anything, anywhere
+    <div class="bg-gray-50 text-gray-900 py-32 sm:py-40 border-b-8 border-orange-600/10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-6xl sm:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                Reliable <span class="text-orange-700">2 Men & a Van</span> Services
             </h1>
-            <p class="text-xl text-blue-100 mb-10">
-                Compare quotes from local transport providers. Save up to 75%.
+            <p class="text-2xl sm:text-3xl mb-14 text-gray-700 font-medium">
+                Professional, affordable and stress-free transport for all your needs.
             </p>
-
             <a href="/loadup/bookings/create"
-               class="inline-block bg-white text-blue-700 font-semibold
-                      px-10 py-4 rounded-xl text-lg shadow-md
-                      hover:bg-blue-50 transition">
-                Get a Quote
+               class="
+               inline-block
+               bg-orange-600 text-white
+               px-14 py-5
+               rounded-lg
+               font-bold
+               text-xl
+               shadow-xl shadow-orange-500/30
+               hover:bg-orange-700
+               transition-all
+               duration-300
+               transform hover:-translate-y-0.5"
+            >
+                Book Now
             </a>
         </div>
-    </section>
+    </div>
 
-    {{-- Services --}}
-    <section class="py-20 bg-blue-50 border-t border-blue-100">
+
+    {{-- Services Grid --}}
+    <div class="py-24 bg-white">
         <div class="px-6 max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-14 tracking-tight">
-                What do you need to move?
+            <h2 class="text-4xl font-extrabold mb-16 text-center text-gray-900">
+                What We Do
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x-2 divide-gray-200 border border-gray-200 rounded-xl overflow-hidden">
 
-                {{-- Furniture --}}
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🪑</div>
-                    <h3 class="text-xl font-semibold mb-2">Furniture Removal</h3>
-                    <p class="text-gray-600 mb-6">Move furniture & appliances</p>
-                    <a href="/loadup/bookings/create?service=furniture"
-                       class="text-blue-700 font-medium hover:underline">
-                        Get Quote →
+                {{-- Removals --}}
+                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
+                    <div class="text-6xl mb-4 text-orange-600">📦</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Removals</h3>
+                    <p class="mb-4 text-gray-600">Small removals, single items or full van loads.</p>
+                    <a href="/loadup/bookings/create?service=removals"
+                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
+                        Book Now
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                 </div>
 
-                {{-- House --}}
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🏠</div>
-                    <h3 class="text-xl font-semibold mb-2">House Moving</h3>
-                    <p class="text-gray-600 mb-6">Full house or flat moving</p>
-                    <a href="/loadup/bookings/create?service=house"
-                       class="text-blue-700 font-medium hover:underline">
-                        Get Quote →
+                {{-- Recycling / Tip Runs --}}
+                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
+                    <div class="text-6xl mb-4 text-orange-600">♻️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Recycling Centre Runs</h3>
+                    <p class="mb-4 text-gray-600">We collect unwanted items and take them to the recycling centre.</p>
+                    <a href="/loadup/bookings/create?service=recycling"
+                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
+                        Book Now
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                 </div>
 
-                {{-- Storage --}}
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">📦</div>
-                    <h3 class="text-xl font-semibold mb-2">Storage</h3>
-                    <p class="text-gray-600 mb-6">Secure storage solutions</p>
-                    <a href="/loadup/bookings/create?service=storage"
-                       class="text-blue-700 font-medium hover:underline">
-                        Get Quote →
+                {{-- Small Moves --}}
+                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
+                    <div class="text-6xl mb-4 text-orange-600">🚚</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Small Moves</h3>
+                    <p class="mb-4 text-gray-600">Ideal for students, single-room moves and partial relocations.</p>
+                    <a href="/loadup/bookings/create?service=small-moves"
+                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
+                        Book Now
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                 </div>
 
-                {{-- Other --}}
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🚐</div>
-                    <h3 class="text-xl font-semibold mb-2">Other</h3>
-                    <p class="text-gray-600 mb-6">Custom transport needs</p>
-                    <a href="/loadup/bookings/create?service=other"
-                       class="text-blue-700 font-medium hover:underline">
-                        Get Quote →
+                {{-- Extra Services --}}
+                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
+                    <div class="text-6xl mb-4 text-orange-600">🔧</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Additional Services</h3>
+                    <p class="mb-4 text-gray-600">Furniture assembly, pickups, deliveries & more.</p>
+                    <a href="/loadup/bookings/create?service=extras"
+                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
+                        Book Now
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+
 
     {{-- How it Works --}}
-    <section class="py-20 bg-white">
+    <div class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 tracking-tight">
-                How it works
+            <h2 class="text-4xl font-extrabold mb-16 text-center text-gray-900">
+                How It Works
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-blue-700">1</span>
+                <div class="relative pt-12">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full bg-orange-600 flex items-center justify-center text-white text-3xl font-extrabold shadow-lg">1</div>
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-orange-600 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 mt-2">Tell Us What You Need</h3>
+                        <p class="text-gray-600">Describe your task—removal, recycling run, delivery or small move.</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Tell us what you need</h3>
-                    <p class="text-gray-600">
-                        Describe your item and pickup/delivery details.
-                    </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-blue-700">2</span>
+                <div class="relative pt-12">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full bg-orange-600 flex items-center justify-center text-white text-3xl font-extrabold shadow-lg">2</div>
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-orange-600 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 mt-2">We Confirm & Arrive</h3>
+                        <p class="text-gray-600">Fast, reliable scheduling with professional 2-man teams.</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Compare quotes</h3>
-                    <p class="text-gray-600">
-                        Receive quotes from verified providers.
-                    </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-blue-700">3</span>
+                <div class="relative pt-12">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full bg-orange-600 flex items-center justify-center text-white text-3xl font-extrabold shadow-lg">3</div>
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-orange-600 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 mt-2">Job Done — Stress Free</h3>
+                        <p class="text-gray-600">We handle loading, transport and unloading with care.</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Book & relax</h3>
-                    <p class="text-gray-600">
-                        Choose your provider and let them handle the rest.
-                    </p>
                 </div>
 
             </div>
         </div>
-    </section>
+    </div>
 
 </x-layout>
