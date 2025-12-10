@@ -13,4 +13,14 @@ class Service extends Model
         'base_price',
         'is_active'
     ];
+
+    protected $casts = [
+        'base_price' => 'decimal:2',
+        'is_active' => 'boolean'
+    ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

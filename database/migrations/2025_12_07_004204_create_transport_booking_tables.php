@@ -4,35 +4,36 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-                            //SERVICES TABLE
+        //SERVICES TABLE
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string( 'name');
-            $table->string( 'icon')->nullable();
+            $table->string('name');
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
 
-                             //BOOKINGS
+        //BOOKINGS
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(   'user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('service_id')->constrained()->onDelete('cascade');
 
             //pickup info
             $table->string('pickup_address');
             $table->string('pickup_postcode');
-            $table->date(  'pickup_date');
+            $table->string('delivery_address')->nullable();
+            $table->string('delivery_postcode')->nullable();
+            $table->date('pickup_date');
 
             //delivery info
-            $table->text(   'item_description');
-            $table->string( 'item_size'   )->nullable();
+            $table->text('item_description')->nullable();
+            $table->string('item_size')->nullable();
 
             //pricing
 //            $table->decimal('estimated_price', 10, 2)->nullable();
@@ -56,28 +57,27 @@ return new class extends Migration
         });
 
 
-                            //QUOTES
+        //QUOTES
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId( 'booking_id' )->constrained()->onDelete('cascade');
-            $table->foreignId( 'provider_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('booking_id')->constrained()->onDelete('cascade');
+            $table->foreignId('provider_id')->constrained('users')->onDelete('cascade');
 
             $table->decimal('quoted_price', 10, 2);
-            $table->text(   'message')->nullable();
-            $table->enum(   'status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->text('message')->nullable();
+            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
             $table->timestamps();
         });
 
-                             //REVIEWS
+        //REVIEWS
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignId('booking_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id'   )->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('rating');
             $table->text('comment')->nullable();
             $table->timestamps();
         });
-
 
 
     }
