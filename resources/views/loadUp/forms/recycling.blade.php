@@ -1,15 +1,13 @@
-,<x-layout>
+<x-layout>
     @php
-    $fakeService = (object) [
-        'id' => 2,
-        'name' => 'Recicyling Centre'
-        ]
+        $service = (object) [
+            'id' => 2,
+            'name' => 'Recycling & Disposal',
+            'icon' => '♻️'
+        ];
+
+        $fields = [];
     @endphp
 
-    <x-forms.vanForm
-        :service="$fakeService"
-    >
-
-
-    </x-forms.vanForm>
+    <x-forms.vanForm :service="$service" :fields="$fields" />
 </x-layout>

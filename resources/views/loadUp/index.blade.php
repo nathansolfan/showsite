@@ -36,7 +36,7 @@
                 What We Do
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x-2 divide-gray-200 border border-gray-200 rounded-xl overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x-2 divide-gray-200 border border-gray-200 rounded-xl overflow-hidden">
 
                 {{-- Removals --}}
                 <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
@@ -63,16 +63,16 @@
                 </div>
 
                 {{-- Small Moves --}}
-                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
-                    <div class="text-6xl mb-4 text-orange-600">🚚</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Small Moves</h3>
-                    <p class="mb-4 text-gray-600">Ideal for students, single-room moves and partial relocations.</p>
-                    <a href="/loadup/small-moves"
-                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
-                        Book Now
-                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                    </a>
-                </div>
+{{--                <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">--}}
+{{--                    <div class="text-6xl mb-4 text-orange-600">🚚</div>--}}
+{{--                    <h3 class="text-xl font-bold mb-3 text-gray-900">Small Moves</h3>--}}
+{{--                    <p class="mb-4 text-gray-600">Ideal for students, single-room moves and partial relocations.</p>--}}
+{{--                    <a href="/loadup/small-moves"--}}
+{{--                       class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">--}}
+{{--                        Book Now--}}
+{{--                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
 
                 {{-- Extra Services --}}
                 <div class="text-center p-8 bg-white hover:bg-gray-50 transition-colors duration-200 group">
