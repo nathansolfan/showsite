@@ -7,59 +7,23 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function removalsForm()
     {
-        //
+        return view('loadUp.forms.removals');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function recyclingForm()
     {
-        //
+        return view('loadUp.forms.recycling');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function smallMovesForm()
     {
-        //
+        return view('loadUp.forms.moves');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function additionalServiceForm()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('loadUp.forms.additional');
     }
 }

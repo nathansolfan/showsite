@@ -49,6 +49,9 @@ return new class extends Migration
             ])->default('pending');
 
             $table->text('notes')->nullable();
+
+            $table->json('extra_fields')->nullable();
+
             $table->timestamps();
         });
 

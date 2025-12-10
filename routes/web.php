@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
+use App\Http\Controllers\LoadUp\BookingController;
 use App\Http\Controllers\LoadUp\ServiceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TextAnalysisController;
@@ -119,7 +120,13 @@ Route::get('/farm', function () {
 });
 
 // LOAD UP
-Route::resource('/loadUp', ServiceController::class);
+Route::get('/loadup', [ServiceController::class, 'index']);
+Route::get('/loadup/removals', [BookingController::class, 'removalsForm']);
+Route::get('/loadup/recycling', [BookingController::class, 'recyclingForm']);
+Route::get('/loadup/small-moves', [BookingController::class, 'smallMovesForm']);
+Route::get('/loadup/additional', [BookingController::class, 'additionalServiceForm']);
+
+
 
 // CONTACT
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
