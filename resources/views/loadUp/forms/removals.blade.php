@@ -2,7 +2,7 @@
     @php
     $fakeService = (object) [
         'id' => 1,
-        'name' => 'Removal Form'
+        'name' => 'Removal'
 ]
 
  @endphp
