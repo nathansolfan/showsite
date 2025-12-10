@@ -43,7 +43,7 @@
                     <div class="text-6xl mb-4 text-orange-600">📦</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-900">Removals</h3>
                     <p class="mb-4 text-gray-600">Small removals, single items or full van loads.</p>
-                    <a href="/loadup/bookings/create?service=removals"
+                    <a href="/loadup/removals"
                        class="text-orange-600 font-bold hover:text-orange-700 flex items-center justify-center pt-2">
                         Book Now
                         <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
