@@ -1,11 +1,12 @@
-@props(['service', 'fields' => []])
+@props(['service', 'fields' => [], 'action'])
 
 <div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
 
         {{-- Header --}}
         <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl shadow-lg mb-6">
+            <div
+                class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl shadow-lg mb-6">
                 <span class="text-4xl">{{ $service->icon ?? '📦' }}</span>
             </div>
             <h1 class="text-5xl font-bold text-orange-600 mb-3">
@@ -14,7 +15,7 @@
             <p class="text-gray-600 text-lg">Fill in the details below to complete your booking</p>
         </div>
 
-        <form method="POST" action="" class="relative">
+        <form method="POST" action="{{$action}}" class="relative">
             @csrf
             <input type="hidden" name="service_id" value="{{ $service->id }}">
 

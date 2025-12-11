@@ -1,10 +1,9 @@
 <x-layout>
     @php
-        $service = (object) [
-            'id' => 3,
-            'name' => 'Additional Services',
-            'icon' => '🔧'
-        ];
+        $service = \App\Models\LoadUp\Service::findOrCreate(
+            ['name' => 'Additional Services'],
+            ['icon' => '🔧']
+        );
 
         $fields = [
             [

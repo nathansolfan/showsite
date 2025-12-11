@@ -1,26 +1,12 @@
 <x-layout>
     @php
-        $service = (object) [
-            'id' => 1,
-            'name' => 'Removals & Moving Services',
-            'icon' => '🚚'
-        ];
+        $service = \App\Models\LoadUp\Service::firstOrCreate(
+            ['name' => 'Removals & Moving Services'],
+            ['icon' => '📦']
+        );
 
 
         $fields = [
-    [
-        'name' => 'delivery_address',
-        'type' => 'text',
-        'label' => 'Delivery Address',
-        'placeholder' => 'Where should we deliver?',
-        'required' => true,
-    ],
-    [
-        'name' => 'delivery_postcode',
-        'type' => 'text',
-        'label' => 'Delivery Postcode',
-        'required' => true,
-    ],
     [
         'name' => 'move_type',
         'type' => 'select',
@@ -48,5 +34,9 @@
 ];
     @endphp
 
-    <x-forms.vanForm :service="$service" :fields="$fields" />
+    <x-forms.vanForm
+        :service="$service"
+        :fields="$fields"
+        action="/bookings"
+    />
 </x-layout>
