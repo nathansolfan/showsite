@@ -14,7 +14,6 @@ class Booking extends Model
         'pickup_address',
         'pickup_postcode',
         'pickup_date',
-
         'delivery_address',
         'delivery_postcode',
 
