@@ -11,11 +11,11 @@ class Booking extends Model
         'user_id',
         'service_id',
 
-        'pickup_adress',
+        'pickup_address',
         'pickup_postcode',
         'pickup_date',
 
-        'delivery_adress',
+        'delivery_address',
         'delivery_postcode',
 
         'item_description',
