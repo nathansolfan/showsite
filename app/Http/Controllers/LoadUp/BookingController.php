@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\LoadUp;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
+
+    public function store()
+    {
+
+    }
+
+
     public function removalsForm()
     {
         return view('loadUp.forms.removals');
@@ -26,4 +32,6 @@ class BookingController extends Controller
     {
         return view('loadUp.forms.additional');
     }
+
+
 }

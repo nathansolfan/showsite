@@ -7,7 +7,6 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\LoadUp\BookingController;
 use App\Http\Controllers\LoadUp\ServiceController;
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TextAnalysisController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -29,11 +28,11 @@ Route::get('/hero', function () {
     return view('pages.hero');
 });
 
-Route::get('/about', function() {
+Route::get('/about', function () {
     return view('pages.about');
 });
 
-Route::get('/feedback', function() {
+Route::get('/feedback', function () {
     return view('pages.feedback');
 })->name('feedback');
 
@@ -41,31 +40,31 @@ Route::get('/services', function () {
     return view('pages.services');
 });
 
-Route::get('contact', function (){
+Route::get('contact', function () {
     return view('contacts.contact');
 });
 
-Route::get('portfolio', function (){
+Route::get('portfolio', function () {
     return view('pages.portfolio');
 });
 
-Route::get('portfolio2', function (){
+Route::get('portfolio2', function () {
     return view('pages.portfolio2');
 });
 
 // Route::get('/works', [GitHubController::class, 'index'])->name('works');
 // Route::get('/workss', [GitHubController::class, 'index'])->name('workss');
 
-Route::get('/works', function(Request $request, GitHubController $controller) {
+Route::get('/works', function (Request $request, GitHubController $controller) {
     return $controller->index($request, 'pages.works');
 })->name('works');
 
-Route::get('/workss', function(Request $request, GitHubController $controller) {
+Route::get('/workss', function (Request $request, GitHubController $controller) {
     return $controller->index($request, 'pages.workss');
 })->name('workss');
 
 // FEEDBACK
-Route::get( '/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 // SVG
@@ -84,7 +83,7 @@ Route::get('/quotes', function () {
 
 // ANALYZE
 Route::post('/analyze', [TextAnalysisController::class, 'analysis']);
-Route::get( '/analyze', function () {
+Route::get('/analyze', function () {
     return view('analyze.analyze');
 });
 
@@ -99,11 +98,10 @@ Route::post('user/{user}/make-admin', [UserController::class, 'makeAdmin']);
 Route::get('user/{user}/blogs', [UserController::class, 'blogs']);
 
 
-
 // AUTH
-Route::get( '/login' ,[AuthController::class, 'loginForm']);
-Route::post('/login' ,[AuthController::class, 'login']);
-Route::post('/logout',[AuthController::class, 'logout']);
+Route::get('/login', [AuthController::class, 'loginForm']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
 //DINIS
 Route::get('/kitchen', function () {
@@ -126,6 +124,7 @@ Route::get('/loadup/recycling', [BookingController::class, 'recyclingForm']);
 Route::get('/loadup/small-moves', [BookingController::class, 'smallMovesForm']);
 Route::get('/loadup/additional', [BookingController::class, 'additionalServiceForm']);
 
+Route::post('/bookings', [BookingController::class, 'store']);
 
 
 // CONTACT
