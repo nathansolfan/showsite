@@ -58,7 +58,25 @@
 
                     <span class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-lg font-bold shadow-lg">
 
-                        <form action=""></form>
+                        <form action="/user/{{$booking->id}}/change-status" method="post">
+                            @csrf
+                            @method('PATCH')
+                            <select>
+                                <option
+                                    value="pending" {{ $booking->status === 'pending' ? 'selected' : '' }}>Pending</option>
+                                <option value="quoted">Quoted</option>
+                                <option value="accepted">Accepted</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+
+                            <button
+                                type="submit"
+                                class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-200">
+                                Update
+                            </button>
+                        </form>
                     </span>
                 @endif
 
