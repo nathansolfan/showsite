@@ -1,6 +1,6 @@
 <x-layout>
     @php
-        $service = \App\Models\LoadUp\Service::findOrCreate(
+        $service = \App\Models\LoadUp\Service::firstOrCreate(
             ['name' => 'Additional Services'],
             ['icon' => '🔧']
         );
@@ -31,5 +31,9 @@
 
     @endphp
 
-    <x-forms.vanForm :service="$service" :fields="$fields"/>
+    <x-forms.vanForm
+        :service="$service"
+        :fields="$fields"
+        action="/bookings"
+    />
 </x-layout>
