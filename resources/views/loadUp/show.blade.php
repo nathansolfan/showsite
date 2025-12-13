@@ -53,6 +53,16 @@
                     <h1 class="text-5xl font-black text-gray-900 mb-2">Booking Details</h1>
                     <p class="text-gray-600 text-lg">Order #{{ $booking->id }}</p>
                 </div>
+
+                @if( auth()->check() && auth()->user()->id === 1 )
+
+                    <span class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-lg font-bold shadow-lg">
+
+                        <form action=""></form>
+                    </span>
+                @endif
+
+
                 <span class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-lg font-bold shadow-lg
                     @if($booking->status === 'pending') bg-yellow-100 text-yellow-800 border-2 border-yellow-200
                     @elseif($booking->status === 'quoted') bg-blue-100 text-blue-800 border-2 border-blue-200
@@ -61,14 +71,20 @@
                     @elseif($booking->status === 'completed') bg-green-100 text-green-800 border-2 border-green-200
                     @elseif($booking->status === 'cancelled') bg-red-100 text-red-800 border-2 border-red-200
                     @else bg-gray-100 text-gray-800 border-2 border-gray-200 @endif">
-                    <span class="w-3 h-3 rounded-full
+
+                        <span class="w-3 h-3 rounded-full
                         @if($booking->status === 'pending') bg-yellow-500 animate-pulse
                         @elseif($booking->status === 'in_progress') bg-purple-500 animate-pulse
                         @elseif($booking->status === 'completed') bg-green-500
                         @else bg-gray-400 @endif">
                     </span>
+
+
+
                     {{ ucfirst($booking->status) }}
                 </span>
+
+
             </div>
 
             {{-- Main Card --}}
