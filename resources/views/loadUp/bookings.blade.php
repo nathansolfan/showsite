@@ -105,7 +105,7 @@
                                         {{ ucfirst($booking->status) }}
                                     </span>
 
-                                    <a href="/loadup/booking/{{ $booking->id }}"
+                                    <a href="/loadup/show/{{ $booking->id }}"
                                        class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-xl font-semibold shadow-lg transition-all duration-200 whitespace-nowrap">
                                         View Details →
                                     </a>

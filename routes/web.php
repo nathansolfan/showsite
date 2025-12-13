@@ -125,7 +125,7 @@ Route::get('/loadup/additional', [BookingController::class, 'additionalServiceFo
 
 Route::post('/bookings', [BookingController::class, 'store']);
 Route::get('/loadup/bookings', [BookingController::class, 'bookings']);
-Route::get('/loadup/show', [BookingController::class, 'show']);
+Route::get('/loadup/show/{id}', [BookingController::class, 'show']);
 
 
 // CONTACT
