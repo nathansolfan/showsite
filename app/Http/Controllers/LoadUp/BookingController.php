@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\LoadUp;
 
 use App\Http\Controllers\Controller;
+use App\Models\LoadUp\Booking;
 use App\Models\LoadUp\Service;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,19 @@ class BookingController extends Controller
         $booking = auth()->user()->bookings()->create($validated);
 
         return redirect('/');
+    }
 
+    public function bookings()
+    {
+        $bookings = Booking::all();
+        return view('loadup.bookings', ['bookings' => $bookings]);
+
+    }
+
+    public function show(Request $request, $id)
+    {
+        $booking = Booking::findOrFail($id);
+        return view('loadup.show', ['booking' => $booking]);
     }
 
 

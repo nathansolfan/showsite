@@ -124,6 +124,8 @@ Route::get('/loadup/small-moves', [BookingController::class, 'smallMovesForm']);
 Route::get('/loadup/additional', [BookingController::class, 'additionalServiceForm']);
 
 Route::post('/bookings', [BookingController::class, 'store']);
+Route::get('/loadup/bookings', [BookingController::class, 'bookings']);
+Route::get('/loadup/show', [BookingController::class, 'show']);
 
 
 // CONTACT
