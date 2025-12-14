@@ -61,7 +61,7 @@
                         <form action="/user/{{$booking->id}}/change-status" method="post">
                             @csrf
                             @method('PATCH')
-                            <select>
+                            <select name="status">
                                 <option
                                     value="pending" {{ $booking->status === 'pending' ? 'selected' : '' }}>Pending</option>
                                 <option value="quoted">Quoted</option>
