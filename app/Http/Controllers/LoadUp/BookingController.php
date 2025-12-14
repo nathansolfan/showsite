@@ -33,7 +33,7 @@ class BookingController extends Controller
 
         $booking = auth()->user()->bookings()->create($validated);
 
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function bookings()
