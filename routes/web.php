@@ -120,13 +120,13 @@ Route::get('/farm', function () {
 Route::get('/loadup', [BookingController::class, 'index']);
 Route::get('/loadup/removals', [BookingController::class, 'removalsForm']);
 Route::get('/loadup/recycling', [BookingController::class, 'recyclingForm']);
-Route::get('/loadup/small-moves', [BookingController::class, 'smallMovesForm']);
 Route::get('/loadup/additional', [BookingController::class, 'additionalServiceForm']);
 
 Route::post('/bookings', [BookingController::class, 'store']);
 Route::get('/loadup/bookings', [BookingController::class, 'bookings']);
 Route::get('/loadup/show/{id}', [BookingController::class, 'show']);
 Route::post('/user/{booking}/change-status', [UserController::class, 'changeStatus']);
+Route::get('/loadup/{booking}/edit', [BookingController::class, 'edit']);
 
 
 // CONTACT

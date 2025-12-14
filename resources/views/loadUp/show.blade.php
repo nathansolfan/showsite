@@ -285,7 +285,7 @@
 
                 {{-- Edit Button (only if pending or quoted) --}}
                 @if(in_array($booking->status, ['pending', 'quoted']))
-                    <a href="/loadup/booking/{{ $booking->id }}/edit"
+                    <a href="/loadup/{{ $booking->id }}/edit"
                        class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center">
             <span class="flex items-center justify-center gap-2">
                 <svg class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none"
