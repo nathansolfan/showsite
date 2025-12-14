@@ -33,12 +33,18 @@ class BookingController extends Controller
 
         $booking = auth()->user()->bookings()->create($validated);
 
-        return redirect()->back();
+        return redirect('loadup');
     }
 
     public function bookings()
     {
-        $bookings = Booking::all();
+        if (auth()->user()->id === 1) {
+            $bookings = Booking::all();
+        } else {
+            $bookings = auth()->user()->bookings()->latest()->get();
+        }
+
+//        $bookings = Booking::all();
         return view('loadup.bookings', ['bookings' => $bookings]);
 
     }
