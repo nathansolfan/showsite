@@ -16,9 +16,10 @@ class AuthController extends Controller
     {
 
         $validated = $request->validate([
-            'email'    => ['required', 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'min:3'],
         ]);
+
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
@@ -35,6 +36,5 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('/blog');
-
     }
 }
