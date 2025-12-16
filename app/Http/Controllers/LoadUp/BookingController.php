@@ -55,6 +55,19 @@ class BookingController extends Controller
         return view('loadup.show', ['booking' => $booking]);
     }
 
+    public function edit(Booking $booking)
+    {
+        $service = $booking->service;
+        $fields = $this->findOrFail($service->name);
+
+        return view('loadUp.edit', [
+            'booking' => $booking,
+            'service' => $service,
+            'fields' => $fields
+        ]);
+
+    }
+
 
     public function removalsForm()
     {
@@ -69,12 +82,6 @@ class BookingController extends Controller
     public function additionalServiceForm()
     {
         return view('loadUp.forms.additional');
-    }
-
-    public function edit(Booking $booking)
-    {
-        dd();
-
     }
 
 

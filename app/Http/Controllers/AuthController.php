@@ -14,7 +14,6 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-
         $validated = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'min:3'],
@@ -28,8 +27,6 @@ class AuthController extends Controller
         return back()->withErrors([
             'email' => 'Invalid Email'
         ]);
-
-
     }
 
     public function logout()
