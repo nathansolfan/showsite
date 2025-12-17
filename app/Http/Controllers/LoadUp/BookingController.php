@@ -5,6 +5,7 @@ namespace App\Http\Controllers\LoadUp;
 use App\Http\Controllers\Controller;
 use App\Models\LoadUp\Booking;
 use App\Models\LoadUp\Service;
+use App\Services\BookingServiceConfig;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -58,8 +59,7 @@ class BookingController extends Controller
     public function edit(Booking $booking)
     {
         $service = $booking->service;
-        $fields = $this->findOrFail($service->name);
-
+        $fields = BookingServiceConfig::getFieldsForService($service->name);
         return view('loadUp.edit', [
             'booking' => $booking,
             'service' => $service,
