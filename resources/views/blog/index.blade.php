@@ -8,16 +8,19 @@
                     Sharing my journey through web development, coding tips, and project breakdowns.
                 </p>
                 <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#latest-posts" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                    <a href="#latest-posts"
+                       class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                         Read Latest
                     </a>
                     @guest
-                        <a href="/user/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                        <a href="/user/create"
+                           class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                             Create
                         </a>
                     @endguest
                     @auth
-                        <a href="/blog/create" class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
+                        <a href="/blog/create"
+                           class="bg-white text-blue-600 hover:bg-blue-100 transition px-6 py-3 rounded-lg font-medium">
                             Project
                         </a>
                     @endauth
@@ -36,13 +39,16 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800" data-aos="fade-right">Featured Post</h2>
-                <a href="#latest-posts" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1" data-aos="fade-left">
+                <a href="#latest-posts" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+                   data-aos="fade-left">
                     View all posts <i class="fas fa-arrow-right text-sm"></i>
                 </a>
             </div>
 
             {{-- First FEATURED POST--}}
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+            <div
+                class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden"
+                data-aos="fade-up">
                 <div class="p-8 md:p-12">
                     <div class="flex items-center gap-4 mb-4">
                         <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
@@ -67,7 +73,9 @@
             </div>
 
             {{-- 2nd FEATURED POST--}}
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden mt-6" data-aos="fade-up">
+            <div
+                class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg overflow-hidden mt-6"
+                data-aos="fade-up">
                 <div class="p-8 md:p-12">
                     <div class="flex items-center gap-4 mb-4">
                         <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
@@ -83,7 +91,7 @@
                     <p class="text-gray-600 mb-6">
                         Our client has requested this beautiful website reactive, using Blade, SQL
                     </p>
-                    <a href="/blog/article"
+                    <a href="/loadup"
                        class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                         Read Full Article <i class="fas fa-arrow-right ml-2 text-sm"></i>
                     </a>
@@ -101,7 +109,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Post Card 1 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="bg-blue-200 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">API</span>
                         <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Feb, 2024</span>
@@ -114,35 +124,44 @@
 
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 8 min read</span>
-                        <a href="{{ route('blog.show', 'dogProject') }}" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        <a href="{{ route('blog.show', 'dogProject') }}"
+                           class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Post Card 2 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-green-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-green-200 h-full flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Laravel</span>
+                        <span
+                            class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Laravel</span>
                         <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Nov, 2025</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Feelings Analyzer</h3>
                     <p class="text-gray-600 mb-4">
-                        Here we use Finn with a lexicon of all words related to feelings with a scale that goes from -5 to +5.
+                        Here we use Finn with a lexicon of all words related to feelings with a scale that goes from -5
+                        to +5.
                         <br>
-                        A script was made and generated the json for the feelings and based on the input you have the final result.
+                        A script was made and generated the json for the feelings and based on the input you have the
+                        final result.
                     </p>
 
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 12 min read</span>
-                        <a href="/analyze" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        <a href="/analyze"
+                           class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Post Card 3 -->
-                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="bg-white rounded-xl shadow border border-gray-100 p-6 transition-all hover:shadow-lg hover:border-blue-200 h-full flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="bg-blue-200 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">API</span>
                         <span class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Sep, 2025</span>
@@ -156,7 +175,8 @@
 
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 15 min read</span>
-                        <a href="/#quotes-section" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
+                        <a href="/#quotes-section"
+                           class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800">
                             Read More <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
@@ -167,19 +187,24 @@
             <!-- Pagination -->
             <div class="mt-12 flex justify-center" data-aos="fade-up">
                 <nav class="inline-flex rounded-md shadow-sm">
-                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#"
+                       class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
                         Previous
                     </a>
-                    <a href="#" class="px-4 py-2 bg-blue-600 border border-blue-600 text-sm font-medium text-white hover:bg-blue-700">
+                    <a href="#"
+                       class="px-4 py-2 bg-blue-600 border border-blue-600 text-sm font-medium text-white hover:bg-blue-700">
                         1
                     </a>
-                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#"
+                       class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
                         2
                     </a>
-                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#"
+                       class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
                         3
                     </a>
-                    <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <a href="#"
+                       class="px-4 py-2 bg-white border border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50">
                         Next
                     </a>
                 </nav>
@@ -192,7 +217,8 @@
         <div class="container mx-auto px-4">
             <div class="max-w-xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Subscribe to my newsletter</h2>
-                <p class="text-black-600 mb-6">Get the latest articles, tutorials, and project updates delivered directly to your inbox.</p>
+                <p class="text-black-600 mb-6">Get the latest articles, tutorials, and project updates delivered
+                    directly to your inbox.</p>
 
                 <form class="flex flex-col sm:flex-row gap-2">
                     <input type="email" placeholder="Your email address"

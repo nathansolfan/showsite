@@ -84,7 +84,6 @@ class UserController extends Controller
 
     public function changeStatus(Booking $booking, Request $request)
     {
-        
         $status = $booking->update(['status' => $request->status]);
         return redirect()->back();
     }
