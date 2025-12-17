@@ -300,10 +300,10 @@
 
                 {{-- Cancel Button (only if pending) --}}
                 @if($booking->status === 'pending')
-                    <form action="/loadup/booking/{{ $booking->id }}/cancel" method="POST"
+                    <form action="/loadup/{{ $booking->id }}/delete" method="POST"
                           onsubmit="return confirm('Are you sure you want to cancel this booking?');">
                         @csrf
-                        @method('PATCH')
+                        {{--                        @method('PATCH')--}}
                         <button type="submit"
                                 class="group relative px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-2xl font-bold text-lg shadow-xl shadow-red-500/30 transition-all duration-300 transform hover:-translate-y-1 w-full">
                 <span class="flex items-center justify-center gap-2">

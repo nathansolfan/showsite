@@ -105,5 +105,12 @@ class BookingController extends Controller
         return view('loadUp.forms.additional');
     }
 
+    public function destroy(Booking $booking)
+    {
+        $booking->delete();
+        return redirect()->back();
+
+    }
+
 
 }

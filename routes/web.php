@@ -129,6 +129,7 @@ Route::post('/user/{booking}/change-status', [UserController::class, 'changeStat
 //EDIT
 Route::get('/loadup/{booking}/edit', [BookingController::class, 'edit']);
 Route::post('/loadup/{booking}/update', [BookingController::class, 'update']);
+Route::post('/loadup/{booking}/delete', [BookingController::class, 'destroy']);
 
 
 // CONTACT
