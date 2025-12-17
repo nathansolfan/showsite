@@ -1,4 +1,9 @@
-@props(['service', 'fields' => [], 'action'])
+@props([
+    'service',
+    'fields' => [],
+    'action',
+    'booking' => null
+    ])
 
 <div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
@@ -17,6 +22,10 @@
 
         <form method="POST" action="{{$action}}" class="relative">
             @csrf
+            @if($booking)
+                @method('PATCH')
+            @endif
+
             <input type="hidden" name="service_id" value="{{ $service->id }}">
 
             {{-- Main Card --}}
@@ -34,14 +43,17 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {{-- Pickup Address --}}
                             <div class="md:col-span-2">
+
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Pickup Address
                                 </label>
+
                                 <input type="text" name="pickup_address"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                                        placeholder="Enter your pickup address"
-                                       value="{{ old('pickup_address') }}"
+                                       value="{{ old('pickup_address', $booking?->pickup_address) }}"
                                        required>
+
                                 @error('pickup_address')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -55,7 +67,7 @@
                                 <input type="text" name="pickup_postcode"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                                        placeholder="Enter postcode"
-                                       value="{{ old('pickup_postcode') }}"
+                                       value="{{ old('pickup_postcode', $booking->pickup_postcode) }}"
                                        required>
                                 @error('pickup_postcode')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -69,7 +81,7 @@
                                 </label>
                                 <input type="date" name="pickup_date"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
-                                       value="{{ old('pickup_date') }}"
+                                       value="{{ old('pickup_date', $booking->pickup_date) }}"
                                        min="{{ date('Y-m-d') }}"
                                        required>
                                 @error('pickup_date')
@@ -95,7 +107,7 @@
                         </label>
                         <textarea name="item_description" rows="4"
                                   class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 resize-none"
-                                  placeholder="Describe the items to be collected...">{{ old('item_description') }}</textarea>
+                                  placeholder="Describe the items to be collected...">{{ old('item_description', $booking->item_description)  }}</textarea>
                         @error('item_description')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror

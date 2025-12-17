@@ -65,6 +65,25 @@ class BookingController extends Controller
             'service' => $service,
             'fields' => $fields
         ]);
+    }
+
+    public function update(Booking Request $request)
+    {
+        $validated = $request->validate([
+
+            'service_id' => ['required', 'exists:services,id'],
+            'pickup_address' => ['required', 'string'],
+            'pickup_postcode' => ['required', 'string'],
+            'pickup_date' => ['required', 'date'],
+            'delivery_address' => ['nullable', 'string'],
+            'delivery_postcode' => ['nullable', 'string'],
+            'item_description' => ['nullable', 'string'],
+            'item_size' => ['nullable', 'string'],
+            'extra_fields' => ['nullable', 'array']
+        ]);
+        $bookin
+        return redirect();
+
 
     }
 
