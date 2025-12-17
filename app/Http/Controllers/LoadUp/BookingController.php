@@ -67,8 +67,9 @@ class BookingController extends Controller
         ]);
     }
 
-    public function update(Booking Request $request)
+    public function update(Booking $booking, Request $request)
     {
+        
         $validated = $request->validate([
 
             'service_id' => ['required', 'exists:services,id'],
@@ -81,8 +82,9 @@ class BookingController extends Controller
             'item_size' => ['nullable', 'string'],
             'extra_fields' => ['nullable', 'array']
         ]);
-        $bookin
-        return redirect();
+        $booking->update($validated);
+
+        return redirect('loadup.index');
 
 
     }
