@@ -66,10 +66,15 @@
                                                 <span>{{ $booking->pickup_date->format('l, d F Y') }}</span>
                                             </div>
 
-                                            <div class="flex items-center gap-2">
-                                                <span class="font-semibold min-w-[100px]">Booking ID:</span>
-                                                <span class="text-sm text-gray-500">#{{ $booking->id }}</span>
-                                            </div>
+
+                                            @if(auth()->check() && auth()->user()->id === 1 )
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-semibold min-w-[100px]">Booking ID:</span>
+                                                    <span class="text-sm text-gray-500">#{{ $booking->id }}</span>
+                                                </div>
+
+                                            @endif
+
                                         </div>
 
                                         {{-- Extra Fields Preview --}}
