@@ -84,7 +84,7 @@ class BookingController extends Controller
         ]);
         $booking->update($validated);
 
-        return redirect('loadup.show' . $booking->id);
+        return redirect('/loadup/show/' . $booking->id);
 
 
     }

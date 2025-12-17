@@ -22,9 +22,9 @@
 
         <form method="POST" action="{{$action}}" class="relative">
             @csrf
-            @if($booking)
-                @method('PATCH')
-            @endif
+            {{--            @if($booking)--}}
+            {{--                @method('PATCH')--}}
+            {{--            @endif--}}
 
             <input type="hidden" name="service_id" value="{{ $service->id }}">
 

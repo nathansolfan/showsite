@@ -4,7 +4,7 @@
         :service="$service"
         :fields="$fields"
         :booking="$booking"
-        action="/loadup/booking/{{$booking->id}}"
+        action="/loadup/{{$booking->id}}/update"
     >
 
     </x-forms.vanForm>
