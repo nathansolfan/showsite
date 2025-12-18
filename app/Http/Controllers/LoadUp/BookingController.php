@@ -34,7 +34,7 @@ class BookingController extends Controller
 
         $booking = auth()->user()->bookings()->create($validated);
 
-        return redirect('loadUp');
+        return redirect('/loadUp/bookings');
     }
 
     public function bookings()
@@ -84,7 +84,7 @@ class BookingController extends Controller
         ]);
         $booking->update($validated);
 
-        return redirect('/loadUp/show/' . $booking->id);
+        return redirect('/loadup/show/' . $booking->id);
 
 
     }
@@ -108,7 +108,7 @@ class BookingController extends Controller
     public function destroy(Booking $booking)
     {
         $booking->delete();
-        return redirect()->back();
+        return redirect('/loadup/bookings');
 
     }
 
