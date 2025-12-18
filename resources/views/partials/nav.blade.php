@@ -13,27 +13,31 @@
                 <a href="/" class="text-white hover:text-blue-100 font-medium transition-colors">Home</a>
                 <a href="/about" class="text-white hover:text-blue-100 font-medium transition-colors">About</a>
                 <a href="/contact" class="text-white hover:text-blue-100 font-medium transition-colors">Contact</a>
-                <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="text-white hover:text-blue-100 font-medium transition-colors">Github</a>
+                <a href="https://github.com/nathansolfan?tab=repositories" target="_blank"
+                   class="text-white hover:text-blue-100 font-medium transition-colors">Github</a>
                 <a href="{{ route('feedback') }}" class="text-white hover:text-blue-100 font-medium transition-colors">Feedback</a>
                 @auth
                     <form action="/logout" method="post">
                         @csrf
-                        <button class="text-white hover:text-blue-100 font-medium transition-colors" type="submit">Logout</button>
+                        <button class="text-white hover:text-blue-100 font-medium transition-colors" type="submit">
+                            Logout
+                        </button>
                     </form>
                 @endauth
-                <a href="{{ route('blog.index') }}" class="px-6 py-2.5 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-md">Projects</a>
-                    <p class="text-white hover:text-blue-100 font-medium transition-colors">
-{{--                        Hi,{{ auth()->check() ? auth()->user()->name : '' }}--}}
-{{--                        Hi, {{auth()->user()->name}}--}}
+                <a href="{{ route('blog.index') }}"
+                   class="px-6 py-2.5 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-md">Projects</a>
+                <p class="text-white hover:text-blue-100 font-medium transition-colors">
+                    {{--                        Hi,{{ auth()->check() ? auth()->user()->name : '' }}--}}
+                    {{--                        Hi, {{auth()->user()->name}}--}}
 
-                        @if(auth()->user())
-                            Hi, <a href="/user/ {{ auth()->id() }}"> {{auth()->user()->name}} </a>
-                        @else
-                           @if(request()->is('/') || request()->routeIs('blog.index'))
-                               Welcome
-                           @endif
+                    @if(auth()->user())
+                        Hi, <a href="{{ route('user.show', auth()->id()) }}">{{ auth()->user()->name }}</a>
+                    @else
+                        @if(request()->is('/') || request()->routeIs('blog.index'))
+                            Welcome
                         @endif
-                    </p>
+                    @endif
+                </p>
 
             </div>
 
@@ -54,12 +58,17 @@
         <div class="px-6 py-4 space-y-3">
             <a href="/" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Home</a>
             <a href="/about" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">About</a>
-            <a href="/contact" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Contact</a>
-            <a href="https://github.com/nathansolfan?tab=repositories" target="_blank" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Github</a>
-            <a href="{{ route('feedback') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
-            <a href="{{ route('blog.index') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Projects</a>
+            <a href="/contact"
+               class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Contact</a>
+            <a href="https://github.com/nathansolfan?tab=repositories" target="_blank"
+               class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Github</a>
+            <a href="{{ route('feedback') }}"
+               class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
+            <a href="{{ route('blog.index') }}"
+               class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Projects</a>
             @auth
-                <a href="{{ route('feedback') }}" class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
+                <a href="{{ route('feedback') }}"
+                   class="block text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Feedback</a>
             @endauth
         </div>
     </div>
