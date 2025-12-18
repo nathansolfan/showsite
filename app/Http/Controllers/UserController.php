@@ -37,7 +37,6 @@ class UserController extends Controller
 
     public function show($id)
     {
-
         $user = User::findOrFail($id);
         $blogs = $user->blogs;
 
@@ -88,17 +87,15 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-
     //Shows user list of blogs
-//    public function blogs(User $user)
-//    {
-//        $blogs = $user->blogs;
-//        return view('user.blogs', [
-//            'blogs' => $blogs,
-//            'user' => $user
-//        ]);
-//
-//    }
+    public function blogs(User $user)
+    {
+        $blogs = $user->blogs;
+        return view('user.blogs', [
+            'blogs' => $blogs,
+            'user' => $user
+        ]);
+    }
 
 
 }

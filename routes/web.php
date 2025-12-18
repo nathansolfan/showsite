@@ -91,10 +91,10 @@ Route::get('/blog/article', [BlogController::class, 'article']);
 Route::resource('/blog', BlogController::class);
 
 // USER
-Route::resource('/user', UserController::class)->except(['index']);
 Route::get('user', [UserController::class, 'index'])->middleware(['auth', 'is_admin']);
 Route::post('user/{user}/make-admin', [UserController::class, 'makeAdmin']);
 Route::get('user/{user}/blogs', [UserController::class, 'blogs']);
+Route::resource('/user', UserController::class)->except(['index']);
 
 
 // AUTH
