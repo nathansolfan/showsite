@@ -39,15 +39,15 @@ class BookingController extends Controller
 
     public function bookings()
     {
-        if (auth()->user()->id === 1) {
+        $user = auth()->user();
+
+        if ($user && $user->id === 1) {
             $bookings = Booking::all();
         } else {
-            $bookings = auth()->user()->bookings()->latest()->get();
+            $bookings = $user->bookings()->latest()->get();
         }
 
-//        $bookings = Booking::all();
         return view('loadup.bookings', ['bookings' => $bookings]);
-
     }
 
     public function show(Request $request, $id)
