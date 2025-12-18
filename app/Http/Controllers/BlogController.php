@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Testing\Fluent\Concerns\Has;
 
 class BlogController extends Controller
 {
@@ -20,20 +18,12 @@ class BlogController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('blog.create');
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'  => ['required'],
+            'name' => ['required'],
             'email' => ['required', 'email'],
             'title' => ['required'],
             'content' => ['required'],
@@ -43,6 +33,14 @@ class BlogController extends Controller
         Blog::create($validated);
         return redirect('/blog');
 
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('blog.create');
     }
 
     /**
