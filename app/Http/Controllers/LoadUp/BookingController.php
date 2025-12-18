@@ -14,7 +14,7 @@ class BookingController extends Controller
     {
         $services = Service::all();
 
-        return view('loadUp/index');
+        return view('loadUp.edit');
     }
 
     public function store(Request $request)
