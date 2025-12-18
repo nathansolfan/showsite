@@ -34,7 +34,7 @@ class BookingController extends Controller
 
         $booking = auth()->user()->bookings()->create($validated);
 
-        return redirect('loadup');
+        return redirect('loadUp');
     }
 
     public function bookings()
@@ -47,13 +47,13 @@ class BookingController extends Controller
             $bookings = $user->bookings()->latest()->get();
         }
 
-        return view('loadup.bookings', ['bookings' => $bookings]);
+        return view('loadUp.bookings', ['bookings' => $bookings]);
     }
 
     public function show(Request $request, $id)
     {
         $booking = Booking::findOrFail($id);
-        return view('loadup.show', ['booking' => $booking]);
+        return view('loadUp.show', ['booking' => $booking]);
     }
 
     public function edit(Booking $booking)
@@ -84,7 +84,7 @@ class BookingController extends Controller
         ]);
         $booking->update($validated);
 
-        return redirect('/loadup/show/' . $booking->id);
+        return redirect('/loadUp/show/' . $booking->id);
 
 
     }
