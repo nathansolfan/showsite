@@ -122,7 +122,7 @@ Route::get('/loadup/removals', [BookingController::class, 'removalsForm']);
 Route::get('/loadup/recycling', [BookingController::class, 'recyclingForm']);
 Route::get('/loadup/additional', [BookingController::class, 'additionalServiceForm']);
 
-Route::post('/bookings', [BookingController::class, 'store']);
+Route::post('/bookings', [BookingController::class, 'store'])->middleware('auth');
 Route::get('/loadup/bookings', [BookingController::class, 'bookings']);
 Route::get('/loadup/show/{id}', [BookingController::class, 'show']);
 Route::post('/user/{booking}/change-status', [UserController::class, 'changeStatus']);
