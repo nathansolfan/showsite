@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,6 +12,11 @@ return new class extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('plan_id')->constrained()->cascadeOnDelete();
+            $table->decimal('amount', 10, 2);
+            $table->string('currency', 3)->default('GBP');
+            $table->timestamp('valid_from');
+            $table->timestamp('valid_until')->nullable();
             $table->timestamps();
         });
     }
