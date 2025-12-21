@@ -23,28 +23,46 @@ class NetflixScraper implements ScraperInterface
             throw new \Exception('Failed to fetch Netflix');
         }
 
-        // Salva o HTML pra você ver
-        file_put_contents(storage_path('app/netflix.html'), $response->body());
-        dump('HTML salvo em: ' . storage_path('app/netflix.html'));
-
         $crawler = new Crawler($response->body());
+        $plans = [];
+        $foundPlans = [];
 
-        // Vamos procurar qualquer coisa relacionada a preço
-        dump('Procurando por texto com £...');
-        $crawler->filter('*')->each(function (Crawler $node) {
-            $text = $node->text();
-            if (str_contains($text, '£') && strlen($text) < 50) {
-                dump($text);
+        try {
+            // Procura por qualquer texto que tenha o padrão: "Nome: £X.XX / month"
+            $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
+                $text = trim($node->text());
+
+                // Padrão: "Standard with adverts: £5.99 / month"
+                if (preg_match('/^([^:]+):\s*£([\d.]+)\s*\/\s*month/i', $text, $matches)) {
+                    $planName = trim($matches[1]);
+                    $price = (float)$matches[2];
+
+                    // Evita duplicatas
+                    if (!isset($foundPlans[$planName])) {
+                        $foundPlans[$planName] = $price;
+                    }
+                }
+            });
+
+            // Converte pra formato esperado
+            foreach ($foundPlans as $name => $price) {
+                $plans[] = [
+                    'name' => $name,
+                    'price' => $price,
+                    'features' => [],
+                ];
             }
-        });
 
-        return [];
+        } catch (\Exception $exception) {
+            throw new \Exception('Failed to parse Netflix: ' . $exception->getMessage());
+        }
+
+        return $plans;
     }
 
-    private function extractPrice(string $text)
+    private function extractPrice(string $text): float
     {
         preg_match('/£?([\d.]+)/', $text, $matches);
         return isset($matches[1]) ? (float)$matches[1] : 0.0;
-
     }
 }
