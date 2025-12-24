@@ -17,53 +17,49 @@ class ScrapeSubscriptionPrices extends Command
     {
         $this->info('🔍 Price scraping started...');
 
-        $service = $this->argument('service');
-
         try {
-            // 1. Busca ou cria a categoria Streaming
             $category = Category::firstOrCreate(
                 ['slug' => 'streaming'],
                 ['name' => 'Streaming']
             );
 
-            // 2. Faz o scraping
             $scraper = new NetflixScraper();
             $data = $scraper->scrape();
 
             $this->info('✅ Netflix scraped successfully!');
 
-            // 3. Mostra a tabela no terminal
-            $this->table(
-                ['Plan', 'Price', 'Status'],
-                collect($data)->map(function ($plan) use ($category) {
-                    // 4. Salva no banco de dados
-                    $subscription = Subscription::updateOrCreate(
-                        ['slug' => Str::slug('netflix-' . $plan['name'])],
-                        [
-                            'name' => 'Netflix - ' . $plan['name'],
-                            'price' => $plan['price'],
-                            'category_id' => $category->id,
-                            'website_url' => 'https://netflix.com',
-                            'logo' => 'netflix.png', // Você pode adicionar depois
-                        ]
-                    );
+            // Salva no banco (código que já temos)
+            collect($data)->each(function ($plan) use ($category) {
+                Subscription::updateOrCreate(
+                    ['slug' => Str::slug('netflix-' . $plan['name'])],
+                    [
+                        'name' => 'Netflix - ' . $plan['name'],
+                        'price' => $plan['price'],
+                        'category_id' => $category->id,
+                        'website_url' => 'https://netflix.com',
+                    ]
+                );
+            });
 
-                    return [
-                        $plan['name'],
-                        '£' . number_format($plan['price'], 2),
-                        $subscription->wasRecentlyCreated ? '🆕 Created' : '♻️  Updated'
-                    ];
-                })
-            );
+            // 🆕 SALVA EM ARQUIVO JSON
+            $filename = 'subscriptions-' . now()->format('Y-m-d_H-i-s') . '.json';
+            $filepath = storage_path('app/scraped/' . $filename);
 
-            $this->info('💾 All plans saved to database!');
+            // Cria pasta se não existir
+            if (!file_exists(storage_path('app/scraped'))) {
+                mkdir(storage_path('app/scraped'), 0755, true);
+            }
+
+            file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
+
+            $this->info('💾 Saved to: ' . $filepath);
             $this->info('📊 Total plans: ' . count($data));
 
         } catch (\Exception $exception) {
             $this->error('❌ Error: ' . $exception->getMessage());
-            return 1; // Retorna código de erro
+            return 1;
         }
 
-        return 0; // Retorna sucesso
+        return 0;
     }
 }
