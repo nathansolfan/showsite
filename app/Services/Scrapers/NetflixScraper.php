@@ -28,23 +28,23 @@ class NetflixScraper implements ScraperInterface
         $foundPlans = [];
 
         try {
-            // Procura por qualquer texto que tenha o padrão: "Nome: £X.XX / month"
+            // Anything
             $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
                 $text = trim($node->text());
 
-                // Padrão: "Standard with adverts: £5.99 / month"
+                // Standard
                 if (preg_match('/^([^:]+):\s*£([\d.]+)\s*\/\s*month/i', $text, $matches)) {
                     $planName = trim($matches[1]);
                     $price = (float)$matches[2];
 
-                    // Evita duplicatas
+                    // Evit DUPES
                     if (!isset($foundPlans[$planName])) {
                         $foundPlans[$planName] = $price;
                     }
                 }
             });
 
-            // Converte pra formato esperado
+            // Convert
             foreach ($foundPlans as $name => $price) {
                 $plans[] = [
                     'name' => $name,
