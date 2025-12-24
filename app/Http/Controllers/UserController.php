@@ -51,6 +51,7 @@ class UserController extends Controller
         return view('user.edit', ['user' => $user]);
 
     }
+    
 
     public function destroy(User $user)
     {
