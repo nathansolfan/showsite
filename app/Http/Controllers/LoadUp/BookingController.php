@@ -68,7 +68,6 @@ class BookingController extends Controller
 
     public function update(Booking $booking, Request $request)
     {
-
         $validated = $request->validate([
 
             'service_id' => ['required', 'exists:services,id'],
@@ -84,8 +83,6 @@ class BookingController extends Controller
         $booking->update($validated);
 
         return redirect('/loadup/show/' . $booking->id);
-
-
     }
 
 
@@ -108,7 +105,6 @@ class BookingController extends Controller
     {
         $booking->delete();
         return redirect('/loadup/bookings');
-
     }
 
 
