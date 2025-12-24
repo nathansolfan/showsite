@@ -13,7 +13,6 @@ class ContactController extends Controller
     public function index()
     {
 
-
     }
 
 
@@ -26,9 +25,9 @@ class ContactController extends Controller
             $fileData = Storage::disk('local')->get($storage);
             $lines = explode("\n", $fileData);
 
-            $name =  trim(str_replace('Name', '', $lines[0] ?? '' ));
+            $name = trim(str_replace('Name', '', $lines[0] ?? ''));
             $email = trim(str_replace('Email', '', $lines[1] ?? ''));
-            $date =  trim(str_replace('Date', '' , $lines[2] ?? ''));
+            $date = trim(str_replace('Date', '', $lines[2] ?? ''));
             $message = trim(implode("\n", array_slice($lines, 4)));
 
             $messageData = [
@@ -44,8 +43,6 @@ class ContactController extends Controller
         }
         return view('contacts.index', ['content' => $content]);
 //        return view('contacts.index', ['result' => $result]);
-
-
     }
 
     //storage
@@ -60,7 +57,7 @@ class ContactController extends Controller
 
 
         // Create document content
-        $content  = "Name: " . $validated['name'] . "\n";
+        $content = "Name: " . $validated['name'] . "\n";
         $content .= "Email: " . $validated['email'] . "\n";
         $content .= "Date: " . now()->format('Y-m-d H:i:s') . "\n";
         $content .= "Message:\n" . $validated['message'] . "\n";
@@ -72,8 +69,6 @@ class ContactController extends Controller
         Storage::disk('local')->put('contacts/' . $filename, $content);
 
         return redirect()->back()->with('success', 'Thank you for your message! We\'ll get back to you soon.');
-
-
     }
 }
 
