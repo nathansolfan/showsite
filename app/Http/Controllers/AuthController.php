@@ -19,7 +19,6 @@ class AuthController extends Controller
             'password' => ['required', 'min:3'],
         ]);
 
-
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
             return redirect('/blog');

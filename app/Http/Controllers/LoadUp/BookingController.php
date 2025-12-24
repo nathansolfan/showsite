@@ -85,7 +85,6 @@ class BookingController extends Controller
         return redirect('/loadup/show/' . $booking->id);
     }
 
-
     public function removalsForm()
     {
         return view('loadUp.forms.removals');
@@ -106,6 +105,4 @@ class BookingController extends Controller
         $booking->delete();
         return redirect('/loadup/bookings');
     }
-
-
 }

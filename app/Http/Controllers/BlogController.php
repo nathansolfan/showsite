@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $blogs = Blog::all();
@@ -17,9 +14,6 @@ class BlogController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -35,17 +29,11 @@ class BlogController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('blog.create');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $blog = Blog::findOrFail($id);
@@ -56,26 +44,17 @@ class BlogController extends Controller
         return view('blog.show', ['blog' => $blog]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $blog = Blog::findOrFail($id);
         return view('blog.edit', ['blog' => $blog]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
