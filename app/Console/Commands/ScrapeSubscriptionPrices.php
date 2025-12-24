@@ -28,7 +28,7 @@ class ScrapeSubscriptionPrices extends Command
 
             $this->info('✅ Netflix scraped successfully!');
 
-            // Salva no banco (código que já temos)
+            // DB save
             collect($data)->each(function ($plan) use ($category) {
                 Subscription::updateOrCreate(
                     ['slug' => Str::slug('netflix-' . $plan['name'])],
