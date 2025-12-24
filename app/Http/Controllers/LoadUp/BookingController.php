@@ -20,7 +20,6 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-
             'service_id' => ['required', 'exists:services,id'],
             'pickup_address' => ['required', 'string'],
             'pickup_postcode' => ['required', 'string'],
