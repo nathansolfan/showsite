@@ -41,11 +41,11 @@ class ScrapeSubscriptionPrices extends Command
                 );
             });
 
-            // 🆕 SALVA EM ARQUIVO JSON
+            //JSON
             $filename = 'subscriptions-' . now()->format('Y-m-d_H-i-s') . '.json';
             $filepath = storage_path('app/scraped/' . $filename);
 
-            // Cria pasta se não existir
+            //Create and store if dont exist
             if (!file_exists(storage_path('app/scraped'))) {
                 mkdir(storage_path('app/scraped'), 0755, true);
             }
