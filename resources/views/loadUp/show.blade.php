@@ -94,9 +94,7 @@
                         @elseif($booking->status === 'in_progress') bg-purple-500 animate-pulse
                         @elseif($booking->status === 'completed') bg-green-500
                         @else bg-gray-400 @endif">
-                    </span>
-
-
+                        </span>
 
                     {{ ucfirst($booking->status) }}
                 </span>
@@ -269,7 +267,6 @@
             </div>
 
             {{-- Actions --}}
-            {{-- Actions --}}
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
 
                 <a href="/loadup/bookings"
@@ -315,7 +312,6 @@
                 @endif
 
                 {{-- Back to List --}}
-
 
                 {{-- New Booking --}}
                 <a href="/loadup"
