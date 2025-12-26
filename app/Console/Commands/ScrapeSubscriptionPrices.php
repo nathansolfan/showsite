@@ -32,11 +32,11 @@ class ScrapeSubscriptionPrices extends Command
 
     public function handle()
     {
-        $this->info('🔍 Price scraping started...');
         $serviceName = $this->argument('service');
 
+        // Se não passou argumento, scrape TODOS
         if (!$serviceName) {
-            $this->info('Scrapping all');
+            $this->info('🔍 Scraping ALL services...');
             foreach (array_keys($this->services) as $service) {
                 $this->scrapeService($service);
                 $this->newLine();
@@ -44,32 +44,51 @@ class ScrapeSubscriptionPrices extends Command
             return 0;
         }
 
-        if (!isset())
+        // Scrape específico
+        if (!isset($this->services[$serviceName])) {
+            $this->error("❌ Service '{$serviceName}' not found!");
+            $this->info('📋 Available services: ' . implode(', ', array_keys($this->services)));
+            return 1;
+        }
 
+        $this->scrapeService($serviceName);
+        return 0;
+    }
+
+    private function scrapeService(string $serviceName): void
+    {
+        $config = $this->services[$serviceName];
+        $this->info("🔍 Scraping {$serviceName}...");
 
         try {
+            // 1. Busca ou cria categoria
             $category = Category::firstOrCreate(
-                ['slug' => 'streaming'],
-                ['name' => 'Streaming']
+                ['slug' => $config['category']],
+                ['name' => $config['category_name']]
             );
 
-            $scraper = new NetflixScraper();
+            // 2. Instancia scraper dinamicamente
+            $scraperClass = $config['scraper'];
+            $scraper = new $scraperClass();
             $data = $scraper->scrape();
 
-            $this->info('✅ Netflix scraped successfully!');
+            $this->info("✅ {$serviceName} scraped successfully!");
 
-            // DB save
-            collect($data)->each(function ($plan) use ($category) {
+            // 3. Salva no banco
+            foreach ($data as $plan) {
                 Subscription::updateOrCreate(
-                    ['slug' => Str::slug('netflix-' . $plan['name'])],
+                    ['slug' => Str::slug("{$serviceName}-{$plan['name']}")],
                     [
-                        'name' => 'Netflix - ' . $plan['name'],
+                        'name' => ucfirst($serviceName) . ' - ' . $plan['name'],
                         'price' => $plan['price'],
                         'category_id' => $category->id,
-                        'website_url' => 'https://netflix.com',
+                        'website_url' => $config['url'],
                     ]
                 );
-            });
+            }
+
+
+
 
             //JSON
             $filename = 'subscriptions-' . now()->format('Y-m-d_H-i-s') . '.json';
@@ -91,5 +110,5 @@ class ScrapeSubscriptionPrices extends Command
         }
 
         return 0;
-    }
+
 }
