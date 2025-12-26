@@ -14,6 +14,7 @@ class ScrapeSubscriptionPrices extends Command
     protected $signature = 'scrape:prices {service?}';
     protected $description = 'Scrape subscription prices and save to database';
 
+    // 🆕 Configuração centralizada
     private array $services = [
         'netflix' => [
             'scraper' => NetflixScraper::class,
@@ -21,13 +22,12 @@ class ScrapeSubscriptionPrices extends Command
             'category_name' => 'Streaming',
             'url' => 'https://netflix.com',
         ],
-
         'spotify' => [
             'scraper' => SpotifyScraper::class,
-            'category' => 'music',
-            'category_name' => 'Music',
+            'category' => 'musica',
+            'category_name' => 'Música',
             'url' => 'https://spotify.com',
-        ]
+        ],
     ];
 
     public function handle()
@@ -87,28 +87,21 @@ class ScrapeSubscriptionPrices extends Command
                 );
             }
 
-
-
-
-            //JSON
-            $filename = 'subscriptions-' . now()->format('Y-m-d_H-i-s') . '.json';
+            // 4. Salva JSON
+            $filename = "{$serviceName}-" . now()->format('Y-m-d_H-i-s') . '.json';
             $filepath = storage_path('app/scraped/' . $filename);
 
-            //Create and store if dont exist
             if (!file_exists(storage_path('app/scraped'))) {
                 mkdir(storage_path('app/scraped'), 0755, true);
             }
 
             file_put_contents($filepath, json_encode($data, JSON_PRETTY_PRINT));
 
-            $this->info('💾 Saved to: ' . $filepath);
-            $this->info('📊 Total plans: ' . count($data));
+            $this->info("💾 Saved to: {$filepath}");
+            $this->info("📊 Total plans: " . count($data));
 
         } catch (\Exception $exception) {
-            $this->error('❌ Error: ' . $exception->getMessage());
-            return 1;
+            $this->error("❌ {$serviceName} failed: " . $exception->getMessage());
         }
-
-        return 0;
-
+    }
 }
