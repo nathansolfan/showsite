@@ -2,10 +2,11 @@
 
 namespace App\Services\Scrapers;
 
+use App\Contracts\ScraperInterface;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
-class SpotifyScraper
+class SpotifyScraper implements ScraperInterface
 {
     private string $url = 'https://www.spotify.com/uk/premium/';
 
@@ -25,6 +26,12 @@ class SpotifyScraper
         $crawler = new Crawler($response->body());
         $plans = [];
 
+        $plans[] = [
+            'name' => 'Indivual',
+            'price' => '11'
+        ];
+
+        return $plans;
     }
 
 }

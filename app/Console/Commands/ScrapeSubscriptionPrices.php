@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Scrapers\Category;
 use App\Models\Scrapers\Subscription;
 use App\Services\Scrapers\NetflixScraper;
+use App\Services\Scrapers\SpotifyScraper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
@@ -13,9 +14,38 @@ class ScrapeSubscriptionPrices extends Command
     protected $signature = 'scrape:prices {service?}';
     protected $description = 'Scrape subscription prices and save to database';
 
+    private array $services = [
+        'netflix' => [
+            'scraper' => NetflixScraper::class,
+            'category' => 'streaming',
+            'category_name' => 'Streaming',
+            'url' => 'https://netflix.com',
+        ],
+
+        'spotify' => [
+            'scraper' => SpotifyScraper::class,
+            'category' => 'music',
+            'category_name' => 'Music',
+            'url' => 'https://spotify.com',
+        ]
+    ];
+
     public function handle()
     {
         $this->info('🔍 Price scraping started...');
+        $serviceName = $this->argument('service');
+
+        if (!$serviceName) {
+            $this->info('Scrapping all');
+            foreach (array_keys($this->services) as $service) {
+                $this->scrapeService($service);
+                $this->newLine();
+            }
+            return 0;
+        }
+
+        if (!isset())
+
 
         try {
             $category = Category::firstOrCreate(
