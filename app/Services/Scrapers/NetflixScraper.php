@@ -46,11 +46,7 @@ class NetflixScraper implements ScraperInterface
 
             // Convert
             foreach ($foundPlans as $name => $price) {
-                $plans[] = [
-                    'name' => $name,
-                    'price' => $price,
-                    'features' => [],
-                ];
+                
             }
 
         } catch (\Exception $exception) {
