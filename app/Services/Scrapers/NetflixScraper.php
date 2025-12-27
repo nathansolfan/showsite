@@ -39,7 +39,7 @@ class NetflixScraper implements ScraperInterface
 
                     // DUPES
                     if (!isset($foundPlans[$planName])) {
-                        [$planName] = $price;
+                        $foundPlans[$planName] = $price;
                     }
                 }
             });
