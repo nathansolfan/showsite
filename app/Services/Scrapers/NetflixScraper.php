@@ -54,7 +54,6 @@ class NetflixScraper implements ScraperInterface
             }
 
         } catch (\Exception $exception) {
-            throw new \Exception('Failed to parse Netflix: ' . $exception->getMessage());
         }
 
         return $plans;
