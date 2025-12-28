@@ -3,6 +3,7 @@
 namespace App\Services\Scrapers;
 
 use Illuminate\Support\Facades\Http;
+use Symfony\Component\DomCrawler\Crawler;
 
 class GenericScraper
 {
@@ -26,6 +27,14 @@ class GenericScraper
                     'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                 ])
                 ->get($this->url);
+
+
+            if (!$response->successful()) {
+                return $this->useFallback('Http request failed');
+            }
+
+            $crawler = new Crawler($response->body());
+            $foundPlans = [];
         }
 
     }
