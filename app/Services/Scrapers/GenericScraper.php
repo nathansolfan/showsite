@@ -34,7 +34,7 @@ class GenericScraper
             }
 
             $crawler = new Crawler($response->body());
-
+            $foundPlans = [];
         }
 
     }
