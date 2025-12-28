@@ -29,9 +29,7 @@ class GenericScraper
                 ->get($this->url);
 
 
-            if (!$response->successful()) {
-                return $this->useFallback('Http request failed');
-            }
+
 
             $crawler = new Crawler($response->body());
             $foundPlans = [];
