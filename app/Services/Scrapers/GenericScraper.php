@@ -50,6 +50,14 @@ class GenericScraper
                     }
                 }
 
+                //2nd
+                elseif (preg_match('/^([A-Za-z\s]+)\s+' . preg_quote($this->currency) .  '([\d.]+)\s*(?:\/|per)\s*month/i', $text, $matches)) {
+                    try {
+                        $parent = $node->ancestors();
+                        $planName = null;
+                    }
+                }
+
             })
         }
 
