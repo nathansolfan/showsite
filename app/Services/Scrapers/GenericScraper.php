@@ -35,6 +35,13 @@ class GenericScraper
 
             $crawler = new Crawler($response->body());
             $foundPlans = [];
+
+            //try
+            $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
+                $text = trim($node->text());
+
+
+            })
         }
 
     }
