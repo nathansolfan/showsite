@@ -28,12 +28,11 @@ class GenericScraper
                 ])
                 ->get($this->url);
 
-
             if (!$response->successful()) {
                 return $this->useFallback('Http request failed');
             }
 
-            $crawler = new Crawler($response->body());
+            $crawler    = new Crawler($response->body());
             $foundPlans = [];
 
             //try
@@ -43,7 +42,7 @@ class GenericScraper
                 //1st
                 if (preg_match('/^([^:]+):\s*' . preg_quote($this->currency) .  '([\d.]+)\s*\/\s*month/i', $text, $matches)) {
                     $planName = trim($matches[1]);
-                    $price = (float)$matches[2];
+                    $price    = (float)$matches[2];
 
                     if (!isset($foundPlans[$planName])) {
                         $foundPlans[$planName] = $price;
@@ -53,7 +52,7 @@ class GenericScraper
                 //2nd
                 elseif (preg_match('/^([A-Za-z\s]+)\s+' . preg_quote($this->currency) .  '([\d.]+)\s*(?:\/|per)\s*month/i', $text, $matches)) {
                     try {
-                        $parent = $node->ancestors();
+                        $parent   = $node->ancestors();
                         $planName = null;
 
                         foreach ($parent as $ancestor) {
@@ -76,6 +75,21 @@ class GenericScraper
                         //ignore
                     }
                 }
+                //if nothing found - fallback
+                if (empty($foundPlans)) {
+                    return $this->usefallBack('No plans found');
+                }
+
+                //convert
+                $plans = [];
+                foreach ($foundPlans as $name => $price) {
+                    $plans[] = [
+                        'name'     => $name,
+                        'price'    => $price,
+                        'features' => [],
+                    ];
+                } return $plans;
+
 
             });
         }
