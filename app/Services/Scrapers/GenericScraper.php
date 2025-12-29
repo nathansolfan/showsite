@@ -65,10 +65,19 @@ class GenericScraper
                                 break;
                             }
                         }
+
+                        if ($planName && strlen($planName) < 50 ) {
+                            $price = (float)$matches[1];
+                            if (!isset($foundPlans[$planName])) {
+                                $foundPlans[$planName] = $price;
+                            }
+                        }
+                    } catch (\Exception $exception){
+                        //ignore
                     }
                 }
 
-            })
+            });
         }
 
     }
