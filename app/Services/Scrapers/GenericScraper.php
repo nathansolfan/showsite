@@ -40,6 +40,15 @@ class GenericScraper
             $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
                 $text = trim($node->text());
 
+                //1st
+                if (preg_match('/^([^:]+):\s*' . preg_quote($this->currency) .  '([\d.]+)\s*\/\s*month/i', $text, $matches)) {
+                    $planName = trim($matches[1]);
+                    $price = (float)$matches[2];
+
+                    if (!isset($foundPlans[$planName])) {
+                        $foundPlans[$planName] = $price;
+                    }
+                }
 
             })
         }
