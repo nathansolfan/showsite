@@ -8,5 +8,9 @@ class SpotifyScraper implements ScraperInterface
 {
     private string $url = 'https://www.spotify.com/uk/premium/';
 
-    
+    public function scrape(): array
+    {
+
+
+    }
 }
