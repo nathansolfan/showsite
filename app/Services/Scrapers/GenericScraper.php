@@ -90,7 +90,13 @@ class GenericScraper
 
             // Convert
             $plans = [];
-            
+            foreach ($foundPlans as $name => $price) {
+                $plans[] = [
+                    'name' => $name,
+                    'price' => $price,
+                    'features' => [],
+                ];
+            }
 
             return $plans;
 
