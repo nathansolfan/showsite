@@ -16,6 +16,8 @@ class SpotifyScraper implements ScraperInterface
             if (!empty($plans)) {
                 return $plans;
             }
+        } catch (\Exception $exception) {
+            \Log::warning('Spotify scraping failed: ' . $exception->getMessage());
         }
 
 
