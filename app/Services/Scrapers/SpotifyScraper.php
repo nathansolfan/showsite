@@ -3,6 +3,7 @@
 namespace App\Services\Scrapers;
 
 use App\Contracts\ScraperInterface;
+use Illuminate\Support\Facades\Http;
 
 class SpotifyScraper implements ScraperInterface
 {
@@ -20,6 +21,12 @@ class SpotifyScraper implements ScraperInterface
             \Log::warning('Spotify scraping failed: ' . $exception->getMessage());
         }
 
+        return $this->getFallbackPlans();
+    }
+
+    private function scrapereal(): array
+    {
+        $response = Http::timeout(30)
 
     }
 }
