@@ -11,7 +11,11 @@ class SpotifyScraper implements ScraperInterface
     public function scrape(): array
     {
         try {
-            $plas = $this->scrapeReal();
+            $plans = $this->scrapeReal();
+
+            if (!empty($plans)) {
+                return $plans;
+            }
         }
 
 
