@@ -10,6 +10,9 @@ class SpotifyScraper implements ScraperInterface
 
     public function scrape(): array
     {
+        try {
+            $plas = $this->scrapeReal();
+        }
 
 
     }
