@@ -27,6 +27,15 @@ class SpotifyScraper implements ScraperInterface
     private function scrapereal(): array
     {
         $response = Http::timeout(30)
+            ->withoutVerifying()
+            ->withHeaders([
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            ])
+            ->get($this->url);
+
+        if (!$response->successful()) {
+            throw new \Exception('Failed to fetch Spotify');
+        }
 
     }
 }
