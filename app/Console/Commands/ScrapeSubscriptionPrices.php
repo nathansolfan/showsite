@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Scrapers\Category;
 use App\Models\Scrapers\Subscription;
+use App\Services\Scrapers\GenericScraper;
 use App\Services\Scrapers\NetflixScraper;
 use App\Services\Scrapers\SpotifyScraper;
 use Illuminate\Console\Command;
@@ -11,10 +12,10 @@ use Illuminate\Support\Str;
 
 class ScrapeSubscriptionPrices extends Command
 {
-    protected $signature = 'scrape:prices {service?}';
+    protected $signature = 'scrape:prices {service?} {--url=} {--category=streaming}';
     protected $description = 'Scrape subscription prices and save to database';
 
-    // 🆕 Configuração centralizada
+    // 🆕 Configuração centralizada com fallback
     private array $services = [
         'netflix' => [
             'scraper' => NetflixScraper::class,
@@ -28,13 +29,32 @@ class ScrapeSubscriptionPrices extends Command
             'category_name' => 'Música',
             'url' => 'https://spotify.com',
         ],
+        // Exemplo com GenericScraper + fallback
+        'disney' => [
+            'scraper' => GenericScraper::class,
+            'scraper_url' => 'https://www.disneyplus.com/en-gb/welcome/plans',
+            'fallback' => [
+                ['name' => 'Monthly', 'price' => 7.99, 'features' => []],
+                ['name' => 'Annual', 'price' => 79.90, 'features' => []],
+            ],
+            'category' => 'streaming',
+            'category_name' => 'Streaming',
+            'url' => 'https://disneyplus.com',
+        ],
     ];
 
     public function handle()
     {
         $serviceName = $this->argument('service');
+        $customUrl = $this->option('url');
 
-        // Se não passou argumento, scrape TODOS
+        // 🆕 Scrape de URL customizada
+        if ($customUrl) {
+            $this->scrapeCustomUrl($customUrl);
+            return 0;
+        }
+
+        // Scrape TODOS os serviços
         if (!$serviceName) {
             $this->info('🔍 Scraping ALL services...');
             foreach (array_keys($this->services) as $service) {
@@ -55,6 +75,59 @@ class ScrapeSubscriptionPrices extends Command
         return 0;
     }
 
+    private function scrapeCustomUrl(string $url): void
+    {
+        $serviceName = parse_url($url, PHP_URL_HOST);
+        $categorySlug = $this->option('category');
+
+        $this->info("🔍 Scraping custom URL...");
+        $this->info("📍 URL: {$url}");
+
+        try {
+            $category = Category::firstOrCreate(
+                ['slug' => $categorySlug],
+                ['name' => ucfirst($categorySlug)]
+            );
+
+            $scraper = new GenericScraper($url);
+            $plans = $scraper->scrape();
+
+            if (empty($plans)) {
+                $this->warn('⚠️  No plans found!');
+                return;
+            }
+
+            $this->info("✅ Found " . count($plans) . " plans!");
+
+            // Mostra tabela
+            $this->table(
+                ['Plan', 'Price'],
+                collect($plans)->map(fn($p) => [$p['name'], '£' . number_format($p['price'], 2)])
+            );
+
+            // Pergunta se quer salvar
+            if ($this->confirm('💾 Save to database?', true)) {
+                foreach ($plans as $plan) {
+                    Subscription::updateOrCreate(
+                        ['slug' => Str::slug("{$serviceName}-{$plan['name']}")],
+                        [
+                            'name' => ucfirst($serviceName) . ' - ' . $plan['name'],
+                            'price' => $plan['price'],
+                            'category_id' => $category->id,
+                            'website_url' => $url,
+                        ]
+                    );
+                }
+                $this->info('✅ Saved to database!');
+            }
+
+        } catch (\Exception $e) {
+            $this->error('❌ Error: ' . $e->getMessage());
+        }
+    }
+
+    // 🆕 Método para scrape de URL customizada
+
     private function scrapeService(string $serviceName): void
     {
         $config = $this->services[$serviceName];
@@ -69,8 +142,24 @@ class ScrapeSubscriptionPrices extends Command
 
             // 2. Instancia scraper dinamicamente
             $scraperClass = $config['scraper'];
-            $scraper = new $scraperClass();
+
+            // Se for GenericScraper, passa URL e fallback
+            if ($scraperClass === GenericScraper::class) {
+                $scraper = new $scraperClass(
+                    $config['scraper_url'] ?? $config['url'],
+                    '£',
+                    $config['fallback'] ?? []
+                );
+            } else {
+                $scraper = new $scraperClass();
+            }
+
             $data = $scraper->scrape();
+
+            if (empty($data)) {
+                $this->warn("⚠️  {$serviceName}: No plans found!");
+                return;
+            }
 
             $this->info("✅ {$serviceName} scraped successfully!");
 
