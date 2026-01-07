@@ -164,7 +164,17 @@ class ScrapeSubscriptionPrices extends Command
             $this->info("✅ {$serviceName} scraped successfully!");
 
             // 3. Salva no banco
-            
+            foreach ($data as $plan) {
+                Subscription::updateOrCreate(
+                    ['slug' => Str::slug("{$serviceName}-{$plan['name']}")],
+                    [
+                        'name' => ucfirst($serviceName) . ' - ' . $plan['name'],
+                        'price' => $plan['price'],
+                        'category_id' => $category->id,
+                        'website_url' => $config['url'],
+                    ]
+                );
+            }
 
             // 4. Salva JSON
             $filename = "{$serviceName}-" . now()->format('Y-m-d_H-i-s') . '.json';
