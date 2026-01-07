@@ -72,6 +72,19 @@ class SpotifyScraper implements ScraperInterface
             }
         });
 
-        
+        $plans = [];
+        foreach ($foundPlans as $name => $price) {
+            $plans[] = [
+                'name' => $name,
+                'price' => $price,
+                'features' => []
+            ];
+        }
+        return $plans;
+    }
+
+    private function getFallbackPlans(): array
+    {
+
     }
 }
