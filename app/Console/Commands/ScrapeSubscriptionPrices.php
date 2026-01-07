@@ -150,7 +150,9 @@ class ScrapeSubscriptionPrices extends Command
                     '£',
                     $config['fallback'] ?? []
                 );
-
+            } else {
+                $scraper = new $scraperClass();
+            }
 
             $data = $scraper->scrape();
 
