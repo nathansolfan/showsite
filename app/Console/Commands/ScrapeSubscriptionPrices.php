@@ -144,15 +144,7 @@ class ScrapeSubscriptionPrices extends Command
             $scraperClass = $config['scraper'];
 
             // Se for GenericScraper, passa URL e fallback
-            if ($scraperClass === GenericScraper::class) {
-                $scraper = new $scraperClass(
-                    $config['scraper_url'] ?? $config['url'],
-                    '£',
-                    $config['fallback'] ?? []
-                );
-            } else {
-                $scraper = new $scraperClass();
-            }
+            
 
             $data = $scraper->scrape();
 
