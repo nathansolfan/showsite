@@ -4,6 +4,7 @@ namespace App\Services\Scrapers;
 
 use App\Contracts\ScraperInterface;
 use Illuminate\Support\Facades\Http;
+use Symfony\Component\DomCrawler\Crawler;
 
 class SpotifyScraper implements ScraperInterface
 {
@@ -37,5 +38,38 @@ class SpotifyScraper implements ScraperInterface
             throw new \Exception('Failed to fetch Spotify');
         }
 
+        $crawler = new Crawler($response->body());
+        $foundPlans = [];
+
+        $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
+            $text = trim($node->text());
+
+            if (preg_match('/^(Individual|Duo|Family|Student)\s+£([\d.]+)/i', $text, $matches)) {
+                $planName = trim($matches[1]);
+                $price = (float)$matches[2];
+
+                if (!isset($foundPlans[$planName])) {
+                    $foundPlans[$planName] = $price;
+                }
+            } elseif (preg_match('/£([\d.]+)\s*\/\s*month/i', $text, $matches)) {
+                try {
+                    $parent = $node->ancestors();
+                    foreach ($parent as $ancestor) {
+                        $ancesterCrawler = new Crawler($ancestor);
+                        $titles = $ancesterCrawler->filter('h1, h2, h3, h4');
+
+                        if ($titles->count() > 0) {
+                            $planName = trim($titles->first()->text());
+                            if (strlen($planName) < 30 && !isset($foundPlans[$planName])) {
+                                $foundPlans[$planName] = (float)$matches[1];
+                                break;
+                            }
+                        }
+                    }
+                } catch (\Exception $exception) {
+
+                }
+            }
+        });
     }
 }
