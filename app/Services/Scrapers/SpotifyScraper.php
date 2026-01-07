@@ -85,6 +85,28 @@ class SpotifyScraper implements ScraperInterface
 
     private function getFallbackPlans(): array
     {
+        return [
+            [
+                'name' => 'Individual',
+                'price' => 11.99,
+                'features' => [],
+            ],
+            [
+                'name' => 'Duo',
+                'price' => 14.99,
+                'features' => [],
+            ],
+            [
+                'name' => 'Family',
+                'price' => 19.99,
+                'features' => [],
+            ],
+            [
+                'name' => 'Student',
+                'price' => 5.99,
+                'features' => [],
+            ],
+        ];
 
     }
 }
