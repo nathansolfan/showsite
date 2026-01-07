@@ -71,5 +71,7 @@ class SpotifyScraper implements ScraperInterface
                 }
             }
         });
+
+        
     }
 }
