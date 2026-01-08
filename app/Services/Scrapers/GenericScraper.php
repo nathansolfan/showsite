@@ -102,7 +102,7 @@ class GenericScraper implements ScraperInterface
             return $plans;
 
         } catch (\Exception $exception) {
-            return $this->useFallback($exception->getMessage());
+            return $this->useFallBack($exception->getMessage());
         }
     }
 

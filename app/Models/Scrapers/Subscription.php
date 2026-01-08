@@ -11,7 +11,8 @@ class Subscription extends Model
         'slug',
         'website_url',
         'logo',
-        'category_id'
+        'category_id',
+        'price'
     ];
 
     public function category()
@@ -19,8 +20,8 @@ class Subscription extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function plans()
-    {
-        return $this->hasMany(Plan::class);
-    }
+//    public function plans()
+//    {
+//        return $this->hasMany(Plan::class);
+//    }
 }
