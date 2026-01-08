@@ -2,10 +2,11 @@
 
 namespace App\Services\Scrapers;
 
+use App\Contracts\ScraperInterface;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
-class GenericScraper
+class GenericScraper implements ScraperInterface
 {
     private string $url;
     private string $currency;
@@ -85,7 +86,7 @@ class GenericScraper
 
             // FALLBACK
             if (empty($foundPlans)) {
-                return $this->useFallback('No plans found with patterns');
+                return $this->useFallBack('No plans found with patterns');
             }
 
             // Convert
