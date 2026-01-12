@@ -17,10 +17,8 @@ class ScrapeSubscriptionPrices extends Command
     // 🆕 Configuração centralizada com fallback
     private array $services = [
         'netflix' => [
-//            'scraper' => NetflixScraper::class,
-            'scraper' => GenericScraper::class,
-
-
+            'scraper' => NetflixScraper::class,
+//            'scraper' => GenericScraper::class,
             'category' => 'streaming',
             'category_name' => 'Streaming',
             'url' => 'https://netflix.com',
