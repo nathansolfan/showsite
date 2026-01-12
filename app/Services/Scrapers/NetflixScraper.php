@@ -46,9 +46,7 @@ class NetflixScraper implements ScraperInterface
                     $planName = trim($matches[1]);
                     $price = (float)$matches[2];
 
-                    if (!isset($foundPlans[$planName])) {
-                        $foundPlans[$planName] = $price;
-                    }
+                    
                 }
             });
 
