@@ -44,6 +44,9 @@ class NetflixScraper implements ScraperInterface
                 } elseif (preg_match('/^([A-Za-z\s]+)\s+£([\d.]+)\s*(?:per|\/)\s*month/i', $text, $matches)) {
 
                     $planName = trim($matches[1]);
+                    $price = (float)$matches[2];
+
+                    if (!isset($foundPlans[$planName]))
                 }
             });
 
