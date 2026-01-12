@@ -25,7 +25,7 @@ class SpotifyScraper implements ScraperInterface
         return $this->getFallbackPlans();
     }
 
-    private function scrapereal(): array
+    private function scrapeReal(): array
     {
         $response = Http::timeout(30)
             ->withoutVerifying()
