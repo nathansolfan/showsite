@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Models\Scrapers\Category;
 use App\Models\Scrapers\Subscription;
 use App\Services\Scrapers\GenericScraper;
-use App\Services\Scrapers\NetflixScraper;
 use App\Services\Scrapers\SpotifyScraper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -18,13 +17,17 @@ class ScrapeSubscriptionPrices extends Command
     // 🆕 Configuração centralizada com fallback
     private array $services = [
         'netflix' => [
-            'scraper' => NetflixScraper::class,
+//            'scraper' => NetflixScraper::class,
+            'scraper' => GenericScraper::class,
+
+
             'category' => 'streaming',
             'category_name' => 'Streaming',
             'url' => 'https://netflix.com',
         ],
         'spotify' => [
             'scraper' => SpotifyScraper::class,
+
             'category' => 'musica',
             'category_name' => 'Música',
             'url' => 'https://spotify.com',
