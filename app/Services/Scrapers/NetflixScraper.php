@@ -65,9 +65,11 @@ class NetflixScraper implements ScraperInterface
                                 break;
                             }
                         }
-                        if ($planName && strlen($planName) < 50  && !isset($foundPlans[$planName])) {
+                        if ($planName && strlen($planName) < 50 && !isset($foundPlans[$planName])) {
                             $foundPlans[$planName] = (float)$matches[1];
                         }
+                    } catch (\Exception $exception) {
+                        //ignore
                     }
                 }
             });
