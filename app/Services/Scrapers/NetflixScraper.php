@@ -57,7 +57,16 @@ class NetflixScraper implements ScraperInterface
                         $planName = null;
 
                         foreach ($parent as $ancestor) {
-                            $ancesterCrawler = new Crawler($ancestor);
+                            $ancestorCrawler = new Crawler($ancestor);
+                            $titles = $ancestorCrawler->filter('h1, h2, h3, h4, .title, .plan-name');
+
+                            if ($titles->count() > 0) {
+                                $planName = trim($titles->first()->text());
+                                break;
+                            }
+                        }
+                        if ($planName && strlen($planName) < 50  && !isset($foundPlans[$planName])) {
+                            $foundPlans[$planName] = (float)$matches[1];
                         }
                     }
                 }
