@@ -55,6 +55,10 @@ class NetflixScraper implements ScraperInterface
                     try {
                         $parent = $node->ancestors();
                         $planName = null;
+
+                        foreach ($parent as $ancestor) {
+                            $ancesterCrawler = new Crawler($ancestor);
+                        }
                     }
                 }
             });
