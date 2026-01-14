@@ -3,6 +3,7 @@
 namespace App\Services\Scrapers;
 
 use App\Contracts\ScraperInterface;
+use Illuminate\Support\Facades\Http;
 
 class DisneyScraper implements ScraperInterface
 {
@@ -23,6 +24,20 @@ class DisneyScraper implements ScraperInterface
         }
         //if fail get fallback
         return $this->getFallbackPlans();
+    }
+
+    private function scrapeReal()
+    {
+        $response = Http::timeout(30)
+            ->withoutVerifying()
+            ->withHeaders([
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            ])
+            ->get($this->url);
+
+        if (!$response->successful()) {
+            throw new \Exception('Failed to fetch Disney+');
+        }
     }
 
 }
