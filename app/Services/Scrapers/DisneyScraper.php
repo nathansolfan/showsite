@@ -4,6 +4,7 @@ namespace App\Services\Scrapers;
 
 use App\Contracts\ScraperInterface;
 use Illuminate\Support\Facades\Http;
+use Symfony\Component\DomCrawler\Crawler;
 
 class DisneyScraper implements ScraperInterface
 {
@@ -38,6 +39,11 @@ class DisneyScraper implements ScraperInterface
         if (!$response->successful()) {
             throw new \Exception('Failed to fetch Disney+');
         }
+
+        $crawler = new Crawler($response->body());
+        $foundPlans = [];
+
+        $crawler->filter('*')
     }
 
 }
