@@ -2,7 +2,9 @@
 
 namespace App\Services\Scrapers;
 
-class DisneyScraper
+use App\Contracts\ScraperInterface;
+
+class DisneyScraper implements ScraperInterface
 {
     private string $url = 'https://www.disneyplus.com/en-gb/welcome/plans';
 
@@ -15,6 +17,8 @@ class DisneyScraper
             if (!empty($plans) && $this->plansLookValid($plans)) {
                 return $plans;
             }
+        } catch (\Exception $exception) {
+            \Log::warning('Disney failed: ' . $exception->getMessage());
         }
 
     }
