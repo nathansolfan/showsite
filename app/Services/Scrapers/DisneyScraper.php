@@ -5,6 +5,7 @@ namespace App\Services\Scrapers;
 use App\Contracts\ScraperInterface;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
+use function Symfony\Component\Translation\t;
 
 class DisneyScraper implements ScraperInterface
 {
@@ -52,8 +53,22 @@ class DisneyScraper implements ScraperInterface
                 $planName = trim($matches[1]);
                 $price = (float)$matches[2];
 
-                if (!isset($foundPlans[$planName])) {
+                if (!$this->isSuspiciousText($planName) && !isset($foundPlans[$planName])) {
                     $foundPlans[$planName] = $price;
+                }
+
+
+            }
+            elseif (preg_match('/£([\d.]+)\s*(?:\/|per)\s*month/i', $text, $matches)) {
+                try {
+                    $planName = trim($matches[1]);
+                    $price = (float)$matches[2];
+
+                    if (!$this->isSuspiciousText($planName) && !isset($foundPlans[$planName])) {
+                        $foundPlans[$planName] = $price;
+                    }
+
+
                 }
             }
 
