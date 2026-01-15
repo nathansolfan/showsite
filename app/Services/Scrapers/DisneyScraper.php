@@ -43,7 +43,13 @@ class DisneyScraper implements ScraperInterface
         $crawler = new Crawler($response->body());
         $foundPlans = [];
 
-        $crawler->filter('*')
+        $crawler->filter('*')->each(function (Crawler $node) use (&$foundPlans) {
+            $text = trim($node->text());
+
+            //1st
+            if (preg_match())
+
+        })
     }
 
 }
