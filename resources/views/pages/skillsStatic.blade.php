@@ -19,10 +19,10 @@
               ['icon' => 'fa-css3-alt', 'title' => 'CSS3', 'desc' => 'Creating visually engaging layouts with modern styling techniques.'],
               ['icon' => 'fa-js', 'title' => 'JavaScript', 'desc' => 'Enhancing interactivity and dynamic features on web applications.'],
               ['icon' => 'fa-laravel', 'title' => 'Laravel', 'desc' => 'A powerful PHP framework for building scalable web applications.'],
-              ['icon' => 'fa-react', 'title' => 'React.js', 'desc' => 'Efficiently managing UI with reusable components and state management.'],
+              // ['icon' => 'fa-react', 'title' => 'React.js', 'desc' => 'Efficiently managing UI with reusable components and state management.'],
               ['icon' => 'fa-node-js', 'title' => 'Node.js', 'desc' => 'Building scalable backend services and APIs with JavaScript.'],
               ['icon' => 'fa-database', 'title' => 'Databases', 'desc' => 'Efficient data management with MySQL, MongoDB, and more.'],
-              ['icon' => 'fa-git-alt', 'title' => 'Git', 'desc' => 'Version control and collaboration for seamless team development.']
+              // ['icon' => 'fa-git-alt', 'title' => 'Git', 'desc' => 'Version control and collaboration for seamless team development.']
             ] as $skill)
             <div class="relative pl-16">
               <dt class="text-lg font-semibold text-gray-900">

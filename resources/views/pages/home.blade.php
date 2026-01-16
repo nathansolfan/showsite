@@ -127,7 +127,7 @@
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Let's Build Something Amazing
                     Together</h2>
                 <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-                    I'm always open to discussing new projects, creative ideas or opportunities to be part of your
+                    I'm always open to discussing new projects, cpptive ideas or opportunities to be part of your
                     vision.
                 </p>
                 <a href="{{ url('/contact') }}"
