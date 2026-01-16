@@ -122,7 +122,7 @@
                         <div class="relative mb-10">
                             <div class="absolute inset-0 flex items-center">
                                 <div class="w-full border-t-2 border-gray-200"></div>
-                            </div>
+                            </div> 
                         </div>
 
                         <div class="mb-6">
