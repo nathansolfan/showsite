@@ -30,6 +30,9 @@ class BookingController extends Controller
             'item_size' => ['nullable', 'string'],
             'extra_fields' => ['nullable', 'array']
         ]);
+        $validated['pickup_postcode'] = strtoupper(
+            trim($validated['pickup_postocode'])
+        );
 
         $booking = auth()->user()->bookings()->create($validated);
         
