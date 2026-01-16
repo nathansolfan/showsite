@@ -5,6 +5,7 @@
         :fields="$fields"
         :booking="$booking"
         action="/loadup/{{$booking->id}}/update"
+        btnName="Update"
     >
 
     </x-forms.vanForm>
