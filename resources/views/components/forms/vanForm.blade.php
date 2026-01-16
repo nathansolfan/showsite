@@ -65,7 +65,9 @@
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Pickup Postcode
                                 </label>
-                                <input type="text" name="pickup_postcode"
+                                <input type="text" 
+                                       name="pickup_postcode"
+                                       oninput="this.value = this.value.toUpperCase()"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                                        placeholder="Enter postcode"
                                        value="{{ old('pickup_postcode', $booking?->pickup_postcode) }}"
