@@ -82,7 +82,8 @@
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Pickup Date
                                 </label>
-                                <input type="date" name="pickup_date"
+                                <input type="date" 
+                                       name="pickup_date"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                                        value="{{ old('pickup_date', $booking?->pickup_date) }}"
                                        min="{{ date('Y-m-d') }}"
