@@ -65,7 +65,7 @@ class BookingController extends Controller
         return view('loadUp.edit', [
             'booking' => $booking,
             'service' => $service,
-            'fields' => $fields
+            'fields'  => $fields
         ]);
     }
 
@@ -73,15 +73,15 @@ class BookingController extends Controller
     {
         $validated = $request->validate([
 
-            'service_id' => ['required', 'exists:services,id'],
-            'pickup_address' => ['required', 'string'],
-            'pickup_postcode' => ['required', 'string'],
-            'pickup_date' => ['required', 'date'],
-            'delivery_address' => ['nullable', 'string'],
+            'service_id'        => ['required', 'exists:services,id'],
+            'pickup_address'    => ['required', 'string'],
+            'pickup_postcode'   => ['required', 'string'],
+            'pickup_date'       => ['required', 'date'],
+            'delivery_address'  => ['nullable', 'string'],
             'delivery_postcode' => ['nullable', 'string'],
-            'item_description' => ['nullable', 'string'],
-            'item_size' => ['nullable', 'string'],
-            'extra_fields' => ['nullable', 'array']
+            'item_description'  => ['nullable', 'string'],
+            'item_size'         => ['nullable', 'string'],
+            'extra_fields'      => ['nullable', 'array']
         ]);
         $booking->update($validated);
 
