@@ -2,7 +2,8 @@
     'service',
     'fields' => [],
     'action',
-    'booking' => null
+    'booking' => null,
+    'btnName'
     ])
 
 <div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -184,6 +185,7 @@
                         <button type="submit"
                                 class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-5 rounded-xl text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200">
                             Book Now
+                            {{ $btnName}}
                         </button>
                     </div>
 
