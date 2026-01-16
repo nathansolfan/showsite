@@ -32,8 +32,9 @@
     @endphp
 
     <x-forms.vanForm
-        :service="$service"
-        :fields="$fields"
-        action="/bookings"
-    />
+    :service="$service"
+    :fields="$fields"
+    :action="'/bookings'"
+/>
+
 </x-layout>
