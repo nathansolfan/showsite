@@ -184,7 +184,7 @@
                     <div class="mt-10">
                         <button type="submit"
                                 class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-5 rounded-xl text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200">
-                            Book Now
+                            {{-- Book Now --}}
                             {{ $btnName}}
                         </button>
                     </div>
