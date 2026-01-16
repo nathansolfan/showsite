@@ -32,8 +32,8 @@ class BookingController extends Controller
         ]);
 
         $booking = auth()->user()->bookings()->create($validated);
-
-        return redirect('/loadUp/bookings');
+        
+        return redirect('/loadup/bookings');
     }
 
     public function bookings()
