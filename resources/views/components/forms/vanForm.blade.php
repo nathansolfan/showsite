@@ -65,7 +65,7 @@
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Pickup Postcode
                                 </label>
-                                <input type="text" 
+                                <input type="text"
                                        name="pickup_postcode"
                                        oninput="this.value = this.value.toUpperCase()"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
@@ -82,7 +82,7 @@
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Pickup Date
                                 </label>
-                                <input type="date" 
+                                <input type="date"
                                        name="pickup_date"
                                        class="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
                                        value="{{ old('pickup_date', $booking?->pickup_date) }}"
@@ -122,7 +122,7 @@
                         <div class="relative mb-10">
                             <div class="absolute inset-0 flex items-center">
                                 <div class="w-full border-t-2 border-gray-200"></div>
-                            </div> 
+                            </div>
                         </div>
 
                         <div class="mb-6">
@@ -187,8 +187,8 @@
                     <div class="mt-10">
                         <button type="submit"
                                 class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-5 rounded-xl text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200">
-                            {{-- Book Now --}}
-                            {{ $btnName}}
+                            Book Now
+                            {{--                            {{ $btnName}}--}}
                         </button>
                     </div>
 

@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use App\Models\Scrapers\Category;
 use App\Models\Scrapers\Subscription;
+use App\Services\Scrapers\DisneyScraper;
 use App\Services\Scrapers\GenericScraper;
+use App\Services\Scrapers\NetflixScraper;
 use App\Services\Scrapers\SpotifyScraper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -32,7 +34,8 @@ class ScrapeSubscriptionPrices extends Command
         ],
         // Exemplo com GenericScraper + fallback
         'disney' => [
-            'scraper' => GenericScraper::class,
+//            'scraper' => GenericScraper::class,
+            'scraper' => DisneyScraper::class,
             'scraper_url' => 'https://www.disneyplus.com/en-gb/welcome/plans',
             'fallback' => [
                 ['name' => 'Monthly', 'price' => 7.99, 'features' => []],
