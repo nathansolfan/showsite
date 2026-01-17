@@ -33,7 +33,12 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('bookings', function (Blueprint $table) {
-            //
+            $table->dropForeign(['referral_by_user-id']);
+            $table->dropColumn([
+                'referral_by_user_id',
+                'referral_code_used',
+                'discount_amount'
+            ]);
         });
     }
 };
