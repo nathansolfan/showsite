@@ -28,7 +28,10 @@ class BookingController extends Controller
             'delivery_postcode' => ['nullable', 'string'],
             'item_description' => ['nullable', 'string'],
             'item_size' => ['nullable', 'string'],
-            'extra_fields' => ['nullable', 'array']
+            'extra_fields' => ['nullable', 'array'],
+
+            //referral
+            'referral_code' => ['nullable', 'string']
         ]);
         $validated['pickup_postcode'] = strtoupper(
             trim($validated['pickup_postcode'])
