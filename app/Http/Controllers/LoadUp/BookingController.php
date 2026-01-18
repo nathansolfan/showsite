@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\LoadUp\Booking;
 use App\Models\LoadUp\Service;
 use App\Services\BookingServiceConfig;
+use App\Services\ReferralService;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -33,12 +34,18 @@ class BookingController extends Controller
             //referral
             'referral_code' => ['nullable', 'string']
         ]);
+
         $validated['pickup_postcode'] = strtoupper(
             trim($validated['pickup_postcode'])
         );
 
-        $booking = auth()->user()->bookings()->create($validated);
+        $referralService = app(ReferralService::class);
+        $referralData = $referralService->applyReferral($request->input('referral_code', ''), auth()->user());
 
+        $bookingData = array_merge($validated, $referralData);
+
+        auth()->user()->bookings()->create($bookingData);
+        
         return redirect('/loadup/bookings');
     }
 
