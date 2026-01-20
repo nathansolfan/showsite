@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Affiliates;
+namespace App\Services\Affiliates\Providers;
 
 use App\Contracts\AffiliateProviderInterface;
 

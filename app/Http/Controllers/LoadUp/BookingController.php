@@ -5,7 +5,7 @@ namespace App\Http\Controllers\LoadUp;
 use App\Http\Controllers\Controller;
 use App\Models\LoadUp\Booking;
 use App\Models\LoadUp\Service;
-use App\Services\BookingServiceConfig;
+use App\Services\Loadup\BookingServiceConfig;
 use App\Services\ReferralService;
 use Illuminate\Http\Request;
 
