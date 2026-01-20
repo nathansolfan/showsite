@@ -19,7 +19,7 @@ return new class extends Migration {
 
             $table->string('referral_code_used')
                 ->nullable()
-                ->after('referral_by_user_id');
+                ->after('referred_by_user_id');
 
             $table->decimal('discount_amount', 10, 2)->default(0);
         });
@@ -31,9 +31,9 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('bookings', function (Blueprint $table) {
-            $table->dropForeign(['referred_by_user-id']);
+            $table->dropForeign(['referred_by_user_id']);
             $table->dropColumn([
-                'referral_by_user_id',
+                'referred_by_user_id',
                 'referral_code_used',
                 'discount_amount'
             ]);

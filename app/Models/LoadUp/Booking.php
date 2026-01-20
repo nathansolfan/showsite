@@ -24,7 +24,12 @@ class Booking extends Model
 
         'status',
         'notes',
-        'extra_fields'
+        'extra_fields',
+
+        //REFERRAL
+        'referred_by_user_id',
+        'referral_code_used',
+        'discount_amount'
     ];
 
     protected $casts = [
@@ -33,6 +38,14 @@ class Booking extends Model
     ];
 
     //RELATION
+
+    //REFERRAL RELATION
+    public function referrer()
+    {
+        return $this->belongsTo(User::class, 'referred_by_user_id');
+
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

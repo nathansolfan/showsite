@@ -45,7 +45,7 @@ class BookingController extends Controller
         $bookingData = array_merge($validated, $referralData);
 
         auth()->user()->bookings()->create($bookingData);
-        
+
         return redirect('/loadup/bookings');
     }
 
