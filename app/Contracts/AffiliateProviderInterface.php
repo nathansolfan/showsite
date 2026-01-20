@@ -4,6 +4,5 @@ namespace App\Contracts;
 
 interface AffiliateProviderInterface
 {
-    public function getOffers();
-
+    public function getOffers(): array;
 }
