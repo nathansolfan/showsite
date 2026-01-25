@@ -22,6 +22,7 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required', 'min:3', 'string']
         ]);
+        
         $validated['password'] = Hash::make($validated['password']);
 
         $user = User::create($validated);
