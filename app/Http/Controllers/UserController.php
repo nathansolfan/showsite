@@ -56,14 +56,12 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect('/');
-
     }
 
     public function makeAdmin(User $user)
     {
         $user->update(['is_admin' => true]);
         return redirect()->back()->with('User is now an Admin');
-
     }
 
     public function update(User $user, Request $request)
