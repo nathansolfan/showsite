@@ -70,7 +70,7 @@ class UserController extends Controller
             'name' => ['required', 'string'],
             'email' => ['required', 'email', 'string']
         ]);
-        
+
         if ($request->filled('password')) {
             $validated['password'] = Hash::make($request['password']);
         };
@@ -95,6 +95,4 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
-
-
 }
