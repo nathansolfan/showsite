@@ -35,16 +35,16 @@ class UserController extends Controller
         return view('user.create');
     }
 
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-        $blogs = $user->blogs;
+    // public function show($id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     $blogs = $user->blogs;
 
-        return view('user.show', [
-            'user' => $user,
-            'blogs' => $blogs,
-        ]);
-    }
+    //     return view('user.show', [
+    //         'user' => $user,
+    //         'blogs' => $blogs,
+    //     ]);
+    // }
 
     public function edit(User $user)
     {
