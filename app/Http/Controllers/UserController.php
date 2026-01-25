@@ -30,10 +30,10 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    // public function create()
-    // {
-    //     return view('user.create');
-    // }
+    public function create()
+    {
+        return view('user.create');
+    }
 
     public function show($id)
     {
