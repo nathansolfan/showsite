@@ -22,6 +22,7 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required', 'min:3', 'string']
         ]);
+        
         $validated['password'] = Hash::make($validated['password']);
 
         $user = User::create($validated);
@@ -49,7 +50,6 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('user.edit', ['user' => $user]);
-
     }
     
 
@@ -57,14 +57,12 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect('/');
-
     }
 
     public function makeAdmin(User $user)
     {
         $user->update(['is_admin' => true]);
         return redirect()->back()->with('User is now an Admin');
-
     }
 
     public function update(User $user, Request $request)
@@ -73,6 +71,7 @@ class UserController extends Controller
             'name' => ['required', 'string'],
             'email' => ['required', 'email', 'string']
         ]);
+
         if ($request->filled('password')) {
             $validated['password'] = Hash::make($request['password']);
         };
@@ -97,6 +96,4 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
-
-
 }
