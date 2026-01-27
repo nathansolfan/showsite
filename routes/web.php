@@ -96,25 +96,10 @@ Route::post('user/{user}/make-admin', [UserController::class, 'makeAdmin']);
 Route::get('user/{user}/blogs', [UserController::class, 'blogs']);
 Route::resource('/user', UserController::class)->except(['index']);
 
-
 // AUTH
 Route::get('/login', [AuthController::class, 'loginForm']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
-
-//DINIS
-Route::get('/kitchen', function () {
-    return view('kitchen.index');
-});
-
-Route::get('/raluca', function () {
-    return view('raluca.index');
-});
-
-//FARM
-Route::get('/farm', function () {
-    return view('farm.index');
-});
 
 // LOAD UP
 Route::get('/loadup', [BookingController::class, 'index']);
@@ -130,11 +115,28 @@ Route::post('/user/{booking}/change-status', [UserController::class, 'changeStat
 Route::get('/loadup/{booking}/edit', [BookingController::class, 'edit']);
 Route::post('/loadup/{booking}/update', [BookingController::class, 'update']);
 Route::post('/loadup/{booking}/delete', [BookingController::class, 'destroy']);
-
-
 // CONTACT
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/messages', [ContactController::class, 'viewMessages']);
-
 //Route::post('/contact-submit', [ContactController::class, 'messages']);
 
+
+Route::get('/subscriptions', function () {
+    return view('subscriptions.index');
+});
+
+
+//DINIS XXXXX
+Route::get('/kitchen', function () {
+    return view('kitchen.index');
+});
+
+
+Route::get('/raluca', function () {
+    return view('raluca.index');
+});
+
+//FARM XXXXX
+Route::get('/farm', function () {
+    return view('farm.index');
+});
