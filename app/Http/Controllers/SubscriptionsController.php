@@ -21,4 +21,15 @@ class SubscriptionsController extends Controller
             'categories' => $categories
         ]);
     }
+
+    public function show()
+    {
+
+    }
+
+
+    public function compare()
+    {
+
+    }
 }
