@@ -125,9 +125,9 @@ Route::get('/messages', [ContactController::class, 'viewMessages']);
 //Route::get('/subscriptions', function () {
 //    return view('subscriptions.index');
 //});
-Route::get('/subscriptions', [SubscriptionsController::class, 'index']);
-Route::get('/subscriptions/compare', [SubscriptionsController::class, 'compare']);
-Route::get('/subscriptions/{slug}', [SubscriptionsController::class, 'show']);
+Route::get('/subscriptions', [SubscriptionsController::class, 'index'])->name('subscriptions.name');
+Route::get('/subscriptions/compare', [SubscriptionsController::class, 'compare'])->name('subscriptions.compare');
+Route::get('/subscriptions/{slug}', [SubscriptionsController::class, 'show'])->name('subscriptions.show');
 
 
 //DINIS XXXXX
