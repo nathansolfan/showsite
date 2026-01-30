@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\LoadUp\BookingController;
+use App\Http\Controllers\SubscriptionsController;
 use App\Http\Controllers\TextAnalysisController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -124,7 +125,8 @@ Route::get('/messages', [ContactController::class, 'viewMessages']);
 //Route::get('/subscriptions', function () {
 //    return view('subscriptions.index');
 //});
-Route::get('/subscriptions', [\App\Http\Controllers\SubscriptionsController::class, 'index']);
+Route::get('/subscriptions', [SubscriptionsController::class, 'index']);
+Route::get('/subscriptions/compare', [SubscriptionsController::class, 'compare']);
 
 
 //DINIS XXXXX
