@@ -127,6 +127,7 @@ Route::get('/messages', [ContactController::class, 'viewMessages']);
 //});
 Route::get('/subscriptions', [SubscriptionsController::class, 'index']);
 Route::get('/subscriptions/compare', [SubscriptionsController::class, 'compare']);
+Route::get('/subscriptions/{slug}', [SubscriptionsController::class, 'show']);
 
 
 //DINIS XXXXX
