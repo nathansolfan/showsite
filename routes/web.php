@@ -121,11 +121,11 @@ Route::get('/messages', [ContactController::class, 'viewMessages']);
 //Route::post('/contact-submit', [ContactController::class, 'messages']);
 
 
-Route::get('/subscriptions', function () {
-    return view('subscriptions.index');
-});
-
+//Route::get('/subscriptions', function () {
+//    return view('subscriptions.index');
+//});
 Route::get('/subscriptions', [\App\Http\Controllers\SubscriptionsController::class, 'index']);
+
 
 //DINIS XXXXX
 Route::get('/kitchen', function () {
