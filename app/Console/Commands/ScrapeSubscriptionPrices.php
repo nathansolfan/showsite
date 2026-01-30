@@ -138,13 +138,13 @@ class ScrapeSubscriptionPrices extends Command
         $this->info("🔍 Scraping {$serviceName}...");
 
         try {
-            // 1. Busca ou cria categoria
+            // 1. SEARCH or Create Category
             $category = Category::firstOrCreate(
                 ['slug' => $config['category']],
                 ['name' => $config['category_name']]
             );
 
-            // 2. Instancia scraper dinamicamente
+            // 2. DINAMIC SCRAPER
             $scraperClass = $config['scraper'];
 
             // Se for GenericScraper, passa URL e fallback
@@ -167,7 +167,7 @@ class ScrapeSubscriptionPrices extends Command
 
             $this->info("✅ {$serviceName} scraped successfully!");
 
-            // 3. Salva no banco
+            // 3. SAVE TO DATABASE
             foreach ($data as $plan) {
                 Subscription::updateOrCreate(
                     ['slug' => Str::slug("{$serviceName}-{$plan['name']}")],
@@ -180,7 +180,7 @@ class ScrapeSubscriptionPrices extends Command
                 );
             }
 
-            // 4. Salva JSON
+            // 4. SAVE JSON
             $filename = "{$serviceName}-" . now()->format('Y-m-d_H-i-s') . '.json';
             $filepath = storage_path('app/scraped/' . $filename);
 
