@@ -64,17 +64,17 @@ class NetflixScraper implements ScraperInterface
                             }
                         }
 
-                        // ✅ VALIDAÇÃO ADICIONADA
+                        // ✅ VALIDATION
                         if ($planName && strlen($planName) < 50 && !$this->isSuspiciousText($planName) && !isset($foundPlans[$planName])) {
                             $foundPlans[$planName] = (float)$matches[1];
                         }
                     } catch (\Exception $e) {
-                        // Ignora
+                        // Ignore
                     }
                 }
             });
 
-            // Converte para formato esperado
+            // Convert to desired format
             $plans = [];
             foreach ($foundPlans as $name => $price) {
                 $plans[] = [
@@ -92,57 +92,20 @@ class NetflixScraper implements ScraperInterface
     }
 
     /**
-     * 🎯 Validação: Filtra textos suspeitos
+     * 🎯 VALIDATION: Filter suspicious text
      */
     private function isSuspiciousText(string $text): bool
     {
-        // Validações rápidas
-        if (strlen($text) > 40 || strlen($text) < 3) return true;
-        if (str_word_count($text) > 5) return true;
-        if (preg_match('/[?!;]/', $text)) return true;
+        // 1. Tamanho: Nomes de planos são curtos
+        if (strlen($text) > 30 || strlen($text) < 3) return true;
 
-        $lower = strtolower($text);
+        // 2. Muitas palavras = provavelmente uma frase, não um plano
+        if (str_word_count($text) > 4) return true;
 
-        // ❌ Blacklist: Palavras que NÃO são nomes de planos
-        $bad = [
-            'pricing',
-            'plans',
-            'british pound',
-            'pound',
-            'currency',
-            'price',
-            'click',
-            'learn',
-            'more',
-            'faq',
-            'question',
-            'how much',
-            'cost',
-            'subscription',
-            'choose',
-            'select',
-        ];
+        // 3. Pontuação estranha = não é nome de plano
+        if (preg_match('/[?!;(),]/', $text)) return true;
 
-        foreach ($bad as $word) {
-            if (stripos($lower, $word) !== false) return true;
-        }
-
-        // ✅ Whitelist: Palavras que SÃO nomes de planos
-        $good = [
-            'standard',
-            'premium',
-            'basic',
-            'advert',
-            'ad',
-            'family',
-            'individual',
-        ];
-
-        foreach ($good as $word) {
-            if (stripos($lower, $word) !== false) return false;
-        }
-
-        // Se não passou em nenhuma validação, aceita palavras simples e curtas
-        return !(str_word_count($text) <= 2 && strlen($text) <= 20);
+        // 4. Aceita palavras simples e curtas (ex: "Premium", "Standard")
+        return !(str_word_count($text) <= 3 && strlen($text) <= 25);
     }
 }
