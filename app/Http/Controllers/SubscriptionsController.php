@@ -33,11 +33,22 @@ class SubscriptionsController extends Controller
             ->limit(3)
             ->get();
 
+        return view('subscriptions.show', [
+            'subscription' => $subscription,
+            'similar' => $similar,
+        ]);
     }
 
 
     public function compare()
     {
+        $subscriptions = Subscription::with('category')
+            ->orderBy('price', 'asc')
+            ->limit(3)
+            ->get();
 
+        return view('subscriptions.compare', [
+            'subscriptions' => $subscriptions
+        ]);
     }
 }
