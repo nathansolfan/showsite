@@ -22,8 +22,13 @@ class SubscriptionsController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($slug)
     {
+        $subscriptions = Subscription::where('slug', $slug)
+            ->with('category')
+            ->firstOrFail();
+
+        $similar = Subscription::where()
 
     }
 
