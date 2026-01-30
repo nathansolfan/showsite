@@ -24,11 +24,14 @@ class SubscriptionsController extends Controller
 
     public function show($slug)
     {
-        $subscriptions = Subscription::where('slug', $slug)
+        $subscription = Subscription::where('slug', $slug)
             ->with('category')
             ->firstOrFail();
 
-        $similar = Subscription::where()
+        $similar = Subscription::where('category_id', $subscription->category_id)
+            ->where('id', '!=', $subscription->id)
+            ->limit(3)
+            ->get();
 
     }
 
