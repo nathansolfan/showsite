@@ -12,7 +12,9 @@ class Subscription extends Model
         'website_url',
         'logo',
         'category_id',
-        'price'
+        'price',
+
+        'affiliate_url'
     ];
 
     public function category()
