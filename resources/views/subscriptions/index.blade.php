@@ -2,26 +2,26 @@
     <x-slot name="title">Compare UK Subscription Prices - Save Money</x-slot>
 
     <!-- Hero Section -->
-    {{--    <section class="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white py-20">--}}
-    {{--        <div class="container mx-auto px-4 text-center">--}}
-    {{--            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">--}}
-    {{--                Compare Subscription Prices--}}
-    {{--            </h1>--}}
-    {{--            <p class="text-xl md:text-2xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">--}}
-    {{--                Find the best deals on streaming, music, and more--}}
-    {{--            </p>--}}
-    {{--            <div class="flex gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">--}}
-    {{--                <a href="#streaming"--}}
-    {{--                   class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">--}}
-    {{--                    View All Services--}}
-    {{--                </a>--}}
-    {{--                <a href="{{ route('subscriptions.compare') }}"--}}
-    {{--                   class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">--}}
-    {{--                    Compare Now--}}
-    {{--                </a>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </section>--}}
+    <section class="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
+                Compare Subscription Prices
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">
+                Find the best deals on streaming, music, and more
+            </p>
+            <div class="flex gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="#streaming"
+                   class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    View All Services
+                </a>
+                <a href="{{ route('subscriptions.compare') }}"
+                   class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">
+                    Compare Now
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Stats Section -->
     <section class="py-12 bg-white border-b">
