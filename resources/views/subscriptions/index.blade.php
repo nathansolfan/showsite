@@ -24,34 +24,34 @@
     </section>
 
     <!-- Stats Section -->
-    {{--    <section class="py-12 bg-white border-b">--}}
-    {{--        <div class="container mx-auto px-4">--}}
-    {{--            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">--}}
-    {{--                <div data-aos="fade-up">--}}
-    {{--                    <div class="text-4xl font-bold text-purple-600 mb-2">--}}
-    {{--                        {{ $subscriptions->flatten()->count() ?? 0 }}--}}
-    {{--                    </div>--}}
-    {{--                    <div class="text-gray-600">Services Compared</div>--}}
-    {{--                </div>--}}
-    {{--                <div data-aos="fade-up" data-aos-delay="100">--}}
-    {{--                    <div class="text-4xl font-bold text-purple-600 mb-2">--}}
-    {{--                        @if($subscriptions->flatten()->count() > 0)--}}
-    {{--                            £{{ number_format($subscriptions->flatten()->min('price'), 2) }}--}}
-    {{--                        @else--}}
-    {{--                            £0.00--}}
-    {{--                        @endif--}}
-    {{--                    </div>--}}
-    {{--                    <div class="text-gray-600">Lowest Price</div>--}}
-    {{--                </div>--}}
-    {{--                <div data-aos="fade-up" data-aos-delay="200">--}}
-    {{--                    <div class="text-4xl font-bold text-purple-600 mb-2">--}}
-    {{--                        {{ $categories->count() ?? 0 }}--}}
-    {{--                    </div>--}}
-    {{--                    <div class="text-gray-600">Categories</div>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </section>--}}
+    <section class="py-12 bg-white border-b">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div data-aos="fade-up">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">
+                        {{ $subscriptions->flatten()->count() ?? 0 }}
+                    </div>
+                    <div class="text-gray-600">Services Compared</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">
+                        @if($subscriptions->flatten()->count() > 0)
+                            £{{ number_format($subscriptions->flatten()->min('price'), 2) }}
+                        @else
+                            £0.00
+                        @endif
+                    </div>
+                    <div class="text-gray-600">Lowest Price</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">
+                        {{ $categories->count() ?? 0 }}
+                    </div>
+                    <div class="text-gray-600">Categories</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Subscriptions by Category -->
     <section class="py-16 bg-gray-50">
