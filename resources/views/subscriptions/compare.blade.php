@@ -1,113 +1,148 @@
 <x-layout>
-    <x-slot name="title">{{ $subscription->name }} - Price & Details</x-slot>
+    <x-slot name="title">Compare Subscription Services - Find the Best Deal</x-slot>
 
-    <!-- Breadcrumb -->
-    <div class="bg-gray-100 py-4">
-        <div class="container mx-auto px-4">
-            <nav class="flex text-gray-600 text-sm">
-                <a href="{{ route('subscriptions.index') }}" class="hover:text-purple-600">Subscriptions</a>
-                <span class="mx-2">/</span>
-                <a href="{{ route('subscriptions.index') }}#{{ $subscription->category->slug }}"
-                   class="hover:text-purple-600">{{ $subscription->category->name }}</a>
-                <span class="mx-2">/</span>
-                <span class="text-gray-800">{{ Str::before($subscription->name, ' - ') }}</span>
-            </nav>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-purple-600 to-pink-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4" data-aos="fade-up">
+                Compare Services Side by Side
+            </h1>
+            <p class="text-xl opacity-90" data-aos="fade-up" data-aos-delay="100">
+                Find the perfect plan for your needs
+            </p>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <section class="py-16 bg-white">
+    <!-- Comparison Table -->
+    <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
 
-                <!-- Service Header -->
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                        {{ Str::before($subscription->name, ' - ') }}
-                    </h1>
-                    <p class="text-2xl text-gray-600">
-                        {{ Str::after($subscription->name, ' - ') }} Plan
-                    </p>
-                </div>
+            <!-- Desktop View -->
+            <div class="hidden md:block overflow-x-auto">
+                <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                    <thead>
+                    <tr class="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                        <th class="px-6 py-4 text-left text-lg font-bold">Service</th>
+                        @foreach($subscriptions as $sub)
+                            <th class="px-6 py-4 text-center text-lg font-bold" data-aos="fade-down"
+                                data-aos-delay="{{ $loop->index * 100 }}">
+                                {{ Str::before($sub->name, ' - ') }}
+                            </th>
+                        @endforeach
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Plan Name -->
+                    <tr class="border-b border-gray-200">
+                        <td class="px-6 py-4 font-semibold text-gray-700">Plan</td>
+                        @foreach($subscriptions as $sub)
+                            <td class="px-6 py-4 text-center" data-aos="fade-up">
+                                {{ Str::after($sub->name, ' - ') }}
+                            </td>
+                        @endforeach
+                    </tr>
 
-                <!-- Price Card -->
-                <div
-                    class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-2xl p-12 text-white text-center mb-12"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="mb-6">
-                        <div class="text-6xl font-bold mb-2">
-                            £{{ number_format($subscription->price, 2) }}
-                        </div>
-                        <div class="text-2xl opacity-90">per month</div>
-                    </div>
+                    <!-- Price -->
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                        <td class="px-6 py-4 font-semibold text-gray-700">Monthly Price</td>
+                        @foreach($subscriptions as $sub)
+                            <td class="px-6 py-4 text-center" data-aos="fade-up"
+                                data-aos-delay="{{ $loop->index * 50 }}">
+                                <div class="text-2xl font-bold text-purple-600">
+                                    £{{ number_format($sub->price, 2) }}
+                                </div>
+                            </td>
+                        @endforeach
+                    </tr>
 
-                    <!-- Affiliate Link Button -->
-                    <a href="{{ $subscription->affiliate_url ?? $subscription->website_url }}"
-                       target="_blank"
-                       rel="nofollow sponsored"
-                       class="inline-block bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
-                        Sign Up Now →
-                    </a>
+                    <!-- Yearly Cost -->
+                    <tr class="border-b border-gray-200">
+                        <td class="px-6 py-4 font-semibold text-gray-700">Yearly Cost</td>
+                        @foreach($subscriptions as $sub)
+                            <td class="px-6 py-4 text-center" data-aos="fade-up"
+                                data-aos-delay="{{ $loop->index * 50 }}">
+                                <div class="text-lg text-gray-600">
+                                    £{{ number_format($sub->price * 12, 2) }}
+                                </div>
+                            </td>
+                        @endforeach
+                    </tr>
 
-                    <p class="text-sm mt-4 opacity-75">
-                        Visit official website
-                    </p>
-                </div>
+                    <!-- Category -->
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                        <td class="px-6 py-4 font-semibold text-gray-700">Category</td>
+                        @foreach($subscriptions as $sub)
+                            <td class="px-6 py-4 text-center" data-aos="fade-up"
+                                data-aos-delay="{{ $loop->index * 50 }}">
+                                {{ $sub->category->name }}
+                            </td>
+                        @endforeach
+                    </tr>
 
-                <!-- Key Info -->
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up">
-                        <div class="text-3xl mb-2">💷</div>
-                        <div class="text-gray-600 text-sm mb-1">Monthly Cost</div>
-                        <div class="text-xl font-bold text-gray-800">£{{ number_format($subscription->price, 2) }}</div>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-3xl mb-2">📅</div>
-                        <div class="text-gray-600 text-sm mb-1">Yearly Cost</div>
-                        <div class="text-xl font-bold text-gray-800">
-                            £{{ number_format($subscription->price * 12, 2) }}</div>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-3xl mb-2">📂</div>
-                        <div class="text-gray-600 text-sm mb-1">Category</div>
-                        <div class="text-xl font-bold text-gray-800">{{ $subscription->category->name }}</div>
-                    </div>
-                </div>
-
-                <!-- Similar Services -->
-                @if($similar->count() > 0)
-                    <div class="border-t border-gray-200 pt-12" data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-                            Similar Services
-                        </h2>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            @foreach($similar as $service)
-                                <a href="{{ route('subscriptions.show', $service->slug) }}"
-                                   class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-500 hover:shadow-xl transition-all transform hover:-translate-y-1">
-                                    <h3 class="font-bold text-lg mb-2">{{ Str::before($service->name, ' - ') }}</h3>
-                                    <p class="text-gray-600 text-sm mb-4">{{ Str::after($service->name, ' - ') }}</p>
-                                    <div class="flex items-baseline">
-                                        <span
-                                            class="text-2xl font-bold text-purple-600">£{{ number_format($service->price, 2) }}</span>
-                                        <span class="text-gray-500 text-sm ml-1">/month</span>
-                                    </div>
+                    <!-- CTA Buttons -->
+                    <tr>
+                        <td class="px-6 py-6 font-semibold text-gray-700"></td>
+                        @foreach($subscriptions as $sub)
+                            <td class="px-6 py-6 text-center" data-aos="fade-up"
+                                data-aos-delay="{{ $loop->index * 50 }}">
+                                <a href="{{ route('subscriptions.show', $sub->slug) }}"
+                                   class="inline-block bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition w-full">
+                                    View Details
                                 </a>
-                            @endforeach
-                        </div>
-                    </div>
-                @endif
+                            </td>
+                        @endforeach
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <!-- Back Button -->
-                <div class="mt-12 text-center">
-                    <a href="{{ route('subscriptions.index') }}"
-                       class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15 19l-7-7 7-7"></path>
-                        </svg>
-                        Back to All Services
-                    </a>
-                </div>
+            <!-- Mobile View -->
+            <div class="md:hidden space-y-6">
+                @foreach($subscriptions as $sub)
+                    <div class="bg-white rounded-xl shadow-lg p-6" data-aos="fade-up"
+                         data-aos-delay="{{ $loop->index * 100 }}">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                            {{ Str::before($sub->name, ' - ') }}
+                        </h3>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between py-2 border-b">
+                                <span class="text-gray-600">Plan:</span>
+                                <span class="font-semibold">{{ Str::after($sub->name, ' - ') }}</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b">
+                                <span class="text-gray-600">Monthly:</span>
+                                <span
+                                    class="text-2xl font-bold text-purple-600">£{{ number_format($sub->price, 2) }}</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b">
+                                <span class="text-gray-600">Yearly:</span>
+                                <span class="font-semibold">£{{ number_format($sub->price * 12, 2) }}</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-600">Category:</span>
+                                <span class="font-semibold">{{ $sub->category->name }}</span>
+                            </div>
+                        </div>
+
+                        <a href="{{ route('subscriptions.show', $sub->slug) }}"
+                           class="block bg-purple-600 text-white text-center px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+                            View Details
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-12 text-center">
+                <a href="{{ route('subscriptions.index') }}"
+                   class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold text-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to All Services
+                </a>
             </div>
         </div>
     </section>
