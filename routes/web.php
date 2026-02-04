@@ -127,6 +127,8 @@ Route::get('/messages', [ContactController::class, 'viewMessages']);
 //});
 Route::get('/subscriptions', [SubscriptionsController::class, 'index'])->name('subscriptions.name');
 Route::get('/subscriptions/compare', [SubscriptionsController::class, 'compare'])->name('subscriptions.compare');
+
+Route::get('/go/{slug}', [SubscriptionsController::class, 'redirect']);
 Route::get('/subscriptions/{slug}', [SubscriptionsController::class, 'show'])->name('subscriptions.show');
 
 
