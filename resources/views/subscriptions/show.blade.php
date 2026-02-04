@@ -42,7 +42,14 @@
                     </div>
 
                     <!-- Affiliate Link Button -->
-                    <a href="{{ $subscription->affiliate_url ?? $subscription->website_url }}"
+                    {{--                    <a href="{{ $subscription->affiliate_url ?? $subscription->website_url }}"--}}
+                    {{--                       target="_blank"--}}
+                    {{--                       rel="nofollow sponsored"--}}
+                    {{--                       class="inline-block bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">--}}
+                    {{--                        Sign Up Now →--}}
+                    {{--                    </a>--}}
+
+                    <a href="{{ route('affiliate.redirect', $subscription->slug) }}"
                        target="_blank"
                        rel="nofollow sponsored"
                        class="inline-block bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
