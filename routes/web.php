@@ -136,10 +136,6 @@ Route::get('/kitchen', function () {
 });
 
 
-Route::get('/raluca', function () {
-    return view('raluca.index');
-});
-
 //FARM XXXXX
 Route::get('/farm', function () {
     return view('farm.index');
