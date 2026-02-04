@@ -17,6 +17,10 @@ class Subscription extends Model
         'affiliate_url'
     ];
 
+    protected $casts = [
+        'last_clicked_at' => 'datetime',
+    ];
+    
     public function category()
     {
         return $this->belongsTo(Category::class);
