@@ -84,26 +84,26 @@ class SubscriptionsController extends Controller
         return $url . $separator . http_build_query($params);
     }
 
-    // Opcional: página de estatísticas
-    public function stats()
-    {
-        $topClicked = Subscription::with('category')
-            ->orderBy('click_count', 'desc')
-            ->limit(10)
-            ->get();
-
-        $totalClicks = Subscription::sum('click_count');
-
-        $clicksByCategory = Subscription::with('category')
-            ->selectRaw('category_id, SUM(click_count) as total_clicks')
-            ->groupBy('category_id')
-            ->orderBy('total_clicks', 'desc')
-            ->get();
-
-        return view('subscriptions.stats', [
-            'topClicked' => $topClicked,
-            'totalClicks' => $totalClicks,
-            'clicksByCategory' => $clicksByCategory
-        ]);
-    }
+//    // Opcional: página de estatísticas
+//    public function stats()
+//    {
+//        $topClicked = Subscription::with('category')
+//            ->orderBy('click_count', 'desc')
+//            ->limit(10)
+//            ->get();
+//
+//        $totalClicks = Subscription::sum('click_count');
+//
+//        $clicksByCategory = Subscription::with('category')
+//            ->selectRaw('category_id, SUM(click_count) as total_clicks')
+//            ->groupBy('category_id')
+//            ->orderBy('total_clicks', 'desc')
+//            ->get();
+//
+//        return view('subscriptions.stats', [
+//            'topClicked' => $topClicked,
+//            'totalClicks' => $totalClicks,
+//            'clicksByCategory' => $clicksByCategory
+//        ]);
+//    }
 }
