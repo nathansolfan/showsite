@@ -49,12 +49,12 @@
                     {{--                        Sign Up Now →--}}
                     {{--                    </a>--}}
 
-                    {{--                    <a href="{{ route('affiliate.redirect', $subscription->slug) }}"--}}
-                    {{--                       target="_blank"--}}
-                    {{--                       rel="nofollow sponsored"--}}
-                    {{--                       class="inline-block bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">--}}
-                    {{--                        Sign Up Now →--}}
-                    {{--                    </a>--}}
+                    <a href="{{ route('affiliate.redirect', $subscription->slug) }}"
+                       target="_blank"
+                       rel="nofollow sponsored"
+                       class="inline-block bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+                        Sign Up Now →
+                    </a>
 
                     <p class="text-sm mt-4 opacity-75">
                         Visit official website

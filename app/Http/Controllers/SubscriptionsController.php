@@ -84,6 +84,18 @@ class SubscriptionsController extends Controller
         return $url . $separator . http_build_query($params);
     }
 
+    public function redirect($slug)
+    {
+        $subscription = Subscription::where('slug', $slug)->firstOrFail();
+
+        $subscription->increment('click_count');
+        $subscription->update(['last_clicked_at' => now()]);
+
+        return redirect()->away($subscription->affiliate_url ?? $subscription->website_url);
+    }
+
+
+
 //    // Opcional: página de estatísticas
 //    public function stats()
 //    {
