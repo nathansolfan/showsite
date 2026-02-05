@@ -52,21 +52,31 @@ class SubscriptionsController extends Controller
     }
 
     // Novo método para redirecionar com tracking
+//    public function redirect($slug)
+//    {
+//        $subscription = Subscription::where('slug', $slug)->firstOrFail();
+//
+//        // Incrementar contador de clicks
+//        $subscription->increment('click_count');
+//        $subscription->update(['last_clicked_at' => now()]);
+//
+//        // Usar affiliate_url se existir, senão usar website_url
+//        $url = $subscription->affiliate_url ?? $subscription->website_url;
+//
+//        // Adicionar UTM parameters para tracking
+//        $url = $this->addUtmParameters($url, $subscription);
+//
+//        return redirect()->away($url);
+//    }
+
     public function redirect($slug)
     {
         $subscription = Subscription::where('slug', $slug)->firstOrFail();
 
-        // Incrementar contador de clicks
         $subscription->increment('click_count');
         $subscription->update(['last_clicked_at' => now()]);
 
-        // Usar affiliate_url se existir, senão usar website_url
-        $url = $subscription->affiliate_url ?? $subscription->website_url;
-
-        // Adicionar UTM parameters para tracking
-        $url = $this->addUtmParameters($url, $subscription);
-
-        return redirect()->away($url);
+        return redirect()->away($subscription->affiliate_url ?? $subscription->website_url);
     }
 
     // Método auxiliar para adicionar UTM parameters
@@ -84,15 +94,7 @@ class SubscriptionsController extends Controller
         return $url . $separator . http_build_query($params);
     }
 
-    public function redirect($slug)
-    {
-        $subscription = Subscription::where('slug', $slug)->firstOrFail();
 
-        $subscription->increment('click_count');
-        $subscription->update(['last_clicked_at' => now()]);
-
-        return redirect()->away($subscription->affiliate_url ?? $subscription->website_url);
-    }
 
 
 
