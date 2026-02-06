@@ -63,24 +63,24 @@
                 </div>
 
                 <!-- Key Info -->
-                {{--                <div class="grid md:grid-cols-3 gap-6 mb-12">--}}
-                {{--                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up">--}}
-                {{--                        <div class="text-3xl mb-2">💷</div>--}}
-                {{--                        <div class="text-gray-600 text-sm mb-1">Monthly Cost</div>--}}
-                {{--                        <div class="text-xl font-bold text-gray-800">£{{ number_format($subscription->price, 2) }}</div>--}}
-                {{--                    </div>--}}
-                {{--                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">--}}
-                {{--                        <div class="text-3xl mb-2">📅</div>--}}
-                {{--                        <div class="text-gray-600 text-sm mb-1">Yearly Cost</div>--}}
-                {{--                        <div class="text-xl font-bold text-gray-800">--}}
-                {{--                            £{{ number_format($subscription->price * 12, 2) }}</div>--}}
-                {{--                    </div>--}}
-                {{--                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">--}}
-                {{--                        <div class="text-3xl mb-2">📂</div>--}}
-                {{--                        <div class="text-gray-600 text-sm mb-1">Category</div>--}}
-                {{--                        <div class="text-xl font-bold text-gray-800">{{ $subscription->category->name }}</div>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up">
+                        <div class="text-3xl mb-2">💷</div>
+                        <div class="text-gray-600 text-sm mb-1">Monthly Cost</div>
+                        <div class="text-xl font-bold text-gray-800">£{{ number_format($subscription->price, 2) }}</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl mb-2">📅</div>
+                        <div class="text-gray-600 text-sm mb-1">Yearly Cost</div>
+                        <div class="text-xl font-bold text-gray-800">
+                            £{{ number_format($subscription->price * 12, 2) }}</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl mb-2">📂</div>
+                        <div class="text-gray-600 text-sm mb-1">Category</div>
+                        <div class="text-xl font-bold text-gray-800">{{ $subscription->category->name }}</div>
+                    </div>
+                </div>
 
                 <!-- Similar Services -->
                 @if($similar->count() > 0)
