@@ -21,14 +21,14 @@
             <div class="max-w-4xl mx-auto">
 
                 <!-- Service Header -->
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                        {{ Str::before($subscription->name, ' - ') }}
-                    </h1>
-                    <p class="text-2xl text-gray-600">
-                        {{ Str::after($subscription->name, ' - ') }} Plan
-                    </p>
-                </div>
+                {{--                <div class="text-center mb-12" data-aos="fade-up">--}}
+                {{--                    <h1 class="text-5xl font-bold text-gray-800 mb-4">--}}
+                {{--                        {{ Str::before($subscription->name, ' - ') }}--}}
+                {{--                    </h1>--}}
+                {{--                    <p class="text-2xl text-gray-600">--}}
+                {{--                        {{ Str::after($subscription->name, ' - ') }} Plan--}}
+                {{--                    </p>--}}
+                {{--                </div>--}}
 
                 <!-- Price Card -->
                 <div
