@@ -34,12 +34,12 @@
                 <div
                     class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-2xl p-12 text-white text-center mb-12"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="mb-6">
-                        <div class="text-6xl font-bold mb-2">
-                            £{{ number_format($subscription->price, 2) }}
-                        </div>
-                        <div class="text-2xl opacity-90">per month</div>
-                    </div>
+                    {{--                    <div class="mb-6">--}}
+                    {{--                        <div class="text-6xl font-bold mb-2">--}}
+                    {{--                            £{{ number_format($subscription->price, 2) }}--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="text-2xl opacity-90">per month</div>--}}
+                    {{--                    </div>--}}
 
                     <!-- Affiliate Link Button -->
                     {{--                    <a href="{{ $subscription->affiliate_url ?? $subscription->website_url }}"--}}
