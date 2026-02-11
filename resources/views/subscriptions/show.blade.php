@@ -57,9 +57,9 @@
                         Sign Up Now →
                     </a>
 
-                    <p class="text-sm mt-4 opacity-75">
-                        Visit official website
-                    </p>
+                    {{--                    <p class="text-sm mt-4 opacity-75">--}}
+                    {{--                        Visit official website--}}
+                    {{--                    </p>--}}
                 </div>
 
                 <!-- Key Info -->
